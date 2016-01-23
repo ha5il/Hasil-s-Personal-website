@@ -9,28 +9,25 @@
          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
          <!-- preloader -->
          <style type="text/css" rel="stylesheet" media="screen,projection"/>
-           nav {
-  font-family: 'Kaushan Script', serif;
-    background: #FF8604
-  }
-
-@font-face {
-  font-family: 'Kaushan Script';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://googledrive.com/host/0BwsBpnv0xfq3ME1kTTY1M0otU0U) format('woff2');
-  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
-}
-
-@font-face {
-  font-family: 'Kaushan Script';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://googledrive.com/host/0BwsBpnv0xfq3dDZrbklmZnVnWXc) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
-}
-
- .myloader {
+            nav {
+            font-family: 'Kaushan Script', serif;
+            background: #FF8604
+            }
+            @font-face {
+            font-family: 'Kaushan Script';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://googledrive.com/host/0BwsBpnv0xfq3ME1kTTY1M0otU0U) format('woff2');
+            unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
+            }
+            @font-face {
+            font-family: 'Kaushan Script';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://googledrive.com/host/0BwsBpnv0xfq3dDZrbklmZnVnWXc) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
+            }
+            .myloader {
             background: url(https://googledrive.com/host/0BwsBpnv0xfq3Rm1lOUhOaFlWTU0/) center center no-repeat #2F4F4F;
             bottom: 0;
             height: 100%;
@@ -42,6 +39,82 @@
             width: 100%;
             z-index: 99999
             }  
+         </style>
+         <style>
+            body {
+            background: #333;
+            overflow: hidden;
+            }
+            ::-webkit-scrollbar {
+            display: none;
+            }
+            div {
+            margin: 0;
+            padding: 0;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: absolute;
+            }
+            #container {
+            font-family: UnifrakturMaguntia;
+            width: 350px;
+            height: 70%;
+            max-height: 500px;
+            top: 50%;
+            left: 50%;
+            -webkit-perspective: 5000px;
+            perspective: 5000px;
+            transform: translate(-50%, -50%) rotateY(20deg);
+            }
+            #container p {
+            padding: 0 5px 0 5px;
+            }
+            #container hr {
+            margin: 0 20px 0 20px;
+            }
+            .panel-node {
+            width: 100%;
+            }
+            .panel-cutout {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            }
+            #content {
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+            overflow-y: scroll;
+            height: 100%;
+            }
+            #content,
+            .panel-content {
+            background: #fefee0;
+            }
+            .panel-content {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            }
+            .backface > * {
+            opacity: 0.25;
+            }
+            #lorem {
+            font-size: 7em;
+            float: left;
+            color: red;
+            border: 1px solid black;
+            margin-right: 5px;
+            }
+            #tree {
+            float: right;
+            width: 10em;
+            height: 10em;
+            border: 1px solid black;
+            margin: 0 5px 0 2px;
+            }
          </style>
          <title>Hasil's Writings</title>
    </head>
@@ -71,12 +144,233 @@
          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       </nav>
       <!-- Body comes here after -->
-      
-      
-      
-      
-      
-      
+      <div id="container">
+         <div id="content" align="center">
+            <h4>
+               <p> All these poems are Published in -<br> Blended Words </p>
+            </h4>
+            <hr>
+            <hr>
+            <h5> Greedy, love, genius and peace </h5>
+            <p>The world doesn't seems to be greedy<br>
+               You are the one who feels greedy<br>
+               If you think that I am greedy<br>
+               Then remember I am greedy because you are greedy
+            </p>
+            <p>
+               Don't think that I don't love you<br>
+               Until and unless you know that I love you<br>
+               If you think that I love you<br>
+               Then you should know that I don't hate you
+            </p>
+            <p>
+               If you know that I am genius<br>
+               Them know that you made of genius<br>
+               Everyone don't accept me as genius<br>
+               Because they aren't genius to belief me as genius
+            </p>
+            <p>
+               Try to live always in peace<br>
+               So that I can stay in peace<br>
+               To live in peace, know the meaning of peace<br>
+               Dictionary is right there, go and find the word - peace.
+            </p>
+            <hr>
+            <h5>Why Fail</h5>
+            <p>Everyone listen what I Tell,<br>
+               Why I always get Fail?<br>
+               The school is Hell<br>
+               To make me Fail!
+            </p>
+            <p>
+               Teachers scold Me,<br>
+               And friends hate Me<br>
+               Just because Why<br>
+               I was going to Die...
+            </p>
+            <p>
+               I tried my Best<br>
+               To get Success,<br>
+               But that study as Input<br>
+               Gave me red marks as Output
+            </p>
+            <p>
+               Even I got fail this Time<br>
+               I may top next Time<br>
+               What if you hate Me<br>
+               World may again love Me
+            </p>
+            <p>
+               Give me another Chance<br>
+               Then,<br>
+               You will Get<br>
+               Less than I Gain...
+            </p>
+            <hr>
+            <h5>Concord</h5>
+            <p>Came in earth alone<br>
+               And will be going alone<br>
+               But,<br>
+               Needs someone to remove solitariness<br>
+               So, I am in search of fondness<br>
+               Wish<br>
+               Come and understand me<br>
+               Come and help me<br>
+               Come and assist me<br>
+               And finally tag me
+            </p>
+            <p>
+               Wish you'll shield me<br>
+               And I'll too secure you<br>
+               So, proceed together<br>
+               We'll to victory<br>
+               Thus, I am in search of affinity
+            </p>
+            <p>
+               Take me away from jinx<br>
+               Take me away from junk<br>
+               Neutralise my vandalize<br>
+               Wish I'll retrieve soon
+            </p>
+            <hr>
+            <hr>
+         </div>
+      </div>
+      <script>
+         (function() {
+         var div = document.createElement('div');
+         div.style.width = '100px';
+         div.style.height = '100px';
+         div.style.overflow = 'scroll';
+         div.style.position = 'absolute';
+         div.style.top = '-9999px';
+         document.body.appendChild(div);
+         
+         var scrollBarWidth = div.offsetWidth - div.clientWidth;
+         
+         document.body.removeChild(div);
+         
+         var style = document.createElement('style');
+         document.querySelector('head').appendChild(style);
+         
+         var selector = '.panel-content';
+         var rule = `padding-right: ${scrollBarWidth}px`;
+         
+         if (style.sheet) {
+         if (style.sheet.insertRule) style.sheet.insertRule(`${selector} {${rule}}`, 0);
+         else style.sheet.addRule(selector, rule);
+         } else if (style.styleSheet) style.styleSheet.addRule(selector, rule);
+         })();
+         
+         function panel(html) {
+         var panelNode = document.createElement('div');
+         var panelCutoutNode = document.createElement('div');
+         var panelContentNode = document.createElement('div');
+         
+         panelNode.classList.add('panel-node');
+         
+         panelCutoutNode.classList.add('panel-cutout');
+         
+         panelContentNode.innerHTML = html;
+         panelContentNode.classList.add('panel-content');
+         
+         panelCutoutNode.appendChild(panelContentNode);
+         panelNode.appendChild(panelCutoutNode);
+         
+         return panelNode;
+         }
+         
+         function syncPanelContent(tops, bottoms, scrollTop, containerHeight, panelHeight) {
+         for (var i = 0; i < tops.length; i++) {
+         var t = tops[i];
+         var b = bottoms[i];
+         var tTop = (i + 1) * panelHeight - scrollTop;
+         var bTop = -i * panelHeight - scrollTop - containerHeight;
+         t.style.transform = `translate3d(0,${tTop}px,0)`;
+         b.style.transform = `translate3d(0,${bTop}px,0)`;
+         }
+         }
+         
+         function transYrotX(y, x) {
+         return `translate3d(0,${y}px,0) rotateX(${x}rad)`;
+         }
+         
+         function createScrollOverlay(el, panelHeight, num, angle) {
+         var tops = [];
+         var bottoms = [];
+         
+         var topParent = el.parentNode;
+         var bottomParent = el.parentNode;
+         
+         var html = el.innerHTML;
+         
+         var totalTheta = 0;
+         
+         for (var i = 0; i < num; i++) {
+         var topPanel = panel(html);
+         var bottomPanel = panel(html);
+         
+         topPanel.style.height = `${panelHeight}px`;
+         bottomPanel.style.height = `${panelHeight}px`;
+         topPanel.style.transformOrigin = '50% 100% 0';
+         bottomPanel.style.transformOrigin = '50% 0% 0';
+         
+         var topPanelContent = topPanel.querySelector('.panel-content');
+         var bottomPanelContent = bottomPanel.querySelector('.panel-content');
+         
+         if (i === 0) {
+         topPanel.style.transform = transYrotX(-panelHeight, 0);
+         bottomPanel.style.top = '100%';
+         bottomPanel.style.transform = transYrotX(0, 0);
+         } else {
+         topPanel.style.transform = transYrotX(-panelHeight + 0.25, angle);
+         bottomPanel.style.transform = transYrotX(panelHeight - 0.25, angle);
+         
+         totalTheta += angle;
+         totalTheta %= 2 * Math.PI;
+         if (Math.PI * (1 / 2) < totalTheta && totalTheta < Math.PI * (3 / 2)) {
+           topPanelContent.classList.add('backface');
+           bottomPanelContent.classList.add('backface');
+         }
+         }
+         
+         angle += 0.025;
+         
+         tops.push(topPanelContent);
+         bottoms.push(bottomPanelContent);
+         
+         topParent.appendChild(topPanel);
+         bottomParent.appendChild(bottomPanel);
+         
+         topParent = topPanel;
+         bottomParent = bottomPanel;
+         }
+         
+         syncPanelContent(tops, bottoms, 0, container.clientHeight, panelHeight);
+         
+         function update() {
+         var scrollTop = el.scrollTop;
+         var containerHeight = container.clientHeight;
+         requestAnimationFrame(function() {
+         syncPanelContent(tops, bottoms, scrollTop, containerHeight, panelHeight);
+         });
+         }
+         
+         el.onscroll = update;
+         window.onresize = update;
+         
+         }
+         
+         var theta = 0.3;
+         var num = 20;
+         if (/iPhone|Android/.test(navigator.userAgent)) {
+         theta = 0.45;
+         num = 10;
+         }
+         
+         var $ = document.querySelector.bind(document);
+         createScrollOverlay($('#content'), 20, num, theta);
+      </script>
       <!-- Materialize js mini -->
       <script src="https://googledrive.com/host/0BwsBpnv0xfq3X21maC1fOWZZX2s/"></script>
       <script src="https://googledrive.com/host/0BwsBpnv0xfq3NklxTVBTY1VDS3c/"></script>
