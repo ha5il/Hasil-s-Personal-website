@@ -5,4 +5,4 @@
  2. Head on to https://hangouts.google.com
  3. Send me a message by searching my name.
  
- > Everything completed, you might refer codes, it has comments.
+> Everything completed, you might refer codes, it has comments.
