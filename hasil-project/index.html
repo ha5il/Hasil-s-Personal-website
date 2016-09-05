@@ -45,7 +45,7 @@
          width: 100%;
          z-index: 99999
          }
-         footer{font-family:'Kaushan Script',serif;background:#124369}
+         footer{font-family:'Kaushan Script',serif;background:#124369; position:fixed; left:0px; bottom:0px; height:50px; width:100%;z-index: 99998}
       </style>
       <title>Hasil's Project Login</title>
       <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
@@ -264,7 +264,7 @@
       <div class="container">
          <div class="card-panel">
             <br>
-            <h4 class="blue-text" style="text-align:center"> O_o Please Authorize Yourself o_O</h4>
+            <h4 class="blue-text" style="text-align:center"> O_o Authentication Required o_O</h4>
             <div class="card-panel hoverable">
                <div class="input-field col s12 m6">
                   <input id="email" type="email" class="validate" name="email" > &nbsp;&nbsp;&nbsp;
@@ -285,7 +285,7 @@
             </div>
             </div>
             <br>
-            <div class="blue-text strong" style="text-align:center"><strong>Feel free to sign up and verify the account, but authorizing you or not depends upon my team :(</strong></div>
+            <div class="blue-text strong" style="text-align:center"><strong>Feel free to sign up and verify the account, but authorizing you to access the projects or not depends upon my team :(</strong></div>
             <br>
             
             <!-- Container where we'll display the user details -->
