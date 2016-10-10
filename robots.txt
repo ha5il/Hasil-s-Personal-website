@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: 
+Disallow: /hasil-project
+Allow: /about-hasil
+Allow: /add-hasil-in-games
+Allow: /hasil-writings
+Allow: /stay-in-touch
+Allow: /hasil-videos
+Allow: /hasil-videos/fuchhey
