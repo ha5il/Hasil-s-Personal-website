@@ -1,108 +1,25 @@
 <!DOCTYPE html>
+<?php include "../allassets/colour.php";?>
 <html lang="en-NP">
-   <head>
-      <!-- for browser and search engine -->
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" >
-      <meta name="author" content="Hasil Paudyal, hasilpaudyal@gmail.com">
-      <!-- Description appears in the search reasult. Search hasilpaudyal.com.np to see it live! -->
-      <meta name="description" content="Hasil's Personal Site. Check out to know more and contact him. ">
-      <!-- Any keyword if searched shall include this page. But there is Ranking system in search results. -->
-      <meta name="keywords" content="Hasil, Paudyal, Google Games Hack, Personal Site, Hášíl, Páůďýál, meet hasil, contact hasil, social circles">
-      <!-- Page logo-->
-      <link href="/allassets/icon.png" rel="shortcut icon">
-      <!-- Materialize css -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-      <!-- font and preloader -->
-      <style rel="stylesheet" type="text/css" media="screen,projection">
-         nav {
-         font-family: 'Kaushan Script', serif;
-         background: #2BE110
-         }
-         @font-face {
-         font-family: 'Kaushan Script';
-         font-style: normal;
-         font-weight: 400;
-         src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IO87R-l0-Xx_7cYc0ZX1ifE.woff2) format('woff2');
-         unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF
-         }
-         @font-face {
-         font-family: 'Kaushan Script';
-         font-style: normal;
-         font-weight: 400;
-         src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IEd0sm1ffa_JvZxsF_BEwQk.woff2) format('woff2');
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000
-         }
-         fonto {
-         font-family: 'Architects Daughter', serif;
-         }
-         @font-face {
-         font-family: 'Architects Daughter';
-         font-style: normal;
-         font-weight: 400;
-         src: local('Architects Daughter'), local('ArchitectsDaughter'), url(https://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2');
-         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-         }
-         .myloader {
-         background: url(/allassets/preloader.gif) center center no-repeat #2F4F4F;
-         bottom: 0;
-         height: 100%;
-         left: 0;
-         overflow: hidden;
-         position: fixed;
-         right: 0;
-         top: 0;
-         width: 100%;
-         z-index: 99999
-         }
-         body{
-         background-color: #93A1AC
-         }
-         footer{font-family:'Kaushan Script',serif;background:#2BE110; position:fixed; left:0px; bottom:0px; height:50px; width:100%;z-index: 99998}
-      </style>
-      <title>Stay in touch with Hasil</title>
-   </head>
-   <body>
-      <!-- Preloader -->
-      <div class="myloader"></div>
-      <!-- The menu bar on top and hidden left side bar for mobiles and smaller screen size
-         Try resizing window size to view changes on webpage -->
-      <div class="navbar-fixed">
-         <ul id="dropdown1" class="dropdown-content">
-            <li><a class="waves-effect waves-yellow tooltipped" data-position="left" data-delay="50" data-tooltip="My username on different platform" href="/add-hasil-in-games/">Add me in Games</a></li>
-            <li><a class="waves-effect waves-red tooltipped" data-position="left" data-delay="50" data-tooltip="View my projects" href="/hasil-project/">My Projects</a></li>
-            <li class="divider"></li>
-            <li><a class="waves-effect waves-teal tooltipped" data-position="left" data-delay="50" data-tooltip="Makes me more popular!" href="https://www.google.com/search?q=Hasil+Paudyal" target="_blank">Me on Google</a></li>
-            <li class="divider"></li>
-            <li><a class="waves-effect waves-red tooltipped" data-position="left" data-delay="50" data-tooltip="My Videos" href="/hasil-videos/">Videos</a></li>
-            <li><a class="waves-effect waves-green tooltipped" data-position="left" data-delay="50" data-tooltip="Bhai ko video haru" href="/hasil-videos/fuchhey/">Fuchhey</a></li>
-         </ul>
-         <nav>
-            <a href="#" class="brand-logo" onclick="Materialize.toast('Its my name :)', 5000, 'rounded')">Hasil Paudyal</a>
-            <ul class="right hide-on-med-and-down">
-               <li><a class="waves-effect waves-orange tooltipped" data-position="bottom" data-delay="50" data-tooltip="Namaste" href="/">Welcome</a></li>
-               <li><a class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Wanna know more?" href="/about-hasil/">About Me</a></li>
-               <li><a class="waves-effect waves-purple tooltipped" data-position="bottom" data-delay="50" data-tooltip="Social Circles" href="#" onclick="Materialize.toast('Below are some options!', 4000, 'rounded')"><b>Stay in Touch</b></a></li>
-               <li><a class="waves-effect waves-green tooltipped" data-position="bottom" data-delay="50" data-tooltip="Some Poems by me" href="/hasil-writings/">My Writings</a></li>
-               <li><a class="dropdown-button tooltipped" href="#" data-activates="dropdown1"data-position="bottom" data-delay="50" data-tooltip="More!">Even More<i class="material-icons right"><img alt="" src="/allassets/DropDown.png" width="20" height="11"></i></a></li>
-            </ul>
-            <ul id="slide-out" class="side-nav">
-               <li><a class="waves-effect waves-orange" href="/">Welcome</a></li>
-               <li><a class="waves-effect waves-light" href="/about-hasil/">About Me</a></li>
-               <li><a class="waves-effect waves-purple" href="#" onclick="Materialize.toast('Below are some options!', 4000, 'rounded')"><b>Stay in Touch</b></a></li>
-               <li><a class="waves-effect waves-green" href="/hasil-writings/">My Writings</a></li>
-               <li><a class="waves-effect waves-yellow" href="/add-hasil-in-games/">Add me in Games</a></li>
-               <li><a class="waves-effect waves-red" href="/hasil-videos/">Videos</a></li>
-               <li><a class="waves-effect waves-green" href="/hasil-videos/fuchhey/">Fuchhey</a></li>
-               <li><a class="waves-effect waves-red" href="/hasil-project/" >My Projects</a></li>
-               <li><a class="waves-effect waves-teal" href="https://www.google.com/search?q=Hasil+Paudyal" target="_blank">Me on Google</a></li>
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation"><img alt="" src="/allassets/menu.png" width="32" height="23"></i></a>
-         </nav>
-      </div>
-      <!-- Body comes here after -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Hasil Paudyal, hasilpaudyal@gmail.com">
+<meta name="description" content="Hasil's Personal Site. Check out to know more and contact him. ">
+<meta name="keywords" content="Hasil, Paudyal, Google Games Hack, Personal Site, Hášíl, Páůďýál, meet hasil, contact hasil, social circles">
+<link href="../allassets/icon.png" rel="shortcut icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<style rel="stylesheet" type="text/css" media="screen,projection">nav{font-family:'Kaushan Script',serif;<?php echo 'background:#'."$design"; ?>}@font-face{font-family:'Kaushan Script';font-style:normal;font-weight:400;src:local('Kaushan Script'),local('KaushanScript-Regular'),url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IO87R-l0-Xx_7cYc0ZX1ifE.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Kaushan Script';font-style:normal;font-weight:400;src:local('Kaushan Script'),local('KaushanScript-Regular'),url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IEd0sm1ffa_JvZxsF_BEwQk.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}fonto{font-family:'Architects Daughter',serif;}@font-face{font-family:'Architects Daughter';font-style:normal;font-weight:400;src:local('Architects Daughter'),local('ArchitectsDaughter'),url(https://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000;}.myloader{background:url(/allassets/preloader.gif) center center no-repeat <?php echo "#"."$design"; ?>;bottom:0;height:100%;left:0;overflow:hidden;position:fixed;right:0;top:0;width:100%;z-index:99999}body{background-color:#93A1AC}footer{font-family:'Kaushan Script',serif;<?php echo 'background:#'."$design"; ?>;position:relative;left:0px;bottom:0px;height:50px;width:100%;z-index:99998}</style>
+<title>Stay in touch with Hasil</title>
+</script>
+</head>
+<body>
+ 
+<div class="myloader"></div>
+        <?php
+         include "../allassets/nav.html";
+         ?>
       <fonto>
-         <!-- container keeps the data in center of page -->
          <div class="container">
             <div class="card-panel">
                <h4 class="green-text" style="text-align: center"> Social Sites </h4>
@@ -123,39 +40,39 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/google29.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/google29.png" width="34" height="34"></td>
                            <td>Google+</td>
                            <td><a href="https://plus.google.com/+HasilPaudyal" target="_blank">Follow me on Google+</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/facebook29.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/facebook29.png" width="34" height="34"></td>
                            <td>Facebook</td>
                            <td><a href="https://facebook.com/hasill" target="_blank">Message me in Facebook</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/meetNepal.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/meetNepal.png" width="34" height="34"></td>
                            <td>Meet-NepalTelecom</td>
                            <td><a href="http://www.meet.net.np/meet/activity/friends/hasil" target="_blank">Add me in this Nepal's social site</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/poolwo.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/poolwo.png" width="34" height="34"></td>
                            <td>Poolwo</td>
                            <td><a href="https://www.poolwo.com/Profile/Hasil" target="_blank">Pools world</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/ello.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/ello.png" width="34" height="34"></td>
                            <td>Ello</td>
                            <td><a href="https://ello.co/ha5il" target="_blank">Discover beautiful art</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/twitter21.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/twitter21.png" width="34" height="34"></td>
                            <td>Twitter</td>
                            <td><a href="https://twitter.com/lordcatscream" target="_blank">Check my tweets</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/biNu.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/biNu.png" width="34" height="34"></td>
                            <td>biNu</td>
-                           <td><a href="#">My user name is hasilpaudyal</a></td>
+                           <td><a href="stay-in-touch.html#">My user name is hasilpaudyal</a></td>
                         </tr>
                      </tbody>
                   </table>
@@ -181,14 +98,14 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/github.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/github.png" width="34" height="34"></td>
                            <td>Github</td>
                            <td><a href="https://github.com/ha5il/" target="_blank">This site's source code is available here!</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/code.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/code.png" width="34" height="34"></td>
                            <td>CodePen</td>
-                           <td><a href="http://codepen.io/hasil/" target="_blank">Playground to js and css</a></td>
+                           <td><a href="https://codepen.io/hasil/" target="_blank">Playground to js and css</a></td>
                         </tr>
                      </tbody>
                   </table>
@@ -214,17 +131,17 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/wn.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/wn.png" width="34" height="34"></td>
                            <td>Writers-Network</td>
                            <td><a href="http://www.writers-network.com/members/inyourmemory" target="_blank">The Writer's community</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/goodreads.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/goodreads.png" width="34" height="34"></td>
                            <td>Goodreads</td>
-                           <td><a href="http://www.goodreads.com/author/show/7394609.Hasil_Paudyal" target="_blank">Check my quotes</a></td>
+                           <td><a href="https://www.goodreads.com/author/show/7394609.Hasil_Paudyal" target="_blank">Check my quotes</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/tumblr12.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/tumblr12.png" width="34" height="34"></td>
                            <td>Tumblr</td>
                            <td><a href="https://www.tumblr.com/blog/hasill" target="_blank">Blog with no post</a></td>
                         </tr>
@@ -252,37 +169,37 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/libre.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/libre.png" width="34" height="34"></td>
                            <td>Libre FM</td>
                            <td><a href="https://libre.fm/user/hasill" target="_blank">A social music platform</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/lastfm-flat.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/lastfm-flat.png" width="34" height="34"></td>
                            <td>Last FM</td>
                            <td><a href="http://www.last.fm/user/hasill" target="_blank">Songs I love</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/youtube17.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/youtube17.png" width="34" height="34"></td>
                            <td>Youtube</td>
                            <td><a href="https://www.youtube.com/c/HasilPaudyal" target="_blank">Subscribe to my channel</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/dailym.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/dailym.png" width="34" height="34"></td>
                            <td>Dailymotion</td>
                            <td><a href="http://www.dailymotion.com/hhaassiill" target="_blank">Subscribe to my channel</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/vimeo.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/vimeo.png" width="34" height="34"></td>
                            <td>Vimeo</td>
                            <td><a href="https://vimeo.com/user30278454" target="_blank">Another video-sharing website</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/myspace6.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/myspace6.png" width="34" height="34"></td>
                            <td>Myspace</td>
                            <td><a href="https://myspace.com/ha5il" target="_blank">Its an empty Space</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/Foursquare.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/Foursquare.png" width="34" height="34"></td>
                            <td>Foursquare</td>
                            <td><a href="https://foursquare.com/lordcatscream" target="_blank">Love to visit different places?</a></td>
                         </tr>
@@ -310,22 +227,22 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/linkedin12.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/linkedin12.png" width="34" height="34"></td>
                            <td>Linkedin</td>
                            <td><a href="https://np.linkedin.com/pub/hasil-paudyal/35/5a5/41" target="_blank">What am I linked with?</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/about-me.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/about-me.png" width="34" height="34"></td>
                            <td>Aboutme</td>
                            <td><a href="https://about.me/hasilpaudyal" target="_blank">Somewhere you describe yourself</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/gravatar.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/gravatar.png" width="34" height="34"></td>
                            <td>Gravatar</td>
                            <td><a href="https://gravatar.com/hasill" target="_blank">Gravatar or Wordpress</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/Pinterest.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/Pinterest.png" width="34" height="34"></td>
                            <td>Pinterest</td>
                            <td><a href="https://www.pinterest.com/hasill" target="_blank">Interests I have Pinned</a></td>
                         </tr>
@@ -353,22 +270,22 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/Instagram.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/Instagram.png" width="34" height="34"></td>
                            <td>Instagram</td>
                            <td><a href="https://instagram.com/mehasil" target="_blank">Check my gallery</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/flickr9.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/flickr9.png" width="34" height="34"></td>
                            <td>Flickr</td>
                            <td><a href="https://www.flickr.com/people/hasil/" target="_blank">Joined long back</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/500px.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/500px.png" width="34" height="34"></td>
                            <td>500px</td>
                            <td><a href="https://500px.com/hasill" target="_blank">Love photography?</a></td>
                         </tr>
                         <tr>
-                           <td><img alt="" src="/allassets/logos/giphy.png" width="34" height="34"></td>
+                           <td><img alt="" src="../allassets/logos/giphy.png" width="34" height="34"></td>
                            <td>giphy</td>
                            <td><a href="https://giphy.com/channel/hasilpaudyal/" target="_blank">Funny gifs ever!</a></td>
                         </tr>
@@ -389,14 +306,10 @@
          </div>
       </fonto>
       <footer>
-         <a  class="white-text"style="text-align:center" href="https://www.goodreads.com/quotes/7708240/" target="_blank">
-            <center>When I was small I felt like a Superhero as my father threw me up in the air.<br>Now after reaching this success peak I unmask - Real Superhero made me Superhero!</center>
-         </a>
+<?php include "../allassets/footer.php" ?>
       </footer>
-      <!-- jquery and mini Materialize js -->
       <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-      <!-- Material Initialization -->
       <script>
          $(window).load(function() {
            $(".myloader").delay(100).fadeOut(1400)
@@ -409,18 +322,6 @@
              delay: 50
            })
          });               
-      </script>
-      <!-- Google Analytics -->
-      <script>
-         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-         
-         ga('create', 'UA-72808058-1', 'auto');
-         ga('require', 'linkid');
-         ga('send', 'pageview');
-         
       </script>
    </body>
 </html>
