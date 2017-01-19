@@ -1,36 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>http://hasilpaudyal.tk/</loc>
-  <lastmod>2016-08-15T19:57:14+05:45</lastmod>
+<loc>http://ha5il.github.io/</loc>
+<lastmod>2016-11-23T13:48:14+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/about-hasil/</loc>
-  <lastmod>2016-08-15T19:57:14+05:45</lastmod>
+<loc>http://ha5il.github.io/about-hasil/</loc>
+<lastmod>2016-08-15T19:57:14+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/stay-in-touch/</loc>
-  <lastmod>2016-08-15T19:57:14+05:45</lastmod>
+<loc>http://ha5il.github.io/stay-in-touch/</loc>
+<lastmod>2016-08-15T19:57:14+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/hasil-writings/</loc>
-  <lastmod>2016-10-13T07:29:01+05:45</lastmod>
+<loc>http://ha5il.github.io/hasil-writings/</loc>
+<lastmod>2016-11-23T23:15:23+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/add-hasil-in-games/</loc>
-  <lastmod>2016-08-15T19:57:14+05:45</lastmod>
+<loc>http://ha5il.github.io/add-hasil-in-games/</loc>
+<lastmod>2016-08-15T19:57:14+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/hasil-videos/</loc>
-  <lastmod>2016-08-15T21:49:59+05:45</lastmod>
+<loc>http://ha5il.github.io/hasil-videos/</loc>
+<lastmod>2016-08-15T21:49:59+05:45</lastmod>
 </url>
 <url>
-  <loc>http://hasilpaudyal.tk/hasil-videos/fuchhey/</loc>
-  <lastmod>2016-08-15T21:49:59+05:45</lastmod>
+<loc>http://ha5il.github.io/hasil-videos/fuchhey/</loc>
+<lastmod>2016-08-15T21:49:59+05:45</lastmod>
 </url>
 </urlset>
