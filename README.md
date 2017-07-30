@@ -1,6 +1,6 @@
 #Personal Website | Google Material Design
 
-**Everything completed, you might refer codes, it has comments.<br>These codes are minimized and used for http://hasilpaudyal.com.np**
+**Everything completed, you might refer codes.<br>These codes are minimized and used for http://hasilpaudyal.com.np**
 
 > As it my personal site I want to edit myself -_- but if you are interested, ask me once!
 >
