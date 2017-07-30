@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "./allassets/colour.php"; ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/colour.php');$pageIdentifier = "notFoundPage";?>
 <html lang="en-NP">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
@@ -46,14 +46,12 @@
    </head>
    <body>
       <div class="myloader"></div>     
-	  <?php
-         include "./allassets/nav.html";
-         ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/nav.php');?>
       <div class="container">
          <img class="materialboxed" width="100%" src="https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/l3vReWaeexMINrVRe.gif?alt=media&token=79109471-9325-4bf6-846b-f00acc591e7f">
       </div>
       <footer>
-<?php include "./allassets/footer.php" ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/footer.php');?>
       </footer>
       <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>

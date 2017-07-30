@@ -1,5 +1,5 @@
 <?php
-   $quot = rand(1,8);
+   $quot = rand(1,9);
    switch ($quot) {
        case "1":
            $result = ' May be its mine bad-luck<br>Or yours not to get me <br>But I still have hope <br>Of being yours';
@@ -24,6 +24,9 @@
            break;
    		    case "8":
            $result = ' Congratulations to your mom and dad for birth of a sweet child!<br>Sorry that I couldn\'t wish them when you were born.';
+           break;
+		    case "9":
+           $result = ' I will miss you not because you taught me,<br>not because you helped me on all steps of education;<br>but only because you made me a leader to lead as an perfect Electrical Engineer.';
            break;
        default:
            $result = ' How come you reach here?';

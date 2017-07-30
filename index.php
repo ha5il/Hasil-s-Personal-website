@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en-NP">
-<?php include "./allassets/colour.php"; include "./allassets/img_link.php"; 
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/colour.php');include($_SERVER['DOCUMENT_ROOT'].'/allassets/img_link.php');$pageIdentifier = "Namaste";?>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
       <meta name="author" content="Hasil Paudyal, hasilpaudyal@gmail.com">
       <meta name="description" content="Hasil's Personal Site. Check out to know more and contact him. ">
-      <meta name="keywords" content="Hasil, Paudyal, Google Games Hack, Personal Site, Hášíl, Páudýál">
+      <meta name="keywords" content="Hasil, Paudyal, Google Games Hack, Personal Site">
       <link href="/allassets/icon.png" rel="shortcut icon">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
       <style type="text/css" media="screen,projection" rel="stylesheet">.fontsize{font-size:20px!important}.c-page__title,.myloader{position:fixed;width:100%}.c-image--responsive,.myloader{width:100%}nav{font-family:'Kaushan Script',serif;<?php echo 'background:#'."$design"; ?>}@font-face{font-family:'Kaushan Script';font-style:normal;font-weight:400;src:local('Kaushan Script'),local('KaushanScript-Regular'),url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IO87R-l0-Xx_7cYc0ZX1ifE.woff2) format('woff2');unicode-range:U+0100-024F,U+1E00-1EFF,U+20A0-20AB,U+20AD-20CF,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Kaushan Script';font-style:normal;font-weight:400;src:local('Kaushan Script'),local('KaushanScript-Regular'),url(https://fonts.gstatic.com/s/kaushanscript/v5/qx1LSqts-NtiKcLw4N03IEd0sm1ffa_JvZxsF_BEwQk.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}.container{width:95%}.myloader{background:url(/allassets/preloader.gif) center center no-repeat <?php echo "#"."$design"; ?>;bottom:0;height:100%;left:0;overflow:hidden;right:0;top:0;z-index:99999}fonto{font-family:Schoolbell,serif;}@font-face{font-family:Schoolbell;font-style:normal;font-weight:400;src:local('Schoolbell'),url(https://fonts.gstatic.com/s/schoolbell/v6/BSqn7FernLolrt-MFco9Wvk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000}*,:after,:before{box-sizing:border-box}*,:active,:after,:after:active,:after:focus,:after:focus:active,:before,:before:active,:before:focus,:before:focus:active,:focus,:focus:active{outline:0}.c-page__title{color:#fff;font-size:36px;margin:0;padding:1em;text-align:center;text-shadow:-.045em .06em .1em #444,.045em .06em .1em #444,0 .09em .1em #444;z-index:1}[class*=' c-section']>img,[class^=c-section]>img{opacity:0}.c-section--angle{-webkit-clip-path:polygon(0 5vw,100% 0,100% calc(100% - 5vw),0 100%);clip-path:polygon(0 5vw,100% 0,100% calc(100% - 5vw),0 100%)}.c-section--angle:first-of-type{-webkit-clip-path:polygon(0 0,100% 0,100% calc(100% - 5vw),0 100%);clip-path:polygon(0 0,100% 0,100% calc(100% - 5vw),0 100%)}.c-section--angle:last-of-type{-webkit-clip-path:polygon(0 5vw,100% 0,100% 100%,0 100%);clip-path:polygon(0 5vw,100% 0,100% 100%,0 100%)}.c-section--angle+.c-section--angle{margin-top:-5vw}.c-section--parallax-bg{background-position:center 0;background-size:120%}footer{font-family:'Kaushan Script',serif;<?php echo 'background:#'."$design"; ?>;left:0px;bottom:0px;width:100%;z-index:99998}</style>
-      <title>Hášíl Páudýál | Hasil's Personal Site | Hasil Paudyal</title>
+      <title>Hasil's Personal Site | Hasil Paudyal</title>
    </head>
    <body>
       <div class="myloader">
@@ -19,9 +18,7 @@
             Slow connection..? <a class="yellow-text" href="/about-hasil/">Click here</a> to skip Welcome page&nbsp;
          </div>
       </div>
-      <?php
-         include "./allassets/nav.html";
-         ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/nav.php');?>
       <fonto>
          <div class="container">
             <div>
@@ -38,7 +35,7 @@
                </section>
                <div class="section white">
                   <div class="row container">
-                     <h2 class="header indigo-text" align="center">These are some of mine collage collection :)</h2>
+                     <h2 class="header indigo-text" align="center">These are some of mine pics collection :)</h2>
                   </div>
                </div>
                <section id="parimg3" class="c-section--angle c-section--parallax-bg js-parallax-bg">
@@ -64,7 +61,7 @@
          </div>
       </fonto>
       <footer>
-<?php include "./allassets/footer.php" ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/footer.php');?>
       </footer>
       <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>

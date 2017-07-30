@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "../allassets/colour.php";?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/colour.php');$pageIdentifier = "StTch";?>
 <html lang="en-NP">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,12 +13,9 @@
 <title>Stay in touch with Hasil</title>
 </script>
 </head>
-<body>
- 
+<body> 
 <div class="myloader"></div>
-        <?php
-         include "../allassets/nav.html";
-         ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/nav.php');?>
       <fonto>
          <div class="container">
             <div class="card-panel">
@@ -306,7 +303,7 @@
          </div>
       </fonto>
       <footer>
-<?php include "../allassets/footer.php" ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/allassets/footer.php');?>
       </footer>
       <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
