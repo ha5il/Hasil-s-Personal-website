@@ -1,15 +1,9 @@
 function cookie_lang(lang)
 {
-if (lang == "en")
-    document.cookie =
-    "lang=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  else
-  {
   var CookieDate = new Date();
   CookieDate.setFullYear(CookieDate.getFullYear() + 4); // expires in 4 years
   document.cookie =
     "lang=" + lang + "; expires=" + CookieDate.toGMTString() + "; path=/";
-}
   window.location.reload(); // reloads the page
 }
 
