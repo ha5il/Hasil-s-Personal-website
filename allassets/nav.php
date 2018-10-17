@@ -141,6 +141,6 @@ $click_4o4="Materialize.toast('Never Searched Never Found', 4000, 'rounded')";
 		 <li><a class="waves-effect waves-green" href="<?php echo "$link_notes"?>"onclick="<?php echo "$click_notes"?>">Notes</a></li>
          <li><a class="waves-effect waves-teal" href="https://www.google.com/search?q=Hasil+Paudyal" target="_blank">Me on Google</a></li>
       </ul>
-	 <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation fontsize">Menu</i></a> 
+	 <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation fontsize orange-text">Menu</i></a> 
    </nav>
 </div>
