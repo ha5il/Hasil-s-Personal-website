@@ -25,3 +25,30 @@ Route::get('/hire-hasil', [
     'as' => 'hireMe',
     'uses' => 'PageController@hireMe',
 ]);
+
+Route::group(['prefix' => 'project'], function () {
+    Route::get('/Electrical-Performance-Analyser', [
+        'as' => 'project1',
+        'uses' => 'ProjectController@project1',
+    ]);
+    Route::get('/Pickup-Delivery-App', [
+        'as' => 'project2',
+        'uses' => 'ProjectController@project2',
+    ]);
+    Route::get('/Achievements-unlocker', [
+        'as' => 'project3',
+        'uses' => 'ProjectController@project3',
+    ]);
+    Route::get('/RABC-Analyser', [
+        'as' => 'project4',
+        'uses' => 'ProjectController@project4',
+    ]);
+    Route::get('/Electrical-Thief-Eliminator', [
+        'as' => 'project5',
+        'uses' => 'ProjectController@project5',
+    ]);
+    Route::get('/RFID-Limitor', [
+        'as' => 'project6',
+        'uses' => 'ProjectController@project6',
+    ]);
+});

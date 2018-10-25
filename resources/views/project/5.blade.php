@@ -1,8 +1,9 @@
+<!-- Electrical Thief Eliminator -->
 @extends('includes.master')
 
 @section('head')
 <meta name="description" content="Hasil's Personal Site. Check out to know more and contact him. ">
-<title>Hire Hasil</title>
+<title>Electrical Thief Eliminator | Hasil's Project</title>
 @endsection
 
 @section('main')

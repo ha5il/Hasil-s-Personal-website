@@ -1,8 +1,9 @@
+<!-- RABC Analyser -->
 @extends('includes.master')
 
 @section('head')
 <meta name="description" content="Hasil's Personal Site. Check out to know more and contact him. ">
-<title>Hire Hasil</title>
+<title>RABC Analyser | Hasil's Project</title>
 @endsection
 
 @section('main')
