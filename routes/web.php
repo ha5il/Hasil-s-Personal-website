@@ -9,13 +9,19 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
-Route::get('/', function () {
-    return view('home');
-});
+ */
 
 Route::get('/', [
     'as' => 'home',
     'uses' => 'PageController@home',
+]);
+
+Route::get('/about-hasil', [
+    'as' => 'aboutMe',
+    'uses' => 'PageController@aboutMe',
+]);
+
+Route::get('/hire-hasil', [
+    'as' => 'hireMe',
+    'uses' => 'PageController@hireMe',
 ]);

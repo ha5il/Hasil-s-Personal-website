@@ -15,7 +15,6 @@
     <main class="main">
     @yield('main')
     @include('includes.footer')
-    @include('includes.navbar')
     </main>
     <script src="{{ URL::asset('/js/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('/js/popper.min.js') }}"></script>

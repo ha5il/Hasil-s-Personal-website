@@ -7,187 +7,189 @@
 @endsection
 
 @section('main')
-<section class="spotlight parallax bg-cover bg-size--cover" data-spotlight="fullscreen" style="background-size: cover; background-image: url('{{ URL::asset('https://i.imgur.com/jLbIGOR.jpg') }}')">
-<span class="bg-primary alpha-7"></span>
-<div class="spotlight-holder py-lg pt-lg-xl">
-<div class="container d-flex align-items-center no-padding">
-<div class="col">
-<div class="row cols-xs-space align-items-center text-center text-md-left justify-content-center">
-<div class="col-7">
-<div class="text-center">
- <h2 class="heading display-4 font-weight-200 text-white animated" data-animation-in="fadeInUp" data-animation-delay="2000">
-<span class="cool-words">I am a <span>Engineer</span><span>Developer</span><span>Desiger</span><span>Poet</span><span>Lover</span></span>
-</h2>
-<p class="lead text-white mt-3 lh-180 c-white animated" data-animation-in="fadeInUp" data-animation-delay="2500" style="text-shadow:-3px 3px #343a40">
- Oh great! I never recognized Sunshine shining me, within me.
- </p>
+
+      <section class="spotlight parallax bg-cover bg-size--cover" data-spotlight="fullscreen" style="background-image: url({{asset('img/cover.jpg')}})">
+        <div class="spotlight-holder py-lg pt-lg-xl">
+          <div class="container d-flex align-items-center no-padding">
+            <div class="col">
+              <div class="row cols-xs-space align-items-center text-center text-md-left justify-content-center">
+                <div class="col-7">
+                  <div class="text-center mt-5">
+                    <h2 class="heading display-4 font-weight-700 text-white mt-5 animated" data-animation-in="fadeInUp" data-animation-delay="2000">
+                    <!--div class="col">
+
+                      <span class="cool-words">I am a <span>Engineer</span><span>Developer</span><span>Desiger</span><span>Poet</span><span>Lover</span></span>
+                      </div-->
+                    </h2>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-</section>
+      </section>
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-lg-6">
-                <div class="card" style="margin-top:14px">
-                    <div class="card-body">
-                        <p class="card-text" style="text-align:center;font-size: larger;">
-                            Here I am<br>
-                            A cut above you all<br>
-                            Silent as a grave<br>
-                            In favour of your death<br><br>
-                            Lethal is my pen<br>
-                            Perfect would be again<br>
-                            A fortune is with me<br>
-                            Unbeatable this shall be<br><br>
-                            Dare you come near<br>
-                            Yell you out there<br>
-                            And who is this me<br>
-                            Links the first letters to me<br>
-                        </p>
-                    </div>
-                </div>
-        </div>
-    </div>
-<div class="col">
-<h3 style="margin-top: 14px;">Education History</h3>
-    <table class="table table-hover table-cards align-items-center">
-    <thead>
-        <tr>
-            <th scope="col" style="font-size: larger;">Institute</th>
-            <th scope="col" style="font-size: larger;">Class</th>
-            <th scope="col" style="font-size: larger;">Location</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/kvm.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Koshi Vidya Mandir</h6>
-                        <span class="font-weight-normal text-muted">1998 - 1999</span>
-                    </div>                </div>
-            </th>
-            <td>Nursery</td>
-            <td>Biratnagar, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/arniko.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Arniko H. S. School</h6>
-                        <span class="font-weight-normal text-muted">1999 - 2002</span>
-                    </div>
-                </div>
-            </th>
-            <td>LKG - 1</td>
-            <td>Biratnagar, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/dpsebs.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Devkota Public Secondary English Boarding School</h6>
-                        <span class="font-weight-normal text-muted">2002 - 2007</span>
-                    </div>                </div>
-            </th>
-            <td>2 - 6</td>
-            <td>Biratnagar, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/saurdeep.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Saurdeep Boarding School</h6>
-                        <span class="font-weight-normal text-muted">2007 - 2009</span>
-                    </div>                </div>
-            </th>
-            <td>7 - 8</td>
-            <td>Kathmandu, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/svi.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Siddhartha Vanasthali Institute</h6>
-                        <span class="font-weight-normal text-muted">2009 - 2010</span>
-                    </div>                </div>
-            </th>
-            <td>9</td>
-            <td>Kathmandu, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/mebs.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Marvellous English Boarding School</h6>
-                        <span class="font-weight-normal text-muted">2010 - 2011</span>
-                    </div>                </div>
-            </th>
-            <td>10</td>
-            <td>Kathmandu, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/nss.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">Nation School of Sciences</h6>
-                        <span class="font-weight-normal text-muted">2011 - 2013</span>
-                    </div>                </div>
-            </th>
-            <td>11 - 12</td>
-            <td>Kathmandu, NP</td>
-        </tr>
-        <tr class="table-divider"></tr>
-        <tr class="table-divider"></tr>
-        <tr class="bg-white">
-            <th scope="row">
-                <div class="media align-items-center">
-                    <img src="{{ URL::asset('/img/institute-logos/nhce.jpg') }}" class="avatar avatar-lg mr-3">
-                    <div class="media-body">
-                        <h6 class="h5 font-weight-normal mb-0">New Horizon College of Engineering</h6>
-                        <span class="font-weight-normal text-muted">2013 - 2017</span>
-                    </div>
-                </div>
-            </th>
-            <td>Bachelor of Electrical and Electronics Engineering</td>
-            <td>Bangalore, IN</td>
-        </tr>
-        <tr class="table-divider"></tr>
-    </tbody>
-</table>
-</div>
-<div class="col">
-   <h3 style="margin-top: 14px;">Work Experience</h3>
-   <div class="col-lg-6">
-      <div class="card" style="margin-top:14px">
+   <div class="row justify-content-center">
+      <div class="col-lg-6">
+         <div class="card" style="margin-top:14px">
+            <div class="card-body">
+               <p class="card-text" style="text-align:center;font-size: larger;">
+                  <strong class="text-primary">H</strong>ere I am<br>
+                  <strong class="text-primary">A</strong> cut above you all<br>
+                  <strong class="text-primary">S</strong>ilent as a grave<br>
+                  <strong class="text-primary">I</strong>n favour of your death<br><br>
+                  <strong class="text-primary">L</strong>ethal is my pen<br>
+                  <strong class="text-success">P</strong>erfect would be again<br>
+                  <strong class="text-success">A</strong> fortune is with me<br>
+                  <strong class="text-success">U</strong>nbeatable this shall be<br><br>
+                  <strong class="text-success">D</strong>are you come near<br>
+                  <strong class="text-success">Y</strong>ell you out there<br>
+                  <strong class="text-success">A</strong>nd who is this me<br>
+                  <strong class="text-success">L</strong>inks the first letters to me<br>
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="border-bottom" style="margin-block-start: 35px;margin-block-end: 25px;"></div>
+   <div class="col-lg-12">
+      <h3>Work Experience</h3>
+      <div class="card">
          <div class="card-body">
             <p class="card-text" style="font-size: larger;">
-               Here I am
+               Since 2016 end, I am handling Technical Service and Sales of industrial laundry machines and accessories. I know the process involved in laundry business setup, marketing and its growth. I am one of the authorised service Engineer for Danube International (France), Pony(Italy) and SEKO (USA). Beside these, I am involved in other brands like Electrolux (Sweden), Maytag (USA), Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany) and Sunrise (India).
             </p>
          </div>
       </div>
    </div>
-</div>
+   <div class="border-bottom" style="margin-block-start: 35px;margin-block-end: 25px;"></div>
+   <div class="col-lg-12">
+        <h3>Projects</h3>
+        <div class="row">
+        <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">Electrical Performance Analyser</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i>63</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i>509
+                    </li>
+                </ul>
+                <p class="card-text">An Arduino UNO based project for realtime data recording and analysis.</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">Pickup and Delivery App</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i> 14</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i> 325
+                    </li>
+                </ul>
+                <p class="card-text">Android app for fixolla.com for their pickup and delivery service.</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">Achievements unlocker</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i> 98</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i> 856
+                    </li>
+                </ul>
+                <p class="card-text">PHP based script for unlocking achievements of any game based on Google api services. Additionally it is capable to push fake highscore to Google's leaderboard.</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">RABC Analyser</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i> 43</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i> 337
+                    </li>
+                </ul>
+                <p class="card-text">Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">Electrical Thief Eliminator</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i> 35</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i> 634
+                    </li>
+                </ul>
+                <p class="card-text">This device detects, locates and terminates the electricity thief from the supply line.</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="heading heading-5 strong-600">RFID Limitor</h5>
+                <ul class="list-inline mb-4">
+                    <li class="list-inline-item pr-2">
+                        <a><i class="fas fa-heart mr-1"></i> 21</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fas fa-eye text-muted mr-1"></i> 253
+                    </li>
+                </ul>
+                <p class="card-text">An Arduino UNO based project for limiting the RFID Scans.</p>
+                <a href="#" class="btn btn-sm btn-dark">Know more...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom" style="margin-block-start: 35px;margin-block-end: 25px;"></div>
+   <div class="col-lg-9">
+        <h3>Published Book</h3>
+                    <div class="card card-body">
+                     <div class="row">
+                         <div class="col-lg-3">
+                        <img src="{{asset('img/book.jpg')}}" class="img-fluid">
+                        </div>
+                    <div class="col-lg-9">
+                        <div class="card-body">
+                        <p class="card-text">Blended Words - containing the mix of thoughts and ideas that begin coming to the Author when he was 16. Seven poems on clear language, how he motivates himself after failure, his view on the world and people, and much more.</p>
+                        <a href="https://www.amazon.com/dp/B01M99C005?tag=hasil-21" class="btn btn-icon-label btn-dark" target="_blank">
+                        <span class="btn-inner--icon"><i class="fas fa-shopping-cart"></i></span>
+                        <span class="btn-inner--text">Buy on Amazon</span></a>
+                        </div>
+                        </div>
+                     </div>
+                    </div>
+    </div>
+    <br>
 </div>
 @endsection
