@@ -26,6 +26,11 @@ Route::get('/hire-hasil', [
     'uses' => 'PageController@hireMe',
 ]);
 
+Route::post('/hire-hasil', [
+    'as' => 'hireMeForm',
+    'uses' => 'PageController@hireMeForm',
+]);
+
 Route::group(['prefix' => 'project'], function () {
     Route::get('/Electrical-Performance-Analyser', [
         'as' => 'project1',
@@ -52,3 +57,10 @@ Route::group(['prefix' => 'project'], function () {
         'uses' => 'ProjectController@project6',
     ]);
 });
+
+// Admin Routes
+
+Route::get('/backend', [
+    'as' => 'backend',
+    'uses' => 'AdminController@backend',
+]);

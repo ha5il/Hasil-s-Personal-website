@@ -88,7 +88,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="card" style="margin-top:14px">
                 <div class="card-body">
                     <p class="card-text" style="text-align:center;font-size: larger;">
@@ -111,7 +111,7 @@
     </div>
     <div class="border-bottom" style="margin-block-start: 35px;margin-block-end: 25px;"></div>
     <div class="col-lg-12">
-        <h3>Work Experience</h3>
+        <h3>My Work</h3>
         <div class="card">
             <div class="card-body">
                 <p class="card-text" style="font-size: larger;">
