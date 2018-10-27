@@ -20,26 +20,20 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>City</th>
                     <th>Country</th>
-                    <th>Job For</th>
-                    <th>Shift For</th>
-                    <th>Message</th>
                     <th>Date</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($joboffers as $joboffer)
                 <tr>
                     <td>{{ $joboffer->name }}</td>
-                    <td>{{ $joboffer->email }}</td>
                     <td>{{ $joboffer->city }}</td>
                     <td>{{ $joboffer->country }}</td>
-                    <td>{{ $joboffer->jobFor }}</td>
-                    <td>{{ $joboffer->timeFor }}</td>
-                    <td>{{ $joboffer->message }}</td>
                     <td>{{ $joboffer->created_at }}</td>
+                    <td><a href="{{route('detailed', $joboffer->id)}}" class="btn btn-sm btn-dark">View</a></td>
                 </tr>
                 @endforeach
             </tbody>

@@ -22,6 +22,9 @@ class CreateJoboffersTable extends Migration
             $table->string('jobFor');
             $table->string('timeFor');
             $table->longText('message')->nullable();
+            $table->boolean('is_fake')->default(0);
+            $table->boolean('is_hidden')->default(0);
+            $table->longText('my_comment')->nullable();
             $table->timestamps();
         });
     }

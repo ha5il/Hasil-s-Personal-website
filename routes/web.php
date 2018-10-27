@@ -59,8 +59,36 @@ Route::group(['prefix' => 'project'], function () {
 });
 
 // Admin Routes
+Route::group(['prefix' => 'backend'], function () {
 
-Route::get('/backend', [
-    'as' => 'backend',
-    'uses' => 'AdminController@backend',
-]);
+    Route::get('/', [
+        'as' => 'backend',
+        'uses' => 'AdminController@backend',
+    ]);
+
+    Route::get('/detailed/{id}', [
+        'as' => 'detailed',
+        'uses' => 'AdminController@detailed',
+    ]);
+
+    Route::get('/hideit/{id}', [
+        'as' => 'hideit',
+        'uses' => 'AdminController@hideit',
+    ]);
+
+    Route::get('/unhideit/{id}', [
+        'as' => 'unhideit',
+        'uses' => 'AdminController@unhideit',
+    ]);
+
+    Route::get('/markfake/{id}', [
+        'as' => 'markfake',
+        'uses' => 'AdminController@markfake',
+    ]);
+
+    Route::get('/savecomment/{id}/{my_comment}', [
+        'as' => 'savecomment',
+        'uses' => 'AdminController@my_comment',
+    ]);
+
+});
