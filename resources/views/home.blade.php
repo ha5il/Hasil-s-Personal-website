@@ -257,6 +257,38 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card" style="margin-top:14px">
+                        <h3 class="header" style="margin-top:14px;text-align:center">Social Connect</h3>
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4">
+                                    <a type="button" class="btn btn-icon-label btn-dark" href="https://fb.com/hasill"
+                                        target="_blank" style="margin-top:5px">
+                                        <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
+                                        <span class="btn-inner--text">Facebook</span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <a type="button" class="btn btn-icon-label btn-dark" href="https://www.youtube.com/c/HasilPaudyal"
+                                        target="_blank" style="margin-top:5px">
+                                        <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
+                                        <span class="btn-inner--text">Youtube</span>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4">
+                                    <a type="button" class="btn btn-icon-label btn-dark" href="https://plus.google.com/+HasilPaudyal"
+                                        target="_blank" style="margin-top:5px">
+                                        <span class="btn-inner--icon"><i class="fab fa-google-plus"></i></span>
+                                        <span class="btn-inner--text">Google+</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     <br>
 </div>
 @endsection
