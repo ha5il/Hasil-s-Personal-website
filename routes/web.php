@@ -92,3 +92,13 @@ Route::group(['prefix' => 'backend'], function () {
     ]);
 
 });
+
+// material theme routes
+Route::group(['prefix' => 'material'], function () {
+
+    Route::get('/', [
+        'as' => 'material.home',
+        'uses' => 'PageController@materialhome',
+    ]);
+
+});

@@ -1,0 +1,60 @@
+body {
+    font-family: 'Merienda', cursive;
+    background-image: url('//hasilpaudyal.com.np/img/cover.jpg');
+    background-position: top;
+    background-repeat: repeat;
+    background-size: contain;
+    position: relative;
+    background-attachment: fixed;
+    background-blend-mode: lighten;
+}
+
+.c-page__title,
+.myloader {
+    position: fixed;
+    width: 100%
+}
+
+.c-image--responsive,
+.myloader {
+    width: 100%
+}
+
+.myloader {
+    background: url('//hasilpaudyal.com.np/img/preloader.gif') center center no-repeat #FFF;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    z-index: 99999
+}
+
+.otherfont {
+    font-family: 'Nothing You Could Do', cursive;
+    font-weight: bold;
+}
+
+.card {
+    padding: 1rem;
+}
+
+.card-content {
+    font-size: larger;
+}
+
+.brand-logo {
+    margin-left: 1rem;
+    width: fit-content;
+}
+
+.small-text {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+footer {
+    position: relative;
+    z-index: 99998
+}

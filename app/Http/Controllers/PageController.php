@@ -46,4 +46,10 @@ class PageController extends Controller
         return redirect()->route('hireMe')
             ->with(['message' => 'Thanks ' . $request['name'] . ', we shall get in touch asap :)']);
     }
+
+    public function materialhome()
+    {
+        return view('material.home');
+    }
+
 }
