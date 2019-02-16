@@ -1,5 +1,5 @@
 body {
-    font-family: 'Merienda', cursive;
+    font-family: 'Paprika', cursive;
     background-image: url('//hasilpaudyal.com.np/img/cover.jpg');
     background-position: top;
     background-repeat: repeat;
@@ -20,22 +20,6 @@ body {
     width: 100%
 }
 
-.myloader {
-    background: url('//hasilpaudyal.com.np/img/preloader.gif') center center no-repeat #FFF;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    right: 0;
-    top: 0;
-    z-index: 99999
-}
-
-.otherfont {
-    font-family: 'Nothing You Could Do', cursive;
-    font-weight: bold;
-}
-
 .card {
     padding: 1rem;
 }
@@ -50,11 +34,54 @@ body {
 }
 
 .small-text {
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 0.8rem;
 }
 
 footer {
     position: relative;
-    z-index: 99998
+    z-index: 99990 !important;
+}
+
+.materialboxed {
+    z-index: 99996 !important;
+}
+
+#materialbox-overlay {
+    z-index: 99995 !important;
+}
+
+.waves-effect.waves-blue .waves-ripple {
+    background-color: #2196F3
+}
+
+.waves-effect.waves-deep-purple .waves-ripple {
+    background-color: #673ab7
+}
+
+.waves-effect.waves-light-green .waves-ripple {
+    background-color: #8bc34a
+}
+
+.waves-effect.waves-indigo .waves-ripple {
+    background-color: #3f51b5
+}
+
+.waves-effect.waves-lime .waves-ripple {
+    background-color: #cddc39
+}
+
+.waves-effect.waves-amber .waves-ripple {
+    background-color: #ffc107
+}
+
+.waves-effect.waves-deep-orange .waves-ripple {
+    background-color: #ff5722
+}
+
+.waves-effect.waves-brown .waves-ripple {
+    background-color: #795548
+}
+
+.waves-effect.waves-blue-grey .waves-ripple {
+    background-color: #607d8b
 }

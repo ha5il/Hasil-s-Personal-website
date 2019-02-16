@@ -1,8 +1,9 @@
-<div class="navbar-fixed otherfont">
+<div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper teal">
-            <a href="{{route('material.home')}}" class="brand-logo tooltipped" data-position="bottom"
-                data-tooltip="It's my name">Hasil Paudyal<i class="material-icons right">verified_user</i></a>
+            <a class="brand-logo" onclick="M.toast({html: 'Thats my name', classes: 'rounded'})">Hasil Paudyal
+            <i class="material-icons right">verified_user</i>
+        </a>
             <ul class="right hide-on-med-and-down">
                 <li><a class="tooltipped modal-trigger" href="#modalhire" data-position="bottom"
                         data-tooltip="Interested in teaming up with me?">

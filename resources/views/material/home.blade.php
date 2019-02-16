@@ -6,11 +6,11 @@
 
 @section('body')
 <div class="row">
-    <div class="col s12 m4 offset-m4">
-        <div class="card hoverable">
+    <div class="col s12 center">
+        <div class="card hoverable waves-effect waves-teal">
             <img class="materialboxed centered circle" width="200" height="200"
                 src="//hasilpaudyal.com.np/Schema-Hasil.jpg" data-caption="Oh great! I never recognized Sunshine shining me, within me."
-                style="margin-left: auto;margin-right: auto">
+                style="margin-left: auto;margin-right: auto;">
             <div class="card-content" style="text-align:center;">
                 <strong class="teal-text">H</strong>ere I am<br>
                 <strong class="teal-text">A</strong> cut above you all<br>
@@ -30,42 +30,42 @@
 </div>
 <div class="row">
     <div class="col s12 m5">
-        <div class="card hoverable">
+        <div class="card hoverable waves-effect waves-teal">
             <div class="card-content">
                 <div class="card-title teal-text"><i class="material-icons left">work</i>My Work</div>
-                <span class="small-text teal-text">Web Developer<br>View9 | Nepal<br>Dec 2018 - Present</span>
+                <span class="small-text teal-text"><i class="material-icons left">public</i>Web Developer<br><i class="material-icons left">business</i>View9 | Nepal<br><i class="material-icons left">date_range</i>Dec 2018 - Present</span>
                 <p>I develop the backend of website and connect its database to different platforms with api.</p>
                 <div class="section">
                     <div class="divider"></div>
                 </div>
-                <span class="small-text teal-text">Juniour Android Developer<br>Fixolla | India<br>Feb 2018 - Dec
+                <span class="small-text teal-text"><i class="material-icons left">android</i>Juniour Android Developer<br><i class="material-icons left">business</i>Fixolla | India<br><i class="material-icons left">date_range</i>Feb 2018 - Dec
                     2018</span>
                 <p>I was not only the part of android development team but also developed api services for the website.
                 </p>
                 <div class="section">
                     <div class="divider"></div>
                 </div>
-                <span class="small-text teal-text">Security Analyst<br>Fixolla | India<br>Sep 2017 - Feb 2018</span>
+                <span class="small-text teal-text"><i class="material-icons left">bug_report</i>Security Analyst<br><i class="material-icons left">business</i>Fixolla | India<br><i class="material-icons left">date_range</i>Sep 2017 - Feb 2018</span>
                 <p>I helped the company in building their database and securing it from different threats.</p>
                 <div class="section">
                     <div class="divider"></div>
                 </div>
-                <span class="small-text teal-text">Service and Sales Engineer<br>A2Z Laundry Solutions | India<br>Dec
+                <span class="small-text teal-text"><i class="material-icons left">build</i>Service and Sales Engineer<br><i class="material-icons left">business</i>A2Z Laundry Solutions | India<br><i class="material-icons left">date_range</i>Dec
                     2016 - Dec 2018</span>
                 <p>I was involved in laundry business setup, marketing and it growth for dorzens of laundries in India.
                     I am one of the authorised service Engineer for Danube International (France), Pony(Italy) and SEKO
                     (USA). Beside these, I am involved in other brands like Electrolux (Sweden), Maytag (USA),
                     Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany) and Sunrise (India).</p>
-                <a class="btn-flat teal-text right modal-trigger" href="#modalhire">Hire Me</a>
+                <a class="btn-flat teal-text right modal-trigger" href="#modalhire"><i class="material-icons left">assignment_ind</i>Hire Me</a>
             </div>
         </div>
     </div>
     <div class="col s12 m3">
         <div class="row">
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">Electrical Performance Analyser</div>
+                        <div class="small-text teal-text"><i class="material-icons left">offline_bolt</i>Electrical Performance Analyser</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -74,9 +74,9 @@
                 </div>
             </div>
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">RFID Limitor</div>
+                        <div class="small-text teal-text"><i class="material-icons left">perm_device_information</i>RFID Limitor</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -85,9 +85,9 @@
                 </div>
             </div>
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">Pickup and Delivery App</div>
+                        <div class="small-text teal-text"><i class="material-icons left">commute</i>Pickup and Delivery App</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -100,9 +100,9 @@
     <div class="col s12 m4">
         <div class="row">
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">Electrical Thief Eliminator</div>
+                        <div class="small-text teal-text"><i class="material-icons left">flash_on</i>Electrical Thief Eliminator</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -111,9 +111,9 @@
                 </div>
             </div>
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">Achievements unlocker</div>
+                        <div class="small-text teal-text"><i class="material-icons left">videogame_asset</i>Achievements unlocker</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -123,9 +123,9 @@
                 </div>
             </div>
             <div class="col s12">
-                <div class="card hoverable">
+                <div class="card hoverable waves-effect waves-teal">
                     <div class="card-content">
-                        <div class="small-text teal-text">RABC Analyser</div>
+                        <div class="small-text teal-text"><i class="material-icons left">assignment</i>RABC Analyser</div>
                         <div class="section">
                             <div class="divider"></div>
                         </div>
@@ -138,14 +138,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="col s12 m8 offset-m2">
-        <div class="card hoverable">
+    <div class="col s12 m8">
+        <div class="card hoverable waves-effect waves-teal">
             <div class="card-content">
                 <div class="card-title teal-text"><i class="material-icons left">book</i>Published Book</div>
                 <div class="row">
                     <div class="card-image col s12 m4">
-                        <img class="materialboxed" src="//hasilpaudyal.com.np/img/book.jpg"
-                            data-caption="Get it on Amazon Kindle!">
+                        <img src="//hasilpaudyal.com.np/img/book.jpg">
                     </div>
                     <div class="col s12 m8">
                         <div class="section">
@@ -162,23 +161,21 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-        <div class="card hoverable">
+    <div class="col s12 m4">
+        <div class="card hoverable waves-effect waves-teal">
             <div class="card-content">
                 <div class="card-title teal-text"><i class="material-icons left">touch_app</i>Get in touch</div>
                 <div class="section">
                     <div class="row">
-                        <div class="col s4 center">
+                        <div class="col s12 center">
                             <a class="btn-flat" href="https://www.facebook.com/hasill" target="_blank">
                                 Facebook</a>
                         </div>
-                        <div class="col s4 center">
+                        <div class="col s12 center">
                             <a class="btn-flat" href="https://www.youtube.com/c/HasilPaudyal" target="_blank">
                                 Youtube</a>
                         </div>
-                        <div class="col s4 center">
+                        <div class="col s12 center">
                             <a class="btn-flat" href="https://www.linkedin.com/in/hášíl-páůďýál-b1770680" target="_blank">
                                 Linkedin</a>
                         </div>

@@ -11,104 +11,139 @@ $(document).ready(function() {
         // convert everything back to teal and call changeColour
         var currentColour = $('#changecolourbtn').data('currentcolour');
         var currentColourText = $('#changecolourbtn').data('currentcolourtext');
+        var currentWavesColour = $('#changecolourbtn').data('currentWavesColour');
         $(document).find('.' + currentColourText).addClass('teal-text').removeClass(currentColourText);
+        $(document).find('.' + currentWavesColour).addClass('waves-teal').removeClass(currentWavesColour);
         $(document).find('.' + currentColour).addClass('teal').removeClass(currentColour);
         changeColour();
     });
     if ($('#newContact').length > 0) {
         contactScript('forcontact');
     }
+});
+
+$(window).on('load', function() {
     $(".myloader").delay(100).fadeOut(1400);
+    $('#hiddenbody').show();
 });
 
 function changeColour() {
     switch (Math.floor(Math.random() * 14) + 1) {
         case 1:
             $(document).find('.teal-text').addClass('green-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-green').removeClass('waves-teal');
             $(document).find('.teal').addClass('green').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'green');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-green');
             $('#changecolourbtn').data('currentcolourtext', 'green-text');
             break;
         case 2:
             $(document).find('.teal-text').addClass('red-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-red').removeClass('waves-teal');
             $(document).find('.teal').addClass('red').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'red');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-red');
             $('#changecolourbtn').data('currentcolourtext', 'red-text');
             break;
         case 3:
             $(document).find('.teal-text').addClass('purple-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-purple').removeClass('waves-teal');
             $(document).find('.teal').addClass('purple').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'purple');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-purple');
             $('#changecolourbtn').data('currentcolourtext', 'purple-text');
             break;
         case 4:
             $(document).find('.teal-text').addClass('deep-purple-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-deep-purple').removeClass('waves-teal');
             $(document).find('.teal').addClass('deep-purple').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'deep-purple');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-deep-purple');
             $('#changecolourbtn').data('currentcolourtext', 'deep-purple-text');
             break;
         case 5:
             $(document).find('.teal-text').addClass('blue-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-blue').removeClass('waves-teal');
             $(document).find('.teal').addClass('blue').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'blue');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-blue');
             $('#changecolourbtn').data('currentcolourtext', 'blue-text');
             break;
         case 6:
             $(document).find('.teal-text').addClass('indigo-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-indigo').removeClass('waves-teal');
             $(document).find('.teal').addClass('indigo').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'indigo');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-indigo');
             $('#changecolourbtn').data('currentcolourtext', 'indigo-text');
             break;
         case 7:
             $(document).find('.teal-text').addClass('light-green-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-light-green').removeClass('waves-teal');
             $(document).find('.teal').addClass('light-green').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'light-green');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-light-green');
             $('#changecolourbtn').data('currentcolourtext', 'light-green-text');
             break;
         case 8:
             $(document).find('.teal-text').addClass('lime-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-lime').removeClass('waves-teal');
             $(document).find('.teal').addClass('lime').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'lime');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-lime');
             $('#changecolourbtn').data('currentcolourtext', 'lime-text');
             break;
         case 9:
             $(document).find('.teal-text').addClass('yellow-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-yellow').removeClass('waves-teal');
             $(document).find('.teal').addClass('yellow').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'yellow');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-yellow');
             $('#changecolourbtn').data('currentcolourtext', 'yellow-text');
             break;
         case 10:
             $(document).find('.teal-text').addClass('amber-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-amber').removeClass('waves-teal');
             $(document).find('.teal').addClass('amber').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'amber');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-amber');
             $('#changecolourbtn').data('currentcolourtext', 'amber-text');
             break;
         case 11:
             $(document).find('.teal-text').addClass('orange-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-orange').removeClass('waves-teal');
             $(document).find('.teal').addClass('orange').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'orange');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-orange');
             $('#changecolourbtn').data('currentcolourtext', 'orange-text');
             break;
         case 12:
             $(document).find('.teal-text').addClass('deep-orange-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-deep-orange').removeClass('waves-teal');
             $(document).find('.teal').addClass('deep-orange').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'deep-orange');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-deep-orange');
             $('#changecolourbtn').data('currentcolourtext', 'deep-orange-text');
             break;
         case 13:
             $(document).find('.teal-text').addClass('brown-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-brown').removeClass('waves-teal');
             $(document).find('.teal').addClass('brown').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'brown');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-brown');
             $('#changecolourbtn').data('currentcolourtext', 'brown-text');
             break;
         case 14:
             $(document).find('.teal-text').addClass('blue-grey-text').removeClass('teal-text');
+            $(document).find('.waves-teal').addClass('waves-blue-grey').removeClass('waves-teal');
             $(document).find('.teal').addClass('blue-grey').removeClass('teal');
             $('#changecolourbtn').data('currentcolour', 'blue-grey');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-blue-grey');
             $('#changecolourbtn').data('currentcolourtext', 'blue-grey-text');
             break;
         default:
             $('#changecolourbtn').data('currentcolour', 'teal');
+            $('#changecolourbtn').data('currentWavesColour', 'waves-teal');
             $('#changecolourbtn').data('currentcolourtext', 'teal-text');
             break;
     }
