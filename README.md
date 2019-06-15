@@ -1,29 +1,5 @@
-# vue
+Personal Website | Build on Vue
 
-## Project setup
-```
-npm install
-```
+**Live version yet to release on https://hasilpaudyal.com.np**
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> Feel free to refer codes and ping me for any help at facebook.com/hasill
