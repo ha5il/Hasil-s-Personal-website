@@ -1,6 +1,0 @@
-Sitemap: https://hasilpaudyal.com.np/sitemap.xml
-User-agent: *
-Disallow: /css
-Disallow: /img
-Disallow: /js
-Disallow: /s*
