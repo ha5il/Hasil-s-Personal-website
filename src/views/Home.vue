@@ -45,8 +45,9 @@
 <style lang="scss">
 #homepage {
     .card {
-        background-color: #FBF1FF;
+        background-color: #fdf7ff;
         border: none;
+        box-shadow: 0px 0px 10px 0px #d0d0d0;
     }
 
     .card-title {

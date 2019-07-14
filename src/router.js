@@ -6,17 +6,20 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0}
+  },
   routes: [
     {
       path: "/",
       name: "home",
       component: require("@/views/Home.vue").default // load sync home
     },
-    // {
-    //   path: "/photos",
-    //   name: "photos",
-    //   component: () => import("@/pages/Photos.vue")
-    // },
+    {
+      path: "/quotes",
+      name: "quotes",
+      component: () => import("@/views/Quotes.vue")
+    },
     {
       path: "/about-hasil",
       name: "about",
