@@ -12,21 +12,21 @@
                 <b-img v-show="isHomePage" class="pb-3" src="/cover.jpg" rounded fluid alt="Hasil Cover"></b-img>
                 <b-nav v-bind:class="{'fixed-top':!isHomePage}" align="right" small @scroll="handleSCroll">
                     <b-nav-item>
-                        <b-link to="/">Projects</b-link>
+                        <b-link to="/">Home</b-link>
+                    </b-nav-item>
+                    <b-nav-item>
+                        <b-link to="/projects">Projects</b-link>
                     </b-nav-item>
                     <b-nav-item>
                         <b-link to="/quotes">Quotes</b-link>
                     </b-nav-item>
-                    <b-nav-item>
-                        <b-link to="/">Hire Me</b-link>
-                    </b-nav-item>
-                    <b-nav-item>
-                        <b-link to="/">Get in Touch</b-link>
-                    </b-nav-item>
                 </b-nav>
                 <transition name="fade">
-                <router-view />
+                    <router-view />
                 </transition>
+                <footer class="mt-3">
+                    Oh great! I never recognized Sunshine shining me, within me.
+                </footer>
             </b-col>
         </b-row>
     </b-container>
@@ -34,17 +34,19 @@
 </template>
 
 <style>
-.fade-enter-active, .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: .25s;
+.fade-enter-active,
+.fade-leave-active {
+    transition-property: opacity;
+    transition-duration: .25s;
 }
 
 .fade-enter-active {
-  transition-delay: .25s;
+    transition-delay: .25s;
 }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-enter,
+.fade-leave-active {
+    opacity: 0
 }
 </style>
 
@@ -57,31 +59,44 @@ export default {
     },
     methods: {
         handleSCroll() {
-            if(this.$router.history.current.name=='home'){
-            let header = document.querySelector(".nav");
-            if (window.pageYOffset > header.offsetTop) {
-                header.classList.add('fixed-top');
-            } else {
-                header.classList.remove('fixed-top');
+            // fixing the navbar
+            if (this.$router.history.current.name == 'home') {
+                let header = document.querySelector(".nav");
+                if (window.pageYOffset > header.offsetTop) {
+                    header.classList.add('fixed-top');
+                } else {
+                    header.classList.remove('fixed-top');
+                }
             }
-            }
+            // changing the quote on footer
+            // let footer = document.querySelector("footer");
+            // let changeQuote = false;
+            // let confirmchangeQuote = false;
+            // if (window.pageYOffset+window.innerHeight > footer.offsetTop) {
+            //     changeQuote = true;
+            // } else {
+            //     confirmchangeQuote = true;
+            // }
+            // console.log(changeQuote)
+            // console.log(confirmchangeQuote)
         }
     },
     created() {
         window.addEventListener('scroll', this.handleSCroll);
-        this.$router.history.current.name=='home'?this.isHomePage=true:this.isHomePage=false
+        this.$router.history.current.name == 'home' ? this.isHomePage = true : this.isHomePage = false
     },
-    watch:{
-    $route (to, from){
-        to.name=='home'?this.isHomePage=true:this.isHomePage=false;
+    watch: {
+        $route(to, from) {
+            to.name == 'home' ? this.isHomePage = true : this.isHomePage = false;
+        }
     }
-} 
 }
 </script>
 
 <style lang="scss">
 body {
-    font-family: arial;
+    font-family: 'Comfortaa', cursive;
+    background-color: #fdf7ff;
 }
 
 .nav {
@@ -101,7 +116,6 @@ body {
 }
 
 .card-poem {
-    background-color: #fdf7ff;
     border: none;
     border-radius: 20px;
     padding-top: 15px;
@@ -122,5 +136,14 @@ body {
     line-height: 20px;
     margin: 20px auto;
     color: #6E161C;
+}
+
+footer {
+    color: #ffffff;
+    padding: 7px 0px;
+    background-color: #ac252d;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 10px 10px 0px 0px;
 }
 </style>

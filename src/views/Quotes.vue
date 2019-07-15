@@ -1,7 +1,7 @@
 <template>
 <div id="quotes" class="mt-5">
-      <transition-group name="quotesBlock" tag="b-row">
-        <b-col cols="4" v-for="quote in quotes" :key="quote">
+      <b-row>
+        <b-col cols="4" v-for="(quote, idx) in quotes" :key="idx">
             <b-card class="mb-3">
                 <b-card-text>
                     <span v-for="quoteLine in quote" :key="quoteLine">
@@ -10,16 +10,16 @@
                 </b-card-text>
             </b-card>
         </b-col>
-      </transition-group>
+      </b-row>
 </div>
 </template>
 
 <style lang="scss">
 #quotes {
     .card {
-        background-color: #fdf7ff;
         border: none;
         box-shadow: 0px 0px 10px 0px #d0d0d0;
+        transition: 0.33s all;
     }
 
     .card-text {
@@ -33,6 +33,8 @@
 </style>
 
 <script>
+import _ from 'lodash';
+
 export default {
     data() {
         return {
