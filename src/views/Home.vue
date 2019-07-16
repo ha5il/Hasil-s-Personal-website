@@ -44,6 +44,8 @@
 
 <style lang="scss">
 #homepage {
+    min-height: 90vh;
+    
     .card {
         border: none;
         box-shadow: 0px 0px 10px 0px #d0d0d0;

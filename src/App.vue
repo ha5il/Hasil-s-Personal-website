@@ -54,7 +54,8 @@
 export default {
     data() {
         return {
-            isHomePage: true
+            isHomePage: true,
+            changeQuote: false
         }
     },
     methods: {
@@ -69,16 +70,15 @@ export default {
                 }
             }
             // changing the quote on footer
-            // let footer = document.querySelector("footer");
-            // let changeQuote = false;
-            // let confirmchangeQuote = false;
-            // if (window.pageYOffset+window.innerHeight > footer.offsetTop) {
-            //     changeQuote = true;
-            // } else {
-            //     confirmchangeQuote = true;
-            // }
-            // console.log(changeQuote)
-            // console.log(confirmchangeQuote)
+            let footer = document.querySelector("footer");
+            if (window.pageYOffset+window.innerHeight > footer.offsetTop) {
+                this.changeQuote = true;
+                console.log('footer visible')
+            }
+            if(this.changeQuote && window.pageYOffset+window.innerHeight < footer.offsetTop){
+                console.log('change footer content')
+                this.changeQuote = false;
+            }
         }
     },
     created() {
@@ -112,7 +112,8 @@ body {
 
 .fixed-top{
     left: 26%;
-    border-radius: 0px 0px 0px 10px;
+    border-radius: 0px 0px 10px 10px;
+    width: 73%;
 }
 
 .card-poem {
@@ -145,5 +146,6 @@ footer {
     text-align: center;
     font-size: 10px;
     border-radius: 10px 10px 0px 0px;
+    bottom: 0px;
 }
 </style>
