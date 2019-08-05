@@ -25,7 +25,9 @@
                     <router-view />
                 </transition>
                 <footer class="mt-3">
-                    Oh great! I never recognized Sunshine shining me, within me.
+                    <span v-for="quoteLine in quotes[quoteKey]" :key="quoteLine">
+                        {{quoteLine}}<br>
+                    </span>
                 </footer>
             </b-col>
         </b-row>
@@ -55,7 +57,63 @@ export default {
     data() {
         return {
             isHomePage: true,
-            changeQuote: false
+            changeQuote: false,
+            quotes: [
+                [
+                    'May be its mine bad-luck',
+                    'Or yours not to get me',
+                    'But I still have hope',
+                    'Of being yours'
+                ],
+                [
+                    'If you know that I am genius',
+                    'Then know that you made me genius',
+                    'Everyone don\'t accept me as genius',
+                    'Because they aren\'t genius to belief me as genius'
+                ],
+                [
+                    'Life for me is just a result of experiments being performed by far more developed creatures.'
+                ],
+                [
+                    'Dream big!',
+                    'But not so big that it becomes a mess, and you may never reach reality.'
+                ],
+                [
+                    'Dreaming of getting you',
+                    'I loosed everything',
+                    'Cheerfulness of smile',
+                    'And all the dreams of life'
+                ],
+                [
+                    'Give me another Chance',
+                    'Then,',
+                    'You will Get',
+                    'Less than I Gain...'
+                ],
+                ['When I was small I felt like a Superhero as my father threw me up in the air.',
+                    'Now after reaching this success peak I unmask - Real Superhero made me Superhero!'
+                ],
+                [
+                    'Congratulations to your mom and dad for birth of a sweet child!',
+                    '',
+                    'Sorry that I couldn\'t wish them when you were born.'
+                ],
+                [
+                    'Oh great!',
+                    'I never recognized Sunshine shining me, within me.'
+                ],
+                [
+                    'I will miss you',
+                    'not because you taught me,',
+                    'not because you helped me on all steps of education;',
+                    'but only because',
+                    'you made me a leader to lead as an perfect Electrical Engineer.'
+                ],
+                [
+                    'Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own.'
+                ]
+            ],
+            quoteKey: 3,
         }
     },
     methods: {
@@ -73,10 +131,9 @@ export default {
             let footer = document.querySelector("footer");
             if (window.pageYOffset+window.innerHeight > footer.offsetTop) {
                 this.changeQuote = true;
-                console.log('footer visible')
             }
             if(this.changeQuote && window.pageYOffset+window.innerHeight < footer.offsetTop){
-                console.log('change footer content')
+                this.quoteKey = Math.floor(Math.random() * this.quotes.length); // Todo: 11+ is getting skipped
                 this.changeQuote = false;
             }
         }
@@ -86,7 +143,7 @@ export default {
         this.$router.history.current.name == 'home' ? this.isHomePage = true : this.isHomePage = false
     },
     watch: {
-        $route(to, from) {
+        $route(to) {
             to.name == 'home' ? this.isHomePage = true : this.isHomePage = false;
         }
     }

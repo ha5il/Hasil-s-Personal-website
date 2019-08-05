@@ -2,6 +2,7 @@
 <div id="projects" class="mt-5">
         <h4 class="p-3">IT Projects</h4>
     <b-row>
+        
         <b-col cols="6" v-for="(project, idx) in itprojects" :key="idx">
             <b-card class="mb-3" :title="project.title">
                 <b-card-text>
@@ -10,7 +11,7 @@
             </b-card>
         </b-col>
     </b-row>
-          <h4 class="p-3">Electrical &amp Electronics Projects</h4>
+          <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
         <b-row>
         <b-col cols="12" v-for="(project, idx) in electricalprojects" :key="idx">
             <b-card class="mb-3" :title="project.title">
