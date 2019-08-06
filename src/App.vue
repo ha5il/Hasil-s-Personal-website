@@ -9,25 +9,7 @@
                 </b-card>
             </b-col>
             <b-col>
-                
-                <b-img v-show="isHomePage" class="pb-3" src="/cover.jpg" rounded fluid alt="Hasil Cover"></b-img>
-<!--                 
-                <div>
-                    <b-carousel
-                        v-show="isHomePage"
-                        fade
-                        indicators
-                        interval="3000"
-                    >
-                        <b-carousel-slide
-                        v-for="image in coverImages"
-                        :key="image.key"
-                        :img-src="image"
-                        ></b-carousel-slide>
-                        
-                    </b-carousel>
-                </div> -->
-                
+                <b-img v-show="isHomePage" class="pb-3" src="/cover.jpg" rounded fluid alt="Hasil Cover"></b-img>                
                 <b-nav v-bind:class="{'fixed-top':!isHomePage}" align="right" small @scroll="handleSCroll">
                     <b-nav-item>
                         <b-link to="/">Home</b-link>
@@ -37,6 +19,9 @@
                     </b-nav-item>
                     <b-nav-item>
                         <b-link to="/quotes">Quotes</b-link>
+                    </b-nav-item>
+                    <b-nav-item>
+                        <b-link to="/gallery">Gallery</b-link>
                     </b-nav-item>
                 </b-nav>
                 <transition name="fade">
@@ -68,16 +53,6 @@
 .fade-leave-active {
     opacity: 0
 }
-
-// .carousel {
-//     height: 200px;
-//     margin-block-end: 10px;
-
-//     img {
-//         height: 200px;
-//         margin: auto;
-//     }
-// }
 </style>
 
 <script>
@@ -142,7 +117,6 @@ export default {
                 ]
             ],
             quoteKey: 3,
-            coverImages: ["https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(1).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(10).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(11).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(12).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(13).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(14).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(15).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(16).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(17).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(18).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(19).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(2).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(20).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(21).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(22).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(23).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(24).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(25).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(26).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(27).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(28).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(3).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(4).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(5).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(6).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(7).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(8).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(9).jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Collage.jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Graduation%20New%20Horizon%20College%20of%20Engineering.jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Nepal%20Flag.jpg?alt=media", "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil.jpg?alt=media"],
         }
     },
     methods: {

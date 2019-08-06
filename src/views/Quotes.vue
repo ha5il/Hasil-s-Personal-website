@@ -36,10 +36,10 @@
 
 <script>
 import _ from 'lodash';
-
+import app from "../App";
 export default {
     created() {
-      this.quotes = _.shuffle(this.quotes)
+      this.quotes = _.shuffle(app.data().quotes)
     }
 }
 </script>
