@@ -4,6 +4,7 @@
       <b-carousel id="carousel-fade" fade indicators controls img-width="1024" img-height="480">
         <b-carousel-slide
           v-for="(slide, idx) in projects"
+          v-if="slide.type=='it'"
           :key="idx"
           :caption="slide.caption"
           :text="slide.text"
@@ -13,8 +14,8 @@
     </div>
     <h4 class="p-3">IT Projects</h4>
     <b-row>
-      <b-col cols="6" v-for="(project, idx) in projects" :key="idx">
-        <b-card v-show="project.type=='it'" class="mb-3" :title="project.caption">
+      <b-col cols="6" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
+        <b-card class="mb-3" :title="project.caption">
           <b-card-text>
             {{project.text}}
             <br />
@@ -24,8 +25,8 @@
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
     <b-row>
-      <b-col cols="12" v-for="(project, idx) in projects" :key="idx">
-        <b-card v-show="project.type=='ee'" class="mb-3" :title="project.caption">
+      <b-col cols="12" v-for="(project, idx) in projects" v-if="project.type=='ee'" :key="idx">
+        <b-card class="mb-3" :title="project.caption">
           <b-card-text>
             {{project.text}}
             <br />
@@ -148,7 +149,7 @@ export default {
     };
   },
   created() {
-    this.carouselItems = _.shuffle(this.carouselItems);
+    this.projects = _.shuffle(this.projects);
   }
 };
 </script>
