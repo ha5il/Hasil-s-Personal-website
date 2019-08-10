@@ -117,14 +117,18 @@ export default {
                 ]
             ],
             quoteKey: 3,
+            navoffset: 0,
         }
     },
     methods: {
         handleSCroll() {
-            // fixing the navbar
+            // fixing the navbar only on home page
             if (this.$router.history.current.name == 'home') {
                 let header = document.querySelector(".nav");
-                if (window.pageYOffset > header.offsetTop) {
+                if(this.navoffset < header.offsetTop){
+                    this.navoffset = header.offsetTop;
+                }
+                if (window.pageYOffset > this.navoffset) {
                     header.classList.add('fixed-top');
                 } else {
                     header.classList.remove('fixed-top');
