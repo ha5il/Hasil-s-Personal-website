@@ -47,7 +47,7 @@
   }
 
   .card-title {
-    color: #6e161c;
+    color: #E6A410;
     font-weight: normal;
   }
 
@@ -123,8 +123,7 @@ export default {
         },
         {
           caption: "RFID Limitor",
-          text:
-            "An Arduino UNO based project for limiting the RFID Scans.",
+          text: "An Arduino UNO based project for limiting the RFID Scans.",
           type: "ee"
         },
         {

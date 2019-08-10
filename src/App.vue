@@ -53,6 +53,9 @@
             <b-nav-item>
               <b-link to="/gallery">Gallery</b-link>
             </b-nav-item>
+            <b-nav-item>
+              <b-link to="/hire-Hasil">Hire Me</b-link>
+            </b-nav-item>
           </b-nav>
           <transition name="fade">
             <router-view />
@@ -193,8 +196,8 @@ export default {
     }
   },
   created() {
-    if (this.isMobile()){
-        window.location = '//amp.hasilpaudyal.com.np';
+    if (this.isMobile()) {
+      window.location = "//amp.hasilpaudyal.com.np";
     }
     window.addEventListener("scroll", this.handleSCroll);
     this.$router.history.current.name == "home"
@@ -216,7 +219,7 @@ body {
 }
 
 .nav {
-  background-color: #ac252d;
+  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
   color: #ffffff;
   height: 35px;
   border-radius: 8px;
@@ -258,7 +261,7 @@ body {
 footer {
   color: #ffffff;
   padding: 7px 0px;
-  background-color: #ac252d;
+  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
   text-align: center;
   font-size: 10px;
   border-radius: 10px 10px 0px 0px;

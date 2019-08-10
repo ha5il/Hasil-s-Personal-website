@@ -21,11 +21,6 @@ export default new Router({
       component: () => import("@/views/Quotes.vue")
     },
     {
-      path: "/about-hasil",
-      name: "about",
-      component: () => import("@/views/About.vue")
-    },
-    {
       path: "/projects",
       name: "projects",
       component: () => import("@/views/Projects.vue")
@@ -39,6 +34,11 @@ export default new Router({
       path: "/gallery",
       name: "gallery",
       component: () => import("@/views/Gallery.vue")
+    },
+    {
+      path: "/hire-Hasil",
+      name: "hire-hasil",
+      component: () => import("@/views/HireHasil.vue")
     },
     // {
     //   path: "*",
