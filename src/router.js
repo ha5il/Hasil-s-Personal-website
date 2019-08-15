@@ -26,7 +26,7 @@ export default new Router({
       component: () => import("@/views/Projects.vue")
     },
     {
-      path: "/project/:id/:slug",
+      path: "/project/:id/:urlSlug",
       name: "project",
       component: () => import("@/views/Project.vue")
     },
