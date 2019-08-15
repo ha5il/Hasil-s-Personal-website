@@ -17,15 +17,16 @@
     <b-row>
       <b-col cols="6" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
         <router-link :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}" tag="div">
-          <b-card class="mb-3" :title="project.name">
+          <b-card :id="'project-'+idx" class="mb-3" :title="project.name">
             <b-card-text>
               {{project.tagLine}}
               <br />
             </b-card-text>
           </b-card>
         </router-link>
+      <b-tooltip :target="'project-'+idx" placement="bottom" title="Read More..."></b-tooltip>
       </b-col>
-    </b-row>
+     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
     <b-row>
       <b-col cols="12" v-for="(project, idx) in projects" v-if="project.type=='ee'" :key="idx">
