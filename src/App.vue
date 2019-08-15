@@ -42,19 +42,29 @@
             @scroll="handleSCroll"
           >
             <b-nav-item>
-              <b-link to="/">Home</b-link>
+              <b-link to="/">
+                <i class="material-icons">home</i>Home
+              </b-link>
             </b-nav-item>
             <b-nav-item>
-              <b-link to="/projects">Projects</b-link>
+              <b-link to="/projects">
+                <i class="material-icons">all_inbox</i>Projects
+              </b-link>
             </b-nav-item>
             <b-nav-item>
-              <b-link to="/quotes">Quotes</b-link>
+              <b-link to="/quotes">
+                <i class="material-icons">record_voice_over</i>Quotes
+              </b-link>
             </b-nav-item>
             <b-nav-item>
-              <b-link to="/gallery">Gallery</b-link>
+              <b-link to="/gallery">
+                <i class="material-icons">perm_media</i>Gallery
+              </b-link>
             </b-nav-item>
             <b-nav-item>
-              <b-link to="/hire-Hasil">Hire Me</b-link>
+              <b-link to="/hire-Hasil">
+                <i class="material-icons">work</i>Hire Me
+              </b-link>
             </b-nav-item>
           </b-nav>
           <transition name="fade">
@@ -86,6 +96,65 @@
 .fade-enter,
 .fade-leave-active {
   opacity: 0;
+}
+
+.nav {
+  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
+  color: #ffffff;
+  height: 42px;
+  border-radius: 8px;
+
+  .material-icons {
+    vertical-align: bottom;
+    padding-right: 4px;
+  }
+
+  .nav-item a {
+    color: #ffffff;
+  }
+}
+body {
+  font-family: "Comfortaa", cursive;
+  background-color: #fdf7ff;
+}
+
+.fixed-top {
+  left: 26%;
+  border-radius: 0px 0px 10px 10px;
+  width: 73%;
+}
+
+.card-poem {
+  border: none;
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-shadow: 0px 0px 10px 0px #d0d0d0;
+  position: fixed;
+  width: 23%;
+
+  img {
+    margin: auto;
+  }
+}
+
+.card-text-poem {
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 20px auto;
+  color: #6e161c;
+}
+
+footer {
+  color: #ffffff;
+  padding: 7px 0px;
+  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
+  text-align: center;
+  font-size: 10px;
+  border-radius: 10px 10px 0px 0px;
+  bottom: 0px;
 }
 </style>
 
@@ -211,60 +280,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-body {
-  font-family: "Comfortaa", cursive;
-  background-color: #fdf7ff;
-}
-
-.nav {
-  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
-  color: #ffffff;
-  height: 35px;
-  border-radius: 8px;
-}
-
-.nav-item a {
-  color: #ffffff;
-}
-
-.fixed-top {
-  left: 26%;
-  border-radius: 0px 0px 10px 10px;
-  width: 73%;
-}
-
-.card-poem {
-  border: none;
-  border-radius: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  box-shadow: 0px 0px 10px 0px #d0d0d0;
-  position: fixed;
-  width: 23%;
-
-  img {
-    margin: auto;
-  }
-}
-
-.card-text-poem {
-  text-align: center;
-  letter-spacing: 1px;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 20px auto;
-  color: #6e161c;
-}
-
-footer {
-  color: #ffffff;
-  padding: 7px 0px;
-  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
-  text-align: center;
-  font-size: 10px;
-  border-radius: 10px 10px 0px 0px;
-  bottom: 0px;
-}
-</style>

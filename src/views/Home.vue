@@ -2,13 +2,20 @@
   <div id="homepage" class="section">
     <b-row class="pt-3">
       <b-col>
-        <b-card class="mb-3" title="Who am I?">
-            <i class="material-icons">contact_support</i>
+        <b-card class="mb-3">
+          <b-card-title>
+            <i class="material-icons">sentiment_satisfied_alt</i>
+              Who am I?
+            </b-card-title>
           <b-card-text
             class="justified"
           >Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. Though having Graduation of Electrical Engineering I do have skills in Design, Web Development, Electrical repair and Electronics simulation. Out of the box, I write poems, speak quotes and try altering cloud saved data.</b-card-text>
         </b-card>
-        <b-card title="What I do?">
+        <b-card>
+            <b-card-title>
+            <i class="material-icons">work</i>
+              What I do?
+            </b-card-title>
           <b-card-text>
             <span class="text-info">
               Web Developer at View9 | Nepal
@@ -61,6 +68,10 @@
 
   .card-title {
     color: #E6A410;
+
+    .material-icons {
+      vertical-align: top;
+    }
   }
 
   .card-text {

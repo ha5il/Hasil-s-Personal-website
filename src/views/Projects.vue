@@ -88,38 +88,50 @@ export default {
           caption: "KTM Retail",
           text: "Vuejs based ecommerce website.",
           img: "/ktmretail.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
+          urlId: 1,
         },
         {
           caption: "Intranery",
           text:
             "Ecommerce website for dealers to sell products as done by Daraz.",
           img: "/intranery.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "intranery--nepal-vuejs-ecommerce-website",
+          urlId: 2,
         },
         {
           caption: "Foreveryng",
           text: "Ecommerce website designed for discounts.",
           img: "/foreveryng.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "foreveryng-online-beauty-store-epal",
+          urlId: 3,
         },
         {
           caption: "Kourtier Courier",
           text: "Webapp for kourier tracking management.",
           img: "/kourtier.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "kourtier-courier-services-cargo-freight",
+          urlId: 4,
         },
         {
           caption: "Mero Pharmacist",
           text: "Pharmacy enquiries online.",
           img: "/meropharmacist.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "mero-pharmacist-pharma-srs-online-enquire",
+          urlId: 5,
         },
         {
           caption: "TIA",
           text: "Tribhuvan International airport.",
           img: "/tia.jpg",
-          type: "it"
+          type: "it",
+          urlSlug: "tribhuvan-international-airport-filght-tracking-nepal",
+          urlId: 6,
         },
         {
           caption: "RFID Limitor",
