@@ -33,10 +33,10 @@
             </b-card-text>
             <div>
               <b-link to="//np.linkedin.com/in/hasil" target="_blank">
-              <img class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
+                <img class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
               </b-link>
               <b-link to="//facebook.com/hasill" target="_blank">
-              <img src="/facebook.svg" alt="facebook" width="20%" />
+                <img src="/facebook.svg" alt="facebook" width="20%" />
               </b-link>
             </div>
           </b-card>
@@ -49,30 +49,20 @@
             small
             @scroll="handleSCroll"
           >
-            <b-nav-item>
-              <b-link to="/">
-                <i class="material-icons">home</i>Home
-              </b-link>
+            <b-nav-item to="/">
+              <i class="material-icons">home</i>Home
             </b-nav-item>
-            <b-nav-item>
-              <b-link to="/projects">
-                <i class="material-icons">all_inbox</i>Projects
-              </b-link>
+            <b-nav-item to="/projects">
+              <i class="material-icons">all_inbox</i>Projects
             </b-nav-item>
-            <b-nav-item>
-              <b-link to="/quotes">
-                <i class="material-icons">record_voice_over</i>Quotes
-              </b-link>
+            <b-nav-item to="/quotes">
+              <i class="material-icons">record_voice_over</i>Quotes
             </b-nav-item>
-            <b-nav-item>
-              <b-link to="/gallery">
-                <i class="material-icons">perm_media</i>Gallery
-              </b-link>
+            <b-nav-item to="/gallery">
+              <i class="material-icons">perm_media</i>Gallery
             </b-nav-item>
-            <b-nav-item>
-              <b-link to="/hire-Hasil">
-                <i class="material-icons">work</i>Hire Me
-              </b-link>
+            <b-nav-item to="/hire-Hasil">
+              <i class="material-icons">work</i>Hire Me
             </b-nav-item>
           </b-nav>
           <transition name="fade">
@@ -108,7 +98,6 @@
 
 .nav {
   background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
-  color: #ffffff;
   height: 42px;
   border-radius: 8px;
 
@@ -117,8 +106,16 @@
     padding-right: 4px;
   }
 
-  .nav-item a {
-    color: #ffffff;
+  .nav-item {
+    transition: 0.33s all;
+
+    a {
+      color: #ffffff;
+    }
+  }
+
+  .nav-item:hover {
+    transform: scale(1.1);
   }
 }
 body {
@@ -247,7 +244,8 @@ export default {
         ]
       ],
       quoteKey: 3,
-      navoffset: 0
+      navoffset: 0,
+      autoToasterId: null,
     };
   },
   methods: {
@@ -291,6 +289,17 @@ export default {
           check = true;
       })(navigator.userAgent || navigator.vendor || window.opera);
       return check;
+    },
+    autoToaster() {
+      this.autoToasterId = setInterval(() => {
+        this.$bvToast.toast('Hello there', {
+          title: "Hello",
+          autoHideDelay: 5000,
+          toaster: 'b-toaster-bottom-right',
+          variant: 'info',
+          appendToast: true
+        });
+      }, 4000);
     }
   },
   created() {
@@ -301,6 +310,7 @@ export default {
     this.$router.history.current.name == "home"
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
+    // this.autoToaster();
   },
   watch: {
     $route(to) {

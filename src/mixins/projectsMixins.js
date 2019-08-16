@@ -7,7 +7,15 @@ const projects = [
         coverImage: "/ktmretail.jpg",
         type: "it",
         urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
-        id: 1
+        id: 1,
+        website: '//ktmretail.com',
+        technologies: ['Vuejs', 'Laravel'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 30,
+            Frontend: 40,
+            Teammates: 25,
+        },
     },
     {
         name: "Intranery",
@@ -42,7 +50,7 @@ const projects = [
                 [{
                     category: 'Feature',
                     text: 'Products with Multiple sizes with individual prices'
-                },{
+                }, {
                     category: 'Feature',
                     text: 'Products Filter API (Laravel Eloquent)'
                 }, {
@@ -69,7 +77,16 @@ const projects = [
         coverImage: "/foreveryng.jpg",
         type: "it",
         urlSlug: "foreveryng-online-beauty-store-nepal",
-        id: 3
+        id: 3,
+        // website: '//foreveryng.com',
+        technologies: ['Laravel'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 40,
+            API: 30,
+            Frontend: 5,
+            Teammates: 20,
+        },
     },
     {
         name: "Kourtier Courier",
@@ -77,7 +94,14 @@ const projects = [
         coverImage: "/kourtier.jpg",
         type: "it",
         urlSlug: "kourtier-courier-services-cargo-freight",
-        id: 4
+        id: 4,
+        website: '//kourtier.com.np',
+        technologies: ['Laravel', 'jQuery'],
+        contributionLevels: {
+            Design: 2,
+            Backend: 8,
+            Teammates: 90,
+        },
     },
     {
         name: "Mero Pharmacist",
@@ -85,7 +109,13 @@ const projects = [
         coverImage: "/meropharmacist.jpg",
         type: "it",
         urlSlug: "mero-pharmacist-pharma-srs-online-enquire",
-        id: 5
+        id: 5,
+        website: '//meropharmacist.com',
+        technologies: ['Laravel'],
+        contributionLevels: {
+            Backend: 10,
+            Teammates: 90,
+        },
     },
     {
         name: "TIA",
@@ -93,30 +123,59 @@ const projects = [
         coverImage: "/tia.jpg",
         type: "it",
         urlSlug: "tribhuvan-international-airport-filght-tracking-nepal",
-        id: 6
+        id: 6,
+        website: '//tiairport.com.np',
+        technologies: ['October CMS'],
+        contributionLevels: {
+            Backend: 30,
+            Teammates: 70,
+        },
     },
     {
         name: "RFID Limitor",
         tagLine: "An Arduino UNO based project for limiting the RFID Scans.",
-        type: "ee"
+        type: "ee",
+        technologies: ['Arduino'],
+        contributionLevels: {
+            'C/C++': 30,
+            Hardware: 70,
+        },
     },
     {
         name: "RABC Analyser",
         tagLine:
             "Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!",
-        type: "ee"
+        type: "ee",
+        technologies: ['Visual Studio'],
+        contributionLevels: {
+            'C++': 80,
+            'C#': 20,
+        },
     },
     {
         name: "Electrical Thief Eliminator",
         tagLine:
             "This device detects, locates and terminates the electricity thief from the supply line.",
-        type: "ee"
+        type: "ee",
+        technologies: ['Arduino'],
+        contributionLevels: {
+            'C/C++': 40,
+            Hardware: 30,
+            Teammates: 30,
+        },
     },
     {
         name: "Electrical Performance Analyser",
         tagLine:
             "An Arduino UNO based project for realtime data recording and analysis.",
-        type: "ee"
+        type: "ee",
+        technologies: ['Arduino', 'PHP'],
+        contributionLevels: {
+            'C/C++': 25,
+            'PHP': 10,
+            Hardware: 40,
+            Teammates: 25,
+        },
     }
 ];
 
@@ -124,7 +183,7 @@ export const projectsMixins = {
     methods: {
         getAllProjects() {
             return _.shuffle(projects.map(row => pick(row, [
-                'name', 'tagLine', 'coverImage',
+                'name', 'tagLine', 'coverImage', 'technologies',
                 'type', 'urlSlug', 'id', 'contributionLevels'
             ])));
         },
@@ -152,13 +211,17 @@ export const projectsMixins = {
                     return 'secondary';
                 case 'Design':
                 case 'Feature':
+                case 'C/C++':
+                case 'C++':
                     return 'info';
                 case 'Backend':
                 case 'Marketing':
                     return 'warning';
                 case 'Frontend':
+                case 'C#':
                     return 'primary';
                 case 'Security':
+                case 'Hardware':
                     return 'danger';
                 default:
                     return 'dark';
