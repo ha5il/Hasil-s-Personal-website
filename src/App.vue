@@ -31,6 +31,14 @@
               <br />
               <strong>L</strong>inks the first letters to me
             </b-card-text>
+            <div>
+              <b-link to="//np.linkedin.com/in/hasil" target="_blank">
+              <img class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
+              </b-link>
+              <b-link to="//facebook.com/hasill" target="_blank">
+              <img src="/facebook.svg" alt="facebook" width="20%" />
+              </b-link>
+            </div>
           </b-card>
         </b-col>
         <b-col>
@@ -135,6 +143,27 @@ body {
 
   img {
     margin: auto;
+  }
+
+  strong {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      text-shadow: 0 0 0 rgba(110, 22, 28, 0.4);
+    }
+    70% {
+      text-shadow: 0 0 100px rgba(110, 22, 28, 0);
+    }
+    100% {
+      text-shadow: 0 0 100px rgba(110, 22, 28, 0);
+    }
+  }
+
+  .social-icon {
+    margin-left: 25%;
+    margin-right: 5%;
   }
 }
 
