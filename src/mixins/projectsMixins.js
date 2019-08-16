@@ -17,10 +17,51 @@ const projects = [
         type: "it",
         urlSlug: "intranery-nepal-vuejs-ecommerce-website",
         id: 2,
-        discription: `Intranery Online means buying or purchasing the stationery and other products through online(The Internet Technology). Today the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized Communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.
-
-
-        Intranery Online it is also the same. The buyer’s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a sales person. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door to door facilities for every people. Now every people can order and get the necessity goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery have access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.`
+        website: '//intranery.com',
+        technologies: ['Vuejs', 'Laravel'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 15,
+            Frontend: 20,
+            Teammates: 60,
+        },
+        details: [{
+            title: 'Project Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Intranery Online means buying or purchasing the stationery and other products through online(The Internet Technology). Today the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized Communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.'
+                }, {
+                    text: 'Intranery Online it is also the same. The buyer’s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a sales person. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door to door facilities for every people. Now every people can order and get the necessity goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery have access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Products with Multiple sizes with individual prices'
+                },{
+                    category: 'Feature',
+                    text: 'Products Filter API (Laravel Eloquent)'
+                }, {
+                    category: 'Security',
+                    text: 'Middleware Protection for admin and staff accounts'
+                }, {
+                    category: 'Feature',
+                    text: 'Banners management'
+                }, {
+                    category: 'Marketing',
+                    text: 'Web Analytics'
+                }, {
+                    category: 'Marketing',
+                    text: 'Dynamic banners rediection'
+                }, {
+                    category: 'Marketing',
+                    text: 'Promo Codes and Discount Management'
+                }],
+        }]
     },
     {
         name: "Foreveryng",
@@ -83,7 +124,8 @@ export const projectsMixins = {
     methods: {
         getAllProjects() {
             return _.shuffle(projects.map(row => pick(row, [
-                'name', 'tagLine', 'coverImage', 'type', 'urlSlug', 'id'
+                'name', 'tagLine', 'coverImage',
+                'type', 'urlSlug', 'id', 'contributionLevels'
             ])));
         },
         getProjectUrlSlug(projectId) {
@@ -103,6 +145,24 @@ export const projectsMixins = {
                 }
             });
             return returnData;
+        },
+        getVariant(type) {
+            switch (type) {
+                case 'Teammates':
+                    return 'secondary';
+                case 'Design':
+                case 'Feature':
+                    return 'info';
+                case 'Backend':
+                case 'Marketing':
+                    return 'warning';
+                case 'Frontend':
+                    return 'primary';
+                case 'Security':
+                    return 'danger';
+                default:
+                    return 'dark';
+            }
         }
     }
 }

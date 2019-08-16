@@ -20,7 +20,10 @@
           <b-card :id="'project-'+idx" class="mb-3" :title="project.name">
             <b-card-text>
               {{project.tagLine}}
-              <br />
+              <b-progress class="mt-2" v-show="project.contributionLevels" show-value>
+                <b-progress-bar v-for="(level, idxLevel) in project.contributionLevels" :key="idxLevel"
+                  :value="level" :variant="getVariant(idxLevel)">{{idxLevel}}</b-progress-bar>
+              </b-progress>
             </b-card-text>
           </b-card>
         </router-link>
