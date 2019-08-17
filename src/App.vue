@@ -33,10 +33,23 @@
             </b-card-text>
             <div>
               <b-link to="//np.linkedin.com/in/hasil" target="_blank">
-                <img v-b-tooltip.hover.bottom title="Let's get connected for work" class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
+                <img
+                  v-b-tooltip.hover.bottom
+                  title="Let's get connected for work"
+                  class="social-icon"
+                  src="/linkedin.svg"
+                  alt="linkedin"
+                  width="20%"
+                />
               </b-link>
               <b-link to="//facebook.com/hasill" target="_blank">
-                <img v-b-tooltip.hover.bottom title="Let's get connected as friend" src="/facebook.svg" alt="facebook" width="20%" />
+                <img
+                  v-b-tooltip.hover.bottom
+                  title="Let's get connected as friend"
+                  src="/facebook.svg"
+                  alt="facebook"
+                  width="20%"
+                />
               </b-link>
             </div>
           </b-card>
@@ -47,21 +60,21 @@
             v-bind:class="{'fixed-top':!isHomePage}"
             align="right"
             small
-            @scroll="handleSCroll"
+            @scroll="handleScroll"
           >
-            <b-nav-item to="/" v-b-tooltip.hover.bottom title="About me">
+            <b-nav-item to="/" v-b-tooltip.hover.bottom title="About me" exact-active-class="active">
               <i class="material-icons">home</i>Home
             </b-nav-item>
-            <b-nav-item to="/projects" v-b-tooltip.hover.bottom title="My Creations">
+            <b-nav-item to="/projects" v-b-tooltip.hover.bottom title="My Creations" exact-active-class="active">
               <i class="material-icons">all_inbox</i>Projects
             </b-nav-item>
-            <b-nav-item to="/quotes" v-b-tooltip.hover.bottom title="My Sayings">
+            <b-nav-item to="/quotes" v-b-tooltip.hover.bottom title="My Sayings" exact-active-class="active">
               <i class="material-icons">record_voice_over</i>Quotes
             </b-nav-item>
-            <b-nav-item to="/gallery" v-b-tooltip.hover.bottom title="Images">
+            <b-nav-item to="/gallery" v-b-tooltip.hover.bottom title="Images" exact-active-class="active">
               <i class="material-icons">perm_media</i>Gallery
             </b-nav-item>
-            <b-nav-item to="/hire-Hasil" v-b-tooltip.hover.bottom title="My Skills">
+            <b-nav-item to="/hire-Hasil" v-b-tooltip.hover.bottom title="My Skills" exact-active-class="active">
               <i class="material-icons">work</i>Hire Me
             </b-nav-item>
           </b-nav>
@@ -116,6 +129,12 @@
 
   .nav-item:hover {
     transform: scale(1.1);
+  }
+
+  .active {
+  background: radial-gradient(#ac252d -30%, #e6a410 130%);
+    border-radius: 15px;
+    height: 100%;
   }
 }
 body {
@@ -245,11 +264,11 @@ export default {
       ],
       quoteKey: 3,
       navoffset: 0,
-      autoToasterId: null,
+      autoToasterId: null
     };
   },
   methods: {
-    handleSCroll() {
+    handleScroll() {
       // fixing the navbar only on home page
       if (this.$router.history.current.name == "home") {
         let header = document.querySelector(".nav");
@@ -292,11 +311,11 @@ export default {
     },
     autoToaster() {
       this.autoToasterId = setInterval(() => {
-        this.$bvToast.toast('Hello there', {
+        this.$bvToast.toast("Hello there", {
           title: "Hello",
           autoHideDelay: 5000,
-          toaster: 'b-toaster-bottom-right',
-          variant: 'info',
+          toaster: "b-toaster-bottom-right",
+          variant: "info",
           appendToast: true
         });
       }, 4000);
@@ -306,7 +325,7 @@ export default {
     if (this.isMobile()) {
       window.location = "//amp.hasilpaudyal.com.np";
     }
-    window.addEventListener("scroll", this.handleSCroll);
+    window.addEventListener("scroll", this.handleScroll);
     this.$router.history.current.name == "home"
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
