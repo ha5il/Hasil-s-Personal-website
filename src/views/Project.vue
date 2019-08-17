@@ -5,7 +5,8 @@
         <b-card>
           <div class="card-title">
             {{project.name}}
-            <b-link v-show="project.website" :href="project.website" target="_blank">
+            <b-link v-show="project.website" :href="project.website" target="_blank"
+              v-b-tooltip.hover.right title="Visit Website">
               <i class="material-icons">launch</i>
             </b-link>
           </div>
@@ -75,6 +76,7 @@
 
       h5 {
         font-size: 16px;
+        padding: 8px 0px;
       }
 
       .material-icons {

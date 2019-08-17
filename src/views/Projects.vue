@@ -1,7 +1,7 @@
 <template>
   <div id="projects" class="mt-5">
     <div>
-      <b-carousel id="carousel-fade" fade indicators controls img-width="1024" img-height="480">
+      <!-- <b-carousel id="carousel-fade" fade indicators controls img-width="1024" img-height="480">
         <b-carousel-slide
           v-for="(slide, idx) in projects"
           v-if="slide.type=='it'"
@@ -10,7 +10,7 @@
           :text="slide.tagLine"
           :img-src="slide.coverImage"
         ></b-carousel-slide>
-      </b-carousel>
+      </b-carousel> -->
     </div>
     <h4 class="p-3">IT Projects</h4>
     <b-row>
