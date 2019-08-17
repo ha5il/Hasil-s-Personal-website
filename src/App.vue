@@ -33,10 +33,10 @@
             </b-card-text>
             <div>
               <b-link to="//np.linkedin.com/in/hasil" target="_blank">
-                <img class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
+                <img v-b-tooltip.hover.bottom title="Let's get connected for work" class="social-icon" src="/linkedin.svg" alt="linkedin" width="20%" />
               </b-link>
               <b-link to="//facebook.com/hasill" target="_blank">
-                <img src="/facebook.svg" alt="facebook" width="20%" />
+                <img v-b-tooltip.hover.bottom title="Let's get connected as friend" src="/facebook.svg" alt="facebook" width="20%" />
               </b-link>
             </div>
           </b-card>
@@ -49,19 +49,19 @@
             small
             @scroll="handleSCroll"
           >
-            <b-nav-item to="/">
+            <b-nav-item to="/" v-b-tooltip.hover.bottom title="About me">
               <i class="material-icons">home</i>Home
             </b-nav-item>
-            <b-nav-item to="/projects">
+            <b-nav-item to="/projects" v-b-tooltip.hover.bottom title="My Creations">
               <i class="material-icons">all_inbox</i>Projects
             </b-nav-item>
-            <b-nav-item to="/quotes">
+            <b-nav-item to="/quotes" v-b-tooltip.hover.bottom title="My Sayings">
               <i class="material-icons">record_voice_over</i>Quotes
             </b-nav-item>
-            <b-nav-item to="/gallery">
+            <b-nav-item to="/gallery" v-b-tooltip.hover.bottom title="Images">
               <i class="material-icons">perm_media</i>Gallery
             </b-nav-item>
-            <b-nav-item to="/hire-Hasil">
+            <b-nav-item to="/hire-Hasil" v-b-tooltip.hover.bottom title="My Skills">
               <i class="material-icons">work</i>Hire Me
             </b-nav-item>
           </b-nav>
@@ -148,13 +148,13 @@ body {
 
   @keyframes pulse {
     0% {
-      text-shadow: 0 0 0 rgba(110, 22, 28, 0.4);
+      text-shadow: 0 0 0 #e6a42f;
     }
     70% {
-      text-shadow: 0 0 100px rgba(110, 22, 28, 0);
+      text-shadow: 0 0 100px #e6a42f;
     }
     100% {
-      text-shadow: 0 0 100px rgba(110, 22, 28, 0);
+      text-shadow: 0 0 100px #e6a42f;
     }
   }
 
