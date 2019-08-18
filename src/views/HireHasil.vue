@@ -2,13 +2,18 @@
   <div id="hire-hasil" class="mt-5">
     <h4>Interested in teaming up with me?</h4>
     <b-row>
-      <b-col cols="4" v-for="(skillData, idx) in skills" :key="idx">
+      <b-col cols="6" v-for="(skillData, idx) in skills" :key="idx">
         <b-card class="mb-3" :title="skillData.title">
           <b-card-text>
-            <span v-for="data in skillData.data" :key="data">
-              {{data}}
-              <b-table striped hover :items="data"></b-table>
-            </span>
+            <b-list-group flush>
+              <b-list-group-item
+                v-for="(list, idxList) in skillData.lists"
+                :key="idxList"
+                class="d-flex justify-content-between align-items-center"
+              >
+                {{list.text}}
+              </b-list-group-item>
+            </b-list-group>
           </b-card-text>
         </b-card>
       </b-col>
@@ -49,12 +54,58 @@ export default {
     return {
       skills: [
         {
-          title: "OS",
-          data: [
-             { age: 'Linux', first_name: 'Windows', last_name: 'macOS' },
-             {under: 'construction!'}
-          ],
-        }
+            title: 'OS',
+            lists:
+                [{
+                    text: 'Linux'
+                }, {
+                    text: 'Windows'
+                }, {
+                    text: 'macOS'
+                }],
+        },{
+            title: 'Hardware/Software Platforms',
+            lists:
+                [{
+                    text: 'Laravel'
+                }, {
+                    text: 'Arduino'
+                }, {
+                    text: 'October CMS'
+                }, {
+                    text: 'Vuejs'
+                }],
+        },{
+            title: 'Tools I am familiar with',
+            lists:
+                [{
+                    text: 'Photoshop'
+                },{
+                    text: 'XD'
+                }, {
+                    text: 'AutoCAD'
+                }, {
+                    text: 'Android and Visual Studio'
+                }, {
+                    text: 'Primavera'
+                }, {
+                    text: 'MiPower'
+                }],
+        },{
+            title: 'What can I build / devlop...',
+            lists:
+                [{
+                    text: 'Script for scrapping, processing and storing data'
+                }, {
+                    text: 'Highly Dynamic and Scalable web platform'
+                }, {
+                    text: 'Webapp and Android App'
+                }, {
+                    text: 'Graphic / UI design'
+                }, {
+                    text: 'Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore.'
+                }],
+        },
       ]
     }
   }

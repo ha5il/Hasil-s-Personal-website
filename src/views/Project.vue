@@ -28,7 +28,7 @@
               v-for="(para, idxPara) in detail.paragraphs"
               :key="idxPara"
             >{{para.text}}</p>
-            <b-list-group v-show="detail.lists">
+            <b-list-group v-show="detail.lists" flush>
               <b-list-group-item
                 v-for="(list, idxList) in detail.lists"
                 :key="idxList"

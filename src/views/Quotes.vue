@@ -12,6 +12,14 @@
         </b-card>
       </b-col>
     </b-row>
+    <div>
+    <b-embed
+      type="iframe"
+      aspect="16by9"
+      src="https://read.amazon.com/kp/card?asin=B01M99C005&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_1LlwDb4A0SXAB"
+      allowfullscreen
+    ></b-embed>
+  </div>
   </div>
 </template>
 

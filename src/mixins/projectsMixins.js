@@ -135,7 +135,7 @@ const projects = [
                     text: 'Database Relations and Laravel Eloquent'
                 }, {
                     category: 'Security',
-                    text: 'Shipment tracking and Reward Points as per its status'
+                    text: 'Shipment tracking and Reward Points as per order item status'
                 }],
         }]
     },
