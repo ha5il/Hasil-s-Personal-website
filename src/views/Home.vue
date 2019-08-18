@@ -1,7 +1,7 @@
 <template>
   <div id="homepage" class="section">
     <b-row class="pt-3">
-      <b-col>
+      <b-col sm="12" md="6">
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">sentiment_satisfied_alt</i>
@@ -50,7 +50,7 @@
           </b-card-text>
         </b-card>
       </b-col>
-      <b-col>
+      <b-col sm="12" md="6">
         <b-img class="pb-3" src="/timeline.png" fluid alt="Hasil Timeline"></b-img>
       </b-col>
     </b-row>

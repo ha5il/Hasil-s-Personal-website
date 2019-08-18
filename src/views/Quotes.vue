@@ -1,7 +1,7 @@
 <template>
   <div id="quotes" class="mt-5">
     <b-row>
-      <b-col cols="4" v-for="(quote, idx) in quotes" :key="idx">
+      <b-col sm="12" md="4" v-for="(quote, idx) in quotes" :key="idx">
         <b-card class="mb-3">
           <b-card-text>
             <span v-for="quoteLine in quote" :key="quoteLine">
@@ -26,6 +26,10 @@
 <style lang="scss">
 #quotes {
   min-height: 90vh;
+
+  @media (max-width: 576px) {
+    margin-top: 85px !important;
+  }
 
   .card {
     border: none;

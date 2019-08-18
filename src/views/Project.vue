@@ -49,6 +49,10 @@
 #project {
   min-height: 90vh;
 
+  @media (max-width: 576px) {
+    margin-top: 85px !important;
+  }
+
   .card {
     border: none;
     box-shadow: 0px 0px 10px 0px #d0d0d0;

@@ -1,21 +1,21 @@
 <template>
   <div id="gallery" class="mt-5">
     <b-row>
-      <b-col>
+      <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImages" :key="idx">
           <b-card v-show="Math.floor(idx/3)==idx/3" class="m-3">
             <img :src="image" width="100%" />
           </b-card>
         </b-row>
       </b-col>
-      <b-col>
+      <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImages" :key="idx">
           <b-card v-show="Math.floor((idx+1)/3)==(idx+1)/3" class="m-3">
             <img :src="image" width="100%" />
           </b-card>
         </b-row>
       </b-col>
-      <b-col>
+      <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImages" :key="idx">
           <b-card v-show="Math.floor((idx+2)/3)==(idx+2)/3" class="m-3">
             <img :src="image" width="100%" />
@@ -29,6 +29,10 @@
 <style lang="scss">
 #gallery {
   min-height: 90vh;
+
+  @media (max-width: 576px) {
+    margin-top: 85px !important;
+  }
 
   .card {
     border: none;

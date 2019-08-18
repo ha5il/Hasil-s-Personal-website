@@ -2,7 +2,7 @@
   <div id="hire-hasil" class="mt-5">
     <h4>Interested in teaming up with me?</h4>
     <b-row>
-      <b-col cols="6" v-for="(skillData, idx) in skills" :key="idx">
+      <b-col sm="12" md="6" v-for="(skillData, idx) in skills" :key="idx">
         <b-card class="mb-3" :title="skillData.title">
           <b-card-text>
             <b-list-group flush>
@@ -24,6 +24,10 @@
 <style lang="scss">
 #hire-hasil {
   min-height: 90vh;
+
+  @media (max-width: 576px) {
+    margin-top: 85px !important;
+  }
 
   .card {
     border: none;
