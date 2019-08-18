@@ -14,7 +14,7 @@
     </div>
     <h4 class="p-3">IT Projects</h4>
     <b-row>
-      <b-col cols="6" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
+      <b-col sm="12" md="6" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
         <router-link
           :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
           tag="div"
