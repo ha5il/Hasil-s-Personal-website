@@ -370,7 +370,6 @@ export default {
   mounted: function() {
     // disable tooltip for small screen
     if (window.innerWidth < 576) {
-      console.log("---");
       this.$root.$emit("bv::disable::tooltip");
     }
   },
