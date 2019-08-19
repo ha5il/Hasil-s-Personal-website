@@ -2,7 +2,12 @@
   <div id="app">
     <b-container fluid>
       <b-row class="pt-2">
-        <b-col v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}" sm="12" md="3" class="ml-2">
+        <b-col
+          v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}"
+          sm="12"
+          md="3"
+          class="ml-2"
+        >
           <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
             <b-card-text class="card-text-poem">
               <strong>H</strong>ere I am
@@ -318,7 +323,7 @@ export default {
       quoteKey: 3,
       navoffset: 0,
       autoToasterId: null,
-      windowInnerWidth: window.innerWidth,
+      windowInnerWidth: window.innerWidth
     };
   },
   methods: {
@@ -360,6 +365,13 @@ export default {
           appendToast: true
         });
       }, 4000);
+    }
+  },
+  mounted: function() {
+    // disable tooltip for small screen
+    if (window.innerWidth < 576) {
+      console.log("---");
+      this.$root.$emit("bv::disable::tooltip");
     }
   },
   created() {
