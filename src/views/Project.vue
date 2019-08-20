@@ -94,7 +94,6 @@
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
 
-import { serverBus } from "../main";
 export default {
   mixins: [projectsMixins],
   data() {

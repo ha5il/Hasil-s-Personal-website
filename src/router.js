@@ -40,10 +40,10 @@ export default new Router({
       name: "hire-hasil",
       component: () => import("@/views/HireHasil.vue")
     },
-    // {
-    //   path: "*",
-    //   name: "404*",
-    //   component: require("@/pages/404.vue").default // load sync home
-    // }
+    {
+      path: "*",
+      name: "404*",
+      redirect: { name: 'home' }
+    }
   ]
 })
