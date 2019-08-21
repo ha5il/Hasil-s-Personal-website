@@ -350,6 +350,15 @@ export const projectsMixins = {
                 default:
                     return 'dark';
             }
+        },
+        getProjectPageTitle(projectId) {
+            let returnData = null;
+            projects.forEach(project => {
+                if (project['id'] == projectId) {
+                    returnData = project['name'];
+                }
+            });
+            return "Project - " + returnData + " | Hasil's Personal Site";
         }
     }
 }

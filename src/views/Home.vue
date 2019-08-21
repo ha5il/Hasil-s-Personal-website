@@ -88,3 +88,13 @@
   }
 }
 </style>
+
+<script>
+
+export default {
+  created() {
+    document.title = "Hasil's Personal Site | Hasil Paudyal";
+  }
+}
+
+</script>

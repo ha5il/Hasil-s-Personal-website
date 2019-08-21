@@ -89,6 +89,7 @@ export default {
     };
   },
   created() {
+    document.title = "Gallery | Hasil's Personal Site";
     this.coverImages = _.shuffle(this.coverImages);
   }
 };

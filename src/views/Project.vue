@@ -102,6 +102,7 @@ export default {
     };
   },
   created() {
+    document.title = this.getProjectPageTitle(this.$router.history.current.params.id);
     let currentPageActualUrlSlug = this.getProjectUrlSlug(
       this.$router.history.current.params.id
     );

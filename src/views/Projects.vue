@@ -129,6 +129,7 @@ export default {
     };
   },
   created() {
+    document.title = "Projects | Hasil's Personal Site";
     this.projects = this.getAllProjects();
   }
 };

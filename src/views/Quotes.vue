@@ -52,6 +52,7 @@ import _ from "lodash";
 import app from "../App";
 export default {
   created() {
+    document.title = "Quotes | Hasil's Personal Site";
     this.quotes = _.shuffle(app.data().quotes);
   }
 };

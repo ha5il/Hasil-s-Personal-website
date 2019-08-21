@@ -112,6 +112,9 @@ export default {
         },
       ]
     }
+  },
+  created() {
+    document.title = "Hire Hasil | Hasil's Personal Site";
   }
 }
 </script>
