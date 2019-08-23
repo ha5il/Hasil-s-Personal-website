@@ -114,6 +114,9 @@
             >
               <i class="material-icons">work</i>Hire Me
             </b-nav-item>
+            <b-nav-item class="back" v-show="navBackShow" :to="navBackTo">
+              <i class="material-icons">arrow_back</i>
+            </b-nav-item>
           </b-nav>
           <transition name="fade">
             <router-view />
@@ -159,6 +162,12 @@
     z-index: 1;
     border-radius: 0px !important;
     width: 100% !important;
+
+    .back {
+      position: fixed;
+      left: 0;
+      top: 40px;
+    }
   }
 
   .material-icons {
@@ -323,7 +332,9 @@ export default {
       quoteKey: 3,
       navoffset: 0,
       autoToasterId: null,
-      windowInnerWidth: window.innerWidth
+      windowInnerWidth: window.innerWidth,
+      navBackShow: false,
+      navBackTo: null
     };
   },
   methods: {
@@ -383,6 +394,15 @@ export default {
   watch: {
     $route(to) {
       to.name == "home" ? (this.isHomePage = true) : (this.isHomePage = false);
+      if (window.innerWidth < 576) {
+        if (to.name == "project") {
+          this.navBackShow = true;
+          this.navBackTo = "/projects";
+        } else {
+          this.navBackShow = false;
+          this.navBackTo = null;
+        }
+      }
     }
   }
 };
