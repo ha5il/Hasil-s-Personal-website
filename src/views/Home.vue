@@ -1,7 +1,7 @@
 <template>
   <div id="homepage" class="section">
     <b-row class="pt-3">
-      <b-col sm="12" md="6">
+      <b-col sm="12" md="8">
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">sentiment_satisfied_alt</i>
@@ -50,8 +50,10 @@
           </b-card-text>
         </b-card>
       </b-col>
-      <b-col sm="12" md="6">
-        <b-img class="pb-3" src="/timeline.png" fluid alt="Hasil Timeline"></b-img>
+      <b-col sm="12" md="4">
+        <b-card class="timeline" no-body>
+          <b-img src="/timeline.png" fluid-grow alt="Hasil Timeline"></b-img>
+        </b-card>
       </b-col>
     </b-row>
   </div>
@@ -85,6 +87,12 @@
 
   .justified {
     text-align: justify;
+  }
+
+  @media (max-width: 576px) {
+    .timeline {
+      margin-top: 20px;
+    }
   }
 }
 </style>
