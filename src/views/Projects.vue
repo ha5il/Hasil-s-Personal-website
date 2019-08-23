@@ -39,13 +39,23 @@
             </b-card-text>
           </b-card>
         </router-link>
-        <b-tooltip :target="'project-'+idx" placement="bottom" title="Read More..."></b-tooltip>
+        <b-tooltip :target="'project-'+idx" placement="bottom" title="Know More..."></b-tooltip>
       </b-col>
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
     <b-row>
       <b-col cols="12" v-for="(project, idx) in projects" v-if="project.type=='ee'" :key="idx">
+        <router-link
+          :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
+          tag="div"
+        >
         <b-card class="mb-3" :title="project.name">
+          <h5 class="text-info">
+            <span v-for="(tech,idx) in project.technologies" :key="idx">
+              <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
+              <span v-else>{{tech}} | </span>
+            </span>
+          </h5>
           <b-card-text>
             {{project.tagLine}}
             <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
@@ -58,6 +68,7 @@
             </b-progress>
           </b-card-text>
         </b-card>
+        </router-link>
       </b-col>
     </b-row>
   </div>

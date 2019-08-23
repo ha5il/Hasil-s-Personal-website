@@ -41,7 +41,7 @@ const projects = [
                 }, {
                     category: 'Marketing',
                     text: 'Promo Codes and Discount Management'
-                },{
+                }, {
                     category: 'Feature',
                     text: 'Order Status/Report management'
                 }],
@@ -206,12 +206,12 @@ const projects = [
                 [{
                     category: 'Backend',
                     text: 'Blog Post Management'
-                },{
+                }, {
                     category: 'Marketing',
                     text: 'Highlight blog post'
                 }],
         }]
-    },{
+    }, {
         name: "Fixolla",
         tagLine:
             "Online mobile and laptop repair in Bangalore.",
@@ -243,7 +243,7 @@ const projects = [
                 [{
                     category: 'Feature',
                     text: 'Android App'
-                },{
+                }, {
                     category: 'Feature',
                     text: 'API'
                 }, {
@@ -259,6 +259,8 @@ const projects = [
         name: "RFID Limitor",
         tagLine: "An Arduino UNO based project for limiting the RFID Scans.",
         type: "ee",
+        urlSlug: "rfid-limitor-arduino-uno-limiting-scans",
+        id: 8,
         technologies: ['Arduino'],
         contributionLevels: {
             'C/C++': 30,
@@ -270,6 +272,8 @@ const projects = [
         tagLine:
             "Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!",
         type: "ee",
+        urlSlug: "rabc-analyser-windows-console-app-danube-international-washer-extractor",
+        id: 9,
         technologies: ['Visual Studio'],
         contributionLevels: {
             'C++': 80,
@@ -281,6 +285,8 @@ const projects = [
         tagLine:
             "This device detects, locates and terminates the electricity thief from the supply line.",
         type: "ee",
+        urlSlug: "electrical-electricity-thief-automatic-remover-supply-line",
+        id: 10,
         technologies: ['Arduino'],
         contributionLevels: {
             'C/C++': 40,
@@ -293,6 +299,8 @@ const projects = [
         tagLine:
             "An Arduino UNO based project for realtime data recording and analysis.",
         type: "ee",
+        urlSlug: "electrical-device-performance-tracker-analyser-realtime",
+        id: 11,
         technologies: ['Arduino', 'PHP'],
         contributionLevels: {
             'C/C++': 25,

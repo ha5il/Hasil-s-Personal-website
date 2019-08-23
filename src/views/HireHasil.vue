@@ -10,9 +10,7 @@
                 v-for="(list, idxList) in skillData.lists"
                 :key="idxList"
                 class="d-flex justify-content-between align-items-center"
-              >
-                {{list.text}}
-              </b-list-group-item>
+              >{{list.text}}</b-list-group-item>
             </b-list-group>
           </b-card-text>
         </b-card>
@@ -35,7 +33,7 @@
   }
 
   .card-title {
-    color: #E6A410;
+    color: #e6a410;
     font-weight: normal;
   }
 
@@ -52,69 +50,96 @@
 
 
 <script>
-
 export default {
   data() {
     return {
       skills: [
         {
-            title: 'OS',
-            lists:
-                [{
-                    text: 'Linux'
-                }, {
-                    text: 'Windows'
-                }, {
-                    text: 'macOS'
-                }],
-        },{
-            title: 'Hardware/Software Platforms',
-            lists:
-                [{
-                    text: 'Laravel'
-                }, {
-                    text: 'Arduino'
-                }, {
-                    text: 'October CMS'
-                }, {
-                    text: 'Vuejs'
-                }],
-        },{
-            title: 'Tools I am familiar with',
-            lists:
-                [{
-                    text: 'Photoshop'
-                },{
-                    text: 'XD'
-                }, {
-                    text: 'AutoCAD'
-                }, {
-                    text: 'Android and Visual Studio'
-                }, {
-                    text: 'Primavera'
-                }, {
-                    text: 'MiPower'
-                }],
-        },{
-            title: 'What can I build / devlop...',
-            lists:
-                [{
-                    text: 'Script for scrapping, processing and storing data'
-                }, {
-                    text: 'Highly Dynamic and Scalable web platform'
-                }, {
-                    text: 'Webapp and Android App'
-                }, {
-                    text: 'Graphic / UI design'
-                }, {
-                    text: 'Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore.'
-                }],
+          title: "What can I build / devlop...",
+          lists: [
+            {
+              text: "Script for scrapping, processing and storing data"
+            },
+            {
+              text: "Highly Dynamic and Scalable web platform"
+            },
+            {
+              text: "Webapp and Android App"
+            },
+            {
+              text: "Graphic / UI design"
+            },
+            {
+              text:
+                "Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore."
+            },
+            {
+              text: "Dynamic Accelerated mobile page generator for advance SEO."
+            }
+          ]
         },
+        {
+          title: "OS",
+          lists: [
+            {
+              text: "Linux"
+            },
+            {
+              text: "Windows"
+            },
+            {
+              text: "macOS"
+            }
+          ]
+        },
+        {
+          title: "Hardware/Software Platforms",
+          lists: [
+            {
+              text: "Laravel"
+            },
+            {
+              text: "Arduino"
+            },
+            {
+              text: "October CMS"
+            },
+            {
+              text: "Vuejs"
+            },
+            {
+              text: "AMP"
+            }
+          ]
+        },
+        {
+          title: "Tools I am familiar with",
+          lists: [
+            {
+              text: "Photoshop"
+            },
+            {
+              text: "XD"
+            },
+            {
+              text: "AutoCAD"
+            },
+            {
+              text: "Android and Visual Studio"
+            },
+            {
+              text: "Primavera"
+            },
+            {
+              text: "MiPower"
+            }
+          ]
+        }
       ]
-    }
+    };
   },
   created() {
     document.title = "Hire Hasil | Hasil's Personal Site";
   }
-}
+};
 </script>

@@ -10,13 +10,13 @@
               <i class="material-icons">launch</i>
             </b-link>
           </div>
-          <b-progress class="mb-3" v-show="project.contributionLevels" show-value>
+          <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
               v-for="(level, idxLevel) in project.contributionLevels"
               :key="idxLevel"
               :value="level"
               :variant="getVariant(idxLevel)"
-            >{{idxLevel}}</b-progress-bar>
+            >{{idxLevel}}<strong>{{level}}%</strong></b-progress-bar>
           </b-progress>
           <b-card-text v-for="(detail, idx) in project.details" :key="idx">
             <h5 class="text-info">
