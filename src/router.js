@@ -41,6 +41,10 @@ export default new Router({
       component: () => import("@/views/HireHasil.vue")
     },
     {
+      path: "/performance-analysis",
+      redirect: { name: 'project', params: { id: 11, urlSlug: 'electrical-device-performance-tracker-analyser-realtime' }}
+    },
+    {
       path: "*",
       name: "404*",
       redirect: { name: 'home' }

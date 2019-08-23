@@ -9,6 +9,8 @@
               v-b-tooltip.hover.right title="Visit Website">
               <i class="material-icons">launch</i>
             </b-link>
+            <b-badge v-show="project.sourceCode" pill :href="project.sourceCode"
+            variant="info" target="_blank">Source Code<i class="material-icons">launch</i></b-badge>
           </div>
           <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
@@ -68,6 +70,19 @@
 
       .material-icons {
         vertical-align: middle;
+      }
+
+      .badge {
+        float: right;
+        font-size: 50%;
+        color: #ffffff;
+        margin-top: 10px;
+
+        .material-icons {
+          font-size: 100%;
+          margin-left: 2px;
+          vertical-align: bottom;
+        }
       }
     }
 

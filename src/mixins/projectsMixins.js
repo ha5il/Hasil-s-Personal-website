@@ -17,6 +17,14 @@ const projects = [
             Teammates: 25,
         },
         details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'KTM Retail is created for authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allows user to purchase items, with digital payment and track its status. It also has reliable options to activate offers and flash sale during festivals.'
+                }
+            ],
+        }, {
             title: 'My Task',
             titleIcon: 'code',
             lists:
@@ -106,6 +114,14 @@ const projects = [
             Teammates: 20,
         },
         details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since the plugin is not targeted to Neplease market we had to built a better platform than that. Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
+                }
+            ],
+        }, {
             title: 'My Task',
             titleIcon: 'code',
             lists:
@@ -154,6 +170,14 @@ const projects = [
             Teammates: 90,
         },
         details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with an advanced and scientific management using world class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customised requirements and by virtue of more than decade and half long experience, we are aware of the type and sensitivity of consignment; process of delivery; standard POD requirements and delivery time schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
+                }
+            ],
+        }, {
             title: 'My Task',
             titleIcon: 'code',
             lists:
@@ -177,12 +201,23 @@ const projects = [
             Teammates: 90,
         },
         details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Meropharmacist is the first of its kind to provide the counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted on serious medicine related concerns like drug overuse, misuse , adverse drug reactions and lack of patient compliance.'
+                }
+            ],
+        }, {
             title: 'My Task',
             titleIcon: 'code',
             lists:
                 [{
                     category: 'Frontend',
-                    text: 'Social login and share'
+                    text: 'Social login'
+                }, {
+                    category: 'Marketing',
+                    text: 'Blog share feature'
                 }],
         }]
     },
@@ -200,6 +235,14 @@ const projects = [
             Teammates: 70,
         },
         details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all they posses smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
+                }
+            ],
+        }, {
             title: 'My Task',
             titleIcon: 'code',
             lists:
@@ -266,6 +309,33 @@ const projects = [
             'C/C++': 30,
             Hardware: 70,
         },
+        sourceCode: "//github.com/ha5il/RFID-Limiter",
+        details: [{
+            title: 'Project Overview',
+            titleIcon: 'receipt',
+            paragraphs: [
+                {
+                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I build the device with option to limit the number of authoriations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Count card scans'
+                }, {
+                    category: 'Feature',
+                    text: 'Warn on last scan'
+                }, {
+                    category: 'Security',
+                    text: 'Visual notification on false card or revoked card'
+                }, {
+                    category: 'Security',
+                    text: 'Log scan history with timestamp to SD card'
+                }],
+        }]
     },
     {
         name: "RABC Analyser",
@@ -279,6 +349,30 @@ const projects = [
             'C++': 80,
             'C#': 20,
         },
+        sourceCode: "//github.com/ha5il/RABC-Analyser",
+        details: [{
+            title: 'Project Overview',
+            titleIcon: 'receipt',
+            paragraphs: [
+                {
+                    text: 'Danube International Washer Extractor keeps the record of washes done in the machine with timestamp. The app is made to calculate total kgs of washes done by machine to report the laundry owner so that he can cross check it with revenue collected.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'CSV Export of raw data for further analysis on Excel '
+                }, {
+                    category: 'Feature',
+                    text: 'View the daily wash load without any export'
+                }, {
+                    category: 'Feature',
+                    text: 'GUI app in C#'
+                }],
+        }]
     },
     {
         name: "Electrical Thief Eliminator",
@@ -293,6 +387,29 @@ const projects = [
             Hardware: 30,
             Teammates: 30,
         },
+        details: [{
+            title: 'Project Overview',
+            titleIcon: 'receipt',
+            paragraphs: [
+                {
+                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegaly by way of tapping get impaired. This operation is transient ( for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus autocad 8.6. The process thus developed is effective and reliable.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Visual Indication when theft is live'
+                }, {
+                    category: 'Security',
+                    text: 'Eliminator Initialization'
+                }, {
+                    category: 'Simulation',
+                    text: 'Modeling ans simulation on Proteus'
+                }],
+        }]
     },
     {
         name: "Electrical Performance Analyser",
@@ -308,6 +425,36 @@ const projects = [
             Hardware: 40,
             Teammates: 25,
         },
+        sourceCode: '//github.com/ha5il/Electrical-Performance-Analyzer',
+        details: [{
+            title: 'Project Overview',
+            titleIcon: 'receipt',
+            paragraphs: [
+                {
+                    text: 'Electrical performance analysis includes crucial for advancement of any system in futureto the necessary practical level. This project is carried out with an objectiveto carry out performance analysis of some electrical devices like transformer,motor, generator in terms of its speed, temperature, voltage and current theparameters of respective device is recorded using dedicated sensors deployedacross the project module. The project module includes the runtime javaapplication along with Arduino interface environment whichautomatically detects the faults across the electrical devices and classifiesit with the fault details. Based on the specifications of the devices, the pre set value for sensors is modifiedusing Java and Arduino interface such that it automatically detects basicfaults. Moreover, analysis of continuous data collected in periodic intervalsfrom several motors helps in improvising them to the latest industrial demand.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Simulation',
+                    text: 'Modeling ans simulation on Proteus'
+                }, {
+                    category: 'Feature',
+                    text: 'Visual Indication of device health'
+                }, {
+                    category: 'Feature',
+                    text: 'Raw data analysis by PHP'
+                }, {
+                    category: 'Feature',
+                    text: 'Realtime serial data transfer by bluetooth module'
+                }, {
+                    category: 'Feature',
+                    text: 'Windows console app to analyse raw SD Card data'
+                }],
+        }]
     }
 ];
 
