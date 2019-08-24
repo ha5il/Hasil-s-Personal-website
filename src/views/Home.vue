@@ -105,6 +105,10 @@ export default {
   created() {
     document.title = "Hasil's Personal Site | Hasil Paudyal";
     this.injectDefaultSchemaJSON('hasil');
+  },
+  beforeRouteLeave(to, from, next) {
+    this.clearSchemaJSON();
+    next();
   }
 };
 </script>

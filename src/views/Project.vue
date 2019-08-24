@@ -124,9 +124,10 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
+import { schemaMixins } from "../mixins/schemaMixins.js";
 
 export default {
-  mixins: [projectsMixins],
+  mixins: [projectsMixins, schemaMixins],
   data() {
     return {
       project: null
@@ -158,6 +159,17 @@ export default {
     this.project = this.getProjectDetails(
       this.$router.history.current.params.id
     );
+    this.injectSchemaJSON(`
+    {
+      "@context": "http://schema.org",
+      "@type": "CreativeWork",
+      "name": "`+ this.project.name +`"
+    }
+    `);
+  },
+  beforeRouteLeave(to, from, next) {
+    this.clearSchemaJSON();
+    next();
   }
 };
 </script>
