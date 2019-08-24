@@ -2,7 +2,7 @@
   <div id="hire-hasil" class="mt-5">
     <h4>Interested in teaming up with me?</h4>
     <b-row>
-      <b-col sm="12" md="6" v-for="(skillData, idx) in skills" :key="idx">
+      <b-col sm="12" :md="skillData.cols" v-for="(skillData, idx) in skills" :key="idx">
         <b-card class="mb-3" :title="skillData.title">
           <b-card-text>
             <b-list-group flush>
@@ -56,6 +56,7 @@ export default {
       skills: [
         {
           title: "What can I build / devlop...",
+          cols: 8,
           lists: [
             {
               text: "Script for scrapping, processing and storing data"
@@ -80,6 +81,7 @@ export default {
         },
         {
           title: "OS",
+          cols: 4,
           lists: [
             {
               text: "Linux"
@@ -94,6 +96,7 @@ export default {
         },
         {
           title: "Hardware/Software Platforms",
+          cols: 6,
           lists: [
             {
               text: "Laravel"
@@ -114,6 +117,7 @@ export default {
         },
         {
           title: "Tools I am familiar with",
+          cols: 6,
           lists: [
             {
               text: "Photoshop"
