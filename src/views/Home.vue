@@ -104,22 +104,7 @@ export default {
   mixins: [schemaMixins],
   created() {
     document.title = "Hasil's Personal Site | Hasil Paudyal";
-
-    // inject schema data
-    var schemaJson = document.getElementById("schemaJSON");
-    if (!schemaJson) {
-      schemaJson = document.createElement("script");
-      schemaJson.type = "application/ld+json";
-      schemaJson.id = "schemaJSON";
-    }
-    var schemaJsonCode = this.getSchemaJSON("hasil");
-    try {
-      schemaJson.appendChild(document.createTextNode(code));
-      document.body.appendChild(schemaJson);
-    } catch (e) {
-      schemaJson.text = this.getSchemaJSON("hasil");
-      document.body.appendChild(schemaJson);
-    }
+    this.injectDefaultSchemaJSON('hasil');
   }
 };
 </script>

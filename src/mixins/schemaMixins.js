@@ -1,6 +1,5 @@
-const schemas = [
-    {
-        slug: 'hasil',
+const globalSchemas = {
+    hasil: {
         "@context": "http://schema.org",
         "@type": "Person",
         name: "Hasil Paudyal",
@@ -17,18 +16,26 @@ const schemas = [
         ],
         honorificPrefix: "Er"
     }
-];
+};
 
 export const schemaMixins = {
     methods: {
-        getSchemaJSON(schemaSlug) {
-            let returnData = null;
-            schemas.forEach(schema => {
-                if (schema['slug'] == schemaSlug) {
-                    returnData = schema;
-                }
-            });
-            return JSON.stringify(returnData);
+        clearSchemaJSON() {
+            document.getElementById("schemaJSON").innerHTML = '';
+        },
+        injectSchemaJSON(schemaJsonCode) {
+            this.clearSchemaJSON();
+            var schemaJson = document.getElementById("schemaJSON");
+            try {
+                schemaJson.appendChild(document.createTextNode(schemaJsonCode));
+                document.body.appendChild(schemaJson);
+            } catch (e) {
+                schemaJson.text = schemaJsonCode;
+                document.body.appendChild(schemaJson);
+            }
+        },
+        injectDefaultSchemaJSON(globalSchemasKey){
+            this.injectSchemaJSON(JSON.stringify(globalSchemas[globalSchemasKey]));
         }
     }
 }
