@@ -21,7 +21,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'KTM Retail is created for authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allows user to purchase items, with digital payment and track its status. It also has reliable options to activate offers and flash sale during festivals.'
+                    text: 'KTM Retail is created for authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allows user to purchase items with digital payment and track its status. It also has reliable options for admin to activate offers and flash sale during festivals.'
                 }
             ],
         }, {
@@ -118,8 +118,11 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since the plugin is not targeted to Neplease market we had to built a better platform than that. Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
-                }
+                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since WooCommerce is not targeted to Neplease market we had to built a better platform than that.'
+                },
+                {
+                text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
+            }
             ],
         }, {
             title: 'My Task',
@@ -205,7 +208,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Meropharmacist is the first of its kind to provide the counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted on serious medicine related concerns like drug overuse, misuse , adverse drug reactions and lack of patient compliance.'
+                    text: 'Meropharmacist is the first of its kind to provide the counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted on serious medicine related concerns like drug overuse, misuse, adverse drug reactions and lack of patient compliance.'
                 }
             ],
         }, {
@@ -276,7 +279,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Fixolla takes gadget repairing to the next level. Their innovative backend system and unparalleled customer care for smartphones and laptops ensuring 100% customer satisfaction. From a broken screen to frozen OS, we fix it all.'
+                    text: 'Fixolla takes gadget repairing to the next level. Their innovative backend system and unparalleled customer care for smartphones and laptops ensuring 100% customer satisfaction. From a broken screen to frozen OS, they fix it all.'
                 }
             ],
         }, {
@@ -315,7 +318,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I build the device with option to limit the number of authoriations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
+                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with option to limit the number of authoriations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
                 }
             ],
         }, {
@@ -392,7 +395,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegaly by way of tapping get impaired. This operation is transient ( for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus autocad 8.6. The process thus developed is effective and reliable.'
+                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegaly by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus autocad 8.6. The process thus developed is effective and reliable.'
                 }
             ],
         }, {
@@ -431,7 +434,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'Electrical performance analysis includes crucial for advancement of any system in futureto the necessary practical level. This project is carried out with an objectiveto carry out performance analysis of some electrical devices like transformer,motor, generator in terms of its speed, temperature, voltage and current theparameters of respective device is recorded using dedicated sensors deployedacross the project module. The project module includes the runtime javaapplication along with Arduino interface environment whichautomatically detects the faults across the electrical devices and classifiesit with the fault details. Based on the specifications of the devices, the pre set value for sensors is modifiedusing Java and Arduino interface such that it automatically detects basicfaults. Moreover, analysis of continuous data collected in periodic intervalsfrom several motors helps in improvising them to the latest industrial demand.'
+                    text: 'Electrical performance analysis includes crucial for advancement of any system in future to the necessary practical level. This project is carried out with an objective to carry out performance analysis of some electrical devices like transformer, motor, generator in terms of its speed, temperature, voltage and current the parameters of respective device is recorded using dedicated sensors deployed across the project module. The project module includes the runtime java application along with Arduino interface environment which automatically detects the faults across the electrical devices and classifies it with the fault details. Based on the specifications of the devices, the pre set value for sensors is modified using Java and Arduino interface such that it automatically detects basic faults. Moreover, analysis of continuous data collected in periodic intervals from several motors helps in improvising them to the latest industrial demand.'
                 }
             ],
         }, {

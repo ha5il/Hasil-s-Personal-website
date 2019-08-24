@@ -5,17 +5,17 @@
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">sentiment_satisfied_alt</i>
-              Who am I?
-            </b-card-title>
+            Who am I?
+          </b-card-title>
           <b-card-text
             class="justified"
           >Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. Though having Graduation of Electrical Engineering I do have skills in Design, Web Development, Electrical repair and Electronics simulation. Out of the box, I write poems, speak quotes and try altering cloud saved data.</b-card-text>
         </b-card>
         <b-card>
-            <b-card-title>
+          <b-card-title>
             <i class="material-icons">work</i>
-              What I do?
-            </b-card-title>
+            What I do?
+          </b-card-title>
           <b-card-text>
             <span class="text-info">
               Web Developer at View9 | Nepal
@@ -69,7 +69,7 @@
   }
 
   .card-title {
-    color: #E6A410;
+    color: #e6a410;
 
     .material-icons {
       vertical-align: top;
@@ -98,11 +98,28 @@
 </style>
 
 <script>
+import { schemaMixins } from "../mixins/schemaMixins.js";
 
 export default {
+  mixins: [schemaMixins],
   created() {
     document.title = "Hasil's Personal Site | Hasil Paudyal";
-  }
-}
 
+    // inject schema data
+    var schemaJson = document.getElementById("schemaJSON");
+    if (!schemaJson) {
+      schemaJson = document.createElement("script");
+      schemaJson.type = "application/ld+json";
+      schemaJson.id = "schemaJSON";
+    }
+    var schemaJsonCode = this.getSchemaJSON("hasil");
+    try {
+      schemaJson.appendChild(document.createTextNode(code));
+      document.body.appendChild(schemaJson);
+    } catch (e) {
+      schemaJson.text = this.getSchemaJSON("hasil");
+      document.body.appendChild(schemaJson);
+    }
+  }
+};
 </script>

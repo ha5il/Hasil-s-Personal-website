@@ -5,12 +5,25 @@
         <b-card>
           <div class="card-title">
             {{project.name}}
-            <b-link v-show="project.website" :href="project.website" target="_blank"
-              v-b-tooltip.hover.right title="Visit Website">
+            <b-link
+              v-show="project.website"
+              :href="project.website"
+              target="_blank"
+              v-b-tooltip.hover.right
+              title="Visit Website"
+            >
               <i class="material-icons">launch</i>
             </b-link>
-            <b-badge v-show="project.sourceCode" pill :href="project.sourceCode"
-            variant="info" target="_blank">Source Code<i class="material-icons">launch</i></b-badge>
+            <b-badge
+              v-show="project.sourceCode"
+              pill
+              :href="project.sourceCode"
+              variant="info"
+              target="_blank"
+            >
+              Source Code
+              <i class="material-icons">launch</i>
+            </b-badge>
           </div>
           <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
@@ -18,7 +31,10 @@
               :key="idxLevel"
               :value="level"
               :variant="getVariant(idxLevel)"
-            >{{idxLevel}}<strong>{{level}}%</strong></b-progress-bar>
+            >
+              {{idxLevel}}
+              <strong>{{level}}%</strong>
+            </b-progress-bar>
           </b-progress>
           <b-card-text v-for="(detail, idx) in project.details" :key="idx">
             <h5 class="text-info">
@@ -117,7 +133,9 @@ export default {
     };
   },
   created() {
-    document.title = this.getProjectPageTitle(this.$router.history.current.params.id);
+    document.title = this.getProjectPageTitle(
+      this.$router.history.current.params.id
+    );
     let currentPageActualUrlSlug = this.getProjectUrlSlug(
       this.$router.history.current.params.id
     );
