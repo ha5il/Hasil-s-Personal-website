@@ -90,6 +90,8 @@ export default {
   },
   created() {
     document.title = "Gallery | Hasil's Personal Site";
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content', "Checkout photoshop skills and know more about Hasil.");
     this.coverImages = _.shuffle(this.coverImages);
   }
 };

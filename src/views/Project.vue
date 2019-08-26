@@ -137,11 +137,10 @@ export default {
     document.title = this.getProjectPageTitle(
       this.$router.history.current.params.id
     );
-    // todo
-    // var description = this.getProjectPageDescription(
-    //   this.$router.history.current.params.id
-    // );
-    // console.log(description);
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content',this.getProjectPageDescription(
+      this.$router.history.current.params.id
+    ));
     let currentPageActualUrlSlug = this.getProjectUrlSlug(
       this.$router.history.current.params.id
     );

@@ -518,23 +518,21 @@ export const projectsMixins = {
             });
             return "Project - " + returnData + " | Hasil's Personal Site";
         },
-        // todo
-        // getProjectPageDescription(projectId) {
-        //     let returnData = null;
-        //     projects.forEach(project => {
-        //         if (project['id'] == projectId) {
-        //             project['details'].forEach(detail => {
-        //                 if(detail['paragraphs'][0]){
-        //                     console.log('test')
-        //                     returnData = detail['paragraphs'][0]['text'];
-        //                 }
-        //             });
-        //         }
-        //     });
-        //     var trimmedString = returnData.substr(0, 158);
-        //     trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-        //     return trimmedString;
-        // }
+        getProjectPageDescription(projectId) {
+            let returnData = null;
+            projects.forEach(project => {
+                if (project['id'] == projectId) {
+                    project['details'].forEach(detail => {
+                        if(detail.paragraphs){
+                            returnData = detail['paragraphs'][0]['text'];
+                        }
+                    });
+                }
+            });
+            var trimmedString = returnData.substr(0, 158);
+            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
+            return trimmedString;
+        }
     }
 }
 

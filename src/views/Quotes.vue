@@ -53,6 +53,8 @@ import app from "../App";
 export default {
   created() {
     document.title = "Quotes | Hasil's Personal Site";
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content', "Collection of quotes by Hasil Paudyal.");
     this.quotes = _.shuffle(app.data().quotes);
   }
 };

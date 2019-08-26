@@ -104,6 +104,8 @@ export default {
   mixins: [schemaMixins],
   created() {
     document.title = "Hasil's Personal Site | Hasil Paudyal";
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content', 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.');
     this.injectDefaultSchemaJSON('hasil');
   },
   beforeRouteLeave(to, from, next) {

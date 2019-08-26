@@ -144,6 +144,8 @@ export default {
   },
   created() {
     document.title = "Hire Hasil | Hasil's Personal Site";
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content', "Let's team up and create something amazing. Know more about top listed web developer, electronics and electrical projects leader.");
   }
 };
 </script>
