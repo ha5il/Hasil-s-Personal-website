@@ -134,19 +134,13 @@ export default {
     };
   },
   created() {
-    document.title = this.getProjectPageTitle(
-      this.$router.history.current.params.id
-    );
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content',this.getProjectPageDescription(
-      this.$router.history.current.params.id
-    ));
     let currentPageActualUrlSlug = this.getProjectUrlSlug(
       this.$router.history.current.params.id
     );
     if (!currentPageActualUrlSlug) {
       // 404
-      this.$router.push("/");
+      this.$router.push({ name: "projects" });
+      return;
     }
     if (
       currentPageActualUrlSlug != this.$router.history.current.params.urlSlug
@@ -160,6 +154,13 @@ export default {
         }
       });
     }
+    document.title = this.getProjectPageTitle(
+      this.$router.history.current.params.id
+    );
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content',this.getProjectPageDescription(
+      this.$router.history.current.params.id
+    ));
     this.project = this.getProjectDetails(
       this.$router.history.current.params.id
     );

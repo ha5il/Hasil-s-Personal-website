@@ -122,10 +122,15 @@
             <router-view />
           </transition>
           <footer class="mt-3">
-            <span v-for="quoteLine in quotes[quoteKey]" :key="quoteLine">
-              {{quoteLine}}
-              <br />
-            </span>
+            <router-link
+              :to="{ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug }}"
+              tag="div"
+            >
+              <span v-for="quoteLine in footerQuote.quoteLines" :key="quoteLine">
+                {{quoteLine}}
+                <br />
+              </span>
+            </router-link>
           </footer>
         </b-col>
       </b-row>
@@ -261,6 +266,10 @@ footer {
   font-size: 10px;
   border-radius: 10px 10px 0px 0px;
   bottom: 0px;
+
+  span {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 576px) {
@@ -271,65 +280,15 @@ footer {
 </style>
 
 <script>
+import { quotesMixins } from "./mixins/quotesMixins.js";
+
 export default {
+  mixins: [quotesMixins],
   data() {
     return {
       isHomePage: true,
       changeQuote: false,
-      quotes: [
-        [
-          "May be its mine bad-luck",
-          "Or yours not to get me",
-          "But I still have hope",
-          "Of being yours"
-        ],
-        [
-          "If you know that I am genius",
-          "Then know that you made me genius",
-          "Everyone don't accept me as genius",
-          "Because they aren't genius to belief me as genius"
-        ],
-        [
-          "Life for me is just a result of experiments being performed by far more developed creatures."
-        ],
-        [
-          "Dream big!",
-          "But not so big that it becomes a mess, and you may never reach reality."
-        ],
-        [
-          "Dreaming of getting you",
-          "I loosed everything",
-          "Cheerfulness of smile",
-          "And all the dreams of life"
-        ],
-        [
-          "Give me another Chance",
-          "Then,",
-          "You will Get",
-          "Less than I Gain..."
-        ],
-        [
-          "When I was small I felt like a Superhero as my father threw me up in the air.",
-          "Now after reaching this success peak I unmask - Real Superhero made me Superhero!"
-        ],
-        [
-          "Congratulations to your mom and dad for birth of a sweet child!",
-          "",
-          "Sorry that I couldn't wish them when you were born."
-        ],
-        ["Oh great!", "I never recognized Sunshine shining me, within me."],
-        [
-          "I will miss you",
-          "not because you taught me,",
-          "not because you helped me on all steps of education;",
-          "but only because",
-          "you made me a leader to lead as an perfect Electrical Engineer."
-        ],
-        [
-          "Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own."
-        ]
-      ],
-      quoteKey: 3,
+      footerQuote: null,
       navoffset: 0,
       autoToasterId: null,
       windowInnerWidth: window.innerWidth,
@@ -362,7 +321,7 @@ export default {
         this.changeQuote &&
         window.pageYOffset + window.innerHeight < footer.offsetTop
       ) {
-        this.quoteKey = Math.floor(Math.random() * this.quotes.length); // Todo: 11+ is getting skipped
+        this.footerQuote = this.getRandomQuote();
         this.changeQuote = false;
       }
     },
@@ -389,6 +348,7 @@ export default {
     this.$router.history.current.name == "home"
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
+    this.footerQuote = this.getRandomQuote();
     // this.autoToaster();
   },
   watch: {
@@ -398,6 +358,9 @@ export default {
         if (to.name == "project") {
           this.navBackShow = true;
           this.navBackTo = "/projects";
+        } else if (to.name == "quote") {
+          this.navBackShow = true;
+          this.navBackTo = "/quotes";
         } else {
           this.navBackShow = false;
           this.navBackTo = null;

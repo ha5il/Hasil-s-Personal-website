@@ -2,14 +2,19 @@
   <div id="quotes" class="mt-5">
     <b-row>
       <b-col sm="12" md="4" v-for="(quote, idx) in quotes" :key="idx">
+        <router-link
+          :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
+          tag="div"
+        >
         <b-card class="mb-3">
           <b-card-text>
-            <span v-for="quoteLine in quote" :key="quoteLine">
+            <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
               {{quoteLine}}
               <br />
             </span>
           </b-card-text>
         </b-card>
+        </router-link>
       </b-col>
     </b-row>
     <div>
@@ -43,19 +48,21 @@
 
   .card:hover {
     transform: scale(1.04);
+    cursor: pointer;
   }
 }
 </style>
 
 <script>
-import _ from "lodash";
-import app from "../App";
+import { quotesMixins } from "../mixins/quotesMixins.js";
+
 export default {
+  mixins: [quotesMixins],
   created() {
     document.title = "Quotes | Hasil's Personal Site";
     document.querySelector('meta[name="description"]')
     .setAttribute('content', "Collection of quotes by Hasil Paudyal.");
-    this.quotes = _.shuffle(app.data().quotes);
+    this.quotes = this.getAllquotes();
   }
 };
 </script>

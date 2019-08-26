@@ -31,6 +31,11 @@ export default new Router({
       component: () => import("@/views/Project.vue")
     },
     {
+      path: "/quote/:id/:urlSlug",
+      name: "quote",
+      component: () => import("@/views/Quote.vue")
+    },
+    {
       path: "/gallery",
       name: "gallery",
       component: () => import("@/views/Gallery.vue")
