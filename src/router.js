@@ -6,19 +6,14 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  scrollBehavior () {
-    return { x: 0, y: 0}
+  scrollBehavior() {
+    return { x: 0, y: 0 }
   },
   routes: [
     {
       path: "/",
       name: "home",
       component: require("@/views/Home.vue").default // load sync home
-    },
-    {
-      path: "/quotes",
-      name: "quotes",
-      component: () => import("@/views/Quotes.vue")
     },
     {
       path: "/projects",
@@ -31,9 +26,24 @@ export default new Router({
       component: () => import("@/views/Project.vue")
     },
     {
+      path: "/quotes",
+      name: "quotes",
+      component: () => import("@/views/Quotes.vue")
+    },
+    {
       path: "/quote/:id/:urlSlug",
       name: "quote",
       component: () => import("@/views/Quote.vue")
+    },
+    {
+      path: "/poems",
+      name: "poems",
+      component: () => import("@/views/Poems.vue")
+    },
+    {
+      path: "/poem/:id/:urlSlug",
+      name: "poem",
+      component: () => import("@/views/Poem.vue")
     },
     {
       path: "/gallery",
@@ -47,7 +57,7 @@ export default new Router({
     },
     {
       path: "/performance-analysis",
-      redirect: { name: 'project', params: { id: 11, urlSlug: 'electrical-device-performance-tracker-analyser-realtime' }}
+      redirect: { name: 'project', params: { id: 11, urlSlug: 'electrical-device-performance-tracker-analyser-realtime' } }
     },
     {
       path: "*",

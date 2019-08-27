@@ -99,6 +99,14 @@
               <i class="material-icons">record_voice_over</i>Quotes
             </b-nav-item>
             <b-nav-item
+              to="/poems"
+              v-b-tooltip.hover.bottom
+              title="As Author"
+              exact-active-class="active"
+            >
+            <i class="material-icons">import_contacts</i>Poems
+            </b-nav-item>
+            <b-nav-item
               to="/gallery"
               v-b-tooltip.hover.bottom
               title="Images"
