@@ -122,15 +122,15 @@
             <router-view />
           </transition>
           <footer class="mt-3">
-            <router-link
+            <!-- <router-link
               :to="{ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug }}"
               tag="div"
-            >
+            > -->
               <span v-for="quoteLine in footerQuote.quoteLines" :key="quoteLine">
                 {{quoteLine}}
                 <br />
               </span>
-            </router-link>
+            <!-- </router-link> -->
           </footer>
         </b-col>
       </b-row>
@@ -267,9 +267,9 @@ footer {
   border-radius: 10px 10px 0px 0px;
   bottom: 0px;
 
-  span {
+  /*span {
     cursor: pointer;
-  }
+  }*/
 }
 
 @media (max-width: 576px) {
