@@ -1,12 +1,20 @@
 <template>
   <div id="poem" class="mt-5">
     <b-row>
-      <b-col cols="12">
+      <b-col col sm="12" md="6" offset-md="3">
         <b-card>
-          <b-card-text>
-            <p v-for="(line, idxLine) in poem.poemLines"
-              :key="idxLine"
-            >{{line}}</p>
+          <b-card-title>
+            {{poem.name}}
+          </b-card-title>
+          <b-card-text class="mt-4">
+            <p v-for="(para, idxPara) in poem.poemParas"
+              :key="idxPara"
+            >
+            <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
+              {{paraLine}}
+              <br/>
+            </span>
+            </p>
             <h5 class="text-info">
               - Hasil Paudyal
             </h5>
@@ -33,6 +41,7 @@
       color: #e6a410;
       font-weight: normal;
       font-size: 24px;
+      text-align: center;
 
       a {
         color: #e6a410;
@@ -60,12 +69,13 @@
       color: #6e161c;
 
       p {
-        text-align: justify;
+        text-align: center;
       }
 
       h5 {
         font-size: 16px;
         padding: 8px 0px;
+        text-align: right;
       }
 
       .material-icons {

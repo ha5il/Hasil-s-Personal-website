@@ -369,6 +369,9 @@ export default {
         } else if (to.name == "quote") {
           this.navBackShow = true;
           this.navBackTo = "/quotes";
+        } else if (to.name == "poem") {
+          this.navBackShow = true;
+          this.navBackTo = "/poems";
         } else {
           this.navBackShow = false;
           this.navBackTo = null;
