@@ -127,7 +127,7 @@
             </b-nav-item>
           </b-nav>
           <transition name="fade">
-            <router-view />
+            <router-view :key="$route.params.id"/>
           </transition>
           <footer class="mt-3">
             <router-link
@@ -147,17 +147,19 @@
 </template>
 
 <style lang="scss">
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.25s;
-}
-
 .fade-enter-active {
-  transition-delay: 0.25s;
+  transition: 1.5s;
 }
 
-.fade-enter,
+.fade-leave-active {
+  transition: 0.5s;
+  transform: rotate(360deg);
+}
+
+.fade-enter {
+  transform: rotate(-360deg);
+  opacity: 0;
+}
 .fade-leave-active {
   opacity: 0;
 }
