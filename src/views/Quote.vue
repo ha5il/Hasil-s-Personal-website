@@ -4,14 +4,25 @@
       <b-col cols="12">
         <b-card>
           <b-card-text>
-            <p v-for="(line, idxLine) in quote.quoteLines"
-              :key="idxLine"
-            >{{line}}</p>
-            <h5 class="text-info">
-              - Hasil Paudyal
-            </h5>
+            <p v-for="(line, idxLine) in quote.quoteLines" :key="idxLine">{{line}}</p>
+            <h5 class="text-info">- Hasil Paudyal</h5>
           </b-card-text>
         </b-card>
+      </b-col>
+    </b-row>
+    <h4 class="p-3">Other quotes</h4>
+    <b-row id="other-quotes">
+      <b-col v-for="(quote, idx) in otherQuotes" :key="idx" md="3">
+        <router-link
+          :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
+          tag="div"
+        >
+          <b-card>
+            <b-card-text>
+              <p>{{quote.quoteLines[0].substr(0, 20)}}...</p>
+            </b-card-text>
+          </b-card>
+        </router-link>
       </b-col>
     </b-row>
   </div>
@@ -23,11 +34,20 @@
 
   @media (max-width: 576px) {
     margin-top: 85px !important;
+
+    #other-quotes .card {
+      margin-block-end: 15px;
+    }
+  }
+
+  #other-quotes .card:hover {
+    transform: scale(1.04);
   }
 
   .card {
     border: none;
     box-shadow: 0px 0px 10px 0px #d0d0d0;
+    transition: 0.33s all;
 
     .card-title {
       color: #e6a410;
@@ -73,6 +93,11 @@
       }
     }
   }
+
+  h4 {
+    color: #6e161c;
+    font-weight: bold;
+  }
 }
 </style>
 
@@ -83,8 +108,42 @@ export default {
   mixins: [quotesMixins],
   data() {
     return {
-      quote: null
+      quote: null,
+      otherQuotes: []
     };
+  },
+  watch: {
+    $route: {
+      handler: "updatePage"
+    }
+  },
+
+  methods: {
+    updatePage() {
+      document.title = this.getQuotePageTitle(
+        this.$router.history.current.params.id
+      );
+      document
+        .querySelector('meta[name="description"]')
+        .setAttribute(
+          "content",
+          this.getQuotePageDescription(this.$router.history.current.params.id)
+        );
+      this.quote = this.getQuoteDetails(this.$router.history.current.params.id);
+      this.otherQuotes = [];
+      while (this.otherQuotes.length != 4) {
+        let uniqueQuote = this.getRandomQuote();
+        let isUnique = true;
+        this.otherQuotes.forEach(quote => {
+          if (quote == uniqueQuote) {
+            isUnique = false;
+          }
+        });
+        if (isUnique) {
+          this.otherQuotes.push(uniqueQuote);
+        }
+      }
+    }
   },
   created() {
     let currentPageActualUrlSlug = this.getQuoteUrlSlug(
@@ -107,16 +166,7 @@ export default {
         }
       });
     }
-    document.title = this.getQuotePageTitle(
-      this.$router.history.current.params.id
-    );
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content',this.getQuotePageDescription(
-      this.$router.history.current.params.id
-    ));
-    this.quote = this.getQuoteDetails(
-      this.$router.history.current.params.id
-    );
+    this.updatePage();
   }
 };
 </script>

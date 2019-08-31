@@ -337,6 +337,41 @@ const poems = [
                 ]
             }
         ],
+    }, {
+        id: 10,
+        urlSlug: 'here-it-comes-a-new-year-again-sunshine',
+        name: 'Happy New Year Sunshine',
+        poemParas: [
+            {
+                paraLines: [
+                    'Here it comes',
+                    'A new year again',
+                    'But glass of wine',
+                    'Weeks in my lifeline',
+                ]
+            }, {
+                paraLines: [
+                    'Waiting for your ego',
+                    'To beat a bye bye go',
+                    'Waiting for conversation',
+                    'Holding for brightening realization',
+                ]
+            }, {
+                paraLines: [
+                    'The story is old',
+                    'With a new scent',
+                    'I promise that',
+                    'There shall never be any bend',
+                ]
+            }, {
+                paraLines: [
+                    'You are the Sunshine',
+                    'The best Sunshine',
+                    'Shining my every year',
+                    'Happy New Year',
+                ]
+            }
+        ],
     }
 ];
 
