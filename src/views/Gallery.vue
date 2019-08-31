@@ -2,21 +2,21 @@
   <div id="gallery" class="mt-5">
     <b-row>
       <b-col sm="12" md="4">
-        <b-row v-for="(image, idx) in coverImages" :key="idx">
+        <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor(idx/3)==idx/3" class="m-3">
             <img :src="image" width="100%" />
           </b-card>
         </b-row>
       </b-col>
       <b-col sm="12" md="4">
-        <b-row v-for="(image, idx) in coverImages" :key="idx">
+        <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor((idx+1)/3)==(idx+1)/3" class="m-3">
             <img :src="image" width="100%" />
           </b-card>
         </b-row>
       </b-col>
       <b-col sm="12" md="4">
-        <b-row v-for="(image, idx) in coverImages" :key="idx">
+        <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor((idx+2)/3)==(idx+2)/3" class="m-3">
             <img :src="image" width="100%" />
           </b-card>
@@ -85,7 +85,9 @@ export default {
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Graduation%20New%20Horizon%20College%20of%20Engineering.jpg?alt=media",
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Nepal%20Flag.jpg?alt=media",
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil.jpg?alt=media"
-      ]
+      ],
+      coverImagesPaginated: null,
+      pageNumber: 1,
     };
   },
   created() {
@@ -93,6 +95,18 @@ export default {
     document.querySelector('meta[name="description"]')
     .setAttribute('content', "Checkout photoshop skills and know more about Hasil.");
     this.coverImages = _.shuffle(this.coverImages);
+    this.loadMore();
+    window.addEventListener("scroll", () => {
+      if (((window.innerHeight + window.scrollY) >= document.body.offsetHeight) && (this.pageNumber < 7)) {
+        this.loadMore();
+      }
+    });
+  },
+  methods: {
+    loadMore() {
+      this.coverImagesPaginated = this.coverImages.slice(0, this.pageNumber * 6);
+      this.pageNumber++;
+    }
   }
 };
 </script>
