@@ -407,7 +407,7 @@ export const poemsMixins = {
                     returnData = poem.name;
                 }
             });
-            return "Poem - " + returnData + '... | Hasil';
+            return "Poem - " + returnData;
         },
         getPoemPageDescription(poemId) {
             let returnData = null;

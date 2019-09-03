@@ -510,13 +510,16 @@ export const projectsMixins = {
             }
         },
         getProjectPageTitle(projectId) {
-            let returnData = null;
+            let returnData = 'Project';
             projects.forEach(project => {
                 if (project['id'] == projectId) {
-                    returnData = project['name'];
+                    returnData +=  " - " + project['name'];
+                    if(project['website']){
+                        returnData += " | " + project['website'].replace('//', '');
+                    }               
                 }
             });
-            return "Project - " + returnData + " | Hasil's Personal Site";
+            return returnData;
         },
         getProjectPageDescription(projectId) {
             let returnData = null;

@@ -117,15 +117,17 @@ export const quotesMixins = {
             return returnData;
         },
         getQuotePageTitle(quoteId) {
-            let returnData = null;
+            let returnData = '';
             quotes.forEach(quote => {
                 if (quote['id'] == quoteId) {
-                    returnData = quote['quoteLines'][0];
+                    quote.quoteLines.forEach(line => {
+                        returnData += ' '+line;
+                    })
                 }
             });
-            var trimmedString = returnData.substr(0, 20);
+            var trimmedString = returnData.substr(0, 40);
             trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-            return "Quote - " + trimmedString + '... | Hasil';
+            return "Quote -" + trimmedString + '...';
         },
         getQuotePageDescription(quoteId) {
             let returnData = null;
