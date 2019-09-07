@@ -1,5 +1,6 @@
 <template>
   <div id="poem" class="mt-5">
+    <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
     <b-row>
       <b-col col sm="12" md="6" offset-md="3">
         <b-card>
@@ -83,6 +84,10 @@
       }
     }
   }
+
+  .breadcrumb a {
+    color: #17a2b8;
+  }
 }
 </style>
 
@@ -93,7 +98,8 @@ export default {
   mixins: [poemsMixins],
   data() {
     return {
-      poem: null
+      poem: null,
+      breadcrumbItems: null,
     };
   },
   created() {
@@ -127,6 +133,16 @@ export default {
     this.poem = this.getPoemDetails(
       this.$router.history.current.params.id
     );
+    this.breadcrumbItems = [
+      {
+        text: 'Poems',
+        to: { name: 'poems' }
+      },
+      {
+        text: this.poem.urlSlug,
+        active: true,
+      },
+    ];
   }
 };
 </script>

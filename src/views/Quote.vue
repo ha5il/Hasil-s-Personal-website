@@ -1,5 +1,6 @@
 <template>
   <div id="quote" class="mt-5">
+    <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
     <b-row>
       <b-col cols="12">
         <b-card>
@@ -98,6 +99,10 @@
     color: #6e161c;
     font-weight: bold;
   }
+
+  .breadcrumb a {
+    color: #17a2b8;
+  }
 }
 </style>
 
@@ -109,7 +114,8 @@ export default {
   data() {
     return {
       quote: null,
-      otherQuotes: []
+      otherQuotes: [],
+      breadcrumbItems: null,
     };
   },
   watch: {
@@ -167,6 +173,16 @@ export default {
       });
     }
     this.updatePage();
+    this.breadcrumbItems = [
+      {
+        text: 'Quotes',
+        to: { name: 'quotes' }
+      },
+      {
+        text: this.quote.urlSlug,
+        active: true,
+      },
+    ];
   }
 };
 </script>

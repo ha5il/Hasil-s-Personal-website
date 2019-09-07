@@ -263,7 +263,7 @@ body {
   text-align: center;
   letter-spacing: 1px;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 18px;
   margin: 20px auto;
   color: #6e161c;
 }

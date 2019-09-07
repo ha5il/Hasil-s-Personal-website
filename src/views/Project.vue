@@ -1,5 +1,6 @@
 <template>
   <div id="project" class="mt-5">
+    <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
     <b-row>
       <b-col cols="12">
         <b-card>
@@ -119,6 +120,10 @@
       }
     }
   }
+
+  .breadcrumb a {
+    color: #17a2b8;
+  }
 }
 </style>
 
@@ -130,7 +135,8 @@ export default {
   mixins: [projectsMixins, schemaMixins],
   data() {
     return {
-      project: null
+      project: null,
+      breadcrumbItems: null,
     };
   },
   created() {
@@ -171,6 +177,16 @@ export default {
       "name": "`+ this.project.name +`"
     }
     `);
+    this.breadcrumbItems = [
+      {
+        text: 'Projects',
+        to: { name: 'projects' }
+      },
+      {
+        text: this.project.name,
+        active: true,
+      },
+    ];
   },
   beforeRouteLeave(to, from, next) {
     this.clearSchemaJSON();
