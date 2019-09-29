@@ -121,8 +121,8 @@ const projects = [
                     text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since WooCommerce is not targeted to Neplease market we had to built a better platform than that.'
                 },
                 {
-                text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
-            }
+                    text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
+                }
             ],
         }, {
             title: 'My Task',
@@ -458,7 +458,59 @@ const projects = [
                     text: 'Windows console app to analyse raw SD Card data'
                 }],
         }]
-    }
+    },
+    {
+        name: "Legal Remit Nepal",
+        tagLine: "Remitance website for money transfers.",
+        type: "it",
+        urlSlug: "legal-remit-nepal-transfer-management",
+        id: 12,
+        website: '//legalremitnepal.com.au',
+        technologies: ['Laravel', 'jQuery', 'AWS'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 70,
+            Frontend: 20,
+            Teammates: 5,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Transferring money is optimized with KYC, documents validation and assigning to banks. The webapp also keeps record of deposits made to banks between countries.'
+                }, {
+                    text: 'The app also has staff accounts for individual partners banks across countries.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Transcation Management'
+                }, {
+                    category: 'Security',
+                    text: 'Middleware Protection for admin, staff and user accounts'
+                }, {
+                    category: 'Marketing',
+                    text: 'Web Analytics'
+                }, {
+                    category: 'Feature',
+                    text: 'Banks transcation management'
+                }, {
+                    category: 'Development',
+                    text: 'Usage tracking'
+                }, {
+                    category: 'Feature',
+                    text: 'Bank staff account'
+                }, {
+                    category: 'Hosting',
+                    text: 'AWS'
+                }],
+        }]
+    },
 ];
 
 export const projectsMixins = {
@@ -513,10 +565,10 @@ export const projectsMixins = {
             let returnData = 'Project';
             projects.forEach(project => {
                 if (project['id'] == projectId) {
-                    returnData +=  " - " + project['name'];
-                    if(project['website']){
+                    returnData += " - " + project['name'];
+                    if (project['website']) {
                         returnData += " | " + project['website'].replace('//', '');
-                    }               
+                    }
                 }
             });
             return returnData;
@@ -526,7 +578,7 @@ export const projectsMixins = {
             projects.forEach(project => {
                 if (project['id'] == projectId) {
                     project['details'].forEach(detail => {
-                        if(detail.paragraphs){
+                        if (detail.paragraphs) {
                             returnData = detail['paragraphs'][0]['text'];
                         }
                     });
