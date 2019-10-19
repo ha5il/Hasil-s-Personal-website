@@ -1,6 +1,12 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "ha5il/hasil-s-personal-website",
+    "description": "Hasil's Personal Website",
+    "authors": [
+        {
+            "name": "Hasil Paudyal",
+            "email": "ha5il@github.com"
+        }
+    ],
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",

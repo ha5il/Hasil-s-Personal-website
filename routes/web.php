@@ -102,3 +102,27 @@ Route::group(['prefix' => 'material'], function () {
     ]);
 
 });
+
+// amp generator
+
+Route::group(['prefix' => 'amp'], function () {
+
+    Route::get('/', [
+        'as' => 'amp.home',
+        'uses' => 'AmpController@index',
+    ]);
+
+    Route::get('/poem/{id}/{urlSlug}', [
+        'as' => 'amp.poem',
+        'uses' => 'AmpController@poem',
+    ]);
+
+    Route::get('/sitemap.xml', [
+        'as' => 'amp.sitemap',
+        'uses' => 'AmpController@sitemap',
+    ]);
+
+    Route::get('/update-firebase', [
+        'uses' => 'AmpController@update_firebase',
+    ]);
+});
