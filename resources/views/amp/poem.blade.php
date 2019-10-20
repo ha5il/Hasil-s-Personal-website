@@ -88,7 +88,7 @@
         }
 
         h2 a {   
-                color: #b90000 !important;
+                color: #b90000;
         }
 
         footer {

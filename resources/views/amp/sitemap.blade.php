@@ -9,7 +9,7 @@ echo '<'.'?'.'xml version="1.0" encoding="UTF-8"?>'."\n";
 @foreach($poems as $poem)
 @php($poem = json_decode($poem->data))
 <url>
-<loc>https://amp.hasilpaudyal.com.np/{{$poem->id}}/{{$poem->urlSlug}}</loc>
+<loc>https://amp.hasilpaudyal.com.np/poem/{{$poem->id}}/{{$poem->urlSlug}}</loc>
 <lastmod>{{\Carbon\Carbon::parse(now())->setTimezone('Asia/Kathmandu')->toDateString()}}T{{\Carbon\Carbon::parse(now())->setTimezone('Asia/Kathmandu')->toTimeString()}}+05:45</lastmod>
 </url>
 @endforeach
