@@ -53,11 +53,7 @@ class AmpController extends Controller
             if (!is_dir('firebase/amp/public/poem')) mkdir('firebase/amp/public/poem');
             if (!is_dir('firebase/amp/public/poem/' . $poem->id)) mkdir('firebase/amp/public/poem/' . $poem->id);
             if (!is_dir('firebase/amp/public/poem/' . $poem->id . '/' . $poem->urlSlug)) mkdir('firebase/amp/public/poem/' . $poem->id . '/' . $poem->urlSlug);
-            dd('next line loops');
-            file_get_contents(route('amp.poem', [
-                'id' => $poem->id,
-                'urlSlug' => $poem->urlSlug
-                ]));
+
             file_put_contents(
                 'firebase/amp/public/poem/' . $poem->id . '/' . $poem->urlSlug . '/index.html',
                 file_get_contents(route('amp.poem', [
