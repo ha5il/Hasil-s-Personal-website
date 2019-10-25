@@ -117,6 +117,21 @@ Route::group(['prefix' => 'amp'], function () {
         'uses' => 'AmpController@poem',
     ]);
 
+    Route::get('/quote/{id}/{urlSlug}', [
+        'as' => 'amp.quote',
+        'uses' => 'AmpController@quote',
+    ]);
+
+    Route::get('/poems', [
+        'as' => 'amp.poems',
+        'uses' => 'AmpController@poems',
+    ]);
+
+    Route::get('/quotes', [
+        'as' => 'amp.quotes',
+        'uses' => 'AmpController@quotes',
+    ]);
+
     Route::get('/sitemap.xml', [
         'as' => 'amp.sitemap',
         'uses' => 'AmpController@sitemap',
