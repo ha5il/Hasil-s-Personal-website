@@ -6,9 +6,11 @@ echo '<'.'?'.'xml version="1.0" encoding="UTF-8"?>'."\n";
 <loc>https://amp.hasilpaudyal.com.np</loc>
 <lastmod>2019-06-07T19:27:00+05:45</lastmod>
 </url>
+<url>
 <loc>https://amp.hasilpaudyal.com.np/quotes</loc>
 <lastmod>2019-10-25T19:27:00+05:45</lastmod>
 </url>
+<url>
 <loc>https://amp.hasilpaudyal.com.np/poems</loc>
 <lastmod>2019-10-25T19:27:00+05:45</lastmod>
 </url>

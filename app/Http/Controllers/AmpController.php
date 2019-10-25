@@ -77,7 +77,7 @@ class AmpController extends Controller
             $poem->data = json_decode($poem->data);
             $poem->title = $poem->data->name;
             $poem->content = '';
-            $poem->href = str_replace(url('/'), '//amp.hasilpaudyal.com.np', route('amp.poem', ['id' => $poem->data->id, 'urlSlug' => $poem->data->urlSlug]));
+            $poem->href = str_replace(url('/amp'), '', route('amp.poem', ['id' => $poem->data->id, 'urlSlug' => $poem->data->urlSlug]));
             foreach ($poem->data->poemParas[0]->paraLines as $index => $paraLine) {
                 if ($index < 3) {
                     $poem->content .= $paraLine . '<br>';
@@ -103,7 +103,7 @@ class AmpController extends Controller
         $quotes->transform(function ($quote) {
             $quote->data = json_decode($quote->data);
             $quote->content = '';
-            $quote->href = str_replace(url('/'), '//amp.hasilpaudyal.com.np', route('amp.quote', ['id' => $quote->data->id, 'urlSlug' => $quote->data->urlSlug]));
+            $quote->href = str_replace(url('/amp'), '', route('amp.quote', ['id' => $quote->data->id, 'urlSlug' => $quote->data->urlSlug]));
             foreach ($quote->data->quoteLines as $index => $quoteLine) {
                 $quote->content .= $quoteLine . '<br>';
             }
