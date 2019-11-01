@@ -39,7 +39,7 @@
             </b-card-text>
           </b-card>
         </router-link>
-        <b-tooltip :target="'project-'+idx" placement="bottom" title="Know More..."></b-tooltip>
+        <b-tooltip :target="'project-'+idx" placement="bottom" :title="getProjectPageDescription(project.id)+'...'"></b-tooltip>
       </b-col>
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>

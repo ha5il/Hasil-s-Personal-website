@@ -10,7 +10,9 @@
                 v-for="(list, idxList) in skillData.lists"
                 :key="idxList"
                 class="d-flex justify-content-between align-items-center"
-              >{{list.text}}</b-list-group-item>
+              >{{list.text}}
+                <b-badge v-show="list.count" pill>{{list.count}}</b-badge>              
+              </b-list-group-item>
             </b-list-group>
           </b-card-text>
         </b-card>
@@ -50,7 +52,10 @@
 
 
 <script>
+import { projectsMixins } from "../mixins/projectsMixins.js";
+
 export default {
+  mixins: [projectsMixins],
   data() {
     return {
       skills: [
@@ -95,27 +100,6 @@ export default {
           ]
         },
         {
-          title: "Hardware/Software Platforms",
-          cols: 6,
-          lists: [
-            {
-              text: "Laravel"
-            },
-            {
-              text: "Arduino"
-            },
-            {
-              text: "October CMS"
-            },
-            {
-              text: "Vuejs"
-            },
-            {
-              text: "AMP"
-            }
-          ]
-        },
-        {
           title: "Tools I am familiar with",
           cols: 6,
           lists: [
@@ -137,8 +121,8 @@ export default {
             {
               text: "MiPower"
             }
-          ]
-        }
+      ]
+      }
       ]
     };
   },
@@ -146,6 +130,20 @@ export default {
     document.title = "Hire Hasil | Hasil's Personal Site";
     document.querySelector('meta[name="description"]')
     .setAttribute('content', "Let's team up and create something amazing. Know more about top listed web developer, electronics and electrical projects leader.");
+    
+    let technologies = [];
+    this.getProjectTechnologies().forEach(technology => {
+    technologies.push({
+      text: technology['tech'],
+      count: technology['projCount'],
+    });
+    });
+    this.skills.push(
+        {
+          title: "Hardware/Software Platforms",
+          cols: 6,
+          lists: technologies
+        });
   }
 };
 </script>

@@ -257,6 +257,10 @@ body {
     margin-left: 25%;
     margin-right: 5%;
   }
+
+  .card-body {
+    padding: 1.25rem 0rem;
+  }
 }
 
 .card-text-poem {

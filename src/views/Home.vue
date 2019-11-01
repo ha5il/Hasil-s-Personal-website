@@ -18,7 +18,10 @@
           </b-card-title>
           <b-card-text>
             <span class="text-info">
+              <a href="//view9.com.np" target="_blank"
+              v-b-tooltip.hover title="Goto View9's website">
               Web Developer at View9 | Nepal
+              </a>
               <br />(Jan 2019 - Present)
               <br />
             </span>
@@ -26,7 +29,10 @@
             <br />
             <br />
             <span class="text-info">
+              <a href="//fixolla.com" target="_blank"
+              v-b-tooltip.hover title="Goto Fixolla's website">
               Juniour Android Developer at Fixolla | India
+              </a>
               <br />(Feb 2018 - Dec 2018)
               <br />
             </span>
@@ -34,7 +40,10 @@
             <br />
             <br />
             <span class="text-info">
+              <a href="//fixolla.com" target="_blank"
+              v-b-tooltip.hover title="Goto Fixolla's website">
               Security Analyst at Fixolla | India
+              </a>
               <br />(Sep 2017 - Feb 2018)
               <br />
             </span>
@@ -42,7 +51,10 @@
             <br />
             <br />
             <span class="text-info">
+              <a href="//a2zlaundrysolutions.com" target="_blank"
+              v-b-tooltip.hover title="Goto A2Z's website">
               Service and Sales Engineer at A2Z Laundry Solutions | India
+              </a>
               <br />(Dec 2016 - Dec 2018)
               <br />
             </span>

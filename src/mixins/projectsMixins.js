@@ -104,7 +104,7 @@ const projects = [
         type: "it",
         urlSlug: "foreveryng-online-beauty-store-nepal",
         id: 3,
-        // website: '//foreveryng.com',
+        website: '//foreveryng.com',
         technologies: ['Laravel'],
         contributionLevels: {
             Design: 5,
@@ -587,6 +587,27 @@ export const projectsMixins = {
             var trimmedString = returnData.substr(0, 158);
             trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
             return trimmedString;
+        },
+        getProjectTechnologies() {
+            let returnData = [];
+            projects.forEach(project => {
+                project['technologies'].forEach(tech => {
+                    let dupliFound = false;
+                    returnData.forEach(dupliCheck => {
+                        if(dupliCheck['tech'] == tech) {
+                            dupliCheck['projCount']++;
+                            dupliFound = true;
+                        }
+                    });
+                    if(!dupliFound) {
+                        returnData.push({
+                            'tech' : tech,
+                            'projCount' : 1,
+                        });
+                    }
+                });
+            });
+            return new Set(returnData);
         }
     }
 }
