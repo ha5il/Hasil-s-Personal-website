@@ -68,6 +68,35 @@ class AmpController extends Controller
         abort(404);
     }
 
+    public function project($id, $urlSlug)
+    {
+        $projects = Mixin::where('type', 'project')
+            ->get();
+
+        foreach ($projects as $project) {
+            $project = json_decode($project->data);
+
+            // get the project from database
+            if ($project->id == $id) {
+                // correct url slug if incorrect
+                if ($project->urlSlug != $urlSlug) {
+                    return redirect()
+                        ->route('amp.project', [
+                            'id' => $project->id,
+                            'urlSlug' => $project->urlSlug,
+                        ]);
+                }
+
+                // everythings fine
+                return view('amp.project', [
+                    'project' => $project,
+                ]);
+            }
+        }
+
+        abort(404);
+    }
+
     public function poems()
     {
         $poems = Mixin::where('type', 'poem')
@@ -114,6 +143,26 @@ class AmpController extends Controller
             'title' => "Quotes | Hasil's Personal Site",
             'description' => 'Collection of quotes by Hasil Paudyal.',
             'data' => $quotes,
+        ]);
+    }
+
+    public function projects()
+    {
+        $projects = Mixin::where('type', 'project')
+            ->get();
+
+        $projects->transform(function ($project) {
+            $project->data = json_decode($project->data);
+            $project->title = $project->data->name;
+            $project->content = $project->data->tagLine;
+            $project->href = str_replace(url('/amp'), '', route('amp.project', ['id' => $project->data->id, 'urlSlug' => $project->data->urlSlug]));
+            return $project;
+        });
+
+        return view('amp.listing', [
+            'title' => "Projects | Hasil's Personal Site",
+            'description' => 'List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing...',
+            'data' => $projects,
         ]);
     }
 
@@ -171,6 +220,23 @@ class AmpController extends Controller
             );
         }
 
+        // projects download
+        $projects = Mixin::where('type', 'project')->get();
+        foreach ($projects as $project) {
+            $project = json_decode($project->data);
+            if (!is_dir('firebase/amp/public/project')) mkdir('firebase/amp/public/project');
+            if (!is_dir('firebase/amp/public/project/' . $project->id)) mkdir('firebase/amp/public/project/' . $project->id);
+            if (!is_dir('firebase/amp/public/project/' . $project->id . '/' . $project->urlSlug)) mkdir('firebase/amp/public/project/' . $project->id . '/' . $project->urlSlug);
+
+            file_put_contents(
+                'firebase/amp/public/project/' . $project->id . '/' . $project->urlSlug . '/index.html',
+                file_get_contents(route('amp.project', [
+                    'id' => $project->id,
+                    'urlSlug' => $project->urlSlug
+                ]))
+            );
+        }
+
         // sitemap download
         file_put_contents('firebase/amp/public/sitemap.xml', file_get_contents(route('amp.sitemap')));
         dd('Done!');
@@ -180,10 +246,12 @@ class AmpController extends Controller
     {
         $poems = Mixin::where('type', 'poem')->get();
         $quotes = Mixin::where('type', 'quote')->get();
+        $projects = Mixin::where('type', 'project')->get();
 
         return view('amp.sitemap', [
             'poems' => $poems,
             'quotes' => $quotes,
+            'projects' => $projects,
         ]);
     }
 }

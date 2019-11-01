@@ -103,7 +103,7 @@ Route::group(['prefix' => 'material'], function () {
 
 });
 
-// amp generator
+// amp generator for https://amp.hasilpaudyal.com.np
 
 Route::group(['prefix' => 'amp'], function () {
 
@@ -122,6 +122,11 @@ Route::group(['prefix' => 'amp'], function () {
         'uses' => 'AmpController@quote',
     ]);
 
+    Route::get('/project/{id}/{urlSlug}', [
+        'as' => 'amp.project',
+        'uses' => 'AmpController@project',
+    ]);
+
     Route::get('/poems', [
         'as' => 'amp.poems',
         'uses' => 'AmpController@poems',
@@ -130,6 +135,11 @@ Route::group(['prefix' => 'amp'], function () {
     Route::get('/quotes', [
         'as' => 'amp.quotes',
         'uses' => 'AmpController@quotes',
+    ]);
+
+    Route::get('/projects', [
+        'as' => 'amp.projects',
+        'uses' => 'AmpController@projects',
     ]);
 
     Route::get('/sitemap.xml', [
