@@ -8,7 +8,7 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
+          <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top v-on:click="toggelTheme()">
             <b-card-text class="card-text-poem">
               <strong>H</strong>ere I am
               <br />
@@ -147,6 +147,14 @@
 </template>
 
 <style lang="scss">
+:root {
+  --global-bg: #fdf7ff;
+  --global-card-bg: #fff;
+  --global-primary-color: #6e161c;
+  --global-secondary-color: #e6a410;
+  --global-shadow-color: #d0d0d0;
+}
+
 .fade-enter-active {
   transition: 1.5s;
 }
@@ -165,7 +173,7 @@
 }
 
 .nav {
-  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
+  background: linear-gradient(to right, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
   height: 42px;
   border-radius: 8px;
 
@@ -203,14 +211,14 @@
   }
 
   .active {
-    background: radial-gradient(#ac252d -30%, #e6a410 130%);
+    background: radial-gradient(var(--global-primary-color) -30%, var(--global-secondary-color) 130%);
     border-radius: 15px;
     height: 100%;
   }
 }
 body {
   font-family: "Comfortaa", cursive;
-  background-color: #fdf7ff;
+  background-color: var(--global-bg);
 }
 
 .fixed-top {
@@ -224,8 +232,9 @@ body {
   border-radius: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
-  box-shadow: 0px 0px 10px 0px #d0d0d0;
+  box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
   margin-top: 85px;
+  background-color: var(--global-card-bg);
 
   @media (min-width: 576px) {
     position: fixed;
@@ -243,13 +252,13 @@ body {
 
   @keyframes pulse {
     0% {
-      text-shadow: 0 0 0 #e6a42f;
+      text-shadow: 0 0 0 var(--global-secondary-color);
     }
     70% {
-      text-shadow: 0 0 100px #e6a42f;
+      text-shadow: 0 0 100px var(--global-secondary-color);
     }
     100% {
-      text-shadow: 0 0 100px #e6a42f;
+      text-shadow: 0 0 100px var(--global-secondary-color);
     }
   }
 
@@ -269,19 +278,19 @@ body {
   font-size: 16px;
   line-height: 18px;
   margin: 20px auto;
-  color: #6e161c;
+  color: var(--global-primary-color);
 }
 
 footer {
   color: #ffffff;
   padding: 7px 0px;
-  background: linear-gradient(to right, #ac252d 0%, #e6a410 90%, #e6a410 100%);
+  background: linear-gradient(to right, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
   text-align: center;
   font-size: 10px;
   border-radius: 10px 10px 0px 0px;
   bottom: 0px;
 
-  span {
+  span {  
     cursor: pointer;
   }
 }
@@ -349,6 +358,22 @@ export default {
           appendToast: true
         });
       }, 4000);
+    },
+    toggelTheme() {
+      let root = document.documentElement;
+      root.style.setProperty('--global-bg', this.getRandomColorCode());
+      root.style.setProperty('--global-card-bg', this.getRandomColorCode());
+      root.style.setProperty('--global-primary-color', this.getRandomColorCode());
+      root.style.setProperty('--global-secondary-color', this.getRandomColorCode());
+      root.style.setProperty('--global-shadow-color', this.getRandomColorCode());
+    },
+    getRandomColorCode () {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
     }
   },
   mounted: function() {

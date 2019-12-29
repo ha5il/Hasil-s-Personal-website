@@ -36,8 +36,9 @@
 
   .card {
     border: none;
-    box-shadow: 0px 0px 10px 0px #d0d0d0;
+    box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     transition: 0.33s all;
+    background-color: var(--global-card-bg);
   }
 
   .card:hover {

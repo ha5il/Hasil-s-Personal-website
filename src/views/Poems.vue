@@ -35,17 +35,18 @@
 
   .card {
     border: none;
-    box-shadow: 0px 0px 10px 0px #d0d0d0;
+    box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     transition: 0.33s all;
     text-align: center;
-
+    background-color: var(--global-card-bg);
+  
     .card-title {
-      color: #e6a410;
+      color: var(--global-secondary-color);
       font-weight: normal;
     }
 
     .card-text {
-      color: #6e161c;
+      color: var(--global-primary-color);
     }
   }
 

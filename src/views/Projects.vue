@@ -84,9 +84,10 @@
 
   .card {
     border: none;
-    box-shadow: 0px 0px 10px 0px #d0d0d0;
+    box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     transition: 0.33s all;
-
+    background-color: var(--global-card-bg);
+  
     h5 {
       font-size: 12px;
       font-weight: 500;
@@ -99,16 +100,16 @@
   }
 
   .card-title {
-    color: #e6a410;
+    color: var(--global-secondary-color);
     font-weight: normal;
   }
 
   .card-text {
-    color: #6e161c;
+    color: var(--global-primary-color);
   }
 
   h4 {
-    color: #6e161c;
+    color: var(--global-primary-color);
     font-weight: bold;
   }
 
