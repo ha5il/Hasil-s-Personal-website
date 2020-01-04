@@ -8,7 +8,7 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top v-on:click="toggelTheme()">
+          <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
             <b-card-text class="card-text-poem">
               <strong>H</strong>ere I am
               <br />
@@ -359,23 +359,37 @@ export default {
         });
       }, 4000);
     },
-    toggelTheme() {
-      let root = document.documentElement;
-      root.style.setProperty('--global-bg', this.getRandomColorCode());
-      root.style.setProperty('--global-card-bg', this.getRandomColorCode());
-      root.style.setProperty('--global-primary-color', this.getRandomColorCode());
-      root.style.setProperty('--global-secondary-color', this.getRandomColorCode());
-      root.style.setProperty('--global-shadow-color', this.getRandomColorCode());
+    toggelTheme(h1,s1,l1,h2,s2,l2) {
+      let root = document.documentElement
+      root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1));
+      root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1));
+      root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2));
+      root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2));
+      root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2));
     },
-    getRandomColorCode () {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+    hslToRgb(h, s, l){
+    var r, g, b;
+    if(s == 0){
+        r = g = b = l; // achromatic
+    }else{
+        function hue2rgb(p, q, t){
+            if(t < 0) t += 1;
+            if(t > 1) t -= 1;
+            if(t < 1/6) return p + (q - p) * 6 * t;
+            if(t < 1/2) return q;
+            if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+            return p;
+        }
+
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1/3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1/3);
+        }
+        return 'rgb('+ r * 255 + ',' + g * 255 + ',' + b * 255 + ')';
       }
-      return color;
-    }
-  },
+    },
   mounted: function() {
     // disable tooltip for small screen
     if (window.innerWidth < 576) {
@@ -389,6 +403,21 @@ export default {
       : (this.isHomePage = false);
     this.footerQuote = this.getRandomQuote();
     // this.autoToaster();
+    let h1 = Math.random()
+    let s1 = Math.random()
+    let l1 = Math.random() * 0.3 // Math.random() * (max - min) + min
+    let h2 = Math.random()
+    let s2 = Math.random()
+    let l2 = Math.random() * (1 - 0.7) + 0.7
+    setInterval(() => {
+      h1 = h1 > 1 ? 0: h1 + 0.01;
+      s1 = s1 > 1 ? 0: s1 + 0.01;
+      l1 = l1 > 1 ? 0: l1 + 0.01;
+      h2 = h2 > 1 ? 0: h2 + 0.01;
+      s2 = s2 > 1 ? 0: s2 + 0.01;
+      l2 = l2 > 1 ? 0: l2 + 0.01;
+        this.toggelTheme(h1,s1,l1,h2,s2,l2)
+      }, 150);
   },
   watch: {
     $route(to) {
