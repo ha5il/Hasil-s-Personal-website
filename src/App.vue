@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-container fluid>
+    <b-container fluid v-on:mousemove="resetTheme">
       <b-row class="pt-2">
         <b-col
           v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}"
@@ -316,7 +316,9 @@ export default {
       autoToasterId: null,
       windowInnerWidth: window.innerWidth,
       navBackShow: false,
-      navBackTo: null
+      navBackTo: null,
+      isDefaultTheme: true,
+      inactiveCount: 0
     };
   },
   methods: {
@@ -347,6 +349,8 @@ export default {
         this.footerQuote = this.getRandomQuote();
         this.changeQuote = false;
       }
+      // reset the theme if scrolled
+      this.resetTheme()
     },
     autoToaster() {
       this.autoToasterId = setInterval(() => {
@@ -361,11 +365,23 @@ export default {
     },
     toggelTheme(h1,s1,l1,h2,s2,l2) {
       let root = document.documentElement
-      root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1));
-      root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1));
-      root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2));
-      root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2));
-      root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2));
+      root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1))
+      root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1))
+      root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2))
+      root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2))
+      root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2))
+      this.isDefaultTheme = false
+    },
+    resetTheme() {
+      if(this.isDefaultTheme) return
+      let root = document.documentElement
+      root.style.setProperty('--global-bg', '#fdf7ff')
+      root.style.setProperty('--global-card-bg', '#fff')
+      root.style.setProperty('--global-primary-color', '#6e161c')
+      root.style.setProperty('--global-secondary-color', '#e6a410')
+      root.style.setProperty('--global-shadow-color', '#d0d0d0')
+      this.isDefaultTheme = true
+      this.inactiveCount = 0
     },
     hslToRgb(h, s, l){
     var r, g, b;
@@ -410,14 +426,18 @@ export default {
     let s2 = Math.random()
     let l2 = Math.random() * (1 - 0.7) + 0.7
     setInterval(() => {
-      h1 = h1 > 1 ? 0: h1 + 0.01;
-      s1 = s1 > 1 ? 0: s1 + 0.01;
-      l1 = l1 > 1 ? 0: l1 + 0.01;
-      h2 = h2 > 1 ? 0: h2 + 0.01;
-      s2 = s2 > 1 ? 0: s2 + 0.01;
-      l2 = l2 > 1 ? 0: l2 + 0.01;
+      if(this.inactiveCount > 20) {
+        h1 = h1 > 1 ? 0: h1 + 0.01;
+        s1 = s1 > 1 ? 0: s1 + 0.01;
+        l1 = l1 > 1 ? 0: l1 + 0.01;
+        h2 = h2 > 1 ? 0: h2 + 0.01;
+        s2 = s2 > 1 ? 0: s2 + 0.01;
+        l2 = l2 > 1 ? 0: l2 + 0.01;
         this.toggelTheme(h1,s1,l1,h2,s2,l2)
-      }, 150);
+      } else {
+        this.inactiveCount++
+      }
+      }, 300);
   },
   watch: {
     $route(to) {
