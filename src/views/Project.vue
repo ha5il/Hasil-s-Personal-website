@@ -28,7 +28,7 @@
           </div>
           <b-img
             v-show="project.coverImage"
-            class="my-3"
+            class="mb-3"
             :src="project.coverImage"
             fluid
             :alt="project.name+' cover image'"
@@ -126,6 +126,10 @@
       .material-icons {
         vertical-align: bottom;
       }
+    }
+
+    .list-group-item {
+      background-color: var(--global-card-bg);
     }
   }
 
