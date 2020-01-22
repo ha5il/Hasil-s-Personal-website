@@ -26,6 +26,13 @@
               <i class="material-icons">launch</i>
             </b-badge>
           </div>
+          <b-img
+            v-show="project.coverImage"
+            class="my-3"
+            :src="project.coverImage"
+            fluid
+            :alt="project.name+' cover image'"
+          ></b-img>
           <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
               v-for="(level, idxLevel) in project.contributionLevels"

@@ -20,6 +20,13 @@
           tag="div"
         >
           <b-card :id="'project-'+idx" class="mb-3" :title="project.name">
+          <b-img
+            v-show="project.coverImage"
+            class="mb-3"
+            :src="project.coverImage"
+            fluid
+            :alt="project.name+' cover image'"
+          ></b-img>
             <h5 class="text-info">
               <span v-for="(tech,idx) in project.technologies" :key="idx">
                 <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>

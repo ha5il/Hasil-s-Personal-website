@@ -4,7 +4,7 @@ const projects = [
     {
         name: "KTM Retail",
         tagLine: "Vuejs based ecommerce website.",
-        coverImage: "/ktmretail.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fktmretail.JPG?alt=media",
         type: "it",
         urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
         id: 1,
@@ -59,7 +59,7 @@ const projects = [
         name: "Intranery",
         tagLine:
             "Ecommerce website for dealers to sell products as done by Daraz.",
-        coverImage: "/intranery.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fintranery.JPG?alt=media",
         type: "it",
         urlSlug: "intranery-nepal-vuejs-ecommerce-website",
         id: 2,
@@ -100,7 +100,7 @@ const projects = [
     {
         name: "Foreveryng",
         tagLine: "Ecommerce website designed for discounts.",
-        coverImage: "/foreveryng.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fforeveryng.JPG?alt=media",
         type: "it",
         urlSlug: "foreveryng-online-beauty-store-nepal",
         id: 3,
@@ -161,7 +161,7 @@ const projects = [
     {
         name: "Kourtier Courier",
         tagLine: "Webapp for kourier tracking management.",
-        coverImage: "/kourtier.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fkourtier.JPG?alt=media",
         type: "it",
         urlSlug: "kourtier-courier-services-cargo-freight",
         id: 4,
@@ -193,7 +193,7 @@ const projects = [
     {
         name: "Mero Pharmacist",
         tagLine: "Pharmacy enquiries online.",
-        coverImage: "/meropharmacist.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fmeropharmacist.JPG?alt=media",
         type: "it",
         urlSlug: "mero-pharmacist-pharma-srs-online-enquire",
         id: 5,
@@ -227,7 +227,7 @@ const projects = [
     {
         name: "TIA",
         tagLine: "Tribhuvan International airport.",
-        coverImage: "/tia.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ftia.JPG?alt=media",
         type: "it",
         urlSlug: "tribhuvan-international-airport-filght-tracking-nepal",
         id: 6,
@@ -261,7 +261,7 @@ const projects = [
         name: "Fixolla",
         tagLine:
             "Online mobile and laptop repair in Bangalore.",
-        // coverImage: "/fixolla.jpg",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ffixolla.JPG?alt=media",
         type: "it",
         urlSlug: "fixolla-india-simplifying-lives-repair-mobile-tablet-laptop-online",
         id: 7,
@@ -462,6 +462,7 @@ const projects = [
     {
         name: "Legal Remit Nepal",
         tagLine: "Remitance website for money transfers.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flegal-remit-nepal.JPG?alt=media",
         type: "it",
         urlSlug: "legal-remit-nepal-transfer-management",
         id: 12,
