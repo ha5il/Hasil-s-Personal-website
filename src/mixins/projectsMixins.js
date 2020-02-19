@@ -511,7 +511,85 @@ const projects = [
                     text: 'AWS'
                 }],
         }]
-    },
+    }, {
+        name: "Limbu Dictionary",
+        tagLine:
+            "A FREE online dictionary to quickly search Limbu meanings in English and Nepali words.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flimbu-dictionary.jpg?alt=media",
+        type: "it",
+        urlSlug: "limbu-english-nepali-dictionary-free-online",
+        id: 13,
+        website: '//apps.apple.com/us/app/limbu-dictionary/id1491522563',
+        technologies: ['React Native'],
+        contributionLevels: {
+            'Native Framework': 60,
+            Design: 25,
+            Teammates: 15,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Wordpress provides API service. The app uses it to list post, search them and view details. Also there are some static supporting pages.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Search using API'
+                }, {
+                    category: 'Feature',
+                    text: 'Detail page with Limbu font'
+                }, {
+                    category: 'Publishing',
+                    text: 'Deploying to App Store'
+                }],
+        }]
+    }, {
+        name: "Indigo Ink",
+        tagLine:
+            "Book gallery page for book publisher with events management.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Findigo-ink.jpg?alt=media",
+        type: "it",
+        urlSlug: "indigo-ink-book-publisher-nepal",
+        id: 14,
+        website: '//indigoink.com.np',
+        technologies: ['October CMS'],
+        contributionLevels: {
+            Backend: 50,
+            Teammates: 50,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Indigo Ink book publisher comes online with book gallery. They also have system to publish the events they regularly organize.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    category: 'Feature',
+                    text: 'Book Gallery'
+                }, {
+                    category: 'Feature',
+                    text: 'Events Management'
+                }, {
+                    category: 'Publishing',
+                    text: 'Hosting on C-Panel'
+                }, {
+                    category: 'Marketing',
+                    text: 'Online Enquiries'
+                }],
+        }]
+    }
 ];
 
 export const projectsMixins = {
