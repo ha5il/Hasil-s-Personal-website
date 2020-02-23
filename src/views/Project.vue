@@ -61,7 +61,7 @@
                 class="d-flex justify-content-between align-items-center"
               >
                 {{list.text}}
-                <b-badge :variant="getVariant(list.category)" pill>{{list.category}}</b-badge>
+                <b-badge :variant="getVariant(list.badge)" pill>{{list.badge}}</b-badge>
               </b-list-group-item>
             </b-list-group>
           </b-card-text>

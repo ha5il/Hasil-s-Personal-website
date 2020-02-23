@@ -458,7 +458,7 @@ export default {
     let s2 = Math.random()
     let l2 = Math.random() * (1 - 0.7) + 0.7
     setInterval(() => {
-      if(this.inactiveCount > 20) {
+      if(this.inactiveCount > 40) {
         h1 = h1 > 1 ? 0: h1 + 0.01;
         s1 = s1 > 1 ? 0: s1 + 0.01;
         l1 = l1 > 1 ? 0: l1 + 0.01;

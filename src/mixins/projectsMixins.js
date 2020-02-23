@@ -29,28 +29,28 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Products with Multiple sizes with individual prices'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Products Filter API (Laravel Eloquent)'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Middleware Protection for admin and staff accounts'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Banners management'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Web Analytics'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Dynamic banners rediection'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Promo Codes and Discount Management'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Order Status/Report management'
                 }],
         }]
@@ -86,13 +86,13 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'API for Dealers Section'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Middleware Protection for admin and staff accounts'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Web Analytics'
                 }],
         }]
@@ -129,32 +129,49 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Backend',
+                    badge: 'Backend',
                     text: 'Product Management with multiple size, colour and different prices'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Product Feedback'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'API'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Middleware Protection for admin and staff accounts'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Web Analytics'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Discounts and offers management'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Gift Card and Promo Code'
                 }, {
-                    category: 'Optimization',
+                    badge: 'Optimization',
                     text: 'Database Relations and Laravel Eloquent'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Shipment tracking and Reward Points as per order item status'
+                }],
+        }, {
+            title: 'Team',
+            titleIcon: 'people',
+            lists:
+                [{
+                    badge: 3,
+                    text: 'UI/UX'
+                }, {
+                    badge: 2,
+                    text: 'Backend'
+                }, {
+                    badge: 2,
+                    text: 'Android'
+                }, {
+                    badge: 1,
+                    text: 'IOS'
                 }],
         }]
     },
@@ -185,7 +202,7 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Optimization',
+                    badge: 'Optimization',
                     text: 'Shifted Admin Report section to Laravel Eloquent'
                 }],
         }]
@@ -216,10 +233,10 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Frontend',
+                    badge: 'Frontend',
                     text: 'Social login'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Blog share feature'
                 }],
         }]
@@ -250,10 +267,10 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Backend',
+                    badge: 'Backend',
                     text: 'Blog Post Management'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Highlight blog post'
                 }],
         }]
@@ -287,16 +304,16 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Android App'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'API'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Protection of User Data'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Tracking the rivals'
                 }],
         }]
@@ -326,16 +343,16 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Count card scans'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Warn on last scan'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Visual notification on false card or revoked card'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Log scan history with timestamp to SD card'
                 }],
         }]
@@ -366,13 +383,13 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'CSV Export of raw data for further analysis on Excel '
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'View the daily wash load without any export'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'GUI app in C#'
                 }],
         }]
@@ -403,13 +420,13 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Visual Indication when theft is live'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Eliminator Initialization'
                 }, {
-                    category: 'Simulation',
+                    badge: 'Simulation',
                     text: 'Modeling ans simulation on Proteus'
                 }],
         }]
@@ -442,19 +459,19 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Simulation',
+                    badge: 'Simulation',
                     text: 'Modeling ans simulation on Proteus'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Visual Indication of device health'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Raw data analysis by PHP'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Realtime serial data transfer by bluetooth module'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Windows console app to analyse raw SD Card data'
                 }],
         }]
@@ -489,26 +506,37 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Transcation Management'
                 }, {
-                    category: 'Security',
+                    badge: 'Security',
                     text: 'Middleware Protection for admin, staff and user accounts'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Web Analytics'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Banks transcation management'
                 }, {
-                    category: 'Development',
+                    badge: 'Development',
                     text: 'Usage tracking'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Bank staff account'
                 }, {
-                    category: 'Hosting',
+                    badge: 'Hosting',
                     text: 'AWS'
+                }],
+        }, {
+            title: 'Team',
+            titleIcon: 'people',
+            lists:
+                [{
+                    badge: 2,
+                    text: 'UI/UX'
+                }, {
+                    badge: 1,
+                    text: 'Backend'
                 }],
         }]
     }, {
@@ -539,14 +567,25 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Search using API'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Detail page with Limbu font'
                 }, {
-                    category: 'Publishing',
+                    badge: 'Publishing',
                     text: 'Deploying to App Store'
+                }],
+        }, {
+            title: 'Team',
+            titleIcon: 'people',
+            lists:
+                [{
+                    badge: 1,
+                    text: 'UI/UX'
+                }, {
+                    badge: 1,
+                    text: 'Backend'
                 }],
         }]
     }, {
@@ -576,17 +615,28 @@ const projects = [
             titleIcon: 'code',
             lists:
                 [{
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Book Gallery'
                 }, {
-                    category: 'Feature',
+                    badge: 'Feature',
                     text: 'Events Management'
                 }, {
-                    category: 'Publishing',
+                    badge: 'Publishing',
                     text: 'Hosting on C-Panel'
                 }, {
-                    category: 'Marketing',
+                    badge: 'Marketing',
                     text: 'Online Enquiries'
+                }],
+        }, {
+            title: 'Team',
+            titleIcon: 'people',
+            lists:
+                [{
+                    badge: 1,
+                    text: 'UI/UX'
+                }, {
+                    badge: 1,
+                    text: 'Backend'
                 }],
         }]
     }
