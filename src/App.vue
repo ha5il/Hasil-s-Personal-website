@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="bg"></div><div class="bg bg2"></div><div class="bg bg3"></div>
+    <div v-show="!isCleanTheme" class="bg"></div><div v-show="!isCleanTheme" class="bg bg2"></div><div v-show="!isCleanTheme" class="bg bg3"></div>
     <b-container fluid v-on:mousemove="resetTheme">
       <b-row class="pt-2">
         <b-col
@@ -61,14 +61,16 @@
           </b-card>
         </b-col>
         <b-col>
-          <b-img
-            v-show="isHomePage"
-            class="cover-image pb-3"
-            src="/cover.jpg"
-            rounded
-            fluid
-            alt="Hasil Cover"
-          ></b-img>
+          <transition name="fade">
+            <b-img
+              v-show="isHomePage"
+              class="cover-image pb-3"
+              src="/cover.jpg"
+              rounded
+              fluid
+              alt="Hasil Cover"
+            ></b-img>
+          </transition>
           <b-nav
             v-bind:class="{'fixed-top':!isHomePage}"
             align="right"
@@ -143,6 +145,9 @@
           </footer>
         </b-col>
       </b-row>
+      <b-button :pressed.sync="isCleanTheme" class="btn-sm" id="theme-button">
+        <i class="material-icons">invert_colors</i>
+        </b-button>
     </b-container>
   </div>
 </template>
@@ -162,11 +167,11 @@
 
 .fade-leave-active {
   transition: 0.5s;
-  transform: rotate(360deg);
+  transform: scale(1.4);
 }
 
 .fade-enter {
-  transform: rotate(-360deg);
+  transform: scale(0.8);
   opacity: 0;
 }
 .fade-leave-active {
@@ -332,6 +337,17 @@ footer {
     margin-top: 20px;
   }
 }
+
+#theme-button {
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 25px;
+  font-size: 12px;
+  color: var(--global-primary-color);
+  border-color: var(--global-secondary-color);
+  background-color: var(--global-secondary-color);
+}
 </style>
 
 <script>
@@ -349,8 +365,9 @@ export default {
       windowInnerWidth: window.innerWidth,
       navBackShow: false,
       navBackTo: null,
-      isDefaultTheme: true,
-      inactiveCount: 0
+      isDefaultTheme: true, // colourful theme
+      inactiveCount: 0,
+      isCleanTheme: true,
     };
   },
   methods: {
@@ -458,7 +475,7 @@ export default {
     let s2 = Math.random()
     let l2 = Math.random() * (1 - 0.7) + 0.7
     setInterval(() => {
-      if(this.inactiveCount > 40) {
+      if(this.inactiveCount > 40 && !this.isCleanTheme) {
         h1 = h1 > 1 ? 0: h1 + 0.01;
         s1 = s1 > 1 ? 0: s1 + 0.01;
         l1 = l1 > 1 ? 0: l1 + 0.01;

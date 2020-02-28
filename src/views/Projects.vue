@@ -14,7 +14,7 @@
     </div>
     <h4 class="p-3">IT Projects</h4>
     <b-row>
-      <b-col sm="12" md="6" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
+      <b-col sm="12" md="4" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
         <router-link
           :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
           tag="div"
@@ -46,7 +46,7 @@
             </b-card-text>
           </b-card>
         </router-link>
-        <b-tooltip :target="'project-'+idx" placement="bottom" :title="getProjectPageDescription(project.id)+'...'"></b-tooltip>
+        <b-tooltip :delay="{show:1000,hide:400}" :target="'project-'+idx" placement="bottom" :title="getProjectPageDescription(project.id)+'...'"></b-tooltip>
       </b-col>
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
