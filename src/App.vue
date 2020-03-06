@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <div v-show="!isCleanTheme" class="bg"></div><div v-show="!isCleanTheme" class="bg bg2"></div><div v-show="!isCleanTheme" class="bg bg3"></div>
-    <b-container fluid v-on:mousemove="resetTheme">
+    <div v-show="activeThemeIndex!=1" class="bg"></div>
+    <div v-show="activeThemeIndex!=1" class="bg bg2"></div>
+    <div v-show="activeThemeIndex!=1" class="bg bg3"></div>
+    <!-- <b-container fluid v-on:mousemove="resetTheme"> -->
+    <b-container fluid>
       <b-row class="pt-2">
         <b-col
           v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}"
@@ -145,7 +148,7 @@
           </footer>
         </b-col>
       </b-row>
-      <b-button :pressed.sync="isCleanTheme" class="btn-sm" id="theme-button">
+      <b-button @click="switchTheme()" class="btn-sm" id="theme-button">
         <i class="material-icons">invert_colors</i>
         </b-button>
     </b-container>
@@ -155,7 +158,7 @@
 <style lang="scss">
 :root {
   --global-bg: #fdf7ff;
-  --global-card-bg: #fff;
+  --global-card-bg: #ffffffe0;
   --global-primary-color: #6e161c;
   --global-secondary-color: #e6a410;
   --global-shadow-color: #d0d0d0;
@@ -365,9 +368,9 @@ export default {
       windowInnerWidth: window.innerWidth,
       navBackShow: false,
       navBackTo: null,
-      isDefaultTheme: true, // colourful theme
+      activeThemeIndex: 0,
       inactiveCount: 0,
-      isCleanTheme: true,
+      randomThemeColourInterval: null,
     };
   },
   methods: {
@@ -399,7 +402,7 @@ export default {
         this.changeQuote = false;
       }
       // reset the theme if scrolled
-      this.resetTheme()
+      // this.resetTheme()
     },
     autoToaster() {
       this.autoToasterId = setInterval(() => {
@@ -412,26 +415,26 @@ export default {
         });
       }, 4000);
     },
-    toggelTheme(h1,s1,l1,h2,s2,l2) {
-      let root = document.documentElement
-      root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1))
-      root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1))
-      root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2))
-      root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2))
-      root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2))
-      this.isDefaultTheme = false
-    },
-    resetTheme() {
-      if(this.isDefaultTheme) return
-      let root = document.documentElement
-      root.style.setProperty('--global-bg', '#fdf7ff')
-      root.style.setProperty('--global-card-bg', '#fff')
-      root.style.setProperty('--global-primary-color', '#6e161c')
-      root.style.setProperty('--global-secondary-color', '#e6a410')
-      root.style.setProperty('--global-shadow-color', '#d0d0d0')
-      this.isDefaultTheme = true
-      this.inactiveCount = 0
-    },
+    // toggelTheme(h1,s1,l1,h2,s2,l2) {
+    //   let root = document.documentElement
+    //   root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1))
+    //   root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1))
+    //   root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2))
+    //   root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2))
+    //   root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2))
+    //   this.isDefaultTheme = false
+    // },
+    // resetTheme() {
+    //   if(this.isDefaultTheme) return
+    //   let root = document.documentElement
+    //   root.style.setProperty('--global-bg', '#fdf7ff')
+    //   root.style.setProperty('--global-card-bg', '#fff')
+    //   root.style.setProperty('--global-primary-color', '#6e161c')
+    //   root.style.setProperty('--global-secondary-color', '#e6a410')
+    //   root.style.setProperty('--global-shadow-color', '#d0d0d0')
+    //   this.isDefaultTheme = true
+    //   this.inactiveCount = 0
+    // },
     hslToRgb(h, s, l){
     var r, g, b;
     if(s == 0){
@@ -453,6 +456,53 @@ export default {
         b = hue2rgb(p, q, h - 1/3);
         }
         return 'rgb('+ r * 255 + ',' + g * 255 + ',' + b * 255 + ')';
+      },
+      switchTheme () {
+        this.activeThemeIndex++
+        if(this.activeThemeIndex > 4) {
+          this.activeThemeIndex = 0
+        }
+        let root = document.documentElement
+        switch (this.activeThemeIndex) {
+          case 0:
+            root.style.setProperty('--global-bg', '#fdf7ff')
+            root.style.setProperty('--global-card-bg', '#ffffffe0')
+            root.style.setProperty('--global-primary-color', '#6e161c')
+            root.style.setProperty('--global-secondary-color', '#e6a410')
+            root.style.setProperty('--global-shadow-color', '#d0d0d0')
+            break;
+          case 1: // let it be dark, as bg anim has to be disabled on this key
+            root.style.setProperty('--global-bg', '#101010')
+            root.style.setProperty('--global-card-bg', '#000000')
+            root.style.setProperty('--global-primary-color', '#ff9800')
+            root.style.setProperty('--global-secondary-color', '#f92b38')
+            root.style.setProperty('--global-shadow-color', '#313131')
+            break;
+        
+          case 2:
+            root.style.setProperty('--global-bg', '#fdf7ff')
+            root.style.setProperty('--global-card-bg', '#ffffffe0')
+            root.style.setProperty('--global-primary-color', '#7B3204')
+            root.style.setProperty('--global-secondary-color', '#8A803B')
+            root.style.setProperty('--global-shadow-color', '#d0d0d0')
+            break;
+
+          case 3:
+            root.style.setProperty('--global-bg', '#fdf7ff')
+            root.style.setProperty('--global-card-bg', '#ffffff')
+            root.style.setProperty('--global-primary-color', '#2196f3')
+            root.style.setProperty('--global-secondary-color', '#1e9822')
+            root.style.setProperty('--global-shadow-color', '#d0d0d0')
+            break;
+
+          default:
+            root.style.setProperty('--global-bg', '#fdf7ff')
+            root.style.setProperty('--global-card-bg', '#ffffffe0')
+            root.style.setProperty('--global-primary-color', '#271129')
+            root.style.setProperty('--global-secondary-color', '#9C27B0')
+            root.style.setProperty('--global-shadow-color', '#d0d0d0')
+            break;
+        }
       }
     },
   mounted: function() {
@@ -468,25 +518,26 @@ export default {
       : (this.isHomePage = false);
     this.footerQuote = this.getRandomQuote();
     // this.autoToaster();
-    let h1 = Math.random()
-    let s1 = Math.random()
-    let l1 = Math.random() * 0.3 // Math.random() * (max - min) + min
-    let h2 = Math.random()
-    let s2 = Math.random()
-    let l2 = Math.random() * (1 - 0.7) + 0.7
-    setInterval(() => {
-      if(this.inactiveCount > 40 && !this.isCleanTheme) {
-        h1 = h1 > 1 ? 0: h1 + 0.01;
-        s1 = s1 > 1 ? 0: s1 + 0.01;
-        l1 = l1 > 1 ? 0: l1 + 0.01;
-        h2 = h2 > 1 ? 0: h2 + 0.01;
-        s2 = s2 > 1 ? 0: s2 + 0.01;
-        l2 = l2 > 1 ? 0: l2 + 0.01;
-        this.toggelTheme(h1,s1,l1,h2,s2,l2)
-      } else {
-        this.inactiveCount++
-      }
-      }, 300);
+    // let h1 = Math.random()
+    // let s1 = Math.random()
+    // let l1 = Math.random() * 0.3 // Math.random() * (max - min) + min
+    // let h2 = Math.random()
+    // let s2 = Math.random()
+    // let l2 = Math.random() * (1 - 0.7) + 0.7
+    // this.randomThemeColourInterval = setInterval(() => {
+    //   console.log('interval active')
+    //   if(this.inactiveCount > 40 && !this.isCleanTheme) {
+    //     h1 = h1 > 1 ? 0: h1 + 0.01;
+    //     s1 = s1 > 1 ? 0: s1 + 0.01;
+    //     l1 = l1 > 1 ? 0: l1 + 0.01;
+    //     h2 = h2 > 1 ? 0: h2 + 0.01;
+    //     s2 = s2 > 1 ? 0: s2 + 0.01;
+    //     l2 = l2 > 1 ? 0: l2 + 0.01;
+    //     this.toggelTheme(h1,s1,l1,h2,s2,l2)
+    //   } else {
+    //     this.inactiveCount++
+    //   }
+    //   }, 300);
   },
   watch: {
     $route(to) {

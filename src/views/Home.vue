@@ -1,7 +1,7 @@
 <template>
   <div id="homepage" class="section">
     <b-row class="pt-3">
-      <b-col sm="12" md="8">
+      <b-col sm="12" md="12">
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">sentiment_satisfied_alt</i>
@@ -25,7 +25,7 @@
               <br />(Jan 2019 - Present)
               <br />
             </span>
-            I develop the backend of website and connect its database to different platforms with api.
+            I develop the backend for website, connect its database to different platforms with api. I also build mini apps on react native.
             <br />
             <br />
             <span class="text-info">
@@ -36,7 +36,7 @@
               <br />(Feb 2018 - Dec 2018)
               <br />
             </span>
-            I was not only the part of android development team but also developed api services for the website.
+            With their android development team I learnt app development and also developed api.
             <br />
             <br />
             <span class="text-info">
@@ -47,7 +47,7 @@
               <br />(Sep 2017 - Feb 2018)
               <br />
             </span>
-            I helped the company in building their database and securing it from different threats.
+            As analyst helped the company in scrapping the data from open sources and build their database. I was also offered for public speaking and promotional offers publicity across colleges in Bangalore.
             <br />
             <br />
             <span class="text-info">
@@ -62,11 +62,11 @@
           </b-card-text>
         </b-card>
       </b-col>
-      <b-col sm="12" md="4">
+      <!-- <b-col sm="12" md="4">
         <b-card class="timeline" no-body>
           <b-img src="/timeline.png" fluid-grow alt="Hasil Timeline"></b-img>
         </b-card>
-      </b-col>
+      </b-col> -->
     </b-row>
   </div>
 </template>
