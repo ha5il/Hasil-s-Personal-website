@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div v-show="activeThemeIndex!=1" class="bg"></div>
-    <div v-show="activeThemeIndex!=1" class="bg bg2"></div>
-    <div v-show="activeThemeIndex!=1" class="bg bg3"></div>
+    <div v-show="showBgAnim" class="bg"></div>
+    <div v-show="showBgAnim" class="bg bg2"></div>
+    <div v-show="showBgAnim" class="bg bg3"></div>
     <!-- <b-container fluid v-on:mousemove="resetTheme"> -->
     <b-container fluid>
       <b-row class="pt-2">
@@ -12,7 +12,7 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem p-5" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
+          <b-card class="card-poem p-3" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
             <b-card-text class="card-text-poem">
               <strong>H</strong>ere I am
               <br />
@@ -148,9 +148,36 @@
           </footer>
         </b-col>
       </b-row>
-      <b-button @click="switchTheme()" class="btn-sm" id="theme-button">
+      <b-button-group id="theme-buttons" size="sm">
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#6e161c', '#e6a410')" v-bind:style="{color:'#6e161c',backgroundColor:'#e6a410'}" class="btn-sm theme-button">
         <i class="material-icons">invert_colors</i>
-        </b-button>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#7B3204', '#8A803B')" v-bind:style="{color:'#7B3204',backgroundColor:'#8A803B'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#011a2d', '#800080')" v-bind:style="{color:'#011a2d',backgroundColor:'#800080'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#ff0101', '#FFC107')" v-bind:style="{color:'#ff0101',backgroundColor:'#FFC107'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#808000', '#1e9822')" v-bind:style="{color:'#808000',backgroundColor:'#1e9822'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#ff9800', '#f92b38')" v-bind:style="{color:'#ff9800',backgroundColor:'#000000'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#00ff00', '#228b22')" v-bind:style="{color:'#00ff00',backgroundColor:'#000000'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#2196f3', '#1e9822')" v-bind:style="{color:'#2196f3',backgroundColor:'#000000'}" class="btn-sm theme-button">
+        <i class="material-icons">invert_colors</i>
+      </b-button>
+      <b-button class="btn-sm theme-button" v-bind:style="{color:'var(--global-primary-color)',backgroundColor:'var(--global-secondary-color)'}" :pressed.sync="isThemeBtnsVisible">
+        <i v-if="isThemeBtnsVisible" class="material-icons">arrow_downward</i>
+        <i v-else class="material-icons">invert_colors</i>
+      </b-button>
+    </b-button-group>
     </b-container>
   </div>
 </template>
@@ -341,15 +368,23 @@ footer {
   }
 }
 
-#theme-button {
+#theme-buttons {
   position: fixed;
   right: 5px;
   bottom: 5px;
-  border-radius: 25px;
-  font-size: 12px;
-  color: var(--global-primary-color);
-  border-color: var(--global-secondary-color);
-  background-color: var(--global-secondary-color);
+  display: grid;
+}
+
+.theme-button {
+    border-radius: 20px !important;
+    font-size: 0px !important;
+    padding: 6px !important;
+    border: none !important;
+    margin-top: 5px !important;
+}
+
+.theme-button:focus {
+    box-shadow: none;
 }
 </style>
 
@@ -368,9 +403,10 @@ export default {
       windowInnerWidth: window.innerWidth,
       navBackShow: false,
       navBackTo: null,
-      activeThemeIndex: 0,
       inactiveCount: 0,
       randomThemeColourInterval: null,
+      isThemeBtnsVisible: false,
+      showBgAnim: true,
     };
   },
   methods: {
@@ -403,6 +439,10 @@ export default {
       }
       // reset the theme if scrolled
       // this.resetTheme()
+      // minimize theme buttons if scrolled
+      if(this.isThemeBtnsVisible) {
+        this.isThemeBtnsVisible = false
+      }
     },
     autoToaster() {
       this.autoToasterId = setInterval(() => {
@@ -457,52 +497,14 @@ export default {
         }
         return 'rgb('+ r * 255 + ',' + g * 255 + ',' + b * 255 + ')';
       },
-      switchTheme () {
-        this.activeThemeIndex++
-        if(this.activeThemeIndex > 4) {
-          this.activeThemeIndex = 0
-        }
+      switchTheme (darkMode, primary, secondary) {
+        this.showBgAnim = !darkMode
         let root = document.documentElement
-        switch (this.activeThemeIndex) {
-          case 0:
-            root.style.setProperty('--global-bg', '#fdf7ff')
-            root.style.setProperty('--global-card-bg', '#ffffffe0')
-            root.style.setProperty('--global-primary-color', '#6e161c')
-            root.style.setProperty('--global-secondary-color', '#e6a410')
-            root.style.setProperty('--global-shadow-color', '#d0d0d0')
-            break;
-          case 1: // let it be dark, as bg anim has to be disabled on this key
-            root.style.setProperty('--global-bg', '#101010')
-            root.style.setProperty('--global-card-bg', '#000000')
-            root.style.setProperty('--global-primary-color', '#ff9800')
-            root.style.setProperty('--global-secondary-color', '#f92b38')
-            root.style.setProperty('--global-shadow-color', '#313131')
-            break;
-        
-          case 2:
-            root.style.setProperty('--global-bg', '#fdf7ff')
-            root.style.setProperty('--global-card-bg', '#ffffffe0')
-            root.style.setProperty('--global-primary-color', '#7B3204')
-            root.style.setProperty('--global-secondary-color', '#8A803B')
-            root.style.setProperty('--global-shadow-color', '#d0d0d0')
-            break;
-
-          case 3:
-            root.style.setProperty('--global-bg', '#fdf7ff')
-            root.style.setProperty('--global-card-bg', '#ffffff')
-            root.style.setProperty('--global-primary-color', '#2196f3')
-            root.style.setProperty('--global-secondary-color', '#1e9822')
-            root.style.setProperty('--global-shadow-color', '#d0d0d0')
-            break;
-
-          default:
-            root.style.setProperty('--global-bg', '#fdf7ff')
-            root.style.setProperty('--global-card-bg', '#ffffffe0')
-            root.style.setProperty('--global-primary-color', '#271129')
-            root.style.setProperty('--global-secondary-color', '#9C27B0')
-            root.style.setProperty('--global-shadow-color', '#d0d0d0')
-            break;
-        }
+        root.style.setProperty('--global-bg', darkMode?'#101010':'#fdf7ff')
+        root.style.setProperty('--global-card-bg', darkMode?'#000000':'#ffffffe0')
+        root.style.setProperty('--global-primary-color', primary)
+        root.style.setProperty('--global-secondary-color', secondary)
+        root.style.setProperty('--global-shadow-color', darkMode?'#313131':'#d0d0d0')
       }
     },
   mounted: function() {
@@ -556,6 +558,10 @@ export default {
           this.navBackShow = false;
           this.navBackTo = null;
         }
+      }
+      // minimize theme buttons if scrolled
+      if(this.isThemeBtnsVisible) {
+        this.isThemeBtnsVisible = false
       }
     }
   }
