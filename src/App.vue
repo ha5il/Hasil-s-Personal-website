@@ -40,23 +40,20 @@
               <br />
               <strong>L</strong>inks the first letters to me
             </b-card-text>
-            <div>
-              <b-link to="//np.linkedin.com/in/hasil" target="_blank">
+            <div class="text-center">
+              <b-link class="px-3" to="//np.linkedin.com/in/hasil" target="_blank">
                 <img
                   v-b-tooltip.hover.bottom
                   title="Let's get connected for work"
-                  class="social-icon"
-                  src="/linkedin.svg"
-                  alt="linkedin"
+                  src="/iconledincon.svg"
                   width="20%"
                 />
               </b-link>
-              <b-link to="//facebook.com/hasill" target="_blank">
+              <b-link class="px-3" to="//facebook.com/hasill" target="_blank">
                 <img
                   v-b-tooltip.hover.bottom
                   title="Let's get connected as friend"
-                  src="/facebook.svg"
-                  alt="facebook"
+                  src="/iconfbcon.svg"
                   width="20%"
                 />
               </b-link>
@@ -511,6 +508,10 @@ export default {
     // disable tooltip for small screen
     if (window.innerWidth < 576) {
       this.$root.$emit("bv::disable::tooltip");
+    }
+    // dark theme if device on dark mode
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.switchTheme(true,'#ff9800', '#f92b38');
     }
   },
   created() {
