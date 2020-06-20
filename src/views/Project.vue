@@ -40,8 +40,7 @@
               :value="level"
               :variant="getVariant(idxLevel)"
             >
-              {{idxLevel}}
-              <strong>{{level}}%</strong>
+              {{idxLevel}} <span class="progress-percentage">{{level}}%</span>
             </b-progress-bar>
           </b-progress>
           <b-card-text v-for="(detail, idx) in project.details" :key="idx">
@@ -135,6 +134,13 @@
 
   .breadcrumb a {
     color: #17a2b8;
+  }
+
+  .progress-bar {
+    .progress-percentage {
+      margin-top: 15px;
+      font-weight: bold;
+    }
   }
 }
 </style>

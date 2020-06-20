@@ -86,6 +86,9 @@ export default {
             },
             {
               text: "Dynamic Accelerated mobile page generator for advance SEO."
+            },
+            {
+              text: "Gitlab server setup on dedicated server"
             }
           ]
         },
@@ -112,7 +115,7 @@ export default {
               text: "Photoshop"
             },
             {
-              text: "XD"
+              text: "Adobe XD"
             },
             {
               text: "AutoCAD"

@@ -526,6 +526,12 @@ const projects = [
                 }, {
                     badge: 'Hosting',
                     text: 'AWS'
+                }, {
+                    badge: 'Feature',
+                    text: 'Banks API integration for verified money transfers to deposition.'
+                }, {
+                    badge: 'Feature',
+                    text: 'Poli Payments Integration'
                 }],
         }, {
             title: 'Team',
@@ -637,6 +643,91 @@ const projects = [
                 }, {
                     badge: 1,
                     text: 'Backend'
+                }],
+        }]
+    }, {
+        name: "Employee Records",
+        tagLine: "Vuejs based employee directory.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Femployee-records.jpg?alt=media",
+        type: "it",
+        urlSlug: "employee-records-directory-laravel-vuejs",
+        id: 15,
+        technologies: ['Vuejs', 'Laravel'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 90,
+            Frontend: 70,
+            Teammates: 15,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Provides easy and fast search of employees in several departments within company.'
+                }
+            ],
+        }, {
+            title: 'My Task',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Database',
+                    text: 'Database design'
+                }, {
+                    badge: 'Feature',
+                    text: 'Vuejs filter and vue-router management.'
+                }, {
+                    badge: 'Storage',
+                    text: 'Vuex for persisting the laravel\'s session and login check of user has loggedin by checking keep me signedin.'
+                }],
+        }, {
+            title: 'Team',
+            titleIcon: 'people',
+            lists:
+                [{
+                    badge: 2,
+                    text: 'UI/UX'
+                }, {
+                    badge: 1,
+                    text: 'Backend'
+                }],
+        }]
+    }, {
+        name: "Amour Production House",
+        tagLine: "Production house portfolio.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Famour-production.png?alt=media",
+        type: "it",
+        urlSlug: "amour-production-house-october-cms",
+        id: 16,
+        website: '//amourproduction.in',
+        technologies: ['October CMS'],
+        contributionLevels: {
+            Design: 100,
+            Frontend: 100,
+            Backend: 100,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Website built for Production house to highlight their protfolio.'
+                }
+            ],
+        }, {
+            title: 'Works',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Database',
+                    text: 'Database design'
+                }, {
+                    badge: 'Storage',
+                    text: 'Image and videos gallery.'
+                }, {
+                    badge: 'Feature',
+                    text: 'Backend for managing enquiries with soft delete and all website contents.'
                 }],
         }]
     }
