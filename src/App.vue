@@ -62,14 +62,14 @@
         </b-col>
         <b-col>
           <transition name="fade">
-            <b-img
+            <b-img-lazy
               v-show="isHomePage"
               class="cover-image pb-3"
               src="/cover.jpg"
               rounded
               fluid
               alt="Hasil Cover"
-            ></b-img>
+            ></b-img-lazy>
           </transition>
           <b-nav
             v-bind:class="{'fixed-top':!isHomePage}"

@@ -14,19 +14,25 @@
     </div>
     <h4 class="p-3">IT Projects</h4>
     <b-row>
-      <b-col sm="12" md="4" v-for="(project, idx) in projects" v-if="project.type=='it'" :key="idx">
+      <b-col sm="12" md="4" v-for="(project, idx) in projects" v-show="project.type=='it'" :key="idx">
         <router-link
           :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
           tag="div"
         >
           <b-card :id="'project-'+idx" class="mb-3" :title="project.name">
-          <b-img
+          <b-img-lazy
             v-show="project.coverImage"
             class="mb-3"
             :src="project.coverImage"
+            blank="true"
+            blank-src
+            blank-width="200"
+            blank-height="200"
+            blank-color="#ddd"
+            center="true"
             fluid
             :alt="project.name+' cover image'"
-          ></b-img>
+          ></b-img-lazy>
             <h5 class="text-info">
               <span v-for="(tech,idx) in project.technologies" :key="idx">
                 <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
@@ -51,7 +57,7 @@
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
     <b-row>
-      <b-col cols="12" v-for="(project, idx) in projects" v-if="project.type=='ee'" :key="idx">
+      <b-col cols="12" v-for="(project, idx) in projects" v-show="project.type=='ee'" :key="idx">
         <router-link
           :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
           tag="div"

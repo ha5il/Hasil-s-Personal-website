@@ -26,13 +26,19 @@
               <i class="material-icons">launch</i>
             </b-badge>
           </div>
-          <b-img
+          <b-img-lazy
             v-show="project.coverImage"
             class="mb-3"
             :src="project.coverImage"
+            blank="true"
+            blank-src
+            blank-width="400"
+            blank-height="200"
+            blank-color="#ddd"
+            center="true"
             fluid
             :alt="project.name+' cover image'"
-          ></b-img>
+          ></b-img-lazy>
           <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
               v-for="(level, idxLevel) in project.contributionLevels"

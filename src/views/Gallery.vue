@@ -4,21 +4,45 @@
       <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor(idx/3)==idx/3" class="m-3">
-            <img :src="image" width="100%" />
+            <b-img-lazy
+            :src="image"
+              blank-src
+              blank-width="200"
+              blank-height="200"
+              blank-color="#ddd"
+              center="true"
+              width="100%">
+            </b-img-lazy>
           </b-card>
         </b-row>
       </b-col>
       <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor((idx+1)/3)==(idx+1)/3" class="m-3">
-            <img :src="image" width="100%" />
+            <b-img-lazy
+            :src="image"
+              blank-src
+              blank-width="200"
+              blank-height="200"
+              blank-color="#ddd"
+              center="true"
+              width="100%">
+            </b-img-lazy>
           </b-card>
         </b-row>
       </b-col>
       <b-col sm="12" md="4">
         <b-row v-for="(image, idx) in coverImagesPaginated" :key="idx">
           <b-card v-show="Math.floor((idx+2)/3)==(idx+2)/3" class="m-3">
-            <img :src="image" width="100%" />
+            <b-img-lazy
+            :src="image"
+              blank-src
+              blank-width="200"
+              blank-height="200"
+              blank-color="#ddd"
+              center="true"
+              width="100%">
+            </b-img-lazy>
           </b-card>
         </b-row>
       </b-col>
@@ -43,6 +67,10 @@
 
   .card:hover {
     transform: scale(1.04);
+  }
+
+  img {
+    width: 100%;
   }
 }
 </style>
