@@ -21,15 +21,14 @@
         >
           <b-card :id="'project-'+idx" class="mb-3" :title="project.name">
           <b-img-lazy
-            v-show="project.coverImage"
             class="mb-3"
             :src="project.coverImage"
-            blank="true"
+            :blank="true"
             blank-src
             blank-width="200"
             blank-height="200"
             blank-color="#ddd"
-            center="true"
+            :center="true"
             fluid
             :alt="project.name+' cover image'"
           ></b-img-lazy>
@@ -145,18 +144,20 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [projectsMixins],
+  mixins: [ projectsMixins, htmlHeadMixins ],
   data() {
     return {
       projects: null
     };
   },
   created() {
-    document.title = "Projects | Hasil's Personal Site";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing...");
+    this.optimizeSeoTags({
+      title: "Projects | Hasil's Personal Site",
+      description: "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing..."
+    });
     this.projects = this.getAllProjects();
   }
 };

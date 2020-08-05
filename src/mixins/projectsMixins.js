@@ -712,7 +712,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Website built for Production house to highlight their protfolio.'
+                    text: 'Website built for Production house to highlight their protfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes restricted area where the visitor has to enter access code to proceed.'
                 }
             ],
         }, {

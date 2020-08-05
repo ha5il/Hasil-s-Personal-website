@@ -59,14 +59,15 @@
 
 <script>
 import { poemsMixins } from "../mixins/poemsMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [poemsMixins],
+  mixins: [ poemsMixins, htmlHeadMixins ],
   created() {
-    document.title = "Poems | Hasil's Personal Site";
-    document
-      .querySelector('meta[name="description"]')
-      .setAttribute("content", "Collection of poems by Hasil Paudyal.");
+    this.optimizeSeoTags({
+      title: "Poems | Hasil's Personal Site",
+      description: "Collection of poems by Hasil Paudyal."
+    });
     this.poems = this.getAllpoems();
   }
 };

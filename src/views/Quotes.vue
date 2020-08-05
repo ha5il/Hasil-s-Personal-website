@@ -56,13 +56,15 @@
 
 <script>
 import { quotesMixins } from "../mixins/quotesMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [quotesMixins],
+  mixins: [ quotesMixins, htmlHeadMixins ],
   created() {
-    document.title = "Quotes | Hasil's Personal Site";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', "Collection of quotes by Hasil Paudyal.");
+    this.optimizeSeoTags({
+      title: "Quotes | Hasil's Personal Site",
+      description: "Collection of quotes by Hasil Paudyal."
+    });
     this.quotes = this.getAllquotes();
   }
 };

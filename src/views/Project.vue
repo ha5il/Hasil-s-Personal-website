@@ -30,12 +30,12 @@
             v-show="project.coverImage"
             class="mb-3"
             :src="project.coverImage"
-            blank="true"
+            :blank="true"
             blank-src
             blank-width="400"
             blank-height="200"
             blank-color="#ddd"
-            center="true"
+            :center="true"
             fluid
             :alt="project.name+' cover image'"
           ></b-img-lazy>
@@ -153,10 +153,10 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
-import { schemaMixins } from "../mixins/schemaMixins.js";
+import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [projectsMixins, schemaMixins],
+  mixins: [projectsMixins, schemaMixins, htmlHeadMixins],
   data() {
     return {
       project: null,
@@ -184,16 +184,18 @@ export default {
         }
       });
     }
-    document.title = this.getProjectPageTitle(
-      this.$router.history.current.params.id
-    );
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content',this.getProjectPageDescription(
-      this.$router.history.current.params.id
-    ));
     this.project = this.getProjectDetails(
       this.$router.history.current.params.id
     );
+    this.optimizeSeoTags({
+      title: this.getProjectPageTitle(
+      this.$router.history.current.params.id
+    ),
+      description: this.getProjectPageDescription(
+      this.$router.history.current.params.id
+    ),
+    image: this.project.coverImage
+    });
     this.injectSchemaJSON(`
     {
       "@context": "http://schema.org",

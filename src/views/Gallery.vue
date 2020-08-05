@@ -10,7 +10,7 @@
               blank-width="200"
               blank-height="200"
               blank-color="#ddd"
-              center="true"
+              :center="true"
               width="100%">
             </b-img-lazy>
           </b-card>
@@ -25,7 +25,7 @@
               blank-width="200"
               blank-height="200"
               blank-color="#ddd"
-              center="true"
+              :center="true"
               width="100%">
             </b-img-lazy>
           </b-card>
@@ -40,7 +40,7 @@
               blank-width="200"
               blank-height="200"
               blank-color="#ddd"
-              center="true"
+              :center="true"
               width="100%">
             </b-img-lazy>
           </b-card>
@@ -77,8 +77,10 @@
 
 <script>
 import _ from "lodash";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
+  mixins: [ htmlHeadMixins ],
   data() {
     return {
       coverImages: [
@@ -120,9 +122,10 @@ export default {
     };
   },
   created() {
-    document.title = "Gallery | Hasil's Personal Site";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', "Checkout photoshop skills and know more about Hasil.");
+    this.optimizeSeoTags({
+      title: "Gallery | Hasil's Personal Site",
+      description: "Checkout photoshop skills and know more about Hasil."
+    });
     this.coverImages = _.shuffle(this.coverImages);
     this.loadMore();
     window.addEventListener("scroll", () => {

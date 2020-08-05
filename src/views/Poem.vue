@@ -94,9 +94,10 @@
 
 <script>
 import { poemsMixins } from "../mixins/poemsMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [poemsMixins],
+  mixins: [ poemsMixins, htmlHeadMixins ],
   data() {
     return {
       poem: null,
@@ -124,13 +125,14 @@ export default {
         }
       });
     }
-    document.title = this.getPoemPageTitle(
+    this.optimizeSeoTags({
+      title: this.getPoemPageTitle(
       this.$router.history.current.params.id
-    );
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content',this.getPoemPageDescription(
+    ),
+      description: this.getPoemPageDescription(
       this.$router.history.current.params.id
-    ));
+    )
+    });
     this.poem = this.getPoemDetails(
       this.$router.history.current.params.id
     );
