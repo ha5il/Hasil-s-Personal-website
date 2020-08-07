@@ -12,7 +12,8 @@
     "core-js": "^2.6.11",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
-    "vue-router": "^3.3.4"
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.4.1"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",
@@ -20,7 +21,7 @@
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-service": "^3.12.1",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "mutationobserver-shim": "^0.3.7",

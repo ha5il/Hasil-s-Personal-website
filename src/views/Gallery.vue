@@ -81,6 +81,12 @@ import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [ htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Gallery | Hasil's Personal Site",
+      description: "Checkout photoshop skills and know more about Hasil."
+    })
+  },
   data() {
     return {
       coverImages: [
@@ -122,10 +128,6 @@ export default {
     };
   },
   created() {
-    this.optimizeSeoTags({
-      title: "Gallery | Hasil's Personal Site",
-      description: "Checkout photoshop skills and know more about Hasil."
-    });
     this.coverImages = _.shuffle(this.coverImages);
     this.loadMore();
     window.addEventListener("scroll", () => {

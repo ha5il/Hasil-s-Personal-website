@@ -63,11 +63,13 @@ import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [ poemsMixins, htmlHeadMixins ],
-  created() {
-    this.optimizeSeoTags({
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
       title: "Poems | Hasil's Personal Site",
       description: "Collection of poems by Hasil Paudyal."
-    });
+    })
+  },
+  created() {
     this.poems = this.getAllpoems();
   }
 };

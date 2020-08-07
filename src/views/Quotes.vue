@@ -60,11 +60,13 @@ import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [ quotesMixins, htmlHeadMixins ],
-  created() {
-    this.optimizeSeoTags({
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
       title: "Quotes | Hasil's Personal Site",
       description: "Collection of quotes by Hasil Paudyal."
-    });
+    })
+  },
+  created() {
     this.quotes = this.getAllquotes();
   }
 };

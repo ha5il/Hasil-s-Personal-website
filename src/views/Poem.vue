@@ -98,6 +98,16 @@ import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [ poemsMixins, htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: this.getPoemPageTitle(
+        this.$router.history.current.params.id
+      ),
+      description: this.getPoemPageDescription(
+        this.$router.history.current.params.id
+      )
+    })
+  },
   data() {
     return {
       poem: null,
@@ -125,14 +135,6 @@ export default {
         }
       });
     }
-    this.optimizeSeoTags({
-      title: this.getPoemPageTitle(
-      this.$router.history.current.params.id
-    ),
-      description: this.getPoemPageDescription(
-      this.$router.history.current.params.id
-    )
-    });
     this.poem = this.getPoemDetails(
       this.$router.history.current.params.id
     );

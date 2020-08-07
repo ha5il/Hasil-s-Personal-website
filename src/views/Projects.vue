@@ -148,16 +148,18 @@ import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [ projectsMixins, htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Projects | Hasil's Personal Site",
+      description: "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing..."
+    })
+  },
   data() {
     return {
       projects: null
     };
   },
   created() {
-    this.optimizeSeoTags({
-      title: "Projects | Hasil's Personal Site",
-      description: "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing..."
-    });
     this.projects = this.getAllProjects();
   }
 };

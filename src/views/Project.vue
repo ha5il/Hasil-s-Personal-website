@@ -27,7 +27,7 @@
             </b-badge>
           </div>
           <b-img-lazy
-            v-show="project.coverImage"
+            v-if="project.coverImage"
             class="mb-3"
             :src="project.coverImage"
             :blank="true"
@@ -157,6 +157,17 @@ import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [projectsMixins, schemaMixins, htmlHeadMixins],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: this.getProjectPageTitle(
+        this.$router.history.current.params.id
+      ),
+        description: this.getProjectPageDescription(
+          this.$router.history.current.params.id
+      ),
+      image: this.project.coverImage
+    })
+  },
   data() {
     return {
       project: null,
@@ -187,15 +198,6 @@ export default {
     this.project = this.getProjectDetails(
       this.$router.history.current.params.id
     );
-    this.optimizeSeoTags({
-      title: this.getProjectPageTitle(
-      this.$router.history.current.params.id
-    ),
-      description: this.getProjectPageDescription(
-      this.$router.history.current.params.id
-    ),
-    image: this.project.coverImage
-    });
     this.injectSchemaJSON(`
     {
       "@context": "http://schema.org",
