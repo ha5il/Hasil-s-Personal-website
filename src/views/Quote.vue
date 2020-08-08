@@ -109,20 +109,9 @@
 
 <script>
 import { quotesMixins } from "../mixins/quotesMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [ quotesMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: this.getQuotePageTitle(
-        this.$router.history.current.params.id
-      ),
-      description: this.getQuotePageDescription(
-        this.$router.history.current.params.id
-      )
-    })
-  },
+  mixins: [quotesMixins],
   data() {
     return {
       quote: null,
@@ -138,6 +127,15 @@ export default {
 
   methods: {
     updatePage() {
+      document.title = this.getQuotePageTitle(
+        this.$router.history.current.params.id
+      );
+      document
+        .querySelector('meta[name="description"]')
+        .setAttribute(
+          "content",
+          this.getQuotePageDescription(this.$router.history.current.params.id)
+        );
       this.quote = this.getQuoteDetails(this.$router.history.current.params.id);
       this.otherQuotes = [];
       while (this.otherQuotes.length != 4) {

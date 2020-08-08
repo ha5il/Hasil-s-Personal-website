@@ -58,16 +58,9 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [ projectsMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: "Hire Hasil | Hasil's Personal Site",
-      description: "Let's team up and create something amazing. Know more about top listed web developer, electronics and electrical projects leader."
-    })
-  },
+  mixins: [projectsMixins],
   data() {
     return {
       skills: [
@@ -142,6 +135,10 @@ export default {
     };
   },
   created() {
+    document.title = "Hire Hasil | Hasil's Personal Site";
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content', "Let's team up and create something amazing. Know more about top listed web developer, electronics and electrical projects leader.");
+    
     let technologies = [];
     this.getProjectTechnologies().forEach(technology => {
     technologies.push({

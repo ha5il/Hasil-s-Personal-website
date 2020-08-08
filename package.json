@@ -12,8 +12,7 @@
     "core-js": "^2.6.11",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
-    "vue-meta": "^2.4.0",
-    "vue-router": "^3.4.1"
+    "vue-router": "^3.4.2"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.10.4",

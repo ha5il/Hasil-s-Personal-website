@@ -153,21 +153,10 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
-import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js";
+import { schemaMixins } from "../mixins/schemaMixins.js";
 
 export default {
-  mixins: [projectsMixins, schemaMixins, htmlHeadMixins],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: this.getProjectPageTitle(
-        this.$router.history.current.params.id
-      ),
-        description: this.getProjectPageDescription(
-          this.$router.history.current.params.id
-      ),
-      image: this.project.coverImage
-    })
-  },
+  mixins: [projectsMixins, schemaMixins],
   data() {
     return {
       project: null,
@@ -195,6 +184,13 @@ export default {
         }
       });
     }
+    document.title = this.getProjectPageTitle(
+      this.$router.history.current.params.id
+    );
+    document.querySelector('meta[name="description"]')
+    .setAttribute('content',this.getProjectPageDescription(
+      this.$router.history.current.params.id
+    ));
     this.project = this.getProjectDetails(
       this.$router.history.current.params.id
     );
