@@ -133,12 +133,14 @@ export default {
      * Manually injecting the tags that vue-meta would inject
      */
     if(!document.getElementsByTagName('title').length) {
-      console.log('appending')
       document.getElementsByTagName('head')[0].insertAdjacentHTML( 'beforeend', `<title>Hasil's Personal Site | Hasil Paudyal</title>
+      <meta data-vue-meta="1" property="og:type" content="website">
+      <meta data-vue-meta="1" property="og:url" content="https://hasilpaudyal.com.np">
       <meta data-vue-meta="1" property="og:title" content="Hasil's Personal Site | Hasil Paudyal">
       <meta data-vue-meta="1" name="twitter:title" content="Hasil's Personal Site | Hasil Paudyal">
       <meta data-vue-meta="1" name="description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
       <meta data-vue-meta="1" property="og:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" name="twitter:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
       <meta data-vue-meta="1" property="og:image" content="https://hasilpaudyal.com.np/Hasil.png">
       <meta data-vue-meta="1" name="twitter:image" content="https://hasilpaudyal.com.np/Hasil.png">`)
     }

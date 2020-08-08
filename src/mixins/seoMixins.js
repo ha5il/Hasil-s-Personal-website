@@ -46,7 +46,7 @@ export const htmlHeadMixins = {
             let returnData = {
                 title: "Hasil's Personal Site | Hasil Paudyal",
                 meta: [
-                    // { property: 'og:type', content: 'website' }
+                    { property: 'og:type', content: 'website' }
                 ]
             }
             if(optimizations.title) {
@@ -57,7 +57,7 @@ export const htmlHeadMixins = {
             if(optimizations.description) {
                 returnData.meta.push({ name: 'description', content: optimizations.description });
                 returnData.meta.push({ property: 'og:description', content: optimizations.description });
-                // returnData.meta.push({ name: 'twitter:description', content: optimizations.description });
+                returnData.meta.push({ name: 'twitter:description', content: optimizations.description });
             }
             if(optimizations.image) {
                 returnData.meta.push({ property: 'og:image', content: optimizations.image });
