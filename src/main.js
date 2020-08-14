@@ -8,10 +8,20 @@ import VueAnalytics from 'vue-analytics'
 
 Vue.config.productionTip = false
 
-new Vue({
+const app = new Vue({
   router,
+  data: { routeLoading: false },
   render: h => h(App)
 }).$mount('#app')
+
+router.beforeEach((to, from, next) => {
+  app.routeLoading = true
+    next()
+})
+
+router.afterEach(() => {
+  setTimeout(() => app.routeLoading = false, Math.random() * (1500 - 500) + 500)
+})
 
 Vue.use(VueAnalytics, {
   id: 'UA-72808058-1',

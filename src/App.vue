@@ -130,9 +130,16 @@
             </b-nav-item>
           </b-nav>
           <transition name="fade">
-            <router-view :key="$route.params.id"/>
+            <div v-if="$root.routeLoading" class="text-center my-5 py-5">
+              <b-spinner class="mx-1" variant="primary" label="Spinning"></b-spinner>
+              <b-spinner class="mx-1" variant="warning" type="grow" label="Spinning"></b-spinner>
+              <b-spinner class="mx-1" variant="success" label="Spinning"></b-spinner>
+              <b-spinner class="mx-1" variant="danger" type="grow" label="Spinning"></b-spinner>
+              <b-spinner class="mx-1" variant="info" label="Spinning"></b-spinner>
+            </div>
+            <router-view v-else :key="$route.params.id" />
           </transition>
-          <footer class="mt-3">
+          <footer class="mt-3" v-show="!$root.routeLoading">
             <router-link
               :to="{ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug }}"
               tag="div"

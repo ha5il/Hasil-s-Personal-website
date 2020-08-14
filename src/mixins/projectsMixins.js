@@ -25,7 +25,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -82,7 +82,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -125,7 +125,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -198,7 +198,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -229,7 +229,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -263,7 +263,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -300,7 +300,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -339,7 +339,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -379,7 +379,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -416,7 +416,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -455,7 +455,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -502,7 +502,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -525,7 +525,7 @@ const projects = [
                     text: 'Bank staff account'
                 }, {
                     badge: 'Hosting',
-                    text: 'AWS'
+                    text: 'AWS - Elasticbeanstalk, Cloudwatch, RDS and EC2 Cron jobs'
                 }, {
                     badge: 'Feature',
                     text: 'Banks API integration for verified money transfers to deposition.'
@@ -569,7 +569,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -617,7 +617,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -668,7 +668,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'My Task',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -696,7 +696,7 @@ const projects = [
     }, {
         name: "Amour Production House",
         tagLine: "Production house portfolio.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Famour-production.png?alt=media",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Famour-production.jpg?alt=media",
         type: "it",
         urlSlug: "amour-production-house-october-cms",
         id: 16,
@@ -716,7 +716,7 @@ const projects = [
                 }
             ],
         }, {
-            title: 'Works',
+            title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists:
                 [{
@@ -728,6 +728,113 @@ const projects = [
                 }, {
                     badge: 'Feature',
                     text: 'Backend for managing enquiries with soft delete and all website contents.'
+                }],
+        }]
+    }, {
+        name: "ReachOn",
+        tagLine: "Digital Education For All",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Freachon.jpg?alt=media",
+        type: "it",
+        urlSlug: "reachon-digital-education-socket-vuejs-nepal",
+        id: 17,
+        technologies: ['Laravel', 'Socket', 'Vuejs'],
+        contributionLevels: {
+            Design: 20,
+            Backend: 30,
+            Server: 80,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'ReachOn is the digital education platform with the vision to create education system where every student has the same opportunities. Education is all about accessibility and equality but different student left their class with different level of understanding and face many problems with current education system.'
+                }
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Feature',
+                    text: 'Backend panel to check answersheet'
+                }, {
+                    badge: 'Feature',
+                    text: 'Laravel Echo for notification'
+                }],
+        }]
+    }, {
+        name: "Uno",
+        tagLine: "Discounts, Coupons and Entertainment for every age group anywhere.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Funo.jpg?alt=media",
+        type: "it",
+        urlSlug: "uno-card-nepal-discounts-coupons",
+        id: 18,
+        website: '//uno.com.np',
+        technologies: ['CodeIgniter', 'Vuejs'],
+        contributionLevels: {
+            Design: 10,
+            API: 60,
+            Backend: 30,
+            Merchant: 20,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Uno is a comprehensive online business directory targeted for extra discount. It provides information to cater to the immediate, impulsive and urgent requirement of customers for companies, products, and services.'
+                },
+                {
+                    text: 'Uno offers a yearly subscription to interested users for a flat discount on 100+ locations across Nepal. Freely registered user can take benefit of points collection and redeem it as cash discount.'
+                },
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Feature',
+                    text: 'Bulk registration for card providers'
+                }, {
+                    badge: 'Feature',
+                    text: 'User reporting system with issue and renewal'
+                }],
+        }]
+    }, {
+        name: "Short Vids",
+        tagLine: "Short entertaining videos to make your day.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fshort-vids.jpg?alt=media",
+        type: "it",
+        urlSlug: "short-vids-videos-make-your-day",
+        id: 19,
+        technologies: ['Laravel', 'Vuejs', 'AWS'],
+        contributionLevels: {
+            Design: 40,
+            API: 100,
+            Backend: 100
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'This app is similar to popular short videos sharing apps. We have optimized the backend for AWS with content caching for faster operations.'
+                }
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Feature',
+                    text: 'Video sharing as public, followers or private.'
+                }, {
+                    badge: 'Security',
+                    text: 'Restriction on content viewing'
+                }, {
+                    badge: 'Hosting',
+                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
                 }],
         }]
     }
