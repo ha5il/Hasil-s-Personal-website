@@ -290,6 +290,7 @@
 body {
   font-family: "Comfortaa", cursive;
   background-color: var(--global-bg);
+  overflow-x: hidden;
 }
 
 .fixed-top {
@@ -448,59 +449,6 @@ export default {
         this.isThemeBtnsVisible = false
       }
     },
-    autoToaster() {
-      this.autoToasterId = setInterval(() => {
-        this.$bvToast.toast("Hello there", {
-          title: "Hello",
-          autoHideDelay: 5000,
-          toaster: "b-toaster-bottom-right",
-          variant: "info",
-          appendToast: true
-        });
-      }, 4000);
-    },
-    // toggelTheme(h1,s1,l1,h2,s2,l2) {
-    //   let root = document.documentElement
-    //   root.style.setProperty('--global-bg', this.hslToRgb(h1,s1,l1))
-    //   root.style.setProperty('--global-card-bg', this.hslToRgb(h1,s1,1-l1))
-    //   root.style.setProperty('--global-primary-color', this.hslToRgb(h2,s2,1-l2))
-    //   root.style.setProperty('--global-secondary-color', this.hslToRgb(h2,s2,l2))
-    //   root.style.setProperty('--global-shadow-color', this.hslToRgb(h2,s2,l2))
-    //   this.isDefaultTheme = false
-    // },
-    // resetTheme() {
-    //   if(this.isDefaultTheme) return
-    //   let root = document.documentElement
-    //   root.style.setProperty('--global-bg', '#fdf7ff')
-    //   root.style.setProperty('--global-card-bg', '#fff')
-    //   root.style.setProperty('--global-primary-color', '#6e161c')
-    //   root.style.setProperty('--global-secondary-color', '#e6a410')
-    //   root.style.setProperty('--global-shadow-color', '#d0d0d0')
-    //   this.isDefaultTheme = true
-    //   this.inactiveCount = 0
-    // },
-    hslToRgb(h, s, l){
-    var r, g, b;
-    if(s == 0){
-        r = g = b = l; // achromatic
-    }else{
-        function hue2rgb(p, q, t){
-            if(t < 0) t += 1;
-            if(t > 1) t -= 1;
-            if(t < 1/6) return p + (q - p) * 6 * t;
-            if(t < 1/2) return q;
-            if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-            return p;
-        }
-
-        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-        var p = 2 * l - q;
-        r = hue2rgb(p, q, h + 1/3);
-        g = hue2rgb(p, q, h);
-        b = hue2rgb(p, q, h - 1/3);
-        }
-        return 'rgb('+ r * 255 + ',' + g * 255 + ',' + b * 255 + ')';
-      },
       switchTheme (darkMode, primary, secondary) {
         this.showBgAnim = !darkMode
         let root = document.documentElement
@@ -516,10 +464,6 @@ export default {
     if (window.innerWidth < 576) {
       this.$root.$emit("bv::disable::tooltip");
     }
-    // dark theme if device on dark mode
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      this.switchTheme(true,'#ff9800', '#f92b38');
-    }
   },
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -527,27 +471,6 @@ export default {
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
     this.footerQuote = this.getRandomQuote();
-    // this.autoToaster();
-    // let h1 = Math.random()
-    // let s1 = Math.random()
-    // let l1 = Math.random() * 0.3 // Math.random() * (max - min) + min
-    // let h2 = Math.random()
-    // let s2 = Math.random()
-    // let l2 = Math.random() * (1 - 0.7) + 0.7
-    // this.randomThemeColourInterval = setInterval(() => {
-    //   console.log('interval active')
-    //   if(this.inactiveCount > 40 && !this.isCleanTheme) {
-    //     h1 = h1 > 1 ? 0: h1 + 0.01;
-    //     s1 = s1 > 1 ? 0: s1 + 0.01;
-    //     l1 = l1 > 1 ? 0: l1 + 0.01;
-    //     h2 = h2 > 1 ? 0: h2 + 0.01;
-    //     s2 = s2 > 1 ? 0: s2 + 0.01;
-    //     l2 = l2 > 1 ? 0: l2 + 0.01;
-    //     this.toggelTheme(h1,s1,l1,h2,s2,l2)
-    //   } else {
-    //     this.inactiveCount++
-    //   }
-    //   }, 300);
   },
   watch: {
     $route(to) {
