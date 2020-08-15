@@ -25,7 +25,7 @@ module.exports = {
         staticDir: path.join(__dirname, 'dist'),
         routes: pagesToRender,
         renderer: new Renderer({
-          maxConcurrentRoutes: 4
+          maxConcurrentRoutes: 5
         })
       })
     ]

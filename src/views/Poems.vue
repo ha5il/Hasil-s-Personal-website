@@ -59,14 +59,18 @@
 
 <script>
 import { poemsMixins } from "../mixins/poemsMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [poemsMixins],
+  mixins: [ poemsMixins, htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Poems | Hasil's Personal Site",
+      description: "Collection of poems by Hasil Paudyal.",
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(15).jpg?alt=media"
+    })
+  },
   created() {
-    document.title = "Poems | Hasil's Personal Site";
-    document
-      .querySelector('meta[name="description"]')
-      .setAttribute("content", "Collection of poems by Hasil Paudyal.");
     this.poems = this.getAllpoems();
   }
 };

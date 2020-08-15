@@ -65,7 +65,7 @@
             <b-img-lazy
               v-show="isHomePage"
               class="cover-image pb-3"
-              src="/cover.jpg"
+              src="https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Collage.jpg?alt=media"
               rounded
               fluid
               alt="Hasil Cover"
@@ -79,48 +79,36 @@
           >
             <b-nav-item
               to="/"
-              v-b-tooltip.hover.bottom
-              title="About me"
               exact-active-class="active"
             >
               <i class="material-icons">home</i>Home
             </b-nav-item>
             <b-nav-item
               to="/projects"
-              v-b-tooltip.hover.bottom
-              title="My Creations"
               exact-active-class="active"
             >
               <i class="material-icons">all_inbox</i>Projects
             </b-nav-item>
             <b-nav-item
               to="/quotes"
-              v-b-tooltip.hover.bottom
-              title="My Sayings"
               exact-active-class="active"
             >
               <i class="material-icons">record_voice_over</i>Quotes
             </b-nav-item>
             <b-nav-item
               to="/poems"
-              v-b-tooltip.hover.bottom
-              title="As Author"
               exact-active-class="active"
             >
             <i class="material-icons">import_contacts</i>Poems
             </b-nav-item>
             <b-nav-item
               to="/gallery"
-              v-b-tooltip.hover.bottom
-              title="Images"
               exact-active-class="active"
             >
               <i class="material-icons">perm_media</i>Gallery
             </b-nav-item>
             <b-nav-item
               to="/hire-Hasil"
-              v-b-tooltip.hover.bottom
-              title="My Skills"
               exact-active-class="active"
             >
               <i class="material-icons">work</i>Hire Me
@@ -459,12 +447,6 @@ export default {
         root.style.setProperty('--global-shadow-color', darkMode?'#313131':'#d0d0d0')
       }
     },
-  mounted: function() {
-    // disable tooltip for small screen
-    if (window.innerWidth < 576) {
-      this.$root.$emit("bv::disable::tooltip");
-    }
-  },
   created() {
     window.addEventListener("scroll", this.handleScroll);
     this.$router.history.current.name == "home"

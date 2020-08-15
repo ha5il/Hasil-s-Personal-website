@@ -111,19 +111,44 @@
 </style>
 
 <script>
-import { schemaMixins } from "../mixins/schemaMixins.js";
+import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js"
 
 export default {
-  mixins: [schemaMixins],
+  mixins: [schemaMixins, htmlHeadMixins],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Hasil's Personal Site | Hasil Paudyal",
+      description: 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.',
+      image: 'https://hasilpaudyal.com.np/Hasil.png'
+    })
+  },
   created() {
-    document.title = "Hasil's Personal Site | Hasil Paudyal";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.');
-    this.injectDefaultSchemaJSON('hasil');
+    /**
+     * Injecting meta tags with vue-meta works on all pages except this
+     * Vue meta works here is user comes from other routes
+     * Debugging shows that computed variables of vue-meta are not set
+     * Calling this.$meta.inject({getOptimizedSeoMetaTags}) throws warning
+     * that this app/component has no vue-meta configutaion
+     * 
+     * Manually injecting the tags that vue-meta would inject
+     */
+    if(!document.getElementsByTagName('title').length) {
+      document.getElementsByTagName('head')[0].insertAdjacentHTML( 'beforeend', `<title>Hasil's Personal Site | Hasil Paudyal</title>
+      <meta data-vue-meta="1" property="og:type" content="website">
+      <meta data-vue-meta="1" property="og:url" content="https://hasilpaudyal.com.np">
+      <meta data-vue-meta="1" property="og:title" content="Hasil's Personal Site | Hasil Paudyal">
+      <meta data-vue-meta="1" name="twitter:title" content="Hasil's Personal Site | Hasil Paudyal">
+      <meta data-vue-meta="1" name="description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" property="og:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" name="twitter:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" property="og:image" content="https://hasilpaudyal.com.np/Hasil.png">
+      <meta data-vue-meta="1" name="twitter:image" content="https://hasilpaudyal.com.np/Hasil.png">`)
+    }
+    this.injectDefaultSchemaJSON('hasil')
   },
   beforeRouteLeave(to, from, next) {
-    this.clearSchemaJSON();
-    next();
+    this.clearSchemaJSON()
+    next()
   }
-};
+}
 </script>

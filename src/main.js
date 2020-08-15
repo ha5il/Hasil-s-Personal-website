@@ -5,6 +5,7 @@ import './plugins/bootstrap-vue'
 import App from './App.vue'
 import router from './router'
 import VueAnalytics from 'vue-analytics'
+import VueMeta from 'vue-meta'
 
 Vue.config.productionTip = false
 
@@ -26,4 +27,12 @@ router.afterEach(() => {
 Vue.use(VueAnalytics, {
   id: 'UA-72808058-1',
   checkDuplicatedScript: true
+})
+
+Vue.use(VueMeta, {
+  keyName: 'metaInfo',
+  attribute: 'data-vue-meta',
+  ssrAttribute: 'data-vue-meta-server-rendered',
+  tagIDKeyName: 'vmid',
+  refreshOnceOnNavigation: true
 })

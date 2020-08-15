@@ -77,8 +77,17 @@
 
 <script>
 import _ from "lodash";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
+  mixins: [ htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Gallery | Hasil's Personal Site",
+      description: "Checkout photoshop skills and know more about Hasil.",
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(22).jpg?alt=media"
+    })
+  },
   data() {
     return {
       coverImages: [
@@ -120,9 +129,6 @@ export default {
     };
   },
   created() {
-    document.title = "Gallery | Hasil's Personal Site";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', "Checkout photoshop skills and know more about Hasil.");
     this.coverImages = _.shuffle(this.coverImages);
     this.loadMore();
     window.addEventListener("scroll", () => {

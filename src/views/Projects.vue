@@ -144,18 +144,23 @@
 
 <script>
 import { projectsMixins } from "../mixins/projectsMixins.js";
+import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [projectsMixins],
+  mixins: [ projectsMixins, htmlHeadMixins ],
+  metaInfo() {
+    return this.getOptimizedSeoMetaTags({
+      title: "Projects | Hasil's Personal Site",
+      description: "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing...",
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(4).jpg?alt=media"
+    })
+  },
   data() {
     return {
       projects: null
     };
   },
   created() {
-    document.title = "Projects | Hasil's Personal Site";
-    document.querySelector('meta[name="description"]')
-    .setAttribute('content', "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing...");
     this.projects = this.getAllProjects();
   }
 };
