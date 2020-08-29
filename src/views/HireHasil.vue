@@ -74,7 +74,7 @@ export default {
       skills: [
         {
           title: "What can I build / devlop...",
-          cols: 8,
+          cols: 7,
           lists: [
             {
               text: "Script for scrapping, processing and storing data"
@@ -96,22 +96,16 @@ export default {
               text: "Dynamic Accelerated mobile page generator for advance SEO."
             },
             {
-              text: "Gitlab server setup on dedicated server"
-            }
-          ]
-        },
-        {
-          title: "OS",
-          cols: 4,
-          lists: [
-            {
-              text: "Linux"
+              text: "Website setup on AWS ec2/dedicated hosting with local database. Also website setup on shared hosting."
             },
             {
-              text: "Windows"
+              text: "AWS EBS setup with remote database, s3, locadbalancer and cloudwatch"
             },
             {
-              text: "macOS"
+              text: "Gitlab server, runner setup for managing projects with CI/CD"
+            },
+            {
+              text: "Self hosted PHP Socket in Laravel"
             }
           ]
         },
@@ -150,12 +144,11 @@ export default {
       count: technology['projCount'],
     });
     });
-    this.skills.push(
-        {
-          title: "Hardware/Software Platforms",
-          cols: 6,
-          lists: technologies
-        });
+    this.skills.splice(1, 0, {
+      title: "Hardware/Software Platforms",
+      cols: 5,
+      lists: technologies
+    })
   }
 };
 </script>

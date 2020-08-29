@@ -53,6 +53,9 @@ export const htmlHeadMixins = {
                 returnData.title = optimizations.title;
                 returnData.meta.push({ property: 'og:title', content: optimizations.title });
                 returnData.meta.push({ name: 'twitter:title', content: optimizations.title });
+
+                // also set h1 tag for bing seo
+                document.getElementById('seoH1Title').innerText = optimizations.title
             }
             if(optimizations.description) {
                 returnData.meta.push({ name: 'description', content: optimizations.description });

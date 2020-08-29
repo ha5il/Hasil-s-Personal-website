@@ -379,6 +379,10 @@ footer {
 .theme-button:focus {
     box-shadow: none;
 }
+
+.breadcrumb {
+  background-color: var(--global-card-bg);
+}
 </style>
 
 <script>

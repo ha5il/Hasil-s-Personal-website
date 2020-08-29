@@ -11,7 +11,7 @@
             class="justified"
           >Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. Though having Graduation of Electrical Engineering I do have skills in Design, Web Development, Electrical repair and Electronics simulation. Out of the box, I write poems, speak quotes and try altering cloud saved data.</b-card-text>
         </b-card>
-        <b-card>
+        <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">work</i>
             What I do?
@@ -61,6 +61,67 @@
             I was involved in laundry business setup, marketing and it growth for dorzens of laundries in India. I am one of the authorised service Engineer for Danube International (France), Pony(Italy) and SEKO (USA). Beside these, I am involved in other brands like Electrolux (Sweden), Maytag (USA), Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany) and Sunrise (India).
           </b-card-text>
         </b-card>
+        <b-card class="mb-3">
+          <b-card-title>
+            <i class="material-icons">all_inbox</i>
+            Highlighted Projects
+          </b-card-title>
+          <b-row>
+            <b-col sm="12" md="4" v-for="(project, idx) in highlightedProjects" v-show="project.type=='it'" :key="idx">
+              <router-link
+                :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug }}"
+                tag="div"
+              >
+                <b-card :id="'project-'+idx" class="mb-3 project-card" :title="project.name">
+                <b-img-lazy
+                  class="mb-3"
+                  :src="project.coverImage"
+                  :blank="true"
+                  blank-src
+                  blank-width="200"
+                  blank-height="200"
+                  blank-color="#ddd"
+                  :center="true"
+                  fluid
+                  :alt="project.name+' cover image'"
+                ></b-img-lazy>
+                  <h5 class="text-info">
+                    <span v-for="(tech,idx) in project.technologies" :key="idx">
+                      <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
+                      <span v-else>{{tech}} | </span>
+                    </span>
+                  </h5>
+                  <b-card-text>
+                    {{project.tagLine}}
+                    <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
+                      <b-progress-bar
+                        v-for="(level, idxLevel) in project.contributionLevels"
+                        :key="idxLevel"
+                        :value="level"
+                        :variant="getVariant(idxLevel)"
+                      >{{idxLevel}}</b-progress-bar>
+                    </b-progress>
+                  </b-card-text>
+                </b-card>
+              </router-link>
+              <b-tooltip :delay="{show:1000,hide:400}" :target="'project-'+idx" placement="bottom" :title="getProjectPageDescription(project.id)+'...'"></b-tooltip>
+            </b-col>
+          </b-row>
+        </b-card>
+        <b-card class="mb-3">
+          <b-card-title>
+            <i class="material-icons">help</i>
+            What Can I do?
+          </b-card-title>
+            <b-list-group flush>
+              <b-list-group-item
+                v-for="(list, idxList) in whatCanIDo"
+                :key="idxList"
+                class="d-flex justify-content-between align-items-center"
+              >{{list.text}}
+              </b-list-group-item>
+            </b-list-group>
+        </b-card>
       </b-col>
       <!-- <b-col sm="12" md="4">
         <b-card class="timeline" no-body>
@@ -79,6 +140,22 @@
     border: none;
     box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     background-color: var(--global-card-bg);
+
+    .list-group-item {
+      background-color: inherit;
+      color: var(--global-primary-color);
+    }
+
+    .project-card {
+      background-color: inherit;
+      box-shadow: none;
+
+      :hover {
+        transform: scale(1.04);
+        cursor: pointer;
+        transition: 0.33s all;
+      }
+    }
   }
 
   .card-title {
@@ -112,9 +189,48 @@
 
 <script>
 import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js"
+import { projectsMixins } from "../mixins/projectsMixins.js";
 
 export default {
-  mixins: [schemaMixins, htmlHeadMixins],
+  mixins: [schemaMixins, htmlHeadMixins, projectsMixins],
+  data() {
+    return {
+      highlightedProjects: [],
+      whatCanIDo: [
+        {
+          text: "Script for scrapping, processing and storing data"
+        },
+        {
+          text: "Highly Dynamic and Scalable web platform"
+        },
+        {
+          text: "Webapp and Android App"
+        },
+        {
+          text: "Graphic / UI design"
+        },
+        {
+          text:
+            "Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore."
+        },
+        {
+          text: "Dynamic Accelerated mobile page generator for advance SEO."
+        },
+        {
+          text: "Website setup on AWS ec2/dedicated hosting with local database. Also website setup on shared hosting."
+        },
+        {
+          text: "AWS EBS setup with remote database, s3, locadbalancer and cloudwatch"
+        },
+        {
+          text: "Gitlab server, runner setup for managing projects with CI/CD"
+        },
+        {
+          text: "Self hosted PHP Socket in Laravel"
+        }
+      ]
+    }
+  },
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
       title: "Hasil's Personal Site | Hasil Paudyal",
@@ -133,6 +249,7 @@ export default {
      * Manually injecting the tags that vue-meta would inject
      */
     if(!document.getElementsByTagName('title').length) {
+      document.getElementById('seoH1Title').innerText = "Hasil's Personal Site | Hasil Paudyal"
       document.getElementsByTagName('head')[0].insertAdjacentHTML( 'beforeend', `<title>Hasil's Personal Site | Hasil Paudyal</title>
       <meta data-vue-meta="1" property="og:type" content="website">
       <meta data-vue-meta="1" property="og:url" content="https://hasilpaudyal.com.np">
@@ -145,6 +262,9 @@ export default {
       <meta data-vue-meta="1" name="twitter:image" content="https://hasilpaudyal.com.np/Hasil.png">`)
     }
     this.injectDefaultSchemaJSON('hasil')
+    this.highlightedProjects = this.getAllProjects().filter(function(project) {
+      return [12,16,19].includes(project.id)
+    })
   },
   beforeRouteLeave(to, from, next) {
     this.clearSchemaJSON()

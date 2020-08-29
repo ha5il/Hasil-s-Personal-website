@@ -134,7 +134,7 @@
     }
 
     .list-group-item {
-      background-color: var(--global-card-bg);
+      background-color: inherit;
     }
   }
 
