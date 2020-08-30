@@ -65,6 +65,7 @@
           <b-card-title>
             <i class="material-icons">all_inbox</i>
             Highlighted Projects
+            <router-link class="float-right" to="/projects">View all</router-link>
           </b-card-title>
           <b-row>
             <b-col sm="12" md="4" v-for="(project, idx) in highlightedProjects" v-show="project.type=='it'" :key="idx">
@@ -73,18 +74,13 @@
                 tag="div"
               >
                 <b-card :id="'project-'+idx" class="mb-3 project-card" :title="project.name">
-                <b-img-lazy
+                <b-img
                   class="mb-3"
                   :src="project.coverImage"
-                  :blank="true"
-                  blank-src
-                  blank-width="200"
-                  blank-height="200"
-                  blank-color="#ddd"
                   :center="true"
                   fluid
                   :alt="project.name+' cover image'"
-                ></b-img-lazy>
+                ></b-img>
                   <h5 class="text-info">
                     <span v-for="(tech,idx) in project.technologies" :key="idx">
                       <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
@@ -122,6 +118,59 @@
               </b-list-group-item>
             </b-list-group>
         </b-card>
+        <b-card class="mb-3">
+          <b-card-title>
+            <i class="material-icons">star</i>
+            Best Quotes
+            <router-link class="float-right" to="/quotes">View all</router-link>
+          </b-card-title>
+          <b-row>
+            <b-col sm="12" md="4" v-for="(quote, idx) in bestQuotes" :key="idx">
+              <router-link
+                :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
+                tag="div"
+              >
+              <b-card class="quote-card mb-3">
+                <b-card-text>
+                  <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
+                    {{quoteLine}}
+                    <br />
+                  </span>
+                </b-card-text>
+              </b-card>
+              </router-link>
+            </b-col>
+          </b-row>
+        </b-card>
+        <b-card class="mb-3">
+          <b-card-title>
+            <i class="material-icons">favorite</i>
+            Best Poems
+            <router-link class="float-right" to="/poems">View all</router-link>
+          </b-card-title>
+          <b-row>
+            <b-col sm="12" md="6" v-for="(poem, idx) in bestPoems" :key="idx">
+              <router-link
+                :to="{ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug }}"
+                tag="div"
+              >
+                <b-card class="poem-card text-center mb-3">
+                  <b-card-title>{{poem.name}}</b-card-title>
+                  <b-card-text class="mt-4">
+                    <p v-for="(para, idxPara) in poem.poemParas"
+                      :key="idxPara"
+                    >
+                    <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
+                      {{paraLine}}
+                      <br/>
+                    </span>
+                    </p>
+                  </b-card-text>
+                </b-card>
+              </router-link>
+            </b-col>
+          </b-row>
+        </b-card>
       </b-col>
       <!-- <b-col sm="12" md="4">
         <b-card class="timeline" no-body>
@@ -146,9 +195,13 @@
       color: var(--global-primary-color);
     }
 
-    .project-card {
+    .project-card, .quote-card, .poem-card {
       background-color: inherit;
       box-shadow: none;
+
+      .card-title {
+        color: var(--global-primary-color);
+      }
 
       :hover {
         transform: scale(1.04);
@@ -190,12 +243,16 @@
 <script>
 import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js"
 import { projectsMixins } from "../mixins/projectsMixins.js";
+import { quotesMixins } from "../mixins/quotesMixins.js";
+import { poemsMixins } from "../mixins/poemsMixins.js";
 
 export default {
-  mixins: [schemaMixins, htmlHeadMixins, projectsMixins],
+  mixins: [schemaMixins, htmlHeadMixins, projectsMixins, quotesMixins, poemsMixins],
   data() {
     return {
       highlightedProjects: [],
+      bestQuotes: [],
+      bestPoems: [],
       whatCanIDo: [
         {
           text: "Script for scrapping, processing and storing data"
@@ -264,6 +321,12 @@ export default {
     this.injectDefaultSchemaJSON('hasil')
     this.highlightedProjects = this.getAllProjects().filter(function(project) {
       return [12,16,19].includes(project.id)
+    })
+    this.bestQuotes = this.getAllquotes().filter(function(quote) {
+      return [2,4,9].includes(quote.id)
+    })
+    this.bestPoems = this.getAllpoems().filter(function(poem) {
+      return [3,8].includes(poem.id)
     })
   },
   beforeRouteLeave(to, from, next) {

@@ -13,32 +13,46 @@
           class="ml-2"
         >
           <b-card class="card-poem p-3" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
+            <p class="my-name">
+              <span>H</span>
+              <span>A</span>
+              <span>S</span>
+              <span>I</span>
+              <span>L</span>
+              <span class="ml-1">P</span>
+              <span>A</span>
+              <span>U</span>
+              <span>D</span>
+              <span>Y</span>
+              <span>A</span>
+              <span>L</span>
+            </p>
             <b-card-text class="card-text-poem">
-              <strong>H</strong>ere I am
+              <span><strong>H</strong>ere I am</span>
               <br />
-              <strong>A</strong> cut above you all
+              <span><strong>A</strong> cut above you all</span>
               <br />
-              <strong>S</strong>ilent as a grave
+              <span><strong>S</strong>ilent as a grave</span>
               <br />
-              <strong>I</strong>n favour of your death
-              <br />
-              <br />
-              <strong>L</strong>ethal is my pen
-              <br />
-              <strong>P</strong>erfect would be again
-              <br />
-              <strong>A</strong> fortune is with me
-              <br />
-              <strong>U</strong>nbeatable this shall be
+              <span><strong>I</strong>n favour of your death</span>
               <br />
               <br />
-              <strong>D</strong>are you come near
+              <span><strong>L</strong>ethal is my pen</span>
               <br />
-              <strong>Y</strong>ell you out there
+              <span><strong>P</strong>erfect would be again</span>
               <br />
-              <strong>A</strong>nd who is this me
+              <span><strong>A</strong> fortune is with me</span>
               <br />
-              <strong>L</strong>inks the first letters to me
+              <span><strong>U</strong>nbeatable this shall be</span>
+              <br />
+              <br />
+              <span><strong>D</strong>are you come near</span>
+              <br />
+              <span><strong>Y</strong>ell you out there</span>
+              <br />
+              <span><strong>A</strong>nd who is this me</span>
+              <br />
+              <span><strong>L</strong>inks the first letters to me</span>
             </b-card-text>
             <div class="text-center">
               <b-link class="px-3" to="//np.linkedin.com/in/hasil" target="_blank">
@@ -189,14 +203,12 @@
 
 .fade-leave-active {
   transition: 0.5s;
-  transform: scale(1.4);
+  transform: skewX(-45deg);
+  opacity: 0;
 }
 
 .fade-enter {
-  transform: scale(0.8);
-  opacity: 0;
-}
-.fade-leave-active {
+  transform: skewX(45deg);
   opacity: 0;
 }
 
@@ -306,40 +318,36 @@ body {
     margin: auto;
   }
 
-  strong {
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      text-shadow: 0 0 0 var(--global-secondary-color);
-    }
-    70% {
-      text-shadow: 0 0 100px var(--global-secondary-color);
-    }
-    100% {
-      text-shadow: 0 0 100px var(--global-secondary-color);
-    }
-  }
-
-  .social-icon {
-    margin-left: 25%;
-    margin-right: 5%;
+  img:hover {
+    transform: scale(1.1);
+    transition: 0.33s all;
   }
 
   .card-body {
     padding: 1.25rem 0rem;
   }
+
+  .my-name {
+    color: var(--global-secondary-color);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .card-text-poem {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 20px auto;
+    color: var(--global-primary-color);
+
+    span:hover strong {
+      color: var(--global-secondary-color);
+    }
+  }
 }
 
-.card-text-poem {
-  text-align: center;
-  letter-spacing: 1px;
-  font-size: 16px;
-  line-height: 18px;
-  margin: 20px auto;
-  color: var(--global-primary-color);
-}
 
 footer {
   color: #ffffff;

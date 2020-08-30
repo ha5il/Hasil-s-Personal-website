@@ -2,7 +2,7 @@
   <div id="poem" class="mt-5">
     <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
     <b-row>
-      <b-col col sm="12" md="6" offset-md="3">
+      <b-col col sm="12">
         <b-card>
           <b-card-title>
             {{poem.name}}
