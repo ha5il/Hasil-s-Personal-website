@@ -34,8 +34,12 @@
           ></b-img-lazy>
             <h5 class="text-info">
               <span v-for="(tech,idx) in project.technologies" :key="idx">
-                <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
-                <span v-else>{{tech}} | </span>
+                <b-img
+                  class="mx-1"
+                  width="32"
+                  :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
+                  :alt="tech+' logo'"
+                ></b-img>
               </span>
             </h5>
             <b-card-text>
@@ -64,8 +68,12 @@
         <b-card class="mb-3" :title="project.name">
           <h5 class="text-info">
             <span v-for="(tech,idx) in project.technologies" :key="idx">
-              <span v-if="(idx+1)==project.technologies.length">{{tech}}</span>
-              <span v-else>{{tech}} | </span>
+                <b-img
+                  class="mx-1"
+                  width="32"
+                  :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
+                  :alt="tech+' logo'"
+                ></b-img>
             </span>
           </h5>
           <b-card-text>

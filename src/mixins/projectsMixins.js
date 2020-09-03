@@ -283,7 +283,7 @@ const projects = [
         urlSlug: "fixolla-india-simplifying-lives-repair-mobile-tablet-laptop-online",
         id: 7,
         website: '//fixolla.com',
-        technologies: ['Java', 'Laravel'],
+        technologies: ['Java', 'Laravel', 'Android Studio'],
         contributionLevels: {
             AndroidApp: 20,
             Design: 5,
