@@ -209,7 +209,7 @@
 
       :hover {
         transform: scale(1.04);
-        cursor: pointer;
+        cursor: url('/cursor-pointer.png'), pointer;
         transition: 0.33s all;
       }
     }

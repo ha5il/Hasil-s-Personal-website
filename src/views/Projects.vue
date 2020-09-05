@@ -116,7 +116,7 @@
 
   .card:hover {
     transform: scale(1.04);
-    cursor: pointer;
+    cursor: url('/cursor-pointer.png'), pointer;;
   }
 
   .card-title {

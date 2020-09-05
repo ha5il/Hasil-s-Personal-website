@@ -12,21 +12,8 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem p-3" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
-            <p class="my-name">
-              <span>H</span>
-              <span>A</span>
-              <span>S</span>
-              <span>I</span>
-              <span>L</span>
-              <span class="ml-1">P</span>
-              <span>A</span>
-              <span>U</span>
-              <span>D</span>
-              <span>Y</span>
-              <span>A</span>
-              <span>L</span>
-            </p>
+          <b-card class="card-poem-intro p-3" img-src="/Hasil.png" img-alt="Hasil Paudyal" img-top>
+            <p class="my-name">Hasil Paudyal</p>
             <b-card-text class="card-text-poem">
               <span><strong>H</strong>ere I am</span>
               <br />
@@ -195,6 +182,11 @@
   --global-primary-color: #6e161c;
   --global-secondary-color: #e6a410;
   --global-shadow-color: #d0d0d0;
+  cursor: url('/cursor-normal.png'), auto;
+}
+
+a {
+  cursor: url('/cursor-pointer.png'), pointer;
 }
 
 .fade-enter-active {
@@ -299,7 +291,15 @@ body {
   width: 73%;
 }
 
-.card-poem {
+.card-poem-intro {
+  :hover strong {
+    color: var(--global-secondary-color);
+  }
+
+  :hover .my-name {
+    color: var(--global-primary-color);
+  }
+
   border: none;
   border-radius: 20px;
   padding-top: 15px;
@@ -341,13 +341,8 @@ body {
     line-height: 18px;
     margin: 20px auto;
     color: var(--global-primary-color);
-
-    span:hover strong {
-      color: var(--global-secondary-color);
-    }
   }
 }
-
 
 footer {
   color: #ffffff;
@@ -359,7 +354,7 @@ footer {
   bottom: 0px;
 
   span {  
-    cursor: pointer;
+    cursor: url('/cursor-pointer.png'), pointer;;
   }
 }
 
