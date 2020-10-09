@@ -3,8 +3,7 @@
     <div v-show="showBgAnim" class="bg"></div>
     <div v-show="showBgAnim" class="bg bg2"></div>
     <div v-show="showBgAnim" class="bg bg3"></div>
-    <!-- <b-container fluid v-on:mousemove="resetTheme"> -->
-    <b-container fluid>
+    <b-container fluid v-bind:style="[ isScrolling ? 'animation: 1s nan-na-na infinite': '' ]">
       <b-row class="pt-2">
         <b-col
           v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}"
@@ -183,6 +182,29 @@
   --global-secondary-color: #e6a410;
   --global-shadow-color: #d0d0d0;
   cursor: url('/cursor-normal.png'), auto;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: #b4b4b4;
+
+  &:hover {
+    width: 10px;
+  }
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #CCCCCC;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: var(--global-primary-color);
+	background-image: -webkit-linear-gradient(90deg, transparent, var(--global-secondary-color) 50%, transparent);
+  box-shadow: inset 0px 0px 4px 0px #000000;
 }
 
 a {
@@ -413,6 +435,8 @@ footer {
 <script>
 import { quotesMixins } from "./mixins/quotesMixins.js";
 
+var scrollEffectTimeout;
+
 export default {
   mixins: [quotesMixins],
   data() {
@@ -429,6 +453,7 @@ export default {
       randomThemeColourInterval: null,
       isThemeBtnsVisible: false,
       showBgAnim: true,
+      isScrolling: false,
     };
   },
   methods: {
@@ -465,6 +490,12 @@ export default {
       if(this.isThemeBtnsVisible) {
         this.isThemeBtnsVisible = false
       }
+      // blur scroll effect
+      this.isScrolling = true;
+      window.clearTimeout(scrollEffectTimeout);
+      scrollEffectTimeout = setTimeout(() => {
+        this.isScrolling = false;
+      }, 66);
     },
       switchTheme (darkMode, primary, secondary) {
         this.showBgAnim = !darkMode
