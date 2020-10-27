@@ -10,7 +10,15 @@
                 v-for="(list, idxList) in skillData.lists"
                 :key="idxList"
                 class="d-flex justify-content-between align-items-center"
-              >{{list.text}}
+              >
+                <b-img
+                  v-if="list.icon"
+                  class="mx-1"
+                  width="32"
+                  :src="list.icon"
+                  :alt="list.text+' logo'"
+                ></b-img>
+                {{list.text}}
                 <b-badge v-show="list.count" pill>{{list.count}}</b-badge>              
               </b-list-group-item>
             </b-list-group>
@@ -142,12 +150,13 @@ export default {
     technologies.push({
       text: technology['tech'],
       count: technology['projCount'],
+      icon: '/'+technology['tech'].replace(/ /g,'').toLowerCase()+'-logo.png',
     });
     });
     this.skills.splice(1, 0, {
       title: "Hardware/Software Platforms",
       cols: 5,
-      lists: technologies
+      lists: _.orderBy(technologies, ['count', 'text'], ['desc', 'asc'])
     })
   }
 };
