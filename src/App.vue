@@ -3,7 +3,7 @@
     <div v-show="showBgAnim" class="bg"></div>
     <div v-show="showBgAnim" class="bg bg2"></div>
     <div v-show="showBgAnim" class="bg bg3"></div>
-    <b-container fluid v-bind:style="[ isScrolling ? 'animation: 1s nan-na-na infinite': '' ]">
+    <b-container fluid>
       <b-row class="pt-2">
         <b-col
           v-bind:class="{'d-none':!isHomePage&&(windowInnerWidth<576)}"
@@ -435,8 +435,6 @@ footer {
 <script>
 import { quotesMixins } from "./mixins/quotesMixins.js";
 
-var scrollEffectTimeout;
-
 export default {
   mixins: [quotesMixins],
   data() {
@@ -453,7 +451,6 @@ export default {
       randomThemeColourInterval: null,
       isThemeBtnsVisible: false,
       showBgAnim: true,
-      isScrolling: false,
     };
   },
   methods: {
@@ -490,12 +487,6 @@ export default {
       if(this.isThemeBtnsVisible) {
         this.isThemeBtnsVisible = false
       }
-      // blur scroll effect
-      this.isScrolling = true;
-      window.clearTimeout(scrollEffectTimeout);
-      scrollEffectTimeout = setTimeout(() => {
-        this.isScrolling = false;
-      }, 66);
     },
       switchTheme (darkMode, primary, secondary) {
         this.showBgAnim = !darkMode
