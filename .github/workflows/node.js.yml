@@ -1,4 +1,4 @@
-name: Node.js C
+name: Hosting Deploy
 on:
   push:
     branches: [ vue ]
