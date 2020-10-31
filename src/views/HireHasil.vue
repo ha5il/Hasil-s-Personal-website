@@ -122,22 +122,25 @@ export default {
           cols: 6,
           lists: [
             {
-              text: "Photoshop"
+              text: "Adobe XD"
             },
             {
-              text: "Adobe XD"
+              text: "Android Studio"
             },
             {
               text: "AutoCAD"
             },
             {
-              text: "Android and Visual Studio"
+              text: "MiPower"
+            },
+            {
+              text: "Photoshop"
             },
             {
               text: "Primavera"
             },
             {
-              text: "MiPower"
+              text: "Visual Studio"
             }
       ]
       }

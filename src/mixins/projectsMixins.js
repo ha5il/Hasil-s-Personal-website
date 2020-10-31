@@ -45,7 +45,7 @@ const projects = [
                     text: 'Web Analytics'
                 }, {
                     badge: 'Marketing',
-                    text: 'Dynamic banners rediection'
+                    text: 'Dynamic banners redirection'
                 }, {
                     badge: 'Marketing',
                     text: 'Promo Codes and Discount Management'
@@ -118,10 +118,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since WooCommerce is not targeted to Neplease market we had to built a better platform than that.'
+                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since WooCommerce is not targeted to Nepalese market we had to built a better platform than that.'
                 },
                 {
-                    text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the oter hand it is also capable to tracking user referrals to provide extra offers and discounts.'
+                    text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the other hand it is also capable to tracking user referrals to provide extra offers and discounts.'
                 }
             ],
         }, {
@@ -177,12 +177,12 @@ const projects = [
     },
     {
         name: "Kourtier Courier",
-        tagLine: "Webapp for kourier tracking management.",
+        tagLine: "Webapp for courier tracking management.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fkourtier.JPG?alt=media",
         type: "it",
         urlSlug: "kourtier-courier-services-cargo-freight",
         id: 4,
-        website: '//kourtier.com.np',
+        website: '//kourtiercourier.com.np',
         technologies: ['Laravel', 'jQuery'],
         contributionLevels: {
             Design: 2,
@@ -194,7 +194,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with an advanced and scientific management using world class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customised requirements and by virtue of more than decade and half long experience, we are aware of the type and sensitivity of consignment; process of delivery; standard POD requirements and delivery time schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
+                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with an advanced and scientific management using world class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customized requirements and by virtue of more than decade and half long experience, we are aware of the type and sensitivity of consignment; process of delivery; standard POD requirements and delivery time schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
                 }
             ],
         }, {
@@ -246,7 +246,7 @@ const projects = [
         tagLine: "Tribhuvan International airport.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ftia.JPG?alt=media",
         type: "it",
-        urlSlug: "tribhuvan-international-airport-filght-tracking-nepal",
+        urlSlug: "tribhuvan-international-airport-flight-tracking-nepal",
         id: 6,
         website: '//tiairport.com.np',
         technologies: ['October CMS'],
@@ -319,10 +319,10 @@ const projects = [
         }]
     },
     {
-        name: "RFID Limitor",
+        name: "RFID Limiter",
         tagLine: "An Arduino UNO based project for limiting the RFID Scans.",
         type: "ee",
-        urlSlug: "rfid-limitor-arduino-uno-limiting-scans",
+        urlSlug: "rfid-limiter-arduino-uno-limiting-scans",
         id: 8,
         technologies: ['Arduino'],
         contributionLevels: {
@@ -335,7 +335,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with option to limit the number of authoriations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
+                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with option to limit the number of authorizations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
                 }
             ],
         }, {
@@ -412,7 +412,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegaly by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus autocad 8.6. The process thus developed is effective and reliable.'
+                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegally by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus 8.6. The process thus developed is effective and reliable.'
                 }
             ],
         }, {
@@ -427,7 +427,7 @@ const projects = [
                     text: 'Eliminator Initialization'
                 }, {
                     badge: 'Simulation',
-                    text: 'Modeling ans simulation on Proteus'
+                    text: 'Modeling and simulation on Proteus'
                 }],
         }]
     },
@@ -460,7 +460,7 @@ const projects = [
             lists:
                 [{
                     badge: 'Simulation',
-                    text: 'Modeling ans simulation on Proteus'
+                    text: 'Modeling and simulation on Proteus'
                 }, {
                     badge: 'Feature',
                     text: 'Visual Indication of device health'
@@ -478,7 +478,7 @@ const projects = [
     },
     {
         name: "Legal Remit Nepal",
-        tagLine: "Remitance website for money transfers.",
+        tagLine: "Remittance website for money transfers.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flegal-remit-nepal.JPG?alt=media",
         type: "it",
         urlSlug: "legal-remit-nepal-transfer-management",
@@ -507,7 +507,7 @@ const projects = [
             lists:
                 [{
                     badge: 'Feature',
-                    text: 'Transcation Management'
+                    text: 'Transaction Management'
                 }, {
                     badge: 'Security',
                     text: 'Middleware Protection for admin, staff and user accounts'
@@ -516,7 +516,7 @@ const projects = [
                     text: 'Web Analytics'
                 }, {
                     badge: 'Feature',
-                    text: 'Banks transcation management'
+                    text: 'Banks transaction management'
                 }, {
                     badge: 'Development',
                     text: 'Usage tracking'
@@ -679,7 +679,7 @@ const projects = [
                     text: 'Vuejs filter and vue-router management.'
                 }, {
                     badge: 'Storage',
-                    text: 'Vuex for persisting the laravel\'s session and login check of user has loggedin by checking keep me signedin.'
+                    text: 'Vuex for persisting the Laravel\'s session and login check of user has logged-in by checking keep me signed-in.'
                 }],
         }, {
             title: 'Team',
@@ -712,7 +712,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Website built for Production house to highlight their protfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes restricted area where the visitor has to enter access code to proceed.'
+                    text: 'Website built for Production house to highlight their portfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes restricted area where the visitor has to enter access code to proceed.'
                 }
             ],
         }, {
@@ -757,10 +757,13 @@ const projects = [
             lists:
                 [{
                     badge: 'Feature',
-                    text: 'Backend panel to check answersheet'
+                    text: 'Backend panel to check answer sheet'
                 }, {
                     badge: 'Feature',
                     text: 'Laravel Echo for notification'
+                }, {
+                    badge: 'Feature',
+                    text: 'Self hosted pusher server'
                 }],
         }]
     }, {

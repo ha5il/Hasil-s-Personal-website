@@ -58,7 +58,7 @@
               <br />(Dec 2016 - Dec 2018)
               <br />
             </span>
-            I was involved in laundry business setup, marketing and it growth for dorzens of laundries in India. I am one of the authorised service Engineer for Danube International (France), Pony(Italy) and SEKO (USA). Beside these, I am involved in other brands like Electrolux (Sweden), Maytag (USA), Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany) and Sunrise (India).
+            I was involved in laundry business setup, marketing and it growth for dorzens of laundries in India. I am one of the authorised service Engineer for <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Beside these, I am involved in other brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
           </b-card-text>
         </b-card>
         <b-card class="mb-3">
