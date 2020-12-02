@@ -98,22 +98,22 @@ export default {
             },
             {
               text:
-                "Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore."
+                "Portable hardware interfacing RFID, physical sensors, Wifi for IoT and much more."
             },
             {
               text: "Dynamic Accelerated mobile page generator for advance SEO."
             },
             {
-              text: "Website setup on AWS ec2/dedicated hosting with local database. Also website setup on shared hosting."
+              text: "Website setup on AWS ec2/dedicated hosting with a local database. Also website setup on shared hosting."
             },
             {
-              text: "AWS EBS setup with remote database, s3, locadbalancer and cloudwatch"
+              text: "AWS EBS setup with a remote database, s3, load balancer and cloud watch"
             },
             {
               text: "Gitlab server, runner setup for managing projects with CI/CD"
             },
             {
-              text: "Self hosted PHP Socket in Laravel"
+              text: "Self-hosted PHP Socket in Laravel"
             }
           ]
         },

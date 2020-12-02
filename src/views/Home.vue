@@ -25,18 +25,18 @@
               <br />(Jan 2019 - Present)
               <br />
             </span>
-            I develop the backend for website, connect its database to different platforms with api. I also build mini apps on react native.
+            I develop the backend for websites, connect its database to different platforms with API. I also build mini-apps on react native.
             <br />
             <br />
             <span class="text-info">
               <a href="//fixolla.com" target="_blank"
               v-b-tooltip.hover title="Goto Fixolla's website">
-              Juniour Android Developer at Fixolla | India
+              Junior Android Developer at Fixolla | India
               </a>
               <br />(Feb 2018 - Dec 2018)
               <br />
             </span>
-            With their android development team I learnt app development and also developed api.
+            With their android development teamn I learnt app development and also developed API.
             <br />
             <br />
             <span class="text-info">
@@ -58,7 +58,7 @@
               <br />(Dec 2016 - Dec 2018)
               <br />
             </span>
-            I was involved in laundry business setup, marketing and it growth for dorzens of laundries in India. I am one of the authorised service Engineer for <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Beside these, I am involved in other brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
+            I was involved in laundry business setup, marketing and it growth for dozens of laundries in India. I am one of the authorised service Engineer for <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Besides these, I am involved in other brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
           </b-card-text>
         </b-card>
         <b-card class="mb-3">
@@ -272,22 +272,22 @@ export default {
         },
         {
           text:
-            "Portabe hardware interfacing RFID, physical sensors, Wifi for IOT and muchmore."
+            "Portable hardware interfacing RFID, physical sensors, Wifi for IoT and much more."
         },
         {
           text: "Dynamic Accelerated mobile page generator for advance SEO."
         },
         {
-          text: "Website setup on AWS ec2/dedicated hosting with local database. Also website setup on shared hosting."
+          text: "Website setup on AWS ec2/dedicated hosting with a local database. Also website setup on shared hosting."
         },
         {
-          text: "AWS EBS setup with remote database, s3, locadbalancer and cloudwatch"
+          text: "AWS EBS setup with a remote database, s3, load balancer and cloud watch"
         },
         {
           text: "Gitlab server, runner setup for managing projects with CI/CD"
         },
         {
-          text: "Self hosted PHP Socket in Laravel"
+          text: "Self-hosted PHP Socket in Laravel"
         }
       ]
     }

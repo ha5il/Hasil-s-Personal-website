@@ -21,7 +21,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'KTM Retail is created for authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allows user to purchase items with digital payment and track its status. It also has reliable options for admin to activate offers and flash sale during festivals.'
+                    text: 'KTM Retail is created for the authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allow users to purchase items with digital payment and track their status. It also has reliable options for admin to activate offers and flash sale during festivals.'
                 }
             ],
         }, {
@@ -76,9 +76,9 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Intranery Online means buying or purchasing the stationery and other products through online(The Internet Technology). Today the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized Communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.'
+                    text: 'Intranery Online means buying or purchasing the stationery and other products through online(The Internet Technology). Today the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.'
                 }, {
-                    text: 'Intranery Online it is also the same. The buyer’s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a sales person. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door to door facilities for every people. Now every people can order and get the necessity goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery have access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.'
+                    text: 'Intranery Online it is also the same. The buyer’s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a salesperson. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door to door facilities for every people. Now every people can order and get the necessary goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery has access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.'
                 }
             ],
         }, {
@@ -118,10 +118,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The project is created to replace the wordpress site crafted with WooCommerce. Since WooCommerce is not targeted to Nepalese market we had to built a better platform than that.'
+                    text: 'The project is created to replace the WordPress site crafted with WooCommerce. Since WooCommerce is not targeted to Nepalese market we had to build a better platform than that.'
                 },
                 {
-                    text: 'Foreveryng not only sells products online but also has reward point, gift card and promo management system to boost the marketing. On the other hand it is also capable to tracking user referrals to provide extra offers and discounts.'
+                    text: 'Foreveryng not only sells products online but also has a reward point system, gift card and promo management system to boost marketing. On the other hand, it is also capable of tracking user referrals to provide extra offers and discounts.'
                 }
             ],
         }, {
@@ -194,7 +194,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with an advanced and scientific management using world class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customized requirements and by virtue of more than decade and half long experience, we are aware of the type and sensitivity of consignment; process of delivery; standard POD requirements and delivery time schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
+                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with advanced and scientific management using world-class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customized requirements and by more than a decade and a half long experience, we are aware of the type and sensitivity of consignment; the process of delivery; standard POD requirements and delivery schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
                 }
             ],
         }, {
@@ -225,7 +225,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Meropharmacist is the first of its kind to provide the counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted on serious medicine related concerns like drug overuse, misuse, adverse drug reactions and lack of patient compliance.'
+                    text: 'Meropharmacist is the first of its kind to provide the counselling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted in serious medicine-related concerns like drug overuse, misuse, adverse drug reactions and lack of patient compliance.'
                 }
             ],
         }, {
@@ -259,7 +259,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all they posses smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
+                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all, they possess smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
                 }
             ],
         }, {
@@ -335,7 +335,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with option to limit the number of authorizations to individual card holder. After (n) number of scans the device revokes the access unless re-authorized by system head.'
+                    text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with an option to limit the number of authorizations to the individual cardholder. After (n) number of scans, the device revokes the access unless re-authorized by system head.'
                 }
             ],
         }, {
@@ -375,7 +375,7 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'Danube International Washer Extractor keeps the record of washes done in the machine with timestamp. The app is made to calculate total kgs of washes done by machine to report the laundry owner so that he can cross check it with revenue collected.'
+                    text: 'Danube International Washer-Extractor keeps the record of washes done in the machine with the timestamp. The app is made to calculate total kgs of washes done by machine to report the laundry owner so that he can cross-check it with revenue collected.'
                 }
             ],
         }, {
@@ -496,9 +496,9 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Transferring money is optimized with KYC, documents validation and assigning to banks. The webapp also keeps record of deposits made to banks between countries.'
+                    text: 'Legal Remit in one of few realtime international remit transfers working for Nepal. Transferring money is optimized with KYC, documents validation and assigning to banks. The web app also keeps record a of deposits made to banks between countries.'
                 }, {
-                    text: 'The app also has staff accounts for individual partners banks across countries.'
+                    text: 'The app also has permission management for admin users, report comparison and remit status tracking.'
                 }
             ],
         }, {
@@ -565,7 +565,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Wordpress provides API service. The app uses it to list post, search them and view details. Also there are some static supporting pages.'
+                    text: 'WordPress provides API service. The app uses it to list post, search them and view details. Also, there are some static supporting pages.'
                 }
             ],
         }, {
@@ -613,7 +613,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Indigo Ink book publisher comes online with book gallery. They also have system to publish the events they regularly organize.'
+                    text: 'Indigo Ink book publisher comes online with a book gallery. They also have a system to publish the events they regularly organize.'
                 }
             ],
         }, {
@@ -664,7 +664,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Provides easy and fast search of employees in several departments within company.'
+                    text: 'Provides an easy and fast search of employees in several departments within the company.'
                 }
             ],
         }, {
@@ -679,7 +679,7 @@ const projects = [
                     text: 'Vuejs filter and vue-router management.'
                 }, {
                     badge: 'Storage',
-                    text: 'Vuex for persisting the Laravel\'s session and login check of user has logged-in by checking keep me signed-in.'
+                    text: 'Vuex for persisting the Laravel\'s session and login check of a user has logged-in by checking to keep me signed-in.'
                 }],
         }, {
             title: 'Team',
@@ -712,7 +712,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Website built for Production house to highlight their portfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes restricted area where the visitor has to enter access code to proceed.'
+                    text: 'Website built for the Production house to highlight its portfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes a restricted area where the visitor has to enter access code to proceed.'
                 }
             ],
         }, {
@@ -748,7 +748,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'ReachOn is the digital education platform with the vision to create education system where every student has the same opportunities. Education is all about accessibility and equality but different student left their class with different level of understanding and face many problems with current education system.'
+                    text: 'ReachOn is the digital education platform with the vision to create an education system where every student has the same opportunities. Education is all about accessibility and equality but different student left their class with different level of understanding and face many problems with the current education system.'
                 }
             ],
         }, {
