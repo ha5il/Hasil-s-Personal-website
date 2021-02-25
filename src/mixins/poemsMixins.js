@@ -93,7 +93,7 @@ const poems = [
             }, {
                 paraLines: [
                     'If you know that I am genius',
-                    'Them know that you made of genius',
+                    'Then know that you made of genius',
                     'Everyone don\'t accept me as genius',
                     'Because they aren\'t genius to belief me as genius',
                 ]

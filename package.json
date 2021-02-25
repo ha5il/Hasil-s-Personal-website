@@ -21,7 +21,7 @@
     "@vue/cli-plugin-eslint": "^3.12.1",
     "@vue/cli-service": "^3.12.1",
     "babel-eslint": "^10.1.0",
-    "bootstrap": "^4.5.3",
+    "bootstrap": "^4.6.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.3",
     "mutationobserver-shim": "^0.3.7",

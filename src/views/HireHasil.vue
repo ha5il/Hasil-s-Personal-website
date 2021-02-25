@@ -81,7 +81,7 @@ export default {
     return {
       skills: [
         {
-          title: "What can I build / devlop...",
+          title: "What can I build / develop...",
           cols: 7,
           lists: [
             {
