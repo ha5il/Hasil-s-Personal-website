@@ -499,11 +499,13 @@ export default {
       }
     },
   created() {
-    window.addEventListener("scroll", this.handleScroll);
     this.$router.history.current.name == "home"
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
     this.footerQuote = this.getRandomQuote();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
   },
   watch: {
     $route(to) {
