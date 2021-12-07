@@ -4,7 +4,7 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 let pagesToRender = ['/', '/projects', '/quotes', '/poems', '/gallery', '/hire-Hasil']
 
-for (let index = 1; index <= 19; index++) {
+for (let index = 1; index <= 20; index++) {
   pagesToRender.push(`/project/${index}/a`)
 }
 

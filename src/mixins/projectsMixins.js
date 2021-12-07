@@ -840,6 +840,42 @@ const projects = [
                     text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
                 }],
         }]
+    }, {
+        name: "Tender Management",
+        tagLine: "Draft, publish, bid and award for public and private tenders.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fshort-vids.jpg?alt=media",
+        type: "it",
+        urlSlug: "strata-tender-management",
+        id: 20,
+        technologies: ['Laravel', 'Vuejs', 'AWS'],
+        contributionLevels: {
+            Design: 10,
+            API: 20,
+            Backend: 30
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'This includes portal for managers and contractors for tender creation and bidding.'
+                }
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Feature',
+                    text: 'Browser push notifications.'
+                }, {
+                    badge: 'Security',
+                    text: 'Email and OPT verification with account ban system.'
+                }, {
+                    badge: 'Hosting',
+                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
+                }],
+        }]
     }
 ];
 
