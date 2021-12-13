@@ -843,7 +843,7 @@ const projects = [
     }, {
         name: "Tender Management",
         tagLine: "Draft, publish, bid and award for public and private tenders.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fshort-vids.jpg?alt=media",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fstrata.jpg?alt=media",
         type: "it",
         urlSlug: "strata-tender-management",
         id: 20,
@@ -858,7 +858,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'This includes portal for managers and contractors for tender creation and bidding.'
+                    text: 'This includes portal for managers and contractors for tender creation and bidding. Super Admin portal is currently developed for license verification with 3rd party api and account activation.'
                 }
             ],
         }, {
@@ -867,13 +867,19 @@ const projects = [
             lists:
                 [{
                     badge: 'Feature',
-                    text: 'Browser push notifications.'
+                    text: 'Browser push notifications using Firebase.'
                 }, {
                     badge: 'Security',
                     text: 'Email and OPT verification with account ban system.'
                 }, {
                     badge: 'Hosting',
-                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
+                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS.'
+                }, {
+                    badge: 'Feature',
+                    text: 'Jobs and Queue for emails and other heavy tasks.'
+                }, {
+                    badge: 'Feature',
+                    text: 'Edit logs for any table using polymorphic model applied using trait to eloquent class.'
                 }],
         }]
     }
