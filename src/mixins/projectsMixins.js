@@ -851,7 +851,8 @@ const projects = [
         contributionLevels: {
             Design: 10,
             API: 20,
-            Backend: 30
+            Backend: 30,
+            'External API': 40
         },
         details: [{
             title: 'Overview',
