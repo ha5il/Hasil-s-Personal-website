@@ -29,5 +29,7 @@ module.exports = {
         })
       })
     ]
-  }
+  },
+
+  productionSourceMap: false
 }

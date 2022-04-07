@@ -18,44 +18,55 @@
           </b-card-title>
           <b-card-text>
             <span class="text-info">
-              <a href="//view9.com.np" target="_blank"
-              v-b-tooltip.hover title="Goto View9's website">
-              Web Developer at View9 | Nepal
+              <a class="job-position" href="//nad-tech.com" target="_blank"
+              v-b-tooltip.hover.right title="Goto NAD Tech's website">
+              Full Stack Developer at NAD Tech | USA (Working from Nepal)
               </a>
-              <br />(Jan 2019 - Present)
+              <br />(Jan 2022 - Present)
               <br />
             </span>
-            I develop the backend for websites, connect its database to different platforms with API. I also build mini-apps on react native.
+            Working as project lead, I focus on Hybrid Apps development with ReactNative and Ionic! Moreover, I handle servers and assist the backend team with crucial decisions and algorithms.
             <br />
             <br />
             <span class="text-info">
-              <a href="//fixolla.com" target="_blank"
-              v-b-tooltip.hover title="Goto Fixolla's website">
-              Junior Android Developer at Fixolla | India
+              <a class="job-position" href="//view9.com.np" target="_blank"
+              v-b-tooltip.hover.right title="Goto View9's website">
+              Web Developer at View9 | Nepal
               </a>
-              <br />(Feb 2018 - Dec 2018)
+              <br />Jan 2019 - Dec 2021 • 2 years 11 months
+              <br />
+            </span>
+            I was project lead and used to develop a backend for websites. I gained a lot of experience by integrating server to server APIs of banks, license verification, online payment and other services to 3rd party servers working on SOAP and JSON. I also developed logging, schedule and recurring jobs system to notify site admins and customers using different AWS and Laravel features. I assisted my juniours in setting up servers and handling the complaints/errors on production.
+            <br />
+            <br />
+            <span class="text-info">
+              <a class="job-position" href="//fixolla.com" target="_blank"
+              v-b-tooltip.hover.right title="Goto Fixolla's website">
+              Part time Junior Android Developer at Fixolla | India
+              </a>
+              <br />Feb 2018 - Dec 2018 • 11 months
               <br />
             </span>
             With their android development team, I learnt app development and also developed API.
             <br />
             <br />
             <span class="text-info">
-              <a href="//fixolla.com" target="_blank"
-              v-b-tooltip.hover title="Goto Fixolla's website">
-              Security Analyst at Fixolla | India
+              <a class="job-position" href="//fixolla.com" target="_blank"
+              v-b-tooltip.hover.right title="Goto Fixolla's website">
+              Part time Security Analyst at Fixolla | India
               </a>
-              <br />(Sep 2017 - Feb 2018)
+              <br />Sep 2017 - Feb 2018 • 6 months
               <br />
             </span>
             As an analyst helped the company in scrapping the data from open sources and build their database. I was also offered public speaking and promotional offers publicity across colleges in Bangalore.
             <br />
             <br />
             <span class="text-info">
-              <a href="//a2zlaundrysolutions.com" target="_blank"
-              v-b-tooltip.hover title="Goto A2Z's website">
+              <a class="job-position" href="//a2zlaundrysolutions.com" target="_blank"
+              v-b-tooltip.hover.right title="Goto A2Z's website">
               Service and Sales Engineer at A2Z Laundry Solutions | India
               </a>
-              <br />(Dec 2016 - Dec 2018)
+              <br />Dec 2016 - Dec 2018 • 2 years 1 months
               <br />
             </span>
             I was involved in laundry business setup, marketing and its growth for dozens of laundries in India. I am one of the authorised service Engineer for <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Besides these, I am involved in other brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
@@ -240,6 +251,10 @@
     .timeline {
       margin-top: 20px;
     }
+  }
+
+  .job-position {
+    font-size: 1.2rem;
   }
 }
 </style>
