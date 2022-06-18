@@ -883,6 +883,29 @@ const projects = [
                     text: 'Edit logs for any table using polymorphic model applied using trait to eloquent class.'
                 }],
         }]
+    }, {
+        name: "Community Events",
+        tagLine: "Create, invite and enjoy events happeing in your community.",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcommunity-event.jpg?alt=media",
+        type: "it",
+        urlSlug: "community-events",
+        id: 21,
+        technologies: ['Spring Boot', 'React Native', 'Expo', 'AWS', 'Firestore'],
+        contributionLevels: {
+            Design: 5,
+            Backend: 20,
+            Frontend: 70,
+            Teammates: 5,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'Expo managed React Native app for creating events and sharing to community. This app also includes chat feature implemented using firestore database provided by Google Firebase.'
+                }
+            ],
+        }]
     }
 ];
 

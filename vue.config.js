@@ -4,7 +4,7 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 let pagesToRender = ['/', '/projects', '/quotes', '/poems', '/gallery', '/hire-Hasil']
 
-for (let index = 1; index <= 20; index++) {
+for (let index = 1; index <= 21; index++) {
   pagesToRender.push(`/project/${index}/a`)
 }
 
@@ -16,7 +16,7 @@ for (let index = 1; index <= 11; index++) {
   pagesToRender.push(`/quote/${index}/a`)
 }
 
-console.log('Pages to render', JSON.stringify(pagesToRender))
+// console.log('Pages to render', JSON.stringify(pagesToRender))
 
 module.exports = {
   configureWebpack: {
