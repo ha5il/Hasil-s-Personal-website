@@ -65,6 +65,7 @@
 
 
 <script>
+import _ from "lodash";
 import { projectsMixins } from "../mixins/projectsMixins.js";
 import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
