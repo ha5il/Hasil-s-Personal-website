@@ -1,20 +1,32 @@
-name: Hosting Deploy
+name: 🚀 Build & Deploy
+
 on:
   push:
     branches: [ vue ]
+
 jobs:
   build:
+    name: 🚀 Build & Deploy
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm install -g firebase-tools
-    - run: npm run build
-    - run: firebase deploy -m "Github ${{ github.sha }}" --only hosting --project "${{ secrets.FIREBASE_PROJECT }}" --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
+      - name: 📍 Checkout Code
+        uses: actions/checkout@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: npm
+
+      - name: 🏗 Setup Firebase Tools
+        run: npm install -g firebase-tools
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🪄 Build App
+        run: npm run build
+
+      - name: 🚀 Deploy to Firebase
+       run: firebase deploy -m "Github ${{ github.sha }}" --only hosting --project "${{ secrets.FIREBASE_PROJECT }}" --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
+    
