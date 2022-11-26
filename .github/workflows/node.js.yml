@@ -2,7 +2,7 @@ name: 🚀 Build & Deploy
 
 on:
   push:
-    branches: [ vue ]
+    branches: [vue]
 
 jobs:
   build:
@@ -28,5 +28,4 @@ jobs:
         run: npm run build
 
       - name: 🚀 Deploy to Firebase
-       run: firebase deploy -m "Github ${{ github.sha }}" --only hosting --project "${{ secrets.FIREBASE_PROJECT }}" --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
-    
+        run: firebase deploy -m "Github ${{ github.sha }}" --only hosting --project "${{ secrets.FIREBASE_PROJECT }}" --non-interactive --token "${{ secrets.FIREBASE_TOKEN }}"
