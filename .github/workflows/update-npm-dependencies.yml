@@ -1,0 +1,29 @@
+
+name: ⏫ Update npm dependencies
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+
+jobs:
+  build:
+    name: ⏫ Update npm dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📍 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          cache: npm
+
+      - name: ⏫ Update dependencies
+        run: npm update
+
+      - name: ✨ Commit to GitHub
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actor
+          message: 'Dependencies updated'
