@@ -3,7 +3,7 @@ name: ⏫ Update npm dependencies
 
 on:
   schedule:
-    - cron: '5 * * * *'
+    - cron: '*/15 * * * *'
 
 jobs:
   build:
