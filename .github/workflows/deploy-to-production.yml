@@ -3,6 +3,7 @@ name: 🚀 Build and deploy to production
 on:
   push:
     branches: [vue]
+  workflow_dispatch:
 
 jobs:
   build:
