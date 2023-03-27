@@ -17,9 +17,9 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.12.1",
-    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^3.12.1",
-    "@vue/cli-service": "^3.12.1",
+    "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.1.0",
     "bootstrap": "^4.6.2",
     "eslint": "^5.16.0",
