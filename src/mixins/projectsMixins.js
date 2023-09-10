@@ -8,7 +8,6 @@ const projects = [
         type: "it",
         urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
         id: 1,
-        website: '//ktmretail.com',
         technologies: ['Vuejs', 'Laravel'],
         contributionLevels: {
             Design: 5,
@@ -63,7 +62,6 @@ const projects = [
         type: "it",
         urlSlug: "intranery-nepal-vuejs-ecommerce-website",
         id: 2,
-        website: '//intranery.com',
         technologies: ['Vuejs', 'Laravel'],
         contributionLevels: {
             Design: 5,
@@ -282,7 +280,6 @@ const projects = [
         type: "it",
         urlSlug: "fixolla-india-simplifying-lives-repair-mobile-tablet-laptop-online",
         id: 7,
-        website: '//fixolla.com',
         technologies: ['Java', 'Laravel', 'Android Studio'],
         contributionLevels: {
             AndroidApp: 20,
@@ -477,13 +474,13 @@ const projects = [
         }]
     },
     {
-        name: "Legal Remit Nepal",
+        name: "Legal Remit",
         tagLine: "Remittance website for money transfers.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flegal-remit-nepal.JPG?alt=media",
         type: "it",
         urlSlug: "legal-remit-nepal-transfer-management",
         id: 12,
-        website: '//legalremitnepal.com.au',
+        website: '//legalremit.com',
         technologies: ['Laravel', 'jQuery', 'AWS'],
         contributionLevels: {
             Design: 5,
@@ -602,7 +599,6 @@ const projects = [
         type: "it",
         urlSlug: "indigo-ink-book-publisher-nepal",
         id: 14,
-        website: '//indigoink.com.np',
         technologies: ['October CMS'],
         contributionLevels: {
             Backend: 50,
@@ -700,7 +696,6 @@ const projects = [
         type: "it",
         urlSlug: "amour-production-house-october-cms",
         id: 16,
-        website: '//amourproduction.in',
         technologies: ['October CMS'],
         contributionLevels: {
             Design: 100,
@@ -905,6 +900,43 @@ const projects = [
                     text: 'Expo managed React Native app for creating events and sharing to community. This app also includes chat feature implemented using firestore database provided by Google Firebase.'
                 }
             ],
+        }]
+    }, {
+        name: "VoIP Calls",
+        tagLine: "Local ip based call app",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fvoip-calls.jpg?alt=media",
+        type: "it",
+        urlSlug: "voip-calls",
+        id: 22,
+        technologies: ['ReactNative', 'Expo', 'Swift', 'JAVA'],
+        contributionLevels: {
+            MobileApp: 100,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'App is used for establishing VoIP calls between users in local network in react native. An prototype for same using WebRTC was also built.'
+                },
+                {
+                    text: 'This app utilizes an custom Expo module written to wrap native Android and iOS libraries.'
+                },
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists:
+                [{
+                    badge: 'Security',
+                    text: 'SSL certificate Pinning'
+                }, {
+                    badge: 'Feature',
+                    text: 'Peer to peer video/audio call using WebRTC (Prototype developed)'
+                }, {
+                    badge: 'Feature',
+                    text: 'Sip based local audio call'
+                }],
         }]
     }
 ];

@@ -18,9 +18,9 @@
           </b-card-title>
           <b-card-text>
             <span class="text-info">
-              <a class="job-position" href="//nad-tech.com" target="_blank"
-              v-b-tooltip.hover.right title="Goto NAD Tech's website">
-              Full Stack Developer at NAD Tech | USA (Working from Nepal)
+              <a class="job-position" href="//www.convergestack.com/" target="_blank"
+              v-b-tooltip.hover.right title="Goto ConvergeStack's website">
+              App Dev Manager Manager at ConvergeStack
               </a>
               <br />(Jan 2022 - Present)
               <br />
