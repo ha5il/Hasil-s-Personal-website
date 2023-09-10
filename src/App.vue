@@ -453,7 +453,7 @@ export default {
       showBgAnim: true,
     };
   },
-  methods: {
+  computed: {
     computeAvatarImage() {
       return Math.random() < 0.5 ? '/Hasil-Shobha.png' : '/Hasil-Shobha-2.png'
     }
