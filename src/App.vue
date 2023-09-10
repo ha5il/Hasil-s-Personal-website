@@ -11,7 +11,7 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem-intro p-3" img-src="/Hasil-Shobha.png" img-alt="Hasil Paudyal" img-top>
+          <b-card class="card-poem-intro p-3" :img-src="computeAvatarImage" img-alt="Hasil Paudyal" img-top>
             <p class="my-name">Hasil Paudyal</p>
             <b-card-text class="card-text-poem">
               <span><strong>H</strong>ere I am</span>
@@ -452,6 +452,11 @@ export default {
       isThemeBtnsVisible: false,
       showBgAnim: true,
     };
+  },
+  methods: {
+    computeAvatarImage() {
+      return Math.random() < 0.5 ? '/Hasil-Shobha.png' : '/Hasil-Shobha-2.png'
+    }
   },
   methods: {
     handleScroll() {
