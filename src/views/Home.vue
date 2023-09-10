@@ -7,9 +7,9 @@
             <i class="material-icons">sentiment_satisfied_alt</i>
             Who am I?
           </b-card-title>
-          <b-card-text
-            class="justified"
-          >Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. Though having Graduation of Electrical Engineering I do have skills in Design, Web Development, Electrical repair and Electronics simulation. Out of the box, I write poems, speak quotes and try altering cloud saved data.</b-card-text>
+          <b-card-text class="justified">
+            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, I possess skills in Design, Web Development, Management, Electrical repair, and Electronics simulation. Beyond the ordinary, I write poems, share quotes, and experiment with cloud-based data.
+          </b-card-text>
         </b-card>
         <b-card class="mb-3">
           <b-card-title>
@@ -18,58 +18,44 @@
           </b-card-title>
           <b-card-text>
             <span class="text-info">
-              <a class="job-position" href="//www.convergestack.com/" target="_blank"
-              v-b-tooltip.hover.right title="Goto ConvergeStack's website">
-              App Dev Manager Manager at ConvergeStack
+              <a class="job-position" href="//www.convergestack.com/" target="_blank" v-b-tooltip.hover.right title="Visit ConvergeStack's website">
+                App Development Manager at ConvergeStack
               </a>
               <br />(Jan 2022 - Present)
-              <br />
             </span>
-            Working as project lead, I focus on Hybrid Apps development with ReactNative and Ionic! Moreover, I handle servers and assist the backend team with crucial decisions and algorithms.
-            <br />
-            <br />
+            As a project lead, my focus is on Hybrid App development using ReactNative. Additionally, I handle server management and assist the backend team in making critical decisions and implementing algorithms.
+            <br /><br />
             <span class="text-info">
-              <a class="job-position" href="//view9.com.np" target="_blank"
-              v-b-tooltip.hover.right title="Goto View9's website">
-              Web Developer at View9 | Nepal
+              <a class="job-position" href="//view9.com.np" target="_blank" v-b-tooltip.hover.right title="Visit View9's website">
+                Web Developer at View9 | Nepal
               </a>
               <br />Jan 2019 - Dec 2021 • 2 years 11 months
-              <br />
             </span>
-            I was project lead and used to develop a backend for websites. I gained a lot of experience by integrating server to server APIs of banks, license verification, online payment and other services to 3rd party servers working on SOAP and JSON. I also developed logging, schedule and recurring jobs system to notify site admins and customers using different AWS and Laravel features. I assisted my juniours in setting up servers and handling the complaints/errors on production.
-            <br />
-            <br />
+            I served as a project lead, developing backend solutions for websites. I gained extensive experience integrating server-to-server APIs for banks, license verification, online payments, and other services with 3rd-party servers using SOAP and JSON. Additionally, I developed logging, scheduling, and recurring job systems to notify site admins and customers, utilizing various AWS and Laravel features. I also mentored junior team members in server setup and handling production issues.
+            <br /><br />
             <span class="text-info">
-              <a class="job-position" href="//fixolla.com" target="_blank"
-              v-b-tooltip.hover.right title="Goto Fixolla's website">
-              Part time Junior Android Developer at Fixolla | India
+              <a class="job-position" href="//fixolla.com" target="_blank" v-b-tooltip.hover.right title="Visit Fixolla's website">
+                Part-time Junior Android Developer at Fixolla | India
               </a>
               <br />Feb 2018 - Dec 2018 • 11 months
-              <br />
             </span>
-            With their android development team, I learnt app development and also developed API.
-            <br />
-            <br />
+            I worked with the Android development team, gaining experience in app development and API development.
+            <br /><br />
             <span class="text-info">
-              <a class="job-position" href="//fixolla.com" target="_blank"
-              v-b-tooltip.hover.right title="Goto Fixolla's website">
-              Part time Security Analyst at Fixolla | India
+              <a class="job-position" href="//fixolla.com" target="_blank" v-b-tooltip.hover.right title="Visit Fixolla's website">
+                Part-time Security Analyst at Fixolla | India
               </a>
               <br />Sep 2017 - Feb 2018 • 6 months
-              <br />
             </span>
-            As an analyst helped the company in scrapping the data from open sources and build their database. I was also offered public speaking and promotional offers publicity across colleges in Bangalore.
-            <br />
-            <br />
+            As an analyst, I assisted the company in data scraping from open sources to build their database. I also engaged in public speaking and promotional activities in colleges across Bangalore.
+            <br /><br />
             <span class="text-info">
-              <a class="job-position" href="//a2zlaundrysolutions.com" target="_blank"
-              v-b-tooltip.hover.right title="Goto A2Z's website">
-              Service and Sales Engineer at A2Z Laundry Solutions | India
+              <a class="job-position" href="//a2zlaundrysolutions.com" target="_blank" v-b-tooltip.hover.right title="Visit A2Z Laundry Solutions' website">
+                Service and Sales Engineer at A2Z Laundry Solutions | India
               </a>
-              <br />Dec 2016 - Dec 2018 • 2 years 1 months
-              <br />
+              <br />Dec 2016 - Dec 2018 • 2 years 1 month
             </span>
-            I was involved in laundry business setup, marketing and its growth for dozens of laundries in India. I am one of the authorised service Engineer for <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Besides these, I am involved in other brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
+            My responsibilities included setting up and growing laundry businesses across India. I am an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Besides these, I was involved in additional brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
           </b-card-text>
         </b-card>
         <b-card class="mb-3">
@@ -85,21 +71,21 @@
                 tag="div"
               >
                 <b-card :id="'project-'+idx" class="mb-3 project-card" :title="project.name">
-                <b-img
-                  class="mb-3"
-                  :src="project.coverImage"
-                  :center="true"
-                  fluid
-                  :alt="project.name+' cover image'"
-                ></b-img>
+                  <b-img
+                    class="mb-3"
+                    :src="project.coverImage"
+                    :center="true"
+                    fluid
+                    :alt="project.name+' cover image'"
+                  ></b-img>
                   <h5 class="text-info">
                     <span v-for="(tech,idx) in project.technologies" :key="idx">
-                    <b-img
-                      class="mx-1"
-                      width="32"
-                      :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
-                      :alt="tech+' logo'"
-                    ></b-img>
+                      <b-img
+                        class="mx-1"
+                        width="32"
+                        :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
+                        :alt="tech+' logo'"
+                      ></b-img>
                     </span>
                   </h5>
                   <b-card-text>
@@ -124,14 +110,14 @@
             <i class="material-icons">help</i>
             What Can I do?
           </b-card-title>
-            <b-list-group flush>
-              <b-list-group-item
-                v-for="(list, idxList) in whatCanIDo"
-                :key="idxList"
-                class="d-flex justify-content-between align-items-center"
-              >{{list.text}}
-              </b-list-group-item>
-            </b-list-group>
+          <b-list-group flush>
+            <b-list-group-item
+              v-for="(list, idxList) in whatCanIDo"
+              :key="idxList"
+              class="d-flex justify-content-between align-items-center"
+            >{{list.text}}
+            </b-list-group-item>
+          </b-list-group>
         </b-card>
         <b-card class="mb-3">
           <b-card-title>
@@ -145,14 +131,14 @@
                 :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
                 tag="div"
               >
-              <b-card class="quote-card mb-3">
-                <b-card-text>
-                  <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
-                    {{quoteLine}}
-                    <br />
-                  </span>
-                </b-card-text>
-              </b-card>
+                <b-card class="quote-card mb-3">
+                  <b-card-text>
+                    <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
+                      {{quoteLine}}
+                      <br />
+                    </span>
+                  </b-card-text>
+                </b-card>
               </router-link>
             </b-col>
           </b-row>
@@ -175,10 +161,10 @@
                     <p v-for="(para, idxPara) in poem.poemParas"
                       :key="idxPara"
                     >
-                    <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
-                      {{paraLine}}
-                      <br/>
-                    </span>
+                      <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
+                        {{paraLine}}
+                        <br/>
+                      </span>
                     </p>
                   </b-card-text>
                 </b-card>
@@ -187,7 +173,7 @@
           </b-row>
         </b-card>
       </b-col>
-      <!-- <b-col sm="12" md="4">
+<!-- <b-col sm="12" md="4">
         <b-card class="timeline" no-body>
           <b-img src="/timeline.png" fluid-grow alt="Hasil Timeline"></b-img>
         </b-card>

@@ -3,7 +3,7 @@ import _ from "lodash";
 const projects = [
     {
         name: "KTM Retail",
-        tagLine: "Vuejs based ecommerce website.",
+        tagLine: "Vue.js-based e-commerce website.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fktmretail.JPG?alt=media",
         type: "it",
         urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
@@ -20,44 +20,42 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'KTM Retail is created for the authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allow users to purchase items with digital payment and track their status. It also has reliable options for admin to activate offers and flash sale during festivals.'
+                    text: 'KTM Retail is created for the authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allow users to purchase items with digital payment and track their status. It also has reliable options for admin to activate offers and flash sales during festivals.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Products with Multiple sizes with individual prices'
-                }, {
-                    badge: 'Feature',
-                    text: 'Products Filter API (Laravel Eloquent)'
-                }, {
-                    badge: 'Security',
-                    text: 'Middleware Protection for admin and staff accounts'
-                }, {
-                    badge: 'Feature',
-                    text: 'Banners management'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Web Analytics'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Dynamic banners redirection'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Promo Codes and Discount Management'
-                }, {
-                    badge: 'Feature',
-                    text: 'Order Status/Report management'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Products with Multiple sizes with individual prices'
+            }, {
+                badge: 'Feature',
+                text: 'Products Filter API (Laravel Eloquent)'
+            }, {
+                badge: 'Security',
+                text: 'Middleware Protection for admin and staff accounts'
+            }, {
+                badge: 'Feature',
+                text: 'Banners management'
+            }, {
+                badge: 'Marketing',
+                text: 'Web Analytics'
+            }, {
+                badge: 'Marketing',
+                text: 'Dynamic banners redirection'
+            }, {
+                badge: 'Marketing',
+                text: 'Promo Codes and Discount Management'
+            }, {
+                badge: 'Feature',
+                text: 'Order Status/Report management'
+            }],
         }]
     },
     {
         name: "Intranery",
-        tagLine:
-            "Ecommerce website for dealers to sell products as done by Daraz.",
+        tagLine: "E-commerce website for dealers to sell products as done by Daraz.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fintranery.JPG?alt=media",
         type: "it",
         urlSlug: "intranery-nepal-vuejs-ecommerce-website",
@@ -74,30 +72,29 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Intranery Online means buying or purchasing the stationery and other products through online(The Internet Technology). Today the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.'
+                    text: 'Intranery Online means buying or purchasing stationery and other products online (The Internet Technology). Today, the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.'
                 }, {
-                    text: 'Intranery Online it is also the same. The buyer’s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a salesperson. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door to door facilities for every people. Now every people can order and get the necessary goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery has access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.'
+                    text: 'Intranery Online is also the same. The buyer\'s decision-making process has changed dramatically in recent years. Buyers are conducting extensive research online before ever speaking to a salesperson. Buyers are also making more direct purchases online and via their smartphone, never stepping foot into traditional brick-and-mortar locations. Thinking about it Intranery is developed and it aims to provide door-to-door facilities for every people. Now every people can order and get the necessary goods very fast by sitting and ordering from your own house and office through Intranery service. Intranery has access to thousands of products through hundreds of high street and non-high street stores nearly. Intranery provides a broad variety of items from Stationery, electronics and technology, to furnishing and other devices.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'API for Dealers Section'
-                }, {
-                    badge: 'Security',
-                    text: 'Middleware Protection for admin and staff accounts'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Web Analytics'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'API for Dealers Section'
+            }, {
+                badge: 'Security',
+                text: 'Middleware Protection for admin and staff accounts'
+            }, {
+                badge: 'Marketing',
+                text: 'Web Analytics'
+            }],
         }]
     },
     {
         name: "Foreveryng",
-        tagLine: "Ecommerce website designed for discounts.",
+        tagLine: "E-commerce website designed for discounts.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fforeveryng.JPG?alt=media",
         type: "it",
         urlSlug: "foreveryng-online-beauty-store-nepal",
@@ -116,66 +113,64 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The project is created to replace the WordPress site crafted with WooCommerce. Since WooCommerce is not targeted to Nepalese market we had to build a better platform than that.'
+                    text: 'The project is created to replace the WordPress site crafted with WooCommerce. Since WooCommerce is not targeted to the Nepalese market, we had to build a better platform than that.'
                 },
                 {
-                    text: 'Foreveryng not only sells products online but also has a reward point system, gift card and promo management system to boost marketing. On the other hand, it is also capable of tracking user referrals to provide extra offers and discounts.'
+                    text: 'Foreveryng not only sells products online but also has a reward point system, gift card, and promo management system to boost marketing. On the other hand, it is also capable of tracking user referrals to provide extra offers and discounts.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Backend',
-                    text: 'Product Management with multiple size, colour and different prices'
-                }, {
-                    badge: 'Feature',
-                    text: 'Product Feedback'
-                }, {
-                    badge: 'Feature',
-                    text: 'API'
-                }, {
-                    badge: 'Security',
-                    text: 'Middleware Protection for admin and staff accounts'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Web Analytics'
-                }, {
-                    badge: 'Feature',
-                    text: 'Discounts and offers management'
-                }, {
-                    badge: 'Security',
-                    text: 'Gift Card and Promo Code'
-                }, {
-                    badge: 'Optimization',
-                    text: 'Database Relations and Laravel Eloquent'
-                }, {
-                    badge: 'Security',
-                    text: 'Shipment tracking and Reward Points as per order item status'
-                }],
+            lists: [{
+                badge: 'Backend',
+                text: 'Product Management with multiple sizes, colors, and different prices'
+            }, {
+                badge: 'Feature',
+                text: 'Product Feedback'
+            }, {
+                badge: 'Feature',
+                text: 'API'
+            }, {
+                badge: 'Security',
+                text: 'Middleware Protection for admin and staff accounts'
+            }, {
+                badge: 'Marketing',
+                text: 'Web Analytics'
+            }, {
+                badge: 'Feature',
+                text: 'Discounts and offers management'
+            }, {
+                badge: 'Security',
+                text: 'Gift Card and Promo Code'
+            }, {
+                badge: 'Optimization',
+                text: 'Database Relations and Laravel Eloquent'
+            }, {
+                badge: 'Security',
+                text: 'Shipment tracking and Reward Points as per order item status'
+            }],
         }, {
             title: 'Team',
             titleIcon: 'people',
-            lists:
-                [{
-                    badge: 3,
-                    text: 'UI/UX'
-                }, {
-                    badge: 2,
-                    text: 'Backend'
-                }, {
-                    badge: 2,
-                    text: 'Android'
-                }, {
-                    badge: 1,
-                    text: 'IOS'
-                }],
+            lists: [{
+                badge: 3,
+                text: 'UI/UX'
+            }, {
+                badge: 2,
+                text: 'Backend'
+            }, {
+                badge: 2,
+                text: 'Android'
+            }, {
+                badge: 1,
+                text: 'IOS'
+            }],
         }]
     },
     {
         name: "Kourtier Courier",
-        tagLine: "Webapp for courier tracking management.",
+        tagLine: "Web app for courier tracking management.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fkourtier.JPG?alt=media",
         type: "it",
         urlSlug: "kourtier-courier-services-cargo-freight",
@@ -192,22 +187,21 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective field. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering self-network of more than 130 service stations around Nepal with strong ad well set-up delivery structure in Kathmandu valley. The Company is running with advanced and scientific management using world-class technology and having quality manpower. Kourtier has come up with fresh team and technology to address your customized requirements and by more than a decade and a half long experience, we are aware of the type and sensitivity of consignment; the process of delivery; standard POD requirements and delivery schedule structure. Kourtier has the required infrastructure, manpower, expertise and technology to do such activities smoothly.'
+                    text: 'Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective fields. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering a self-network of more than 130 service stations around Nepal with a strong and well-set-up delivery structure in Kathmandu valley. The Company is running with advanced and scientific management using world-class technology and having quality manpower. Kourtier has come up with a fresh team and technology to address your customized requirements and by more than a decade and a half long experience, we are aware of the type and sensitivity of consignment; the process of delivery; standard POD requirements and delivery schedule structure. Kourtier has the required infrastructure, manpower, expertise, and technology to do such activities smoothly.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Optimization',
-                    text: 'Shifted Admin Report section to Laravel Eloquent'
-                }],
+            lists: [{
+                badge: 'Optimization',
+                text: 'Shifted Admin Report section to Laravel Eloquent'
+            }],
         }]
     },
     {
         name: "Mero Pharmacist",
-        tagLine: "Pharmacy enquiries online.",
+        tagLine: "Pharmacy inquiries online.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fmeropharmacist.JPG?alt=media",
         type: "it",
         urlSlug: "mero-pharmacist-pharma-srs-online-enquire",
@@ -223,25 +217,23 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Meropharmacist is the first of its kind to provide the counselling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about ‘what and how’ on their medicines. Time and again, this has resulted in serious medicine-related concerns like drug overuse, misuse, adverse drug reactions and lack of patient compliance.'
+                    text: 'Meropharmacist is the first of its kind to provide counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about \'what and how\' on their medicines. Time and again, this has resulted in serious medicine-related concerns like drug overuse, misuse, adverse drug reactions, and lack of patient compliance.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Frontend',
-                    text: 'Social login'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Blog share feature'
-                }],
+            lists: [{
+                badge: 'Frontend',
+                text: 'Social login'
+            }, {
+                badge: 'Marketing',
+                text: 'Blog share feature'
+            }],
         }]
-    },
-    {
+    }, {
         name: "TIA",
-        tagLine: "Tribhuvan International airport.",
+        tagLine: "Tribhuvan International Airport.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ftia.JPG?alt=media",
         type: "it",
         urlSlug: "tribhuvan-international-airport-flight-tracking-nepal",
@@ -257,25 +249,23 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all, they possess smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
+                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur, and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all, they possess smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Backend',
-                    text: 'Blog Post Management'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Highlight blog post'
-                }],
+            lists: [{
+                badge: 'Backend',
+                text: 'Blog Post Management'
+            }, {
+                badge: 'Marketing',
+                text: 'Highlight blog post'
+            }],
         }]
     }, {
         name: "Fixolla",
-        tagLine:
-            "Online mobile and laptop repair in Bangalore.",
+        tagLine: "Online mobile and laptop repair in Bangalore.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ffixolla.JPG?alt=media",
         type: "it",
         urlSlug: "fixolla-india-simplifying-lives-repair-mobile-tablet-laptop-online",
@@ -293,28 +283,27 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Fixolla takes gadget repairing to the next level. Their innovative backend system and unparalleled customer care for smartphones and laptops ensuring 100% customer satisfaction. From a broken screen to frozen OS, they fix it all.'
+                    text: 'Fixolla takes gadget repairing to the next level. Their innovative backend system and unparalleled customer care for smartphones and laptops ensure 100% customer satisfaction. From a broken screen to a frozen OS, they fix it all.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Android App'
-                }, {
-                    badge: 'Feature',
-                    text: 'API'
-                }, {
-                    badge: 'Security',
-                    text: 'Protection of User Data'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Tracking the rivals'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Android App'
+            }, {
+                badge: 'Feature',
+                text: 'API'
+            }, {
+                badge: 'Security',
+                text: 'Protection of User Data'
+            }, {
+                badge: 'Marketing',
+                text: 'Tracking the rivals'
+            }],
         }]
-    },
+},
     {
         name: "RFID Limiter",
         tagLine: "An Arduino UNO based project for limiting the RFID Scans.",
@@ -568,28 +557,26 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Search using API'
-                }, {
-                    badge: 'Feature',
-                    text: 'Detail page with Limbu font'
-                }, {
-                    badge: 'Publishing',
-                    text: 'Deploying to App Store'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Search using API'
+            }, {
+                badge: 'Feature',
+                text: 'Detail page with Limbu font'
+            }, {
+                badge: 'Publishing',
+                text: 'Deploying to App Store'
+            }],
         }, {
             title: 'Team',
             titleIcon: 'people',
-            lists:
-                [{
-                    badge: 1,
-                    text: 'UI/UX'
-                }, {
-                    badge: 1,
-                    text: 'Backend'
-                }],
+            lists: [{
+                badge: 1,
+                text: 'UI/UX'
+            }, {
+                badge: 1,
+                text: 'Backend'
+            }],
         }]
     }, {
         name: "Indigo Ink",
@@ -615,31 +602,29 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Book Gallery'
-                }, {
-                    badge: 'Feature',
-                    text: 'Events Management'
-                }, {
-                    badge: 'Publishing',
-                    text: 'Hosting on C-Panel'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Online Enquiries'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Book Gallery'
+            }, {
+                badge: 'Feature',
+                text: 'Events Management'
+            }, {
+                badge: 'Publishing',
+                text: 'Hosting on C-Panel'
+            }, {
+                badge: 'Marketing',
+                text: 'Online Enquiries'
+            }],
         }, {
             title: 'Team',
             titleIcon: 'people',
-            lists:
-                [{
-                    badge: 1,
-                    text: 'UI/UX'
-                }, {
-                    badge: 1,
-                    text: 'Backend'
-                }],
+            lists: [{
+                badge: 1,
+                text: 'UI/UX'
+            }, {
+                badge: 1,
+                text: 'Backend'
+            }],
         }]
     }, {
         name: "Employee Records",
@@ -666,28 +651,26 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Database',
-                    text: 'Database design'
-                }, {
-                    badge: 'Feature',
-                    text: 'Vuejs filter and vue-router management.'
-                }, {
-                    badge: 'Storage',
-                    text: 'Vuex for persisting the Laravel\'s session and login check of a user has logged-in by checking to keep me signed-in.'
-                }],
+            lists: [{
+                badge: 'Database',
+                text: 'Database design'
+            }, {
+                badge: 'Feature',
+                text: 'Vuejs filter and vue-router management.'
+            }, {
+                badge: 'Storage',
+                text: 'Vuex for persisting the Laravel\'s session and login check of a user has logged-in by checking to keep me signed-in.'
+            }],
         }, {
             title: 'Team',
             titleIcon: 'people',
-            lists:
-                [{
-                    badge: 2,
-                    text: 'UI/UX'
-                }, {
-                    badge: 1,
-                    text: 'Backend'
-                }],
+            lists: [{
+                badge: 2,
+                text: 'UI/UX'
+            }, {
+                badge: 1,
+                text: 'Backend'
+            }],
         }]
     }, {
         name: "Amour Production House",
@@ -713,17 +696,16 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Database',
-                    text: 'Database design'
-                }, {
-                    badge: 'Storage',
-                    text: 'Image and videos gallery.'
-                }, {
-                    badge: 'Feature',
-                    text: 'Backend for managing enquiries with soft delete and all website contents.'
-                }],
+            lists: [{
+                badge: 'Database',
+                text: 'Database design'
+            }, {
+                badge: 'Storage',
+                text: 'Image and videos gallery.'
+            }, {
+                badge: 'Feature',
+                text: 'Backend for managing enquiries with soft delete and all website contents.'
+            }],
         }]
     }, {
         name: "ReachOn",
@@ -749,17 +731,16 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Backend panel to check answer sheet'
-                }, {
-                    badge: 'Feature',
-                    text: 'Laravel Echo for notification'
-                }, {
-                    badge: 'Feature',
-                    text: 'Self hosted pusher server'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Backend panel to check answer sheet'
+            }, {
+                badge: 'Feature',
+                text: 'Laravel Echo for notification'
+            }, {
+                badge: 'Feature',
+                text: 'Self hosted pusher server'
+            }],
         }]
     }, {
         name: "Uno",
@@ -790,14 +771,13 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Bulk registration for card providers'
-                }, {
-                    badge: 'Feature',
-                    text: 'User reporting system with issue and renewal'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Bulk registration for card providers'
+            }, {
+                badge: 'Feature',
+                text: 'User reporting system with issue and renewal'
+            }],
         }]
     }, {
         name: "Short Vids",
@@ -823,17 +803,16 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Video sharing as public, followers or private.'
-                }, {
-                    badge: 'Security',
-                    text: 'Restriction on content viewing'
-                }, {
-                    badge: 'Hosting',
-                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Video sharing as public, followers or private.'
+            }, {
+                badge: 'Security',
+                text: 'Restriction on content viewing'
+            }, {
+                badge: 'Hosting',
+                text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS'
+            }],
         }]
     }, {
         name: "Tender Management",
@@ -860,27 +839,26 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Browser push notifications using Firebase.'
-                }, {
-                    badge: 'Security',
-                    text: 'Email and OPT verification with account ban system.'
-                }, {
-                    badge: 'Hosting',
-                    text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS.'
-                }, {
-                    badge: 'Feature',
-                    text: 'Jobs and Queue for emails and other heavy tasks.'
-                }, {
-                    badge: 'Feature',
-                    text: 'Edit logs for any table using polymorphic model applied using trait to eloquent class.'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Browser push notifications using Firebase.'
+            }, {
+                badge: 'Security',
+                text: 'Email and OPT verification with account ban system.'
+            }, {
+                badge: 'Hosting',
+                text: 'AWS - Elasticbeanstalk, Cloudwatch and RDS.'
+            }, {
+                badge: 'Feature',
+                text: 'Jobs and Queue for emails and other heavy tasks.'
+            }, {
+                badge: 'Feature',
+                text: 'Edit logs for any table using polymorphic model applied using trait to eloquent class.'
+            }],
         }]
     }, {
         name: "Community Events",
-        tagLine: "Create, invite and enjoy events happeing in your community.",
+        tagLine: "Create, invite and enjoy events happening in your community.",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcommunity-event.jpg?alt=media",
         type: "it",
         urlSlug: "community-events",
@@ -897,13 +875,13 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Expo managed React Native app for creating events and sharing to community. This app also includes chat feature implemented using firestore database provided by Google Firebase.'
+                    text: 'Expo managed React Native app for creating events and sharing to the community. This app also includes chat feature implemented using firestore database provided by Google Firebase.'
                 }
             ],
         }]
     }, {
         name: "VoIP Calls",
-        tagLine: "Local ip based call app",
+        tagLine: "Local IP based call app",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fvoip-calls.jpg?alt=media",
         type: "it",
         urlSlug: "voip-calls",
@@ -917,26 +895,25 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'App is used for establishing VoIP calls between users in local network in react native. An prototype for same using WebRTC was also built.'
+                    text: 'App is used for establishing VoIP calls between users in the local network in react native. A prototype for the same using WebRTC was also built.'
                 },
                 {
-                    text: 'This app utilizes an custom Expo module written to wrap native Android and iOS libraries.'
+                    text: 'This app utilizes a custom Expo module written to wrap native Android and iOS libraries.'
                 },
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Security',
-                    text: 'SSL certificate Pinning'
-                }, {
-                    badge: 'Feature',
-                    text: 'Peer to peer video/audio call using WebRTC (Prototype developed)'
-                }, {
-                    badge: 'Feature',
-                    text: 'Sip based local audio call'
-                }],
+            lists: [{
+                badge: 'Security',
+                text: 'SSL certificate Pinning'
+            }, {
+                badge: 'Feature',
+                text: 'Peer to peer video/audio call using WebRTC (Prototype developed)'
+            }, {
+                badge: 'Feature',
+                text: 'Sip-based local audio call'
+            }],
         }]
     }
 ];
@@ -1022,15 +999,15 @@ export const projectsMixins = {
                 project['technologies'].forEach(tech => {
                     let dupliFound = false;
                     returnData.forEach(dupliCheck => {
-                        if(dupliCheck['tech'] == tech) {
+                        if (dupliCheck['tech'] == tech) {
                             dupliCheck['projCount']++;
                             dupliFound = true;
                         }
                     });
-                    if(!dupliFound) {
+                    if (!dupliFound) {
                         returnData.push({
-                            'tech' : tech,
-                            'projCount' : 1,
+                            'tech': tech,
+                            'projCount': 1,
                         });
                     }
                 });

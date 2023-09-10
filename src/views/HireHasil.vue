@@ -1,6 +1,6 @@
 <template>
   <div id="hire-hasil" class="mt-5">
-    <h4>Interested in teaming up with me?</h4>
+    <h4>Interested in Collaborating with Me?</h4>
     <b-row>
       <b-col sm="12" :md="skillData.cols" v-for="(skillData, idx) in skills" :key="idx">
         <b-card class="mb-3" :title="skillData.title">
@@ -19,7 +19,7 @@
                   :alt="list.text+' logo'"
                 ></b-img>
                 {{list.text}}
-                <b-badge v-show="list.count" pill>{{list.count}}</b-badge>              
+                <b-badge v-show="list.count" pill>{{list.count}}</b-badge>
               </b-list-group-item>
             </b-list-group>
           </b-card-text>
@@ -63,7 +63,6 @@
 }
 </style>
 
-
 <script>
 import _ from "lodash";
 import { projectsMixins } from "../mixins/projectsMixins.js";
@@ -74,41 +73,41 @@ export default {
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
       title: "Hire Hasil | Hasil's Personal Site",
-      description: "Let's team up and create something amazing. Know more about top listed web developer, electronics and electrical projects leader.",
+      description: "Let's collaborate and create something amazing. Learn more about the top-listed web developer, electronics, and electrical projects leader.",
       image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Graduation%20New%20Horizon%20College%20of%20Engineering.jpg?alt=media"
-    })
+    });
   },
   data() {
     return {
       skills: [
         {
-          title: "What can I build / develop...",
+          title: "What Can I Build/Develop...",
           cols: 7,
           lists: [
             {
-              text: "Script for scrapping, processing and storing data"
+              text: "Script for scraping, processing, and storing data"
             },
             {
               text: "Highly Dynamic and Scalable web platform"
             },
             {
-              text: "Webapp and Android App"
+              text: "Web and Mobile App"
             },
             {
-              text: "Graphic / UI design"
+              text: "Graphic/UI design"
             },
             {
               text:
-                "Portable hardware interfacing RFID, physical sensors, Wifi for IoT and much more."
+                "Portable hardware interfacing RFID, physical sensors, WiFi for IoT, and much more."
             },
             {
-              text: "Dynamic Accelerated mobile page generator for advance SEO."
+              text: "Dynamic Accelerated mobile page generator for advanced SEO."
             },
             {
-              text: "Website setup on AWS ec2/dedicated hosting with a local database. Also website setup on shared hosting."
+              text: "Website setup on AWS EC2/dedicated hosting with a local database. Also, website setup on shared hosting."
             },
             {
-              text: "AWS EBS setup with a remote database, s3, load balancer and cloud watch"
+              text: "AWS EBS setup with a remote database, S3, load balancer, CloudWatch and Lambda."
             },
             {
               text: "Gitlab server, runner setup for managing projects with CI/CD"
@@ -119,7 +118,7 @@ export default {
           ]
         },
         {
-          title: "Tools I am familiar with",
+          title: "Tools I am Familiar with",
           cols: 6,
           lists: [
             {
@@ -143,19 +142,19 @@ export default {
             {
               text: "Visual Studio"
             }
-      ]
-      }
+          ]
+        }
       ]
     };
   },
   created() {
     let technologies = [];
     this.getProjectTechnologies().forEach(technology => {
-    technologies.push({
-      text: technology['tech'],
-      count: technology['projCount'],
-      icon: '/'+technology['tech'].replace(/ /g,'').toLowerCase()+'-logo.png',
-    });
+      technologies.push({
+        text: technology['tech'],
+        count: technology['projCount'],
+        icon: '/' + technology['tech'].replace(/ /g, '').toLowerCase() + '-logo.png',
+      });
     });
     this.skills.splice(1, 0, {
       title: "Hardware/Software Platforms",
