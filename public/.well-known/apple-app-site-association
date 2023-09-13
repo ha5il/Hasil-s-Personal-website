@@ -1,0 +1,42 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "66TSDLV75U.com.convergestack.playerz",
+        "paths": [
+          "/share",
+          "/test/*"
+        ]
+      },
+      {
+        "appID": "8T9XJ7RWKS.com.convergestack.playerz.dev",
+        "paths": [
+          "/share",
+          "/test/*"
+        ]
+      },
+      {
+        "appID": "8T9XJ7RWKS.com.convergestack.playerz.development",
+        "paths": [
+          "/share",
+          "/test/*"
+        ]
+      }
+    ]
+  },
+  "activitycontinuation": {
+    "apps": [
+      "66TSDLV75U.com.convergestack.playerz",
+      "8T9XJ7RWKS.com.convergestack.playerz.dev",
+      "8T9XJ7RWKS.com.convergestack.playerz.development"
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "66TSDLV75U.com.convergestack.playerz",
+      "8T9XJ7RWKS.com.convergestack.playerz.dev",
+      "8T9XJ7RWKS.com.convergestack.playerz.development"
+    ]
+  }
+}
