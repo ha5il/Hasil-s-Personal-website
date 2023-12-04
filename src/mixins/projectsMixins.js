@@ -231,14 +231,13 @@ const projects = [
                 text: 'Blog share feature'
             }],
         }]
-    }, {
-        name: "TIA",
-        tagLine: "Tribhuvan International Airport.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ftia.JPG?alt=media",
+}, {
+        name: "CMS Site",
+        tagLine: "October Content Management System",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcms.JPG?alt=media",
         type: "it",
-        urlSlug: "tribhuvan-international-airport-flight-tracking-nepal",
+        urlSlug: "cms-tracking-nepal",
         id: 6,
-        website: '//tiairport.com.np',
         technologies: ['October CMS'],
         contributionLevels: {
             Backend: 30,
@@ -249,7 +248,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'The Tribhuvan International Airport (TIA), situated 5.56 km east of Kathmandu city is in the heart of the Kathmandu Valley. TIA is amid the confluence of three ancient cities viz. Kathmandu, Bhaktapur, and Patan, rich in their art and culture not only gifted for their temples and pagoda - but above all, they possess smiling men and women, the pride of the nation. Hence TIA not only has flourished as the main hub for every expanding business of the country but has proudly catered to various domestic and international airlines.'
+                    text: 'October CMS based website to ublish news, articals and blogs.'
                 }
             ],
         }, {
@@ -743,9 +742,9 @@ const projects = [
             }],
         }]
     }, {
-        name: "Uno",
+        name: "Discont Card",
         tagLine: "Discounts, Coupons and Entertainment for every age group anywhere.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%discount-card.jpg?alt=media",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fdiscount-card.jpg?alt=media",
         type: "it",
         urlSlug: "nepal-discount-card-coupons",
         id: 18,
