@@ -236,7 +236,7 @@ const projects = [
         tagLine: "October Content Management System",
         coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcms.JPG?alt=media",
         type: "it",
-        urlSlug: "cms-tracking-nepal",
+        urlSlug: "cms-website-nepal",
         id: 6,
         technologies: ['October CMS'],
         contributionLevels: {
