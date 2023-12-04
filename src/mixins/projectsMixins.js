@@ -745,11 +745,10 @@ const projects = [
     }, {
         name: "Uno",
         tagLine: "Discounts, Coupons and Entertainment for every age group anywhere.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Funo.jpg?alt=media",
+        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%discount-card.jpg?alt=media",
         type: "it",
-        urlSlug: "uno-card-nepal-discounts-coupons",
+        urlSlug: "nepal-discount-card-coupons",
         id: 18,
-        website: '//uno.com.np',
         technologies: ['CodeIgniter', 'Vuejs'],
         contributionLevels: {
             Design: 10,
@@ -762,21 +761,18 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Uno is a comprehensive online business directory targeted for extra discount. It provides information to cater to the immediate, impulsive and urgent requirement of customers for companies, products, and services.'
-                },
-                {
-                    text: 'Uno offers a yearly subscription to interested users for a flat discount on 100+ locations across Nepal. Freely registered user can take benefit of points collection and redeem it as cash discount.'
-                },
+                    text: 'An subscription based card model that keeps track of descounts provided by resturants to its customers.'
+                }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists: [{
                 badge: 'Feature',
-                text: 'Bulk registration for card providers'
+                text: 'Bulk registration of users'
             }, {
                 badge: 'Feature',
-                text: 'User reporting system with issue and renewal'
+                text: 'Reporting and reneal options for accounts.'
             }],
         }]
     }, {
