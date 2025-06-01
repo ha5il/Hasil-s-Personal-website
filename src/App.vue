@@ -140,36 +140,28 @@
           </footer>
         </b-col>
       </b-row>
+
       <b-button-group id="theme-buttons" size="sm">
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#6e161c', '#e6a410')" v-bind:style="{color:'#6e161c',backgroundColor:'#e6a410'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#7B3204', '#8A803B')" v-bind:style="{color:'#7B3204',backgroundColor:'#8A803B'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#011a2d', '#800080')" v-bind:style="{color:'#011a2d',backgroundColor:'#800080'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#ff0101', '#FFC107')" v-bind:style="{color:'#ff0101',backgroundColor:'#FFC107'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(false,'#808000', '#1e9822')" v-bind:style="{color:'#808000',backgroundColor:'#1e9822'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#ff9800', '#f92b38')" v-bind:style="{color:'#ff9800',backgroundColor:'#000000'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#00ff00', '#228b22')" v-bind:style="{color:'#00ff00',backgroundColor:'#000000'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button v-show="isThemeBtnsVisible" @click="switchTheme(true,'#2196f3', '#1e9822')" v-bind:style="{color:'#2196f3',backgroundColor:'#000000'}" class="btn-sm theme-button">
-        <i class="material-icons">invert_colors</i>
-      </b-button>
-      <b-button class="btn-sm theme-button" v-bind:style="{color:'var(--global-primary-color)',backgroundColor:'var(--global-secondary-color)'}" :pressed.sync="isThemeBtnsVisible">
-        <i v-if="isThemeBtnsVisible" class="material-icons">arrow_downward</i>
-        <i v-else class="material-icons">invert_colors</i>
-      </b-button>
-    </b-button-group>
+        <b-button
+          v-show="isThemeBtnsVisible"
+          v-for="(t, idx) in allThemes"
+          :key="idx"
+          @click="switchTheme(t.darkMode, t.primary, t.secondary)"
+          :style="{ color: t.primary, backgroundColor: t.secondary }"
+          class="btn-sm theme-button"
+        >
+          <i class="material-icons">invert_colors</i>
+        </b-button>
+
+        <b-button
+          class="btn-sm theme-button"
+          :style="{ color: 'var(--global-primary-color)', backgroundColor: 'var(--global-secondary-color)' }"
+          :pressed.sync="isThemeBtnsVisible"
+        >
+          <i v-if="isThemeBtnsVisible" class="material-icons">arrow_downward</i>
+          <i v-else class="material-icons">invert_colors</i>
+        </b-button>
+      </b-button-group>
     </b-container>
   </div>
 </template>
@@ -451,6 +443,16 @@ export default {
       randomThemeColourInterval: null,
       isThemeBtnsVisible: false,
       showBgAnim: true,
+      allThemes: [
+        { darkMode: false, primary: "#6e161c", secondary: "#e6a410" },
+        { darkMode: false, primary: "#7B3204", secondary: "#8A803B" },
+        { darkMode: false, primary: "#011a2d", secondary: "#800080" },
+        { darkMode: false, primary: "#ff0101", secondary: "#FFC107" },
+        { darkMode: false, primary: "#808000", secondary: "#1e9822" },
+        { darkMode: true, primary: "#ff9800", secondary: "#f92b38" },
+        { darkMode: true, primary: "#00ff00", secondary: "#228b22" },
+        { darkMode: true, primary: "#2196f3", secondary: "#1e9822" },
+      ],
     };
   },
   computed: {
@@ -493,16 +495,48 @@ export default {
         this.isThemeBtnsVisible = false
       }
     },
-      switchTheme (darkMode, primary, secondary) {
-        this.showBgAnim = !darkMode
-        let root = document.documentElement
-        root.style.setProperty('--global-bg', darkMode?'#101010':'#fdf7ff')
-        root.style.setProperty('--global-card-bg', darkMode?'#000000':'#ffffffe0')
-        root.style.setProperty('--global-primary-color', primary)
-        root.style.setProperty('--global-secondary-color', secondary)
-        root.style.setProperty('--global-shadow-color', darkMode?'#313131':'#d0d0d0')
-      }
+    switchTheme(darkMode, primary, secondary) {
+      this.showBgAnim = !darkMode;
+      const root = document.documentElement;
+      root.style.setProperty("--global-bg", darkMode ? "#121212" : "#fdf7ff");
+      root.style.setProperty("--global-card-bg", darkMode ? "#1F1F1F" : "#ffffffe0");
+      root.style.setProperty("--global-primary-color", primary);
+      root.style.setProperty("--global-secondary-color", secondary);
+      root.style.setProperty("--global-shadow-color", darkMode ? "#2A2A2A" : "#d0d0d0");
+
+      const themeObj = { darkMode, primary, secondary };
+      localStorage.setItem("theme", JSON.stringify(themeObj));
     },
+    initTheme() {
+      let stored = null;
+      try {
+        stored = JSON.parse(localStorage.getItem("theme"));
+      } catch (e) {
+        stored = null;
+      }
+
+      if (stored && typeof stored.darkMode === "boolean") {
+        this.switchTheme(stored.darkMode, stored.primary, stored.secondary);
+      } else {
+        // No saved theme → fall back to prefers‐color‐scheme
+        const prefersDark = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        // Filter themes array for that preference:
+        const candidates = this.allThemes.filter(t => t.darkMode === prefersDark);
+
+        // If for some reason none match (shouldn’t happen), just use the full list
+        const pool = candidates.length ? candidates : this.allThemes;
+
+        // Pick a random index from 0..pool.length-1
+        const rand = Math.floor(Math.random() * pool.length);
+        const { darkMode, primary, secondary } = pool[rand];
+
+        // Apply & save it to localStorage
+        this.switchTheme(darkMode, primary, secondary);
+      }
+    }
+  },
   created() {
     this.$router.history.current.name == "home"
       ? (this.isHomePage = true)
@@ -510,6 +544,7 @@ export default {
     this.footerQuote = this.getRandomQuote();
   },
   mounted() {
+    this.initTheme()
     window.addEventListener("scroll", this.handleScroll);
   },
   watch: {

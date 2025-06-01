@@ -296,7 +296,7 @@ export default {
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
       title: "Hasil's Personal Site | Hasil Paudyal",
-      description: 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.',
+      description: 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.',
       image: 'https://hasilpaudyal.com.np/Hasil-Shobha.png'
     })
   },
@@ -317,9 +317,9 @@ export default {
       <meta data-vue-meta="1" property="og:url" content="https://hasilpaudyal.com.np">
       <meta data-vue-meta="1" property="og:title" content="Hasil's Personal Site | Hasil Paudyal">
       <meta data-vue-meta="1" name="twitter:title" content="Hasil's Personal Site | Hasil Paudyal">
-      <meta data-vue-meta="1" name="description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
-      <meta data-vue-meta="1" property="og:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
-      <meta data-vue-meta="1" name="twitter:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 4+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" name="description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" property="og:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" name="twitter:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
       <meta data-vue-meta="1" property="og:image" content="https://hasilpaudyal.com.np/Hasil-Shobha.png">
       <meta data-vue-meta="1" name="twitter:image" content="https://hasilpaudyal.com.np/Hasil-Shobha.png">`)
     }
