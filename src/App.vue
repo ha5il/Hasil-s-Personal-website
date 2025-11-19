@@ -11,7 +11,16 @@
           md="3"
           class="ml-2"
         >
-          <b-card class="card-poem-intro p-3" :img-src="computeAvatarImage" img-alt="Hasil Paudyal" img-top>
+          <b-card class="card-poem-intro p-3">
+            <transition name="fade-avatar" mode="out-in">
+              <img
+                :key="avatarImage"
+                :src="avatarImage"
+                alt="Hasil Paudyal"
+                class="card-img-top"
+                style="width:100%;border-radius:20px;"
+              />
+            </transition>
             <p class="my-name">Hasil Paudyal</p>
             <b-card-text class="card-text-poem">
               <span><strong>H</strong>ere I am</span>
@@ -177,11 +186,11 @@
 }
 
 ::-webkit-scrollbar {
-	width: 5px;
+	width: 10px;
 	background-color: #b4b4b4;
 
   &:hover {
-    width: 10px;
+    width: 15px;
   }
 }
 
@@ -215,6 +224,13 @@ a {
 
 .fade-enter {
   transform: skewX(45deg);
+  opacity: 0;
+}
+
+.fade-avatar-enter-active, .fade-avatar-leave-active {
+  transition: opacity 0.6s;
+}
+.fade-avatar-enter, .fade-avatar-leave-to {
   opacity: 0;
 }
 
@@ -443,6 +459,7 @@ export default {
       randomThemeColourInterval: null,
       isThemeBtnsVisible: false,
       showBgAnim: true,
+      avatarImage: '/Hasil-Shobha.png',
       allThemes: [
         { darkMode: false, primary: "#6e161c", secondary: "#e6a410" },
         { darkMode: false, primary: "#7B3204", secondary: "#8A803B" },
@@ -454,11 +471,6 @@ export default {
         { darkMode: true, primary: "#2196f3", secondary: "#1e9822" },
       ],
     };
-  },
-  computed: {
-    computeAvatarImage() {
-      return Math.random() < 0.5 ? '/Hasil-Shobha.png' : '/Hasil-Shobha-2.png'
-    }
   },
   methods: {
     handleScroll() {
@@ -535,6 +547,15 @@ export default {
         // Apply & save it to localStorage
         this.switchTheme(darkMode, primary, secondary);
       }
+    },
+    updateAvatarImage() {
+      const images = [
+        '/Hasil-Shobha.png',
+        '/Hasil-Shobha-2.png',
+        '/Hasil.png',
+        '/Hasil-Shobha-3.png'
+      ];
+      this.avatarImage = images[Math.floor(Math.random() * images.length)];
     }
   },
   created() {
@@ -542,6 +563,7 @@ export default {
       ? (this.isHomePage = true)
       : (this.isHomePage = false);
     this.footerQuote = this.getRandomQuote();
+    this.updateAvatarImage();
   },
   mounted() {
     this.initTheme()
@@ -565,6 +587,7 @@ export default {
           this.navBackTo = null;
         }
       }
+      this.updateAvatarImage();
       // minimize theme buttons if scrolled
       if(this.isThemeBtnsVisible) {
         this.isThemeBtnsVisible = false

@@ -120,8 +120,9 @@ export default {
       ),
       description: this.getQuotePageDescription(
         this.$router.history.current.params.id
-      )
-    })
+      ),
+      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
+    });
   },
   data() {
     return {

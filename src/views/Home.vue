@@ -8,13 +8,13 @@
             Who am I?
           </b-card-title>
           <b-card-text class="justified">
-            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, I possess skills in Design, Web Development, Management, Electrical repair, and Electronics simulation. Beyond the ordinary, I write poems, share quotes, and experiment with cloud-based data.
+            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, I have expertise in design, web development, management, electrical repair, and electronics simulation. Beyond technology, I write poems, share quotes, and experiment with cloud-based data.
           </b-card-text>
         </b-card>
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">work</i>
-            What I do?
+            What do I do?
           </b-card-title>
           <b-card-text>
             <span class="text-info">
@@ -23,7 +23,7 @@
               </a>
               <br />(Jan 2022 - Present)
             </span>
-            As a project lead, my focus is on Hybrid App development using ReactNative. Additionally, I handle server management and assist the backend team in making critical decisions and implementing algorithms.
+            As project lead, I specialize in hybrid app development using React Native (Expo), from prototyping to publishing production-ready Android and iOS apps. I also manage servers and assist the backend team with architectural decisions and algorithm implementation.
             <br /><br />
             <span class="text-info">
               <a class="job-position" href="//view9.com.np" target="_blank" v-b-tooltip.hover.right title="Visit View9's website">
@@ -31,7 +31,7 @@
               </a>
               <br />Jan 2019 - Dec 2021 • 2 years 11 months
             </span>
-            I served as a project lead, developing backend solutions for websites. I gained extensive experience integrating server-to-server APIs for banks, license verification, online payments, and other services with 3rd-party servers using SOAP and JSON. Additionally, I developed logging, scheduling, and recurring job systems to notify site admins and customers, utilizing various AWS and Laravel features. I also mentored junior team members in server setup and handling production issues.
+            I led backend development for websites, integrating server-to-server APIs for banks, license verification, online payments, and other services using SOAP and JSON. I developed logging, scheduling, and recurring job systems for notifications, utilizing AWS and Laravel features. I also mentored junior team members in server setup and production issue handling.
             <br /><br />
             <span class="text-info">
               <a class="job-position" href="//fixolla.com" target="_blank" v-b-tooltip.hover.right title="Visit Fixolla's website">
@@ -39,7 +39,7 @@
               </a>
               <br />Feb 2018 - Dec 2018 • 11 months
             </span>
-            I worked with the Android development team, gaining experience in app development and API development.
+            I worked with the Android development team, gaining experience in app and API development.
             <br /><br />
             <span class="text-info">
               <a class="job-position" href="//fixolla.com" target="_blank" v-b-tooltip.hover.right title="Visit Fixolla's website">
@@ -47,7 +47,7 @@
               </a>
               <br />Sep 2017 - Feb 2018 • 6 months
             </span>
-            As an analyst, I assisted the company in data scraping from open sources to build their database. I also engaged in public speaking and promotional activities in colleges across Bangalore.
+            As a security analyst, I assisted in data scraping from open sources to build company databases and participated in public speaking and promotional activities at colleges in Bangalore.
             <br /><br />
             <span class="text-info">
               <a class="job-position" href="//a2zlaundrysolutions.com" target="_blank" v-b-tooltip.hover.right title="Visit A2Z Laundry Solutions' website">
@@ -55,7 +55,7 @@
               </a>
               <br />Dec 2016 - Dec 2018 • 2 years 1 month
             </span>
-            My responsibilities included setting up and growing laundry businesses across India. I am an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a> and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. Besides these, I was involved in additional brands like <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a> and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
+            I set up and expanded laundry businesses across India, serving as an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a>, and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. I also worked with <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a>, and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.
           </b-card-text>
         </b-card>
         <b-card class="mb-3">
@@ -108,7 +108,7 @@
         <b-card class="mb-3">
           <b-card-title>
             <i class="material-icons">help</i>
-            What Can I do?
+            What can I do?
           </b-card-title>
           <b-list-group flush>
             <b-list-group-item
@@ -260,66 +260,68 @@ export default {
       bestPoems: [],
       whatCanIDo: [
         {
-          text: "Script for scrapping, processing and storing data"
+          text: "Scripts for scraping, processing, and storing data"
         },
         {
-          text: "Highly Dynamic and Scalable web platform"
+          text: "Highly dynamic and scalable web platforms"
         },
         {
-          text: "Webapp and Android App"
+          text: "Web apps and Android & iOS apps with React Native (Expo)"
         },
         {
           text: "Graphic / UI design"
         },
         {
           text:
-            "Portable hardware interfacing RFID, physical sensors, Wifi for IoT and much more."
+            "Portable hardware interfacing with RFID, physical sensors, and Wi-Fi for IoT and much more."
         },
         {
-          text: "Dynamic Accelerated mobile page generator for advance SEO."
+          text: "Dynamic Accelerated Mobile Pages (AMP) generator for advanced SEO."
         },
         {
-          text: "Website setup on AWS ec2/dedicated hosting with a local database. Also website setup on shared hosting."
+          text: "Website setup on AWS EC2 / dedicated hosting with a local database, as well as setup on shared hosting."
         },
         {
-          text: "AWS EBS setup with a remote database, s3, load balancer and cloud watch"
+          text: "AWS Elastic Beanstalk (EBS) setup with a remote database, S3, load balancer, and CloudWatch."
         },
         {
-          text: "Gitlab server, runner setup for managing projects with CI/CD"
+          text: "GitLab server and runner setup for managing projects with CI/CD"
         },
         {
-          text: "Self-hosted PHP Socket in Laravel"
+          text: "Self-hosted PHP WebSocket services in Laravel"
         }
       ]
     }
   },
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
-      title: "Hasil's Personal Site | Hasil Paudyal",
-      description: 'Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.',
-      image: 'https://hasilpaudyal.com.np/Hasil-Shobha.png'
-    })
+      title: "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet",
+      description: "Portfolio of Hasil Paudyal: React Native (Expo) & web developer, electrical engineer, and poet from Nepal. Explore my work in app development, web platforms, electronics, and poetry. Contact me for collaboration.",
+      image: "https://hasilpaudyal.com.np/Hasil-Shobha.png",
+      keywords: "Hasil Paudyal, React Native, Web Developer, Electrical Engineer, Nepal, Portfolio, App Development, Poetry, Electronics, Expo, Laravel, AWS, Android, iOS",
+      url: "https://hasilpaudyal.com.np"
+    });
   },
   created() {
     /**
      * Injecting meta tags with vue-meta works on all pages except this
-     * Vue meta works here is user comes from other routes
+     * Vue meta works here if user comes from other routes
      * Debugging shows that computed variables of vue-meta are not set
-     * Calling this.$meta.inject({getOptimizedSeoMetaTags}) throws warning
-     * that this app/component has no vue-meta configutaion
+     * Calling this.$meta.inject({getOptimizedSeoMetaTags}) throws a warning
+     * that this app/component has no vue-meta configuration
      * 
      * Manually injecting the tags that vue-meta would inject
      */
     if(!document.getElementsByTagName('title').length) {
-      document.getElementById('seoH1Title').innerText = "Hasil's Personal Site | Hasil Paudyal"
-      document.getElementsByTagName('head')[0].insertAdjacentHTML( 'beforeend', `<title>Hasil's Personal Site | Hasil Paudyal</title>
+      document.getElementById('seoH1Title').innerText = "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet"
+      document.getElementsByTagName('head')[0].insertAdjacentHTML( 'beforeend', `<title>Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet</title>
       <meta data-vue-meta="1" property="og:type" content="website">
       <meta data-vue-meta="1" property="og:url" content="https://hasilpaudyal.com.np">
-      <meta data-vue-meta="1" property="og:title" content="Hasil's Personal Site | Hasil Paudyal">
-      <meta data-vue-meta="1" name="twitter:title" content="Hasil's Personal Site | Hasil Paudyal">
-      <meta data-vue-meta="1" name="description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
-      <meta data-vue-meta="1" property="og:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
-      <meta data-vue-meta="1" name="twitter:description" content="Top listed Web Developer, Electrical Engineer and Poet from Nepal with 7+ years of experience. Checkout to know more and contact.">
+      <meta data-vue-meta="1" property="og:title" content="Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet">
+      <meta data-vue-meta="1" name="twitter:title" content="Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet">
+      <meta data-vue-meta="1" name="description" content="React Native (Expo) & web developer, electrical engineer, and poet from Nepal with 7+ years of experience. I build and publish Android & iOS apps, create scalable web platforms, and write technology-inspired poetry. Explore my work and get in touch.">
+      <meta data-vue-meta="1" property="og:description" content="React Native (Expo) & web developer, electrical engineer, and poet from Nepal with 7+ years of experience. I build and publish Android & iOS apps, create scalable web platforms, and write technology-inspired poetry. Explore my work and get in touch.">
+      <meta data-vue-meta="1" name="twitter:description" content="React Native (Expo) & web developer, electrical engineer, and poet from Nepal with 7+ years of experience. I build and publish Android & iOS apps, create scalable web platforms, and write technology-inspired poetry. Explore my work and get in touch.">
       <meta data-vue-meta="1" property="og:image" content="https://hasilpaudyal.com.np/Hasil-Shobha.png">
       <meta data-vue-meta="1" name="twitter:image" content="https://hasilpaudyal.com.np/Hasil-Shobha.png">`)
     }

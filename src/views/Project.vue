@@ -21,6 +21,7 @@
               :href="project.sourceCode"
               variant="info"
               target="_blank"
+              aria-label="View Source Code"
             >
               Source Code
               <i class="material-icons">launch</i>

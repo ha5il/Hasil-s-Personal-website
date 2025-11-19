@@ -158,10 +158,11 @@ export default {
   mixins: [ projectsMixins, htmlHeadMixins ],
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
-      title: "Projects | Hasil's Personal Site",
-      description: "List of Electrical, Electronics and IT projects by Hasil and his team. Know more to team up and create something amazing...",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(4).jpg?alt=media"
-    })
+      title: "Projects | Hasil Paudyal Portfolio",
+      description: "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.",
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(4).jpg?alt=media",
+      keywords: "Hasil Paudyal, Projects, Electrical Engineering, Electronics, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio"
+    });
   },
   data() {
     return {

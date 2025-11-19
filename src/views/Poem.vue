@@ -105,8 +105,9 @@ export default {
       ),
       description: this.getPoemPageDescription(
         this.$router.history.current.params.id
-      )
-    })
+      ),
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
+    });
   },
   data() {
     return {

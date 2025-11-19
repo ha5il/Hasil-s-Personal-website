@@ -42,31 +42,37 @@ export const schemaMixins = {
 
 export const htmlHeadMixins = {
     methods: {
-        getOptimizedSeoMetaTags(optimizations) {
-            let returnData = {
-                title: "Hasil's Personal Site | Hasil Paudyal",
-                meta: [
-                    { property: 'og:type', content: 'website' }
-                ]
+        getOptimizedSeoMetaTags({ title, description, image, keywords, url }) {
+            let meta = [
+                { property: 'og:type', content: 'website' }
+            ];
+            if (title) {
+                meta.push({ property: 'og:title', content: title });
+                meta.push({ name: 'twitter:title', content: title });
+                // Bing SEO h1 tag
+                if (document.getElementById('seoH1Title')) {
+                    document.getElementById('seoH1Title').innerText = title;
+                }
             }
-            if(optimizations.title) {
-                returnData.title = optimizations.title;
-                returnData.meta.push({ property: 'og:title', content: optimizations.title });
-                returnData.meta.push({ name: 'twitter:title', content: optimizations.title });
-
-                // also set h1 tag for bing seo
-                document.getElementById('seoH1Title').innerText = optimizations.title
+            if (description) {
+                meta.push({ name: 'description', content: description });
+                meta.push({ property: 'og:description', content: description });
+                meta.push({ name: 'twitter:description', content: description });
             }
-            if(optimizations.description) {
-                returnData.meta.push({ name: 'description', content: optimizations.description });
-                returnData.meta.push({ property: 'og:description', content: optimizations.description });
-                returnData.meta.push({ name: 'twitter:description', content: optimizations.description });
+            if (image) {
+                meta.push({ property: 'og:image', content: image });
+                meta.push({ name: 'twitter:image', content: image });
             }
-            if(optimizations.image) {
-                returnData.meta.push({ property: 'og:image', content: optimizations.image });
-                returnData.meta.push({ name: 'twitter:image', content: optimizations.image });
+            if (keywords) {
+                meta.push({ name: 'keywords', content: keywords });
             }
-            return returnData;
+            if (url) {
+                meta.push({ property: 'og:url', content: url });
+            }
+            return {
+                title: title || "Hasil's Personal Site | Hasil Paudyal",
+                meta
+            };
         }
     }
 }

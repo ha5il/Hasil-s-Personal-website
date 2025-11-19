@@ -67,8 +67,9 @@ export default {
     return this.getOptimizedSeoMetaTags({
       title: "Poems | Hasil's Personal Site",
       description: "Collection of poems by Hasil Paudyal.",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(15).jpg?alt=media"
-    })
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(15).jpg?alt=media",
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
+    });
   },
   created() {
     this.poems = this.getAllpoems();

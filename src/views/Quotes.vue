@@ -64,8 +64,9 @@ export default {
     return this.getOptimizedSeoMetaTags({
       title: "Quotes | Hasil's Personal Site",
       description: "Collection of quotes by Hasil Paudyal.",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(12).jpg?alt=media"
-    })
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(12).jpg?alt=media",
+      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
+    });
   },
   created() {
     this.quotes = this.getAllquotes();

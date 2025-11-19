@@ -83,10 +83,11 @@ export default {
   mixins: [ htmlHeadMixins ],
   metaInfo() {
     return this.getOptimizedSeoMetaTags({
-      title: "Gallery | Hasil's Personal Site",
-      description: "Checkout photoshop skills and know more about Hasil.",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(22).jpg?alt=media"
-    })
+      title: "Gallery | Hasil Paudyal Portfolio",
+      description: "Explore the gallery to see Photoshop skills, creative works, and moments from Hasil Paudyal's professional and personal journey.",
+      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(12).jpg?alt=media",
+      keywords: "Hasil Paudyal, Gallery, Photoshop, Portfolio, Creative Works, Nepal, Web Developer, Electrical Engineer"
+    });
   },
   data() {
     return {
@@ -122,25 +123,33 @@ export default {
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Collage.jpg?alt=media",
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Graduation%20New%20Horizon%20College%20of%20Engineering.jpg?alt=media",
         "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20Nepal%20Flag.jpg?alt=media",
-        "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil.jpg?alt=media"
+        "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(29).jpeg?alt=media"
       ],
       coverImagesPaginated: null,
       pageNumber: 1,
+      imagesPerPage: 9
     };
   },
   created() {
     this.coverImages = _.shuffle(this.coverImages);
     this.loadMore();
     window.addEventListener("scroll", () => {
-      if (((window.innerHeight + window.scrollY) >= document.body.offsetHeight) && (this.pageNumber < 7)) {
+      if (
+        (window.innerHeight + window.scrollY >= document.body.offsetHeight) &&
+        (this.coverImagesPaginated.length < this.coverImages.length)
+      ) {
         this.loadMore();
       }
     });
   },
   methods: {
     loadMore() {
-      this.coverImagesPaginated = this.coverImages.slice(0, this.pageNumber * 6);
-      this.pageNumber++;
+      const nextImages = this.coverImages.slice(0, this.pageNumber * this.imagesPerPage);
+      this.coverImagesPaginated = nextImages;
+      if (nextImages.length < this.coverImages.length) {
+        this.pageNumber++;
+      }
     }
   }
 };
