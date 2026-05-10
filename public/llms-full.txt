@@ -2,6 +2,8 @@
 
 > This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np.
 
+> Last updated: 2026-05-10
+
 ---
 
 ## Person

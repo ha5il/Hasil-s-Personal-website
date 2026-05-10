@@ -1,5 +1,4 @@
 Sitemap: https://hasilpaudyal.com.np/sitemap.xml
-LLMs-Txt: https://hasilpaudyal.com.np/llms.txt
 
 # All crawlers welcome — public portfolio
 User-agent: *

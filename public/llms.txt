@@ -2,6 +2,8 @@
 
 > Personal portfolio of Hasil Paudyal: App Development Manager, React Native / Expo developer, web developer, electrical engineer, hardware builder, and original poet. Based in Kathmandu, Nepal.
 
+> Last updated: 2026-05-10
+
 ## About
 
 Hasil Paudyal is an App Development Manager at ConvergeStack (Jan 2022–present). He holds a B.E. in Electrical Engineering from New Horizon College of Engineering, Bangalore (2013–2017). Beyond software, he builds IoT hardware, writes original poetry and quotes, and has real-world experience as a field service & sales engineer for international industrial equipment brands.
