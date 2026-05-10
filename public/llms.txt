@@ -1,0 +1,75 @@
+# Hasil Paudyal — Personal Portfolio
+
+> Personal portfolio of Hasil Paudyal: App Development Manager, React Native / Expo developer, web developer, electrical engineer, hardware builder, and original poet. Based in Kathmandu, Nepal.
+
+## About
+
+Hasil Paudyal is an App Development Manager at ConvergeStack (Jan 2022–present). He holds a B.E. in Electrical Engineering from New Horizon College of Engineering, Bangalore (2013–2017). Beyond software, he builds IoT hardware, writes original poetry and quotes, and has real-world experience as a field service & sales engineer for international industrial equipment brands.
+
+He is the author of all poems and quotes published on this site.
+
+LinkedIn: https://www.linkedin.com/in/hasil/
+GitHub: https://github.com/ha5il
+
+## What He Does
+
+- Mobile apps — React Native (Expo) for iOS and Android
+- Custom Expo native modules in Swift (iOS) and Kotlin (Android)
+- Apple TV apps with HomeKit device integration
+- Serverless edge APIs and workers with Cloudflare Workers
+- Backend development with Laravel (PHP) and AWS infrastructure
+- IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
+- Full-stack web platforms (Vue.js, Laravel, AWS EBS, RDS, S3, Lambda)
+- Container deployments — Podman, Nexus, Docker
+- Original poetry and prose writing
+
+## Site Sections
+
+- [Home](https://hasilpaudyal.com.np/) — Bio, career history, highlighted projects, featured quotes and poems
+- [Projects](https://hasilpaudyal.com.np/projects) — IT projects and Electrical/Electronics projects with tech stacks and contribution breakdowns
+- [Quotes](https://hasilpaudyal.com.np/quotes) — 11 original quotes authored by Hasil Paudyal
+- [Poems](https://hasilpaudyal.com.np/poems) — Original poems including acrostic, philosophical, and lyrical pieces
+- [Hire Me](https://hasilpaudyal.com.np/hire-Hasil) — Full career timeline, skills across engineering and creative domains, and collaboration contact
+
+## Key IT Projects
+
+- **BriefBoard** — KPI dashboard mobile app (iOS + Android), published to App Store and Google Play. React Native / Expo.
+- **Legal Remit** — Real-time international remittance web platform. Laravel, AWS EBS, RDS.
+- **VoIP Calls** — SIP and WebRTC call app with custom Expo native modules in Swift and Kotlin.
+- **KTM Retail** — E-commerce for Jockey/Dixey Nepal. Vue.js, Laravel.
+- **Strata Tender Management** — Tender creation and bidding portal. Laravel, Vue.js, AWS.
+- **Community Events** — React Native app for creating and joining community events.
+- **Limbu Dictionary** — Free online Limbu–English–Nepali dictionary. React Native, WordPress API.
+- **Reachon** — Digital education platform with real-time features. Vue.js, Socket.io.
+
+## Electrical & Electronics Projects
+
+- RFID Limiter — Arduino Uno device limiting RFID scan frequency
+- RABC Analyser — Windows console app for Danube International washer extractor analysis
+- Electricity Thief Detector — Automatic supply-line remover circuit
+- Device Performance Tracker — Real-time electrical device performance analyser
+
+## Technologies
+
+React Native, Expo, Swift, Kotlin, Vue.js, Laravel, PHP, AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Deno, Podman, Nexus, Docker, Arduino, Spring Boot, Node.js, MySQL, Figma, AutoCAD, MiPower, Primavera P6
+
+## Creative Work
+
+Hasil writes original poetry and quotes in English. His work blends personal philosophy, wit, and wordplay. The acrostic poem "H.A.S.I.L. P.A.U.D.Y.A.L." appears in the sidebar of his portfolio and spells out his full name.
+
+Selected quotes:
+- "Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own."
+- "If you know that I am a genius, then know that you are part of the reason."
+- "Dream big, but not so big that it becomes a mess."
+
+## Full Content
+
+A detailed version with all project descriptions, poems, and quotes is available at:
+https://hasilpaudyal.com.np/llms-full.txt
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/hasil/
+- Facebook: https://facebook.com/hasill
+- GitHub: https://github.com/ha5il
+- Website: https://hasilpaudyal.com.np

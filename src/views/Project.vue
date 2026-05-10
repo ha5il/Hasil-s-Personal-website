@@ -27,28 +27,16 @@
               <i class="material-icons">launch</i>
             </b-badge>
           </div>
-          <b-img-lazy
-            v-if="project.coverImage"
-            class="mb-3"
-            :src="project.coverImage"
-            :blank="true"
-            blank-src
-            blank-width="400"
-            blank-height="200"
-            blank-color="#ddd"
-            :center="true"
-            fluid
-            :alt="project.name+' cover image'"
-          ></b-img-lazy>
-          <b-progress class="mb-3" height="40px" v-show="project.contributionLevels" show-value>
+          <div class="project-detail-banner mb-3">
+            <span class="project-initial">{{ project.name.charAt(0) }}</span>
+          </div>
+          <b-progress class="mb-3" height="28px" v-show="project.contributionLevels" show-value>
             <b-progress-bar
               v-for="(level, idxLevel) in project.contributionLevels"
               :key="idxLevel"
               :value="level"
               :variant="getVariant(idxLevel)"
-            >
-              {{idxLevel}} <span class="progress-percentage">{{level}}%</span>
-            </b-progress-bar>
+            >{{idxLevel}} <span class="progress-percentage">{{level}}%</span></b-progress-bar>
           </b-progress>
           <b-card-text v-for="(detail, idx) in project.details" :key="idx">
             <h5 class="text-info">
@@ -85,11 +73,54 @@
     margin-top: 85px !important;
   }
 
+  .project-detail-banner {
+    height: 200px;
+    background: linear-gradient(135deg, var(--global-primary-color), var(--global-secondary-color));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      top: -80px;
+      right: -40px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      bottom: -60px;
+      left: 20px;
+    }
+
+    .project-initial {
+      font-size: 130px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.18);
+      letter-spacing: -4px;
+      user-select: none;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
   .card {
     border: none;
     box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     background-color: var(--global-card-bg);
-  
+
     .card-title {
       color: var(--global-secondary-color);
       font-weight: normal;
@@ -143,10 +174,30 @@
     color: #17a2b8;
   }
 
+  .progress {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
   .progress-bar {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+
     .progress-percentage {
-      margin-top: 15px;
-      font-weight: bold;
+      font-weight: 700;
+      opacity: 0.9;
+      flex-shrink: 0;
     }
   }
 }
@@ -158,17 +209,6 @@ import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
   mixins: [projectsMixins, schemaMixins, htmlHeadMixins],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: this.getProjectPageTitle(
-        this.$router.history.current.params.id
-      ),
-        description: this.getProjectPageDescription(
-          this.$router.history.current.params.id
-      ),
-      image: this.project.coverImage
-    })
-  },
   data() {
     return {
       project: null,
@@ -176,45 +216,32 @@ export default {
     };
   },
   created() {
-    let currentPageActualUrlSlug = this.getProjectUrlSlug(
-      this.$router.history.current.params.id
-    );
+    const id = this.$route.params.id;
+    let currentPageActualUrlSlug = this.getProjectUrlSlug(id);
     if (!currentPageActualUrlSlug) {
-      // 404
       this.$router.push({ name: "projects" });
       return;
     }
-    if (
-      currentPageActualUrlSlug != this.$router.history.current.params.urlSlug
-    ) {
-      // slug mismatch
+    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
       this.$router.push({
         name: "project",
-        params: {
-          id: this.$router.history.current.params.id,
-          urlSlug: currentPageActualUrlSlug
-        }
+        params: { id, urlSlug: currentPageActualUrlSlug }
       });
     }
-    this.project = this.getProjectDetails(
-      this.$router.history.current.params.id
-    );
-    this.injectSchemaJSON(`
-    {
+    this.project = this.getProjectDetails(id);
+    this.getOptimizedSeoMetaTags({
+      title: this.getProjectPageTitle(id),
+      description: this.getProjectPageDescription(id),
+      image: undefined
+    });
+    this.injectSchemaJSON(JSON.stringify({
       "@context": "http://schema.org",
       "@type": "CreativeWork",
-      "name": "`+ this.project.name +`"
-    }
-    `);
+      "name": this.project.name
+    }));
     this.breadcrumbItems = [
-      {
-        text: 'Projects',
-        to: { name: 'projects' }
-      },
-      {
-        text: this.project.name,
-        active: true,
-      },
+      { text: 'Projects', to: { name: 'projects' } },
+      { text: this.project.name, active: true },
     ];
   },
   beforeRouteLeave(to, from, next) {

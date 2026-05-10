@@ -4,7 +4,7 @@ const projects = [
     {
         name: "KTM Retail",
         tagLine: "Vue.js-based e-commerce website.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fktmretail.JPG?alt=media",
+        coverImage: "/project/ktmretail.JPG",
         type: "it",
         urlSlug: "ktmretail-jockey-nepal-vuejs-ecommerce-website",
         id: 1,
@@ -56,7 +56,7 @@ const projects = [
     {
         name: "Intranery",
         tagLine: "E-commerce website for dealers to sell products as done by Daraz.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fintranery.JPG?alt=media",
+        coverImage: "/project/intranery.JPG",
         type: "it",
         urlSlug: "intranery-nepal-vuejs-ecommerce-website",
         id: 2,
@@ -95,7 +95,7 @@ const projects = [
     {
         name: "Foreveryng",
         tagLine: "E-commerce website designed for discounts.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fforeveryng.JPG?alt=media",
+        coverImage: "/project/foreveryng.JPG",
         type: "it",
         urlSlug: "foreveryng-online-beauty-store-nepal",
         id: 3,
@@ -171,7 +171,7 @@ const projects = [
     {
         name: "Kourtier Courier",
         tagLine: "Web app for courier tracking management.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fkourtier.JPG?alt=media",
+        coverImage: "/project/kourtier.JPG",
         type: "it",
         urlSlug: "kourtier-courier-services-cargo-freight",
         id: 4,
@@ -202,7 +202,7 @@ const projects = [
     {
         name: "Mero Pharmacist",
         tagLine: "Pharmacy inquiries online.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fmeropharmacist.JPG?alt=media",
+        coverImage: "/project/meropharmacist.JPG",
         type: "it",
         urlSlug: "mero-pharmacist-pharma-srs-online-enquire",
         id: 5,
@@ -231,10 +231,10 @@ const projects = [
                 text: 'Blog share feature'
             }],
         }]
-}, {
+    }, {
         name: "CMS Site",
         tagLine: "October Content Management System",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcms.JPG?alt=media",
+        coverImage: "/project/cms.JPG",
         type: "it",
         urlSlug: "cms-website-nepal",
         id: 6,
@@ -248,7 +248,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'October CMS based website to ublish news, articals and blogs.'
+                    text: 'October CMS based website to publish news, articles and blogs.'
                 }
             ],
         }, {
@@ -265,7 +265,7 @@ const projects = [
     }, {
         name: "Fixolla",
         tagLine: "Online mobile and laptop repair in Bangalore.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Ffixolla.JPG?alt=media",
+        coverImage: "/project/fixolla.JPG",
         type: "it",
         urlSlug: "fixolla-india-simplifying-lives-repair-mobile-tablet-laptop-online",
         id: 7,
@@ -302,7 +302,7 @@ const projects = [
                 text: 'Tracking the rivals'
             }],
         }]
-},
+    },
     {
         name: "RFID Limiter",
         tagLine: "An Arduino UNO based project for limiting the RFID Scans.",
@@ -326,26 +326,24 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Count card scans'
-                }, {
-                    badge: 'Feature',
-                    text: 'Warn on last scan'
-                }, {
-                    badge: 'Security',
-                    text: 'Visual notification on false card or revoked card'
-                }, {
-                    badge: 'Security',
-                    text: 'Log scan history with timestamp to SD card'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Count card scans'
+            }, {
+                badge: 'Feature',
+                text: 'Warn on last scan'
+            }, {
+                badge: 'Security',
+                text: 'Visual notification on false card or revoked card'
+            }, {
+                badge: 'Security',
+                text: 'Log scan history with timestamp to SD card'
+            }],
         }]
     },
     {
         name: "RABC Analyser",
-        tagLine:
-            "Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!",
+        tagLine: "Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!",
         type: "ee",
         urlSlug: "rabc-analyser-windows-console-app-danube-international-washer-extractor",
         id: 9,
@@ -366,23 +364,21 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'CSV Export of raw data for further analysis on Excel '
-                }, {
-                    badge: 'Feature',
-                    text: 'View the daily wash load without any export'
-                }, {
-                    badge: 'Feature',
-                    text: 'GUI app in C#'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'CSV Export of raw data for further analysis on Excel '
+            }, {
+                badge: 'Feature',
+                text: 'View the daily wash load without any export'
+            }, {
+                badge: 'Feature',
+                text: 'GUI app in C#'
+            }],
         }]
     },
     {
         name: "Electrical Thief Eliminator",
-        tagLine:
-            "This device detects, locates and terminates the electricity thief from the supply line.",
+        tagLine: "This device detects, locates and terminates the electricity thief from the supply line.",
         type: "ee",
         urlSlug: "electrical-electricity-thief-automatic-remover-supply-line",
         id: 10,
@@ -397,29 +393,27 @@ const projects = [
             titleIcon: 'receipt',
             paragraphs: [
                 {
-                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer’s appliances drawing powers illegally by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus 8.6. The process thus developed is effective and reliable.'
+                    text: 'A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer\'s appliances drawing powers illegally by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus 8.6. The process thus developed is effective and reliable.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Visual Indication when theft is live'
-                }, {
-                    badge: 'Security',
-                    text: 'Eliminator Initialization'
-                }, {
-                    badge: 'Simulation',
-                    text: 'Modeling and simulation on Proteus'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Visual Indication when theft is live'
+            }, {
+                badge: 'Security',
+                text: 'Eliminator Initialization'
+            }, {
+                badge: 'Simulation',
+                text: 'Modeling and simulation on Proteus'
+            }],
         }]
     },
     {
         name: "Electrical Performance Analyser",
-        tagLine:
-            "An Arduino UNO based project for realtime data recording and analysis.",
+        tagLine: "An Arduino UNO based project for realtime data recording and analysis.",
         type: "ee",
         urlSlug: "electrical-device-performance-tracker-analyser-realtime",
         id: 11,
@@ -442,29 +436,28 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Simulation',
-                    text: 'Modeling and simulation on Proteus'
-                }, {
-                    badge: 'Feature',
-                    text: 'Visual Indication of device health'
-                }, {
-                    badge: 'Feature',
-                    text: 'Raw data analysis by PHP'
-                }, {
-                    badge: 'Feature',
-                    text: 'Realtime serial data transfer by bluetooth module'
-                }, {
-                    badge: 'Feature',
-                    text: 'Windows console app to analyse raw SD Card data'
-                }],
+            lists: [{
+                badge: 'Simulation',
+                text: 'Modeling and simulation on Proteus'
+            }, {
+                badge: 'Feature',
+                text: 'Visual Indication of device health'
+            }, {
+                badge: 'Feature',
+                text: 'Raw data analysis by PHP'
+            }, {
+                badge: 'Feature',
+                text: 'Realtime serial data transfer by bluetooth module'
+            }, {
+                badge: 'Feature',
+                text: 'Windows console app to analyse raw SD Card data'
+            }],
         }]
     },
     {
         name: "Legal Remit",
         tagLine: "Remittance website for money transfers.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flegal-remit-nepal.JPG?alt=media",
+        coverImage: "/project/legal-remit-nepal.JPG",
         type: "it",
         urlSlug: "legal-remit-nepal-transfer-management",
         id: 12,
@@ -489,52 +482,49 @@ const projects = [
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
-            lists:
-                [{
-                    badge: 'Feature',
-                    text: 'Transaction Management'
-                }, {
-                    badge: 'Security',
-                    text: 'Middleware Protection for admin, staff and user accounts'
-                }, {
-                    badge: 'Marketing',
-                    text: 'Web Analytics'
-                }, {
-                    badge: 'Feature',
-                    text: 'Banks transaction management'
-                }, {
-                    badge: 'Development',
-                    text: 'Usage tracking'
-                }, {
-                    badge: 'Feature',
-                    text: 'Bank staff account'
-                }, {
-                    badge: 'Hosting',
-                    text: 'AWS - Elasticbeanstalk, Cloudwatch, RDS and EC2 Cron jobs'
-                }, {
-                    badge: 'Feature',
-                    text: 'Banks API integration for verified money transfers to deposition.'
-                }, {
-                    badge: 'Feature',
-                    text: 'Poli Payments Integration'
-                }],
+            lists: [{
+                badge: 'Feature',
+                text: 'Transaction Management'
+            }, {
+                badge: 'Security',
+                text: 'Middleware Protection for admin, staff and user accounts'
+            }, {
+                badge: 'Marketing',
+                text: 'Web Analytics'
+            }, {
+                badge: 'Feature',
+                text: 'Banks transaction management'
+            }, {
+                badge: 'Development',
+                text: 'Usage tracking'
+            }, {
+                badge: 'Feature',
+                text: 'Bank staff account'
+            }, {
+                badge: 'Hosting',
+                text: 'AWS - Elasticbeanstalk, Cloudwatch, RDS and EC2 Cron jobs'
+            }, {
+                badge: 'Feature',
+                text: 'Banks API integration for verified money transfers to deposition.'
+            }, {
+                badge: 'Feature',
+                text: 'Poli Payments Integration'
+            }],
         }, {
             title: 'Team',
             titleIcon: 'people',
-            lists:
-                [{
-                    badge: 2,
-                    text: 'UI/UX'
-                }, {
-                    badge: 1,
-                    text: 'Backend'
-                }],
+            lists: [{
+                badge: 2,
+                text: 'UI/UX'
+            }, {
+                badge: 1,
+                text: 'Backend'
+            }],
         }]
     }, {
         name: "Limbu Dictionary",
-        tagLine:
-            "A FREE online dictionary to quickly search Limbu meanings in English and Nepali words.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Flimbu-dictionary.jpg?alt=media",
+        tagLine: "A FREE online dictionary to quickly search Limbu meanings in English and Nepali words.",
+        coverImage: "/project/limbu-dictionary.jpg",
         type: "it",
         urlSlug: "limbu-english-nepali-dictionary-free-online",
         id: 13,
@@ -579,9 +569,8 @@ const projects = [
         }]
     }, {
         name: "Indigo Ink",
-        tagLine:
-            "Book gallery page for book publisher with events management.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Findigo-ink.jpg?alt=media",
+        tagLine: "Book gallery page for book publisher with events management.",
+        coverImage: "/project/indigo-ink.jpg",
         type: "it",
         urlSlug: "indigo-ink-book-publisher-nepal",
         id: 14,
@@ -628,7 +617,7 @@ const projects = [
     }, {
         name: "Employee Records",
         tagLine: "Vuejs based employee directory.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Femployee-records.jpg?alt=media",
+        coverImage: "/project/employee-records.jpg",
         type: "it",
         urlSlug: "employee-records-directory-laravel-vuejs",
         id: 15,
@@ -674,7 +663,7 @@ const projects = [
     }, {
         name: "Amour Production House",
         tagLine: "Production house portfolio.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Famour-production.jpg?alt=media",
+        coverImage: "/project/amour-production.jpg",
         type: "it",
         urlSlug: "amour-production-house-october-cms",
         id: 16,
@@ -709,7 +698,7 @@ const projects = [
     }, {
         name: "ReachOn",
         tagLine: "Digital Education For All",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Freachon.jpg?alt=media",
+        coverImage: "/project/reachon.jpg",
         type: "it",
         urlSlug: "reachon-digital-education-socket-vuejs-nepal",
         id: 17,
@@ -744,7 +733,7 @@ const projects = [
     }, {
         name: "Discont Card",
         tagLine: "Discounts, Coupons and Entertainment for every age group anywhere.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fdiscount-card.jpg?alt=media",
+        coverImage: "/project/discount-card.jpg",
         type: "it",
         urlSlug: "nepal-discount-card-coupons",
         id: 18,
@@ -760,7 +749,7 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'An subscription based card model that keeps track of descounts provided by resturants to its customers.'
+                    text: 'An subscription based card model that keeps track of discounts provided by restaurants to its customers.'
                 }
             ],
         }, {
@@ -771,13 +760,13 @@ const projects = [
                 text: 'Bulk registration of users'
             }, {
                 badge: 'Feature',
-                text: 'Reporting and reneal options for accounts.'
+                text: 'Reporting and renewal options for accounts.'
             }],
         }]
     }, {
         name: "Short Vids",
         tagLine: "Short entertaining videos to make your day.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fshort-vids.jpg?alt=media",
+        coverImage: "/project/short-vids.jpg",
         type: "it",
         urlSlug: "short-vids-videos-make-your-day",
         id: 19,
@@ -812,7 +801,7 @@ const projects = [
     }, {
         name: "Tender Management",
         tagLine: "Draft, publish, bid and award for public and private tenders.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fstrata.jpg?alt=media",
+        coverImage: "/project/strata.jpg",
         type: "it",
         urlSlug: "strata-tender-management",
         id: 20,
@@ -854,7 +843,7 @@ const projects = [
     }, {
         name: "Community Events",
         tagLine: "Create, invite and enjoy events happening in your community.",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fcommunity-event.jpg?alt=media",
+        coverImage: "/project/community-event.jpg",
         type: "it",
         urlSlug: "community-events",
         id: 21,
@@ -877,7 +866,7 @@ const projects = [
     }, {
         name: "VoIP Calls",
         tagLine: "Local IP based call app",
-        coverImage: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/project%2Fvoip-calls.jpg?alt=media",
+        coverImage: "/project/voip-calls.jpg",
         type: "it",
         urlSlug: "voip-calls",
         id: 22,
@@ -908,6 +897,57 @@ const projects = [
             }, {
                 badge: 'Feature',
                 text: 'Sip-based local audio call'
+            }],
+        }]
+    }, {
+        name: "BriefBoard",
+        tagLine: "Your key metrics at a glance — a premium mobile KPI dashboard.",
+        coverImage: "/project/briefboard.jpg",
+        type: "it",
+        urlSlug: "briefboard-kpi-dashboard-mobile-app",
+        id: 23,
+        website: '//apps.apple.com/id/app/briefboard/id6757684014',
+        technologies: ['ReactNative', 'Expo'],
+        contributionLevels: {
+            Design: 80,
+            MobileApp: 100,
+            Backend: 60,
+        },
+        details: [{
+            title: 'Overview',
+            titleIcon: 'assignment',
+            paragraphs: [
+                {
+                    text: 'BriefBoard is a premium mobile dashboard app that transforms complex business data into accessible insights at a glance. Engineered for non-technical users while leveraging advanced mobile design patterns, it simplifies performance monitoring for teams across SaaS, Retail, Healthcare, Fintech, and Logistics.'
+                },
+                {
+                    text: 'Available on both iOS and Android, BriefBoard features home and lock screen widgets, morning brief notifications with prioritized actions, smart threshold alerts, and full offline mode with sync timestamps.'
+                }
+            ],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists: [{
+                badge: 'Feature',
+                text: 'Home and Lock Screen widgets (Today\'s Snapshot, Alerts Overview, Target Progress Ring)'
+            }, {
+                badge: 'Feature',
+                text: 'Morning Brief — daily scheduled summaries with 1-3 recommended priority actions'
+            }, {
+                badge: 'Feature',
+                text: 'Smart threshold alerts when metrics shift significantly'
+            }, {
+                badge: 'Feature',
+                text: 'Offline mode with dashboard accessibility and sync timestamps'
+            }, {
+                badge: 'Feature',
+                text: 'Selectable theme packs (Enterprise Dark, Healthcare Light)'
+            }, {
+                badge: 'Publishing',
+                text: 'Published to App Store and Google Play Store'
+            }, {
+                badge: 'Feature',
+                text: 'Custom Expo native modules for platform-specific integrations'
             }],
         }]
     }
@@ -1012,7 +1052,6 @@ export const projectsMixins = {
     }
 }
 
-// returns only selected keys from object
 function pick(obj, keys) {
     return keys.map(k => k in obj ? { [k]: obj[k] } : {}).reduce((res, o) => Object.assign(res, o), {});
 }

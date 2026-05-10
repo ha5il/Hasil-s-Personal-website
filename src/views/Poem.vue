@@ -8,13 +8,11 @@
             {{poem.name}}
           </b-card-title>
           <b-card-text class="mt-4">
-            <p v-for="(para, idxPara) in poem.poemParas"
-              :key="idxPara"
-            >
-            <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
-              {{paraLine}}
-              <br/>
-            </span>
+            <p v-for="(para, idxPara) in poem.poemParas" :key="idxPara">
+              <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
+                {{paraLine}}
+                <br/>
+              </span>
             </p>
             <h5 class="text-info">
               - Hasil Paudyal
@@ -38,33 +36,12 @@
     border: none;
     box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     background-color: var(--global-card-bg);
-  
+
     .card-title {
       color: var(--global-secondary-color);
       font-weight: normal;
       font-size: 24px;
       text-align: center;
-
-      a {
-        color: var(--global-secondary-color);
-      }
-
-      .material-icons {
-        vertical-align: middle;
-      }
-
-      .badge {
-        float: right;
-        font-size: 50%;
-        color: #ffffff;
-        margin-top: 10px;
-
-        .material-icons {
-          font-size: 100%;
-          margin-left: 2px;
-          vertical-align: bottom;
-        }
-      }
     }
 
     .card-text {
@@ -78,10 +55,6 @@
         font-size: 16px;
         padding: 8px 0px;
         text-align: right;
-      }
-
-      .material-icons {
-        vertical-align: bottom;
       }
     }
   }
@@ -97,18 +70,7 @@ import { poemsMixins } from "../mixins/poemsMixins.js";
 import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [ poemsMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: this.getPoemPageTitle(
-        this.$router.history.current.params.id
-      ),
-      description: this.getPoemPageDescription(
-        this.$router.history.current.params.id
-      ),
-      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
-    });
-  },
+  mixins: [poemsMixins, htmlHeadMixins],
   data() {
     return {
       poem: null,
@@ -116,38 +78,27 @@ export default {
     };
   },
   created() {
-    let currentPageActualUrlSlug = this.getPoemUrlSlug(
-      this.$router.history.current.params.id
-    );
+    const id = this.$route.params.id;
+    let currentPageActualUrlSlug = this.getPoemUrlSlug(id);
     if (!currentPageActualUrlSlug) {
-      // 404
       this.$router.push({ name: "poems" });
       return;
     }
-    if (
-      currentPageActualUrlSlug != this.$router.history.current.params.urlSlug
-    ) {
-      // slug mismatch
+    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
       this.$router.push({
         name: "poem",
-        params: {
-          id: this.$router.history.current.params.id,
-          urlSlug: currentPageActualUrlSlug
-        }
+        params: { id, urlSlug: currentPageActualUrlSlug }
       });
     }
-    this.poem = this.getPoemDetails(
-      this.$router.history.current.params.id
-    );
+    this.getOptimizedSeoMetaTags({
+      title: this.getPoemPageTitle(id),
+      description: this.getPoemPageDescription(id),
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
+    });
+    this.poem = this.getPoemDetails(id);
     this.breadcrumbItems = [
-      {
-        text: 'Poems',
-        to: { name: 'poems' }
-      },
-      {
-        text: this.poem.urlSlug,
-        active: true,
-      },
+      { text: 'Poems', to: { name: 'poems' } },
+      { text: this.poem.urlSlug, active: true },
     ];
   }
 };

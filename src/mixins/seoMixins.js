@@ -1,78 +1,87 @@
 const globalSchemas = {
     hasil: {
-        "@context": "http://schema.org",
+        "@context": "https://schema.org",
         "@type": "Person",
         name: "Hasil Paudyal",
         additionalName: "Hášíl Páůďýál",
         url: "https://hasilpaudyal.com.np",
-        worksFor: "View9",
-        jobTitle: "Web Developer",
+        worksFor: {
+            "@type": "Organization",
+            name: "ConvergeStack"
+        },
+        jobTitle: "App Development Manager",
         alumniOf: "New Horizon College of Engineering",
         gender: "male",
         sameAs: [
-            "https://amp.hasilpaudyal.com.np",
+            "https://www.linkedin.com/in/hasil/",
             "https://facebook.com/hasill",
-            "https://www.linkedin.com/in/hasil/"
+            "https://github.com/ha5il",
+            "https://rocketreach.co/hasil-paudyal-email_301428293"
         ],
         honorificPrefix: "Er"
     }
 };
 
+function getOrCreateSchemaEl() {
+    let el = document.getElementById('schemaJSON')
+    if (!el) {
+        el = document.createElement('script')
+        el.type = 'application/ld+json'
+        el.id = 'schemaJSON'
+        document.head.appendChild(el)
+    }
+    return el
+}
+
 export const schemaMixins = {
     methods: {
         clearSchemaJSON() {
-            document.getElementById("schemaJSON").innerHTML = '';
+            const el = document.getElementById('schemaJSON')
+            if (el) el.innerHTML = ''
         },
         injectSchemaJSON(schemaJsonCode) {
-            this.clearSchemaJSON();
-            var schemaJson = document.getElementById("schemaJSON");
+            this.clearSchemaJSON()
+            const el = getOrCreateSchemaEl()
             try {
-                schemaJson.appendChild(document.createTextNode(schemaJsonCode));
-                document.body.appendChild(schemaJson);
+                el.appendChild(document.createTextNode(schemaJsonCode))
             } catch (e) {
-                schemaJson.text = schemaJsonCode;
-                document.body.appendChild(schemaJson);
+                el.text = schemaJsonCode
             }
         },
-        injectDefaultSchemaJSON(globalSchemasKey){
-            this.injectSchemaJSON(JSON.stringify(globalSchemas[globalSchemasKey]));
+        injectDefaultSchemaJSON(globalSchemasKey) {
+            this.injectSchemaJSON(JSON.stringify(globalSchemas[globalSchemasKey]))
         }
     }
+}
+
+function setMetaTag(attr, key, content) {
+    if (!content) return
+    let el = document.querySelector(`meta[${attr}="${key}"]`)
+    if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute(attr, key)
+        document.head.appendChild(el)
+    }
+    el.setAttribute('content', content)
 }
 
 export const htmlHeadMixins = {
     methods: {
         getOptimizedSeoMetaTags({ title, description, image, keywords, url }) {
-            let meta = [
-                { property: 'og:type', content: 'website' }
-            ];
-            if (title) {
-                meta.push({ property: 'og:title', content: title });
-                meta.push({ name: 'twitter:title', content: title });
-                // Bing SEO h1 tag
-                if (document.getElementById('seoH1Title')) {
-                    document.getElementById('seoH1Title').innerText = title;
-                }
-            }
-            if (description) {
-                meta.push({ name: 'description', content: description });
-                meta.push({ property: 'og:description', content: description });
-                meta.push({ name: 'twitter:description', content: description });
-            }
-            if (image) {
-                meta.push({ property: 'og:image', content: image });
-                meta.push({ name: 'twitter:image', content: image });
-            }
-            if (keywords) {
-                meta.push({ name: 'keywords', content: keywords });
-            }
-            if (url) {
-                meta.push({ property: 'og:url', content: url });
-            }
-            return {
-                title: title || "Hasil's Personal Site | Hasil Paudyal",
-                meta
-            };
+            const pageTitle = title || "Hasil's Personal Site | Hasil Paudyal"
+
+            document.title = pageTitle
+
+            setMetaTag('property', 'og:type', 'website')
+            setMetaTag('property', 'og:title', title)
+            setMetaTag('name', 'twitter:title', title)
+            setMetaTag('name', 'description', description)
+            setMetaTag('property', 'og:description', description)
+            setMetaTag('name', 'twitter:description', description)
+            setMetaTag('property', 'og:image', image)
+            setMetaTag('name', 'twitter:image', image)
+            setMetaTag('name', 'keywords', keywords)
+            setMetaTag('property', 'og:url', url)
         }
     }
 }

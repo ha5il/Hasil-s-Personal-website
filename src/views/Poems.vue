@@ -2,9 +2,9 @@
   <div id="poems" class="mt-5">
     <b-row>
       <b-col sm="12" md="4" v-for="(poem, idx) in poems" :key="idx">
-        <router-link
-          :to="{ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug }}"
-          tag="div"
+        <div
+          style="cursor: pointer"
+          @click="$router.push({ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug } })"
         >
           <b-card class="mb-3">
             <b-card-title>{{poem.name}}</b-card-title>
@@ -18,10 +18,9 @@
               </span>
             </b-card-text>
           </b-card>
-        </router-link>
+        </div>
       </b-col>
     </b-row>
-    <div></div>
   </div>
 </template>
 
@@ -39,7 +38,7 @@
     transition: 0.33s all;
     text-align: center;
     background-color: var(--global-card-bg);
-  
+
     .card-title {
       color: var(--global-secondary-color);
       font-weight: normal;
@@ -60,18 +59,20 @@
 <script>
 import { poemsMixins } from "../mixins/poemsMixins.js";
 import { htmlHeadMixins } from "../mixins/seoMixins.js";
-
 export default {
-  mixins: [ poemsMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: "Poems | Hasil's Personal Site",
-      description: "Collection of poems by Hasil Paudyal.",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(15).jpg?alt=media",
-      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
-    });
+  mixins: [poemsMixins, htmlHeadMixins],
+  data() {
+    return {
+      poems: []
+    };
   },
   created() {
+    this.getOptimizedSeoMetaTags({
+      title: "Poems | Hasil's Personal Site",
+      description: "Collection of poems by Hasil Paudyal.",
+      image: "/gallery/hasil-paudyal-15.jpg",
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
+    });
     this.poems = this.getAllpoems();
   }
 };

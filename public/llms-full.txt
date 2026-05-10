@@ -1,0 +1,291 @@
+# Hasil Paudyal — Full Site Content
+
+> This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np.
+
+---
+
+## Person
+
+**Name:** Hasil Paudyal
+**Location:** Kathmandu, Nepal
+**Website:** https://hasilpaudyal.com.np
+**LinkedIn:** https://www.linkedin.com/in/hasil/
+**GitHub:** https://github.com/ha5il
+**Facebook:** https://facebook.com/hasill
+
+**Bio:** Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, Hasil has expertise in design, web development, management, electrical repair, electronics simulation, IoT hardware, and creative writing. He writes original poems and quotes, and has built and shipped mobile apps to the App Store and Google Play.
+
+---
+
+## Career History
+
+### App Development Manager — ConvergeStack, Kathmandu (Jan 2022 – Present)
+As project lead, specialises in hybrid app development using React Native (Expo), from prototyping to publishing production-ready Android and iOS apps. Manages servers and assists the backend team with architectural decisions and algorithm implementation. Builds custom native modules in Swift (iOS) and Kotlin (Android).
+
+### Web Developer — View9, Nepal (Jan 2019 – Dec 2021, 2 years 11 months)
+Led backend development for websites, integrating server-to-server APIs for banks, license verification, online payments, and other services using SOAP and JSON. Developed logging, scheduling, and recurring job systems for notifications using AWS and Laravel. Mentored junior team members in server setup and production issue handling.
+
+### Part-time Junior Android Developer — Fixolla, India (Feb 2018 – Dec 2018, 11 months)
+Worked with the Android development team on app and API development.
+
+### Part-time Security Analyst — Fixolla, India (Sep 2017 – Feb 2018, 6 months)
+Assisted in data scraping from open sources to build company databases. Participated in public speaking and promotional activities at colleges in Bangalore.
+
+### Service and Sales Engineer — A2Z Laundry Solutions, India (Dec 2016 – Dec 2018, 2 years 1 month)
+Set up and expanded laundry businesses across India. Authorised service engineer for Danube International (France), Pony (Italy), SEKO (USA), Electrolux (Sweden), Maytag (USA), Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany), and Sunrise (India).
+
+---
+
+## Education
+
+**B.E. Electrical Engineering** — New Horizon College of Engineering, Bangalore (2013–2017)
+
+---
+
+## IT Projects
+
+### BriefBoard
+KPI dashboard mobile app published on App Store and Google Play. Built with React Native / Expo. Displays business metrics and key performance indicators.
+App Store: https://apps.apple.com/id/app/briefboard/id6757684014
+Play Store: https://play.google.com/store/apps/details?id=com.convergestack.briefboard
+
+### Legal Remit
+Real-time international remittance web platform. Technologies: Laravel, AWS Elastic Beanstalk, RDS, S3.
+
+### VoIP Calls
+SIP and WebRTC based call app with custom Expo native modules written in Swift (iOS) and Kotlin (Android). Local IP based calling.
+
+### KTM Retail (Jockey / Dixey Nepal)
+E-commerce website for Jockey and Dixey Nepal. Technologies: Vue.js, Laravel.
+
+### Intranery
+Online stationery and multi-product marketplace for dealers, similar to Daraz. Aimed at door-to-door delivery across Nepal. Technologies: Vue.js, Laravel.
+
+### Strata Tender Management
+Tender creation and bidding portal. Technologies: Laravel, Vue.js, AWS.
+
+### Community Events
+React Native app for creating, inviting, and enjoying community events. Technologies: React Native, Backend API, Frontend.
+
+### Limbu English-Nepali Dictionary
+Free online dictionary for searching Limbu meanings in English and Nepali. Technologies: Native Framework, WordPress.
+
+### Foreveryng
+Online beauty store for Nepal. E-commerce website. Technologies: Vue.js, Laravel, API.
+
+### Kourtier Courier
+Web app for courier tracking management. Technologies: Vue.js, Laravel, Teammates.
+
+### Discont Card
+Discounts, coupons, and entertainment for every age group. Technologies: Vue.js, API, Backend, Merchant integrations.
+
+### Indigo Ink
+Book gallery page for a book publisher with events management. Technologies: Laravel, PHP.
+
+### Short Vids
+Short entertaining videos app to make your day. Technologies: Vue.js.
+
+### Mero Pharmacist
+Pharma SRS and online enquiry platform.
+
+### CMS Website
+Content management website for Nepal.
+
+### Employee Records Directory
+Employee records directory built with Laravel and Vue.js.
+
+### Amour Production House
+Website for a production house built with OctoberCMS.
+
+### Reachon
+Digital education platform with real-time features. Technologies: Vue.js, Socket.io, Nepal.
+
+### Fixolla India
+Website for Fixolla — simplifying lives through repair services (mobile, tablet, laptop).
+
+---
+
+## Electrical & Electronics Projects
+
+### RFID Limiter — Arduino Uno
+Portable hardware device that limits the frequency of RFID scans. Built with Arduino Uno, RFID reader, and custom firmware.
+
+### RABC Analyser — Windows Console App
+Windows console application for analysing Danube International washer extractor data. RABC = Risk Analysis and Biocontamination Control.
+
+### Electricity Thief Automatic Remover
+Circuit that automatically detects and disconnects electricity theft from supply lines.
+
+### Electrical Device Performance Tracker
+Real-time analyser and tracker for electrical device performance metrics.
+
+---
+
+## Original Quotes by Hasil Paudyal
+
+1. "May be its mine bad-luck / Or yours not to get me / But I still have hope / Of being yours"
+
+2. "If you know that I am genius / Then know that you made me genius / Everyone don't accept me as genius / Because they aren't genius to belief me as genius"
+
+3. "Life for me is just a result of experiments being performed by far more developed creatures."
+
+4. "Dream big! But not so big that it becomes a mess, and you may never reach reality."
+
+5. "Dreaming of getting you / I loosed everything / Cheerfulness of smile / And all the dreams of life"
+
+6. "Give me another Chance / Then, / You will Get / Less than I Gain..."
+
+7. "When I was small I felt like a Superhero as my father threw me up in the air. Now after reaching this success peak I unmask - Real Superhero made me Superhero!"
+
+8. "Congratulations to your mom and dad for birth of a sweet child! Sorry that I couldn't wish them when you were born."
+
+9. "Oh great! I never recognized Sunshine shining me, within me."
+
+10. "I will miss you / not because you taught me, / not because you helped me on all steps of education; / but only because / you made me a leader to lead as an perfect Electrical Engineer."
+
+11. "Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own."
+
+---
+
+## Original Poems by Hasil Paudyal
+
+### It's Me (Acrostic: H.A.S.I.L. P.A.U.D.Y.A.L.)
+
+Here I am / A cut above you all / Silent as a grave / In favour of your death
+
+Lethal is my pen / Perfect would be again / A fortune is with me / Unbeatable this shall be
+
+Dare you come near / Yell you out there / And who is this me / Links the first letters to me
+
+---
+
+### Why Fail
+
+Everyone listen what I Tell, / Why I always get Fail? / The school is Hell / To make me Fail!
+
+Teachers scold Me, / And friends hate Me / Just because Why / I was going to Die...
+
+I tried my Best / To get Success, / But that study as Input / Gave me red marks as Output
+
+Even I got fail this Time / I may top next Time / What if you hate Me / World may again love Me
+
+Give me another Chance / Then, / You will Get / Less than I Gain...
+
+---
+
+### Greed, Love, Genius and Peace
+
+The world doesn't seems to be greedy / You are the one who feels greedy / If you think that I am greedy / Then remember I am greedy because you are greedy
+
+Don't think that I don't love you / Until and unless you know that I love you / If you think that I love you / Then you should know that I don't hate you
+
+If you know that I am genius / Then know that you made of genius / Everyone don't accept me as genius / Because they aren't genius to belief me as genius
+
+Try to live always in peace / So that I can stay in peace / To live in peace, know the meaning of peace / Dictionary is right there, go and find the word - peace.
+
+---
+
+### What This Moment Is?
+
+I never wish of getting you / But I always meet you / Wherever I move from / It leads up to you
+
+I want to say what my eyes says / So always stay around you / But my nervousness stops / To get near of you
+
+Wish you could know my hidden words / And accept my proposal for my happiness / Which takes to your happiness / And finally to our home happiness
+
+At least I said you hi today / Now waiting for your reply tomorrow / What this moment is? Am so confused / Neither want to gain nor to loose...
+
+---
+
+### Take Me Out
+
+Dreaming of getting you / I loosed everything / Cheerfulness of smile / And all the dreams of life
+
+Wishing of being yours / Followed you a lot / But got you only with / Someone others
+
+May be its mine bad-luck / Or yours not to get me / But I still have hope / Of being yours
+
+Give me a break / I'll explain you everything / What's the truth / And what's the false
+
+Please understand me / Trust me and help me / To get out of this puzzle / Forever
+
+---
+
+### My Dream Girl
+
+My sound never goes sharper, / Never goes shriller, / When I speak with you,
+
+Coz you are my love, / You are my love; / The crazy feelings of me, / Crazy feelings of me towards you,
+
+Are never gonna change, / Coz you are mine, / And only mine; / Though I can't face you,
+
+Though I can't face you, / In front of everyone, / Coz you are my dream, / Coz you are my dream;
+
+Oh God! please don't let this dream go, / Please God! don't let this dream go, / Coz in this dream there is mine DREAM GIRL, / There is mine DREAM GIRL......
+
+---
+
+### Leave Me Alone
+
+What do you think you yourself are, leader of my heart? / Who do you think you are, someone for whom I can die?
+
+If so, then stop thinking the false! / Your dreams can never get true / I don't remember you, crazy for me / At least someone can really be the same for me
+
+If you didn't love me, you really are a good actress / But if you really do, better let me forget it as you never loved me
+
+Days were in past where I waited for you / But its the present, time to forget you / I don't care what you shall do / I only remember what I should do
+
+Stay in dark without me / And I shall Stay in light without you / Get out of the heart / And never ever dare to come again here
+
+---
+
+### Concord
+
+Came in Earth alone / And will be going alone / But, / Needs someone to remove solitariness / So, I am in search of fondness / Wish / Come and understand me / Come and help me / Come and assist me / And finally tag me
+
+Wish you'll shield me / And I'll too secure you / So, proceed together / We'll to victory. / Thus, I am in search of affinity
+
+Take me away from jinx / Take me away from junk / Neutralise my vandalize / Wish I'll retrieve soon
+
+---
+
+### Current Aim
+
+I should get it whatever it costs / But within few months / If it slips off my hands / I may not get its glance
+
+Everyone is helping me to get it / And I am too trying me best to achieve it / Wish this time my luck supports me / And my heart gains it
+
+If I fail this time / I need to try next time / But my pens will scold me / My book will hate me
+
+So request god to gain success / And help me to cross IRON GATE / I am sure I won't make it rust / Thus help me my host
+
+---
+
+### Happy New Year Sunshine
+
+Here it comes / A new year again / But glass of wine / Weeks in my lifeline
+
+Waiting for your ego / To beat a bye bye go / Waiting for conversation / Holding for brightening realization
+
+The story is old / With a new scent / I promise that / There shall never be any bend
+
+You are the Sunshine / The best Sunshine / Shining my every year / Happy New Year
+
+---
+
+## Technologies & Tools
+
+**Mobile:** React Native, Expo, Swift, Kotlin, Android Studio
+**Backend:** Laravel (PHP), Node.js, Spring Boot, Deno
+**Cloud:** AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Cloudflare Pages, Cloudflare R2
+**Frontend:** Vue.js, jQuery, Bootstrap
+**Databases:** MySQL, Firebase Firestore
+**DevOps:** Docker, Podman, Nexus, GitLab CI/CD
+**Hardware:** Arduino, RFID modules, physical sensors
+**Design:** Figma, Photoshop
+**Engineering:** AutoCAD, MiPower, Primavera P6
+
+---
+
+*Last updated: 2026-05-10*
+*Source: https://hasilpaudyal.com.np*

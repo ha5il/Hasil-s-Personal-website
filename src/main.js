@@ -1,38 +1,32 @@
-import '@babel/polyfill'
-import 'mutationobserver-shim'
-import Vue from 'vue'
-import './plugins/bootstrap-vue'
+import { createApp } from 'vue'
+import { createBootstrap, Components, Directives } from 'bootstrap-vue-next'
 import App from './App.vue'
 import router from './router'
-import VueAnalytics from 'vue-analytics'
-import VueMeta from 'vue-meta'
+import { appState } from './state'
 
-Vue.config.productionTip = false
-
-const app = new Vue({
-  router,
-  data: { routeLoading: false },
-  render: h => h(App)
-}).$mount('#app')
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
 
 router.beforeEach((to, from, next) => {
-  app.routeLoading = true
-    next()
+  appState.routeLoading = true
+  next()
 })
 
 router.afterEach(() => {
-  setTimeout(() => app.routeLoading = false, Math.random() * (1500 - 500) + 500)
+  setTimeout(() => {
+    appState.routeLoading = false
+  }, Math.random() * (1500 - 500) + 500)
 })
 
-Vue.use(VueAnalytics, {
-  id: 'UA-72808058-1',
-  checkDuplicatedScript: true
+const app = createApp(App)
+app.use(router)
+app.use(createBootstrap())
+
+// Register all components and directives globally
+Object.entries(Components).forEach(([name, component]) => app.component(name, component))
+Object.entries(Directives).forEach(([name, directive]) => {
+  // Strip leading 'v' from export name: vBTooltip -> BTooltip (used as v-b-tooltip)
+  app.directive(name.replace(/^v/, ''), directive)
 })
 
-Vue.use(VueMeta, {
-  keyName: 'metaInfo',
-  attribute: 'data-vue-meta',
-  ssrAttribute: 'data-vue-meta-server-rendered',
-  tagIDKeyName: 'vmid',
-  refreshOnceOnNavigation: true
-})
+app.mount('#app')

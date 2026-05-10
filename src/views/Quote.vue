@@ -13,17 +13,17 @@
     </b-row>
     <h4 class="p-3">Other quotes</h4>
     <b-row id="other-quotes">
-      <b-col v-for="(quote, idx) in otherQuotes" :key="idx" md="3">
-        <router-link
-          :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
-          tag="div"
+      <b-col v-for="(q, idx) in otherQuotes" :key="idx" md="3">
+        <div
+          style="cursor: pointer"
+          @click="$router.push({ name: 'quote', params: { id: q.id, urlSlug: q.urlSlug } })"
         >
           <b-card>
             <b-card-text>
-              <p>{{quote.quoteLines[0].substr(0, 20)}}...</p>
+              <p>{{q.quoteLines[0].substr(0, 20)}}...</p>
             </b-card-text>
           </b-card>
-        </router-link>
+        </div>
       </b-col>
     </b-row>
   </div>
@@ -50,33 +50,6 @@
     box-shadow: 0px 0px 10px 0px var(--global-shadow-color);
     transition: 0.33s all;
     background-color: var(--global-card-bg);
-  
-    .card-title {
-      color: var(--global-secondary-color);
-      font-weight: normal;
-      font-size: 24px;
-
-      a {
-        color: var(--global-secondary-color);
-      }
-
-      .material-icons {
-        vertical-align: middle;
-      }
-
-      .badge {
-        float: right;
-        font-size: 50%;
-        color: #ffffff;
-        margin-top: 10px;
-
-        .material-icons {
-          font-size: 100%;
-          margin-left: 2px;
-          vertical-align: bottom;
-        }
-      }
-    }
 
     .card-text {
       color: var(--global-primary-color);
@@ -88,10 +61,6 @@
       h5 {
         font-size: 16px;
         padding: 8px 0px;
-      }
-
-      .material-icons {
-        vertical-align: bottom;
       }
     }
   }
@@ -112,18 +81,7 @@ import { quotesMixins } from "../mixins/quotesMixins.js";
 import { htmlHeadMixins } from "../mixins/seoMixins.js";
 
 export default {
-  mixins: [ quotesMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: this.getQuotePageTitle(
-        this.$router.history.current.params.id
-      ),
-      description: this.getQuotePageDescription(
-        this.$router.history.current.params.id
-      ),
-      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
-    });
-  },
+  mixins: [quotesMixins, htmlHeadMixins],
   data() {
     return {
       quote: null,
@@ -132,60 +90,42 @@ export default {
     };
   },
   watch: {
-    $route: {
-      handler: "updatePage"
-    }
+    $route: { handler: "updatePage" }
   },
-
   methods: {
     updatePage() {
-      this.quote = this.getQuoteDetails(this.$router.history.current.params.id);
+      this.quote = this.getQuoteDetails(this.$route.params.id);
       this.otherQuotes = [];
-      while (this.otherQuotes.length != 4) {
+      while (this.otherQuotes.length !== 4) {
         let uniqueQuote = this.getRandomQuote();
-        let isUnique = true;
-        this.otherQuotes.forEach(quote => {
-          if (quote == uniqueQuote) {
-            isUnique = false;
-          }
-        });
-        if (isUnique) {
+        if (!this.otherQuotes.includes(uniqueQuote)) {
           this.otherQuotes.push(uniqueQuote);
         }
       }
     }
   },
   created() {
-    let currentPageActualUrlSlug = this.getQuoteUrlSlug(
-      this.$router.history.current.params.id
-    );
+    const id = this.$route.params.id;
+    let currentPageActualUrlSlug = this.getQuoteUrlSlug(id);
     if (!currentPageActualUrlSlug) {
-      // 404
       this.$router.push({ name: "quotes" });
       return;
     }
-    if (
-      currentPageActualUrlSlug != this.$router.history.current.params.urlSlug
-    ) {
-      // slug mismatch
+    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
       this.$router.push({
         name: "quote",
-        params: {
-          id: this.$router.history.current.params.id,
-          urlSlug: currentPageActualUrlSlug
-        }
+        params: { id, urlSlug: currentPageActualUrlSlug }
       });
     }
+    this.getOptimizedSeoMetaTags({
+      title: this.getQuotePageTitle(id),
+      description: this.getQuotePageDescription(id),
+      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
+    });
     this.updatePage();
     this.breadcrumbItems = [
-      {
-        text: 'Quotes',
-        to: { name: 'quotes' }
-      },
-      {
-        text: this.quote.urlSlug,
-        active: true,
-      },
+      { text: 'Quotes', to: { name: 'quotes' } },
+      { text: this.quote.urlSlug, active: true },
     ];
   }
 };

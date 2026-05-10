@@ -2,29 +2,28 @@
   <div id="quotes" class="mt-5">
     <b-row>
       <b-col sm="12" md="4" v-for="(quote, idx) in quotes" :key="idx">
-        <router-link
-          :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug }}"
-          tag="div"
+        <div
+          style="cursor: pointer"
+          @click="$router.push({ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug } })"
         >
-        <b-card class="mb-3">
-          <b-card-text>
-            <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
-              {{quoteLine}}
-              <br />
-            </span>
-          </b-card-text>
-        </b-card>
-        </router-link>
+          <b-card class="mb-3">
+            <b-card-text>
+              <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">
+                {{quoteLine}}
+                <br />
+              </span>
+            </b-card-text>
+          </b-card>
+        </div>
       </b-col>
     </b-row>
-    <div>
-    <b-embed
-      type="iframe"
-      aspect="16by9"
-      src="https://read.amazon.com/kp/card?asin=B01M99C005&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_1LlwDb4A0SXAB"
-      allowfullscreen
-    ></b-embed>
-  </div>
+    <div class="ratio ratio-16x9 mt-3">
+      <iframe
+        src="https://read.amazon.com/kp/card?asin=B01M99C005&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_1LlwDb4A0SXAB"
+        allowfullscreen
+        title="Amazon book preview"
+      ></iframe>
+    </div>
   </div>
 </template>
 
@@ -57,18 +56,20 @@
 <script>
 import { quotesMixins } from "../mixins/quotesMixins.js";
 import { htmlHeadMixins } from "../mixins/seoMixins.js";
-
 export default {
-  mixins: [ quotesMixins, htmlHeadMixins ],
-  metaInfo() {
-    return this.getOptimizedSeoMetaTags({
-      title: "Quotes | Hasil's Personal Site",
-      description: "Collection of quotes by Hasil Paudyal.",
-      image: "https://firebasestorage.googleapis.com/v0/b/x8-red-freedom-c.appspot.com/o/Hasil%20Paudyal%20(12).jpg?alt=media",
-      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
-    });
+  mixins: [quotesMixins, htmlHeadMixins],
+  data() {
+    return {
+      quotes: []
+    };
   },
   created() {
+    this.getOptimizedSeoMetaTags({
+      title: "Quotes | Hasil's Personal Site",
+      description: "Collection of quotes by Hasil Paudyal.",
+      image: "/gallery/hasil-paudyal-12.jpg",
+      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
+    });
     this.quotes = this.getAllquotes();
   }
 };
