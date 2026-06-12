@@ -2,11 +2,11 @@
 
 > Personal portfolio of Hasil Paudyal: App Development Manager, React Native / Expo developer, web developer, electrical engineer, hardware builder, and original poet. Based in Kathmandu, Nepal.
 
-> Last updated: 2026-05-10
+> Last updated: 2026-06-12
 
 ## About
 
-Hasil Paudyal is an App Development Manager at ConvergeStack (Jan 2022–present). He holds a B.E. in Electrical Engineering from New Horizon College of Engineering, Bangalore (2013–2017). Beyond software, he builds IoT hardware, writes original poetry and quotes, and has real-world experience as a field service & sales engineer for international industrial equipment brands.
+Hasil Paudyal is an App Development Manager at ConvergeStack (Jan 2022–present). He holds a B.E. in Electrical & Electronics Engineering from New Horizon College of Engineering, Bangalore (2013–2017). Beyond software, he builds IoT hardware, writes original poetry and quotes, and has real-world experience as a field service & sales engineer for international industrial equipment brands.
 
 He is the author of all poems and quotes published on this site.
 
@@ -15,14 +15,20 @@ GitHub: https://github.com/ha5il
 
 ## What He Does
 
-- Mobile apps — React Native (Expo) for iOS and Android
-- Custom Expo native modules in Swift (iOS) and Kotlin (Android)
+- Backend & APIs in Laravel (PHP), Node.js, and Deno
+- Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking
+- Fraud-detection admin panels and reporting/analytics dashboards for courier/logistics clients
+- Content-managed (CMS) sites for non-technical clients
+- Full-stack web platforms in JavaScript/TypeScript (Vue.js, Laravel, AWS EBS, RDS, S3, Lambda)
+- Mobile apps — React Native (Expo) for iOS and Android, with custom native modules in Swift and Kotlin
+- SIP/WebRTC voice calling via custom Expo native modules
 - Apple TV apps with HomeKit device integration
 - Serverless edge APIs and workers with Cloudflare Workers
-- Backend development with Laravel (PHP) and AWS infrastructure
-- IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
-- Full-stack web platforms (Vue.js, Laravel, AWS EBS, RDS, S3, Lambda)
+- CI/CD pipelines and reproducible QA/staging environments
+- Server automation — remote DB backups/restore, CRON jobs, queues
+- Self-hosted local LLMs + workflow automation (Activepieces) for internal tasks
 - Container deployments — Podman, Nexus, Docker
+- IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
 - Original poetry and prose writing
 
 ## Site Sections
@@ -53,7 +59,7 @@ GitHub: https://github.com/ha5il
 
 ## Technologies
 
-React Native, Expo, Swift, Kotlin, Vue.js, Laravel, PHP, AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Deno, Podman, Nexus, Docker, Arduino, Spring Boot, Node.js, MySQL, Figma, AutoCAD, MiPower, Primavera P6
+JavaScript/TypeScript, Vue.js, React Native, Expo, Swift, Kotlin, Laravel, PHP, Node.js, Deno, AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Podman, Nexus, Docker, GitLab CI/CD, Arduino, MySQL, Firebase Firestore, Figma, AutoCAD, MiPower, Primavera P6. Familiar with Spring Boot fundamentals (controllers, services, repositories).
 
 ## Creative Work
 

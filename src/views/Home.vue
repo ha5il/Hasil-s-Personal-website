@@ -23,7 +23,7 @@
             Who am I?
           </b-card-title>
           <b-card-text class="justified bio-text">
-            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, I have expertise in design, web development, management, electrical repair, and electronics simulation. Beyond technology, I write poems, share quotes, and experiment with cloud-based data.
+            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical & Electronics Engineering, I have expertise in design, web development, management, electrical repair, and electronics simulation. Beyond technology, I write poems, share quotes, and experiment with cloud-based data.
           </b-card-text>
         </b-card>
 
@@ -82,8 +82,9 @@
               <div style="cursor:pointer"
                 @click="$router.push({name:'project',params:{id:project.id,urlSlug:project.urlSlug}})">
                 <b-card :id="'project-'+idx" class="mb-3 project-card" :title="project.name">
-                  <b-img class="mb-3" :src="project.coverImage" :center="true" fluid loading="lazy"
-                    :alt="project.name+' cover image'"></b-img>
+                  <div class="project-banner mb-3">
+                    <span class="project-initial">{{ project.name.charAt(0) }}</span>
+                  </div>
                   <h5 class="text-info">
                     <span v-for="(tech,i) in project.technologies" :key="i">
                       <b-img class="mx-1" width="32"
@@ -246,6 +247,48 @@
         cursor: url('/cursor-pointer.png'), pointer;
         transition: 0.33s all;
       }
+    }
+  }
+
+  // --- Project cover placeholder (gradient banner with project initial) ---
+  .project-banner {
+    height: 140px;
+    background: linear-gradient(135deg, var(--global-primary-color), var(--global-secondary-color));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      top: -40px;
+      right: -20px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      bottom: -30px;
+      left: 10px;
+    }
+    .project-initial {
+      font-size: 80px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: -2px;
+      user-select: none;
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -447,14 +490,14 @@ export default {
           company: "ConvergeStack",
           url: "//www.convergestack.com/",
           period: "Jan 2022 – Present",
-          desc: "As project lead, I specialize in hybrid app development using React Native (Expo), from prototyping to publishing production-ready Android and iOS apps. I also manage servers and assist the backend team with architectural decisions and algorithm implementation."
+          desc: "As project lead, I shape backend architecture and APIs with the team — guiding data models and algorithm implementation — and manage cloud servers and deployment. I build cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ship production-ready Android and iOS releases. I also set up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs."
         },
         {
           title: "Web Developer at View9 | Nepal",
           company: "View9",
           url: "//view9.com.np",
           period: "Jan 2019 – Dec 2021 · 2 yrs 11 mos",
-          desc: "I led backend development for websites, integrating server-to-server APIs for banks, license verification, online payments, and other services using SOAP and JSON. I developed logging, scheduling, and recurring job systems for notifications, utilizing AWS and Laravel features. I also mentored junior team members in server setup and production issue handling."
+          desc: "I led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. I built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. On the operations side I set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issues."
         },
         {
           title: "Part-time Junior Android Developer at Fixolla | India",
@@ -480,19 +523,26 @@ export default {
       ],
 
       whatCanIDo: [
-        { text: "Scripts for scraping, processing, and storing data",                              icon: "storage"        },
+        { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking", icon: "account_balance" },
+        { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)",       icon: "gpp_maybe"      },
+        { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients", icon: "analytics" },
+        { text: "Content-managed (CMS) sites for non-technical clients — banners, copy, page sections", icon: "edit_note" },
         { text: "Highly dynamic and scalable web platforms",                                       icon: "web"            },
         { text: "Web and mobile apps (React Native / Expo) for Android and iOS",                   icon: "smartphone"     },
         { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)",                  icon: "code"           },
+        { text: "SIP/WebRTC voice calling via custom Expo native modules",                         icon: "call"           },
         { text: "Apple TV apps interacting with HomeKit devices",                                  icon: "tv"             },
-        { text: "Graphic / UI design",                                                             icon: "palette"        },
-        { text: "Portable hardware interfacing with RFID, sensors, and Wi-Fi for IoT",             icon: "memory"         },
         { text: "Serverless edge functions and APIs with Cloudflare Workers",                      icon: "cloud"          },
         { text: "Website setup on AWS EC2, dedicated hosting, or shared hosting",                  icon: "dns"            },
         { text: "AWS Elastic Beanstalk with S3, load balancer, CloudWatch, and Lambda",            icon: "hub"            },
-        { text: "GitLab server and runner setup for projects with CI/CD",                          icon: "merge"          },
+        { text: "CI/CD pipelines with reproducible QA/staging environments",                       icon: "merge"          },
+        { text: "Server automation — remote DB backups/restore, CRON jobs, and queues",            icon: "backup"         },
+        { text: "Self-hosted local LLMs + workflow automation (e.g. Activepieces) for internal tasks", icon: "smart_toy"  },
         { text: "Self-hosted PHP WebSocket services in Laravel",                                   icon: "sync_alt"       },
         { text: "Container-based deployments with Podman and Nexus artifact registry",             icon: "layers"         },
+        { text: "Portable hardware interfacing with RFID, sensors, and Wi-Fi for IoT",             icon: "memory"         },
+        { text: "Scripts for scraping, processing, and storing data",                              icon: "storage"        },
+        { text: "Graphic / UI design",                                                             icon: "palette"        },
       ]
     }
   },
@@ -504,7 +554,7 @@ export default {
     this.getOptimizedSeoMetaTags({
       title: "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet",
       description: "Portfolio of Hasil Paudyal: React Native (Expo) & web developer, app development manager, electrical engineer, and poet from Nepal. Explore my work in app development, web platforms, electronics, and poetry.",
-      image: "https://hasilpaudyal.com.np/Hasil-Shobha.png",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, React Native, Web Developer, App Development Manager, Electrical Engineer, Nepal, Portfolio, Expo, Laravel, AWS, Android, iOS, Cloudflare Workers",
       url: "https://hasilpaudyal.com.np"
     });

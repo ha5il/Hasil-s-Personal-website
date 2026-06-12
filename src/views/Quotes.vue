@@ -67,7 +67,7 @@ export default {
     this.getOptimizedSeoMetaTags({
       title: "Quotes | Hasil's Personal Site",
       description: "Collection of quotes by Hasil Paudyal.",
-      image: "/gallery/hasil-paudyal-12.jpg",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
     });
     this.quotes = this.getAllquotes();

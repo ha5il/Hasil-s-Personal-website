@@ -2,7 +2,7 @@
 
 > This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np.
 
-> Last updated: 2026-05-10
+> Last updated: 2026-06-12
 
 ---
 
@@ -15,17 +15,17 @@
 **GitHub:** https://github.com/ha5il
 **Facebook:** https://facebook.com/hasill
 
-**Bio:** Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical Engineering, Hasil has expertise in design, web development, management, electrical repair, electronics simulation, IoT hardware, and creative writing. He writes original poems and quotes, and has built and shipped mobile apps to the App Store and Google Play.
+**Bio:** Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical & Electronics Engineering, Hasil has expertise in backend & API development, mobile and cloud/DevOps, web development, management, electrical repair, electronics simulation, IoT hardware, and creative writing. He writes original poems and quotes, and has built and shipped mobile apps to the App Store and Google Play.
 
 ---
 
 ## Career History
 
 ### App Development Manager — ConvergeStack, Kathmandu (Jan 2022 – Present)
-As project lead, specialises in hybrid app development using React Native (Expo), from prototyping to publishing production-ready Android and iOS apps. Manages servers and assists the backend team with architectural decisions and algorithm implementation. Builds custom native modules in Swift (iOS) and Kotlin (Android).
+As project lead, shapes backend architecture and APIs with the team — guiding data models and algorithm implementation — and manages cloud servers and deployment. Builds cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ships production-ready Android and iOS releases. Also sets up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs.
 
 ### Web Developer — View9, Nepal (Jan 2019 – Dec 2021, 2 years 11 months)
-Led backend development for websites, integrating server-to-server APIs for banks, license verification, online payments, and other services using SOAP and JSON. Developed logging, scheduling, and recurring job systems for notifications using AWS and Laravel. Mentored junior team members in server setup and production issue handling.
+Led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. Built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. Set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issue handling.
 
 ### Part-time Junior Android Developer — Fixolla, India (Feb 2018 – Dec 2018, 11 months)
 Worked with the Android development team on app and API development.
@@ -40,7 +40,32 @@ Set up and expanded laundry businesses across India. Authorised service engineer
 
 ## Education
 
-**B.E. Electrical Engineering** — New Horizon College of Engineering, Bangalore (2013–2017)
+**B.E. Electrical & Electronics Engineering** — New Horizon College of Engineering, Bangalore (2013–2017)
+
+---
+
+## Capabilities
+
+Capability depth, strongest first: Backend & APIs, Mobile, Cloud/DevOps, Frontend.
+
+- Backend & APIs in Laravel (PHP), Node.js, and Deno
+- Bank & payment-gateway integrations over SOAP and JSON (remittance, payment, verification), with automated transaction tracking
+- Fraud-detection admin panels (e.g. flagging multiple signups from one IP)
+- Reporting & analytics dashboards (monthly sales + operational reports) for courier/logistics clients
+- Content-managed (CMS) sites for non-technical clients — banners, homepage copy, page sections
+- Full-stack web platforms — Vue.js front end, Laravel + AWS back end
+- Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS
+- Custom Expo native modules in Swift (iOS) and Kotlin (Android)
+- SIP/WebRTC voice calling via custom Expo native modules
+- Apple TV apps with HomeKit integration
+- Serverless edge APIs with Cloudflare Workers
+- Self-hosted WebSocket services in PHP/Laravel
+- CI/CD pipelines and reproducible QA/staging environments
+- Container deployments — Podman, Nexus, Docker
+- Server automation — remote database backups/restore, CRON jobs, queues
+- Self-hosted local LLMs + workflow automation (e.g. Activepieces) for internal tasks
+- IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
+- Data scraping, processing, and ETL pipelines
 
 ---
 
@@ -78,7 +103,7 @@ Online beauty store for Nepal. E-commerce website. Technologies: Vue.js, Laravel
 ### Kourtier Courier
 Web app for courier tracking management. Technologies: Vue.js, Laravel, Teammates.
 
-### Discont Card
+### Discount Card
 Discounts, coupons, and entertainment for every age group. Technologies: Vue.js, API, Backend, Merchant integrations.
 
 ### Indigo Ink
@@ -277,17 +302,19 @@ You are the Sunshine / The best Sunshine / Shining my every year / Happy New Yea
 
 ## Technologies & Tools
 
-**Mobile:** React Native, Expo, Swift, Kotlin, Android Studio
-**Backend:** Laravel (PHP), Node.js, Spring Boot, Deno
-**Cloud:** AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Cloudflare Pages, Cloudflare R2
+**Languages:** JavaScript/TypeScript, PHP, Swift, Kotlin
+**Backend:** Laravel (PHP), Node.js, Deno (also familiar with Spring Boot fundamentals — controllers, services, repositories)
 **Frontend:** Vue.js, jQuery, Bootstrap
+**Mobile:** React Native, Expo, custom native modules (Swift/iOS, Kotlin/Android), Android Studio
+**Cloud:** AWS (EC2, EBS, RDS, S3, Lambda, CloudWatch), Cloudflare Workers, Cloudflare Pages, Cloudflare R2
 **Databases:** MySQL, Firebase Firestore
-**DevOps:** Docker, Podman, Nexus, GitLab CI/CD
+**DevOps:** Docker, Podman, Nexus, GitLab CI/CD, reproducible QA/staging environments, CRON, queues, remote DB backups
+**Automation/AI:** Self-hosted local LLMs, Activepieces workflow automation
 **Hardware:** Arduino, RFID modules, physical sensors
 **Design:** Figma, Photoshop
 **Engineering:** AutoCAD, MiPower, Primavera P6
 
 ---
 
-*Last updated: 2026-05-10*
+*Last updated: 2026-06-12*
 *Source: https://hasilpaudyal.com.np*

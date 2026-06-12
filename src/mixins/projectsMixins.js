@@ -731,7 +731,7 @@ const projects = [
             }],
         }]
     }, {
-        name: "Discont Card",
+        name: "Discount Card",
         tagLine: "Discounts, Coupons and Entertainment for every age group anywhere.",
         coverImage: "/project/discount-card.jpg",
         type: "it",
@@ -870,7 +870,7 @@ const projects = [
         type: "it",
         urlSlug: "voip-calls",
         id: 22,
-        technologies: ['ReactNative', 'Expo', 'Swift', 'JAVA'],
+        technologies: ['React Native', 'Expo', 'Swift', 'Java'],
         contributionLevels: {
             MobileApp: 100,
         },
@@ -907,7 +907,7 @@ const projects = [
         urlSlug: "briefboard-kpi-dashboard-mobile-app",
         id: 23,
         website: '//apps.apple.com/id/app/briefboard/id6757684014',
-        technologies: ['ReactNative', 'Expo'],
+        technologies: ['React Native', 'Expo'],
         contributionLevels: {
             Design: 80,
             MobileApp: 100,

@@ -70,7 +70,7 @@ export default {
     this.getOptimizedSeoMetaTags({
       title: "Poems | Hasil's Personal Site",
       description: "Collection of poems by Hasil Paudyal.",
-      image: "/gallery/hasil-paudyal-15.jpg",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
     });
     this.poems = this.getAllpoems();

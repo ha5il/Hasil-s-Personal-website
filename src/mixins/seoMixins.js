@@ -10,7 +10,16 @@ const globalSchemas = {
             name: "ConvergeStack"
         },
         jobTitle: "App Development Manager",
-        alumniOf: "New Horizon College of Engineering",
+        alumniOf: {
+            "@type": "CollegeOrUniversity",
+            name: "New Horizon College of Engineering"
+        },
+        hasCredential: {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "degree",
+            educationalLevel: "Bachelor of Engineering",
+            name: "B.E. Electrical & Electronics Engineering"
+        },
         gender: "male",
         sameAs: [
             "https://www.linkedin.com/in/hasil/",

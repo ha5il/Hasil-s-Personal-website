@@ -12,9 +12,9 @@
           <p class="hero-tagline">Engineer &bull; Creator &bull; Leader</p>
           <p class="hero-bio">
             From designing electrical systems and repairing international hardware in India,
-            to leading app development teams across mobile and cloud platforms —
-            and writing poetry in between. I bring a rare combination of technical depth,
-            creative thinking, and real-world problem-solving.
+            to building backend systems and APIs and leading app development across mobile
+            and cloud platforms — and writing poetry in between. I bring a rare combination
+            of technical depth, creative thinking, and real-world problem-solving.
           </p>
           <div class="hero-links">
             <b-link href="//np.linkedin.com/in/hasil" target="_blank" class="hero-link">
@@ -424,7 +424,7 @@ export default {
       title: "Hire Hasil | Engineer, Creator & Leader",
       description:
         "Hasil Paudyal — App Development Manager, Electrical Engineer, IoT builder, and poet from Nepal. Experienced across mobile apps, cloud backends, hardware, and creative writing.",
-      image: "/gallery/hasil-paudyal-graduation.jpg",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords:
         "Hire Hasil Paudyal, App Development Manager, React Native, Expo, Electrical Engineer, IoT, Poetry, Laravel, AWS, Nepal",
     });
@@ -454,12 +454,12 @@ export default {
         {
           icon: "phone_iphone",
           title: "Software Engineer",
-          desc: "React Native, Expo native modules (Swift/Kotlin), Laravel backends, Cloudflare Workers, AWS — full stack from mobile to cloud.",
+          desc: "Backend & APIs (Laravel, Node.js, Deno), React Native + Expo with native modules in Swift/Kotlin, Cloudflare Workers and AWS — full-stack in JavaScript/TypeScript, from APIs to mobile to cloud.",
         },
         {
           icon: "electrical_services",
           title: "Electrical Engineer",
-          desc: "B.E. in Electrical Engineering. Hardware prototyping, IoT with RFID & sensors, electronics simulation, and field service engineering.",
+          desc: "B.E. in Electrical & Electronics Engineering. Hardware prototyping, IoT with RFID & sensors, electronics simulation, and field service engineering.",
         },
         {
           icon: "edit",
@@ -481,8 +481,8 @@ export default {
           period: "Jan 2022 – Present",
           variant: "primary",
           description:
-            "Leading hybrid app development using React Native (Expo), server management, and backend architecture. Builds custom native modules in Swift and Kotlin.",
-          tags: ["React Native", "Expo", "Swift", "Kotlin", "AWS", "Cloudflare"],
+            "Backend architecture and APIs, cloud and server management, and CI/CD with reproducible QA/staging environments. Leads cross-platform app development with React Native (Expo) and custom native modules in Swift and Kotlin (including SIP/WebRTC voice calling).",
+          tags: ["Backend & APIs", "React Native", "Expo", "Swift", "Kotlin", "AWS", "Cloudflare", "CI/CD"],
         },
         {
           title: "Web Developer",
@@ -492,8 +492,8 @@ export default {
           period: "Jan 2019 – Dec 2021",
           variant: "info",
           description:
-            "Led backend development, server-to-server API integrations for banks and payment gateways, AWS & Laravel architecture, and mentored junior developers.",
-          tags: ["Laravel", "AWS", "PHP", "API Integration"],
+            "Led backend development and bank/payment-gateway API integrations over SOAP and JSON with automated transaction tracking. Built fraud-detection and reporting dashboards and CMS sites; managed AWS/Laravel infrastructure and mentored junior developers.",
+          tags: ["Laravel", "AWS", "PHP", "API Integration", "SOAP/JSON"],
         },
         {
           title: "Junior Android Developer",
@@ -535,14 +535,22 @@ export default {
           icon: "code",
           cols: 7,
           lists: [
-            { text: "Hybrid mobile apps — React Native (Expo) for Android & iOS" },
+            { text: "Backend & APIs in Laravel (PHP), Node.js, and Deno" },
+            { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking" },
+            { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)" },
+            { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients" },
+            { text: "Content-managed (CMS) sites for non-technical clients" },
+            { text: "Full-stack web platforms — Vue.js front end, Laravel + AWS back end" },
+            { text: "Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS" },
             { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)" },
+            { text: "SIP/WebRTC voice calling via custom native modules" },
             { text: "Apple TV apps with HomeKit integration" },
             { text: "Serverless edge APIs with Cloudflare Workers" },
-            { text: "Scalable web platforms with Laravel + AWS" },
             { text: "Self-hosted WebSocket services in PHP/Laravel" },
+            { text: "CI/CD pipelines with reproducible QA/staging environments" },
             { text: "Container deployments — Podman, Nexus, Docker" },
-            { text: "GitLab CI/CD server and runner setup" },
+            { text: "Server automation — remote DB backups/restore, CRON jobs, queues" },
+            { text: "Self-hosted local LLMs + workflow automation (Activepieces)" },
             { text: "Data scraping, processing, and ETL pipelines" },
           ],
         },

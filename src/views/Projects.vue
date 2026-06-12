@@ -177,8 +177,8 @@ export default {
     this.getOptimizedSeoMetaTags({
       title: "Projects | Hasil Paudyal Portfolio",
       description: "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.",
-      image: "/gallery/hasil-paudyal-4.jpg",
-      keywords: "Hasil Paudyal, Projects, Electrical Engineering, Electronics, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio"
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords: "Hasil Paudyal, Projects, Electrical & Electronics Engineering, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio"
     });
     this.projects = this.getAllProjects();
   }
