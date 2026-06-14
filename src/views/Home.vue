@@ -133,6 +133,9 @@
               <div style="cursor:pointer"
                 @click="$router.push({name:'quote',params:{id:quote.id,urlSlug:quote.urlSlug}})">
                 <b-card class="quote-card mb-3">
+                  <div class="quote-banner mb-3">
+                    <i class="material-icons quote-banner-icon">format_quote</i>
+                  </div>
                   <b-card-text>
                     <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">{{ quoteLine }}<br/></span>
                   </b-card-text>
@@ -154,8 +157,14 @@
               <div style="cursor:pointer"
                 @click="$router.push({name:'poem',params:{id:poem.id,urlSlug:poem.urlSlug}})">
                 <b-card class="poem-card text-center mb-3">
-                  <b-card-title>{{ poem.name }}</b-card-title>
-                  <b-card-text class="mt-4">
+                  <div class="poem-banner mb-3">
+                    <i class="material-icons poem-banner-icon">auto_stories</i>
+                  </div>
+                  <b-card-title>
+                    <i class="material-icons poem-title-icon">auto_stories</i>
+                    {{ poem.name }}
+                  </b-card-title>
+                  <b-card-text>
                     <p v-for="(para, idxPara) in poem.poemParas" :key="idxPara">
                       <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
                         {{ paraLine }}<br/>
@@ -290,6 +299,57 @@
       position: relative;
       z-index: 1;
     }
+  }
+
+  .quote-banner, .poem-banner {
+    height: 90px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      top: -30px; right: -15px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      bottom: -20px; left: 10px;
+    }
+  }
+
+  .quote-banner {
+    background: linear-gradient(135deg, var(--global-secondary-color), var(--global-primary-color));
+    .quote-banner-icon {
+      font-size: 64px;
+      color: rgba(255, 255, 255, 0.25);
+      position: relative; z-index: 1;
+    }
+  }
+
+  .poem-banner {
+    background: linear-gradient(315deg, var(--global-secondary-color), var(--global-primary-color));
+    .poem-banner-icon {
+      font-size: 64px;
+      color: rgba(255, 255, 255, 0.25);
+      position: relative; z-index: 1;
+    }
+  }
+
+  .poem-title-icon {
+    font-size: 1rem;
+    vertical-align: text-bottom;
+    margin-right: 3px;
   }
 
   .card-title {

@@ -606,6 +606,19 @@ footer {
 
 .breadcrumb {
   background-color: var(--global-card-bg);
+
+  .breadcrumb-item {
+    color: var(--global-primary-color);
+
+    &::before {
+      color: var(--global-primary-color);
+      opacity: 0.5;
+    }
+
+    &.active {
+      color: var(--global-primary-color);
+    }
+  }
 }
 
 .card {
