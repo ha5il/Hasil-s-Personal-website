@@ -7,7 +7,7 @@
           style="cursor: pointer"
           @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
         >
-          <b-card class="mb-3" :title="project.name">
+          <b-card :id="'it-project-'+project.id" class="mb-3" :title="project.name">
             <div class="project-banner mb-3">
               <span class="project-initial">{{ project.name.charAt(0) }}</span>
             </div>
@@ -23,7 +23,6 @@
             </h5>
             <b-card-text>
               {{project.tagLine}}
-              <p class="project-description mt-2">{{ getProjectPageDescription(project.id) }}...</p>
               <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
                 <b-progress-bar
                   v-for="(level, idxLevel) in project.contributionLevels"
@@ -35,6 +34,8 @@
             </b-card-text>
           </b-card>
         </div>
+        <b-tooltip :delay="{show:0,hide:0}" :target="'it-project-'+project.id" placement="bottom"
+          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
       </b-col>
     </b-row>
     <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
@@ -44,7 +45,7 @@
           style="cursor: pointer"
           @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
         >
-          <b-card class="mb-3" :title="project.name">
+          <b-card :id="'ee-project-'+project.id" class="mb-3" :title="project.name">
             <h5 class="text-info">
               <span v-for="(tech,idx) in project.technologies" :key="idx">
                 <b-img
@@ -68,6 +69,8 @@
             </b-card-text>
           </b-card>
         </div>
+        <b-tooltip :delay="{show:0,hide:0}" :target="'ee-project-'+project.id" placement="bottom"
+          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
       </b-col>
     </b-row>
   </div>

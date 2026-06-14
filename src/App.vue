@@ -647,6 +647,7 @@ h4, h5 {
   --bs-tooltip-border-radius: 8px !important;
   font-family: "DM Sans", sans-serif;
   font-size: 0.8rem;
+  z-index: 1090 !important;
 }
 
 // Belt-and-suspenders: override the rendered elements directly too
@@ -656,7 +657,11 @@ h4, h5 {
   border-radius: 8px !important;
   font-family: "DM Sans", sans-serif;
   font-size: 0.8rem;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  max-width: 320px !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-align: left;
 }
 
 .tooltip .tooltip-arrow::before,

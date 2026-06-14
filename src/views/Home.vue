@@ -102,7 +102,7 @@
                 </b-card>
               </div>
               <b-tooltip :delay="{show:0,hide:0}" :target="'project-'+idx" placement="bottom"
-                :title="getProjectPageDescription(project.id)+'...'"></b-tooltip>
+                :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
             </b-col>
           </b-row>
         </b-card>
