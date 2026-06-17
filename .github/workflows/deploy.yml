@@ -1,14 +1,9 @@
-name: Build, prerender & deploy to Cloudflare Pages
-
-# Cloudflare Pages' own build container has no Chrome, so it can't run the
-# prerender step. Instead we build + prerender here (GitHub runners have Chrome)
-# and push the finished dist/ to Pages via Wrangler Direct Upload — which is
-# available on the free plan and doesn't count against Pages' Git build quota.
+name: 🚀 Build & Deploy to CF Pages
 
 on:
   push:
     branches: [vue]
-  workflow_dispatch: {} # allow manual runs from the Actions tab
+  workflow_dispatch: {} # 🛠️ Manual trigger
 
 permissions:
   contents: read
@@ -19,30 +14,35 @@ concurrency:
 
 jobs:
   deploy:
+    name: 🌍 Deploy Website
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v6
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
 
-      # Guarantees a Chrome binary and exposes its path for the prerender script.
-      - id: chrome
+      # 🌐 Guarantees a Chrome binary and exposes its path for the prerender script.
+      - name: 🌐 Setup Chrome for Prerendering
+        id: chrome
         uses: browser-actions/setup-chrome@v2
 
-      - run: npm ci
+      - name: 📦 Install dependencies
+        run: npm ci
 
-      # vite build + scripts/prerender.mjs (snapshots every route in sitemap.xml).
-      - name: Build & prerender
+      # ⚙️ vite build + scripts/prerender.mjs (snapshots every route in sitemap.xml).
+      - name: 🏗️ Build & Prerender
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
         run: npm run build:seo
 
-      - name: Deploy to Cloudflare Pages
+      - name: ☁️ Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=${{ github.ref_name }}
+          command: pages deploy dist --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=${{ github.ref_name }} --commit-dirty=true
