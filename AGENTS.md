@@ -157,6 +157,8 @@ Routes that should be in it: `/`, `/projects`, `/quotes`, `/poems`, `/hire-Hasil
 `/project/:id/:slug`, `/quote/:id/:slug`, `/poem/:id/:slug`. **Do not** add redirect-only routes
 (e.g. `/performance-analysis`). Set `<lastmod>` to today **only on URLs whose content actually
 changed** — don't blanket-bump every entry (crawlers distrust always-fresh sitemaps).
+**No trailing slashes** — use `/quotes` not `/quotes/`. The prerender reads this file directly;
+trailing slashes in sitemap entries cause CF Pages' directory-index redirect to add slashes to live URLs.
 
 ### `public/robots.txt`
 Allows all crawlers (empty `Disallow:`), explicitly allows AI bots (GPTBot, ClaudeBot, etc.) and
@@ -176,8 +178,9 @@ JS so it's fine, but **social crawlers (Facebook/LinkedIn/X/Slack/WhatsApp) and 
 
 `npm run build:seo` fixes this: after `vite build`, it serves `dist/`, visits **every URL in
 `sitemap.xml`** in headless Chrome, waits for `applySeo()` to populate `<head>`, and writes the
-rendered HTML back to `dist/<route>/index.html`. So **`sitemap.xml` is the prerender route list** —
-add a page there and it gets prerendered; the two can't drift.
+rendered HTML back as a **flat `.html` file** — e.g. `dist/quotes.html`, `dist/project/12/slug.html`
+(NOT `dist/route/index.html`). So **`sitemap.xml` is the prerender route list** — add a page there
+and it gets prerendered; the two can't drift.
 
 - **Snapshot, not SSR — and that matters.** The previous attempt that broke click listeners was
   almost certainly SSR/hydration. This is a *snapshot* prerender: the client still does
@@ -189,6 +192,10 @@ add a page there and it gets prerendered; the two can't drift.
   override with `CHROME_PATH=/path/to/chrome`. CI must have Chrome available.
 - `main.js` skips the artificial 500–1500 ms loading delay when `window.__PRERENDER_INJECTED` is
   set (the prerenderer injects it), so snapshots resolve fast and deterministically.
+- **Output is flat `.html` files, not directories.** `dist/quotes.html` not `dist/quotes/index.html`.
+  This is intentional: Cloudflare Pages serves `foo.html` at `/foo` with no trailing-slash redirect,
+  whereas a `foo/index.html` directory causes CF Pages to redirect `/foo` → `/foo/` at the platform
+  level (before any `_redirects` rules fire). **Do not revert to `directory/index.html` output.**
 - `dist/` is gitignored — prerendered output is a build artifact, never committed. Deploy the
   output of `build:seo`, **not** plain `build`.
 

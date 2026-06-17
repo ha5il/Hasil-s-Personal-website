@@ -112,9 +112,12 @@ async function run() {
         { timeout: 15000 }
       )
       const html = '<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML)
-      const outDir = route === '/' ? DIST : join(DIST, route)
-      await mkdir(outDir, { recursive: true })
-      await writeFile(join(outDir, 'index.html'), html, 'utf8')
+      // Write flat .html files (e.g. dist/quotes.html, dist/project/12/slug.html)
+      // so Cloudflare Pages serves them at /quotes, /project/12/slug with no
+      // trailing-slash redirect. CF Pages natively serves foo.html at /foo.
+      const outPath = route === '/' ? join(DIST, 'index.html') : join(DIST, route.slice(1) + '.html')
+      await mkdir(dirname(outPath), { recursive: true })
+      await writeFile(outPath, html, 'utf8')
       ok++
       console.log(`  ✓ ${route}`)
     } catch (err) {
