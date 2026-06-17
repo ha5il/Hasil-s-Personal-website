@@ -1,15 +1,24 @@
 <template>
-  <div id="hire-hasil" class="mt-5">
-
+  <div
+    id="hire-hasil"
+    class="mt-5"
+  >
     <!-- Hero -->
     <b-card class="hero-card mb-4">
       <div class="hero-inner">
         <div class="hero-avatar d-none d-md-flex">
-          <img src="/Hasil-Shobha.png" alt="Hasil Paudyal" />
+          <img
+            src="/Hasil-Shobha.png"
+            alt="Hasil Paudyal"
+          >
         </div>
         <div class="hero-content">
-          <h2 class="hero-name">Hasil Paudyal</h2>
-          <p class="hero-tagline">Engineer &bull; Creator &bull; Leader</p>
+          <h2 class="hero-name">
+            Hasil Paudyal
+          </h2>
+          <p class="hero-tagline">
+            Engineer &bull; Creator &bull; Leader
+          </p>
           <p class="hero-bio">
             From designing electrical systems and repairing international hardware in India,
             to building backend systems and APIs and leading app development across mobile
@@ -17,12 +26,30 @@
             of technical depth, creative thinking, and real-world problem-solving.
           </p>
           <div class="hero-links">
-            <b-link href="//np.linkedin.com/in/hasil" target="_blank" class="hero-link">
-              <img v-b-tooltip.hover.bottom title="Connect on LinkedIn" src="/iconledincon.svg" width="28" />
+            <b-link
+              href="//np.linkedin.com/in/hasil"
+              target="_blank"
+              class="hero-link"
+            >
+              <img
+                v-b-tooltip.hover.bottom
+                title="Connect on LinkedIn"
+                src="/iconledincon.svg"
+                width="28"
+              >
               LinkedIn
             </b-link>
-            <b-link href="//facebook.com/hasill" target="_blank" class="hero-link">
-              <img v-b-tooltip.hover.bottom title="Connect on Facebook" src="/iconfbcon.svg" width="28" />
+            <b-link
+              href="//facebook.com/hasill"
+              target="_blank"
+              class="hero-link"
+            >
+              <img
+                v-b-tooltip.hover.bottom
+                title="Connect on Facebook"
+                src="/iconfbcon.svg"
+                width="28"
+              >
               Facebook
             </b-link>
           </div>
@@ -36,13 +63,24 @@
       What Makes Me, Me
     </h4>
     <b-row class="mb-4">
-      <b-col sm="12" md="6" lg="3" v-for="(dim, idx) in dimensions" :key="idx" class="mb-3">
+      <b-col
+        v-for="(dim, idx) in dimensions"
+        :key="idx"
+        sm="12"
+        md="6"
+        lg="3"
+        class="mb-3"
+      >
         <b-card class="dimension-card h-100">
           <div class="dim-icon">
             <i class="material-icons">{{ dim.icon }}</i>
           </div>
-          <h5 class="dim-title">{{ dim.title }}</h5>
-          <p class="dim-desc">{{ dim.desc }}</p>
+          <h5 class="dim-title">
+            {{ dim.title }}
+          </h5>
+          <p class="dim-desc">
+            {{ dim.desc }}
+          </p>
         </b-card>
       </b-col>
     </b-row>
@@ -53,8 +91,15 @@
       Career Journey
     </h4>
     <div class="timeline-container mb-4">
-      <div v-for="(event, idx) in timeline" :key="idx" class="timeline-item">
-        <div class="timeline-dot" :class="event.variant"></div>
+      <div
+        v-for="(event, idx) in timeline"
+        :key="idx"
+        class="timeline-item"
+      >
+        <div
+          class="timeline-dot"
+          :class="event.variant"
+        />
         <div class="timeline-content">
           <div class="timeline-header">
             <span class="timeline-title">{{ event.title }}</span>
@@ -63,12 +108,27 @@
           <div class="timeline-role">
             <strong>{{ event.role }}</strong>
             <span v-if="event.company"> at
-              <a :href="event.companyUrl" target="_blank">{{ event.company }}</a>
+              <a
+                :href="event.companyUrl"
+                target="_blank"
+              >{{ event.company }}</a>
             </span>
           </div>
-          <div class="timeline-desc">{{ event.description }}</div>
-          <div v-if="event.tags" class="timeline-tags mt-2">
-            <b-badge v-for="tag in event.tags" :key="tag" pill class="me-1 mb-1">{{ tag }}</b-badge>
+          <div class="timeline-desc">
+            {{ event.description }}
+          </div>
+          <div
+            v-if="event.tags"
+            class="timeline-tags mt-2"
+          >
+            <b-badge
+              v-for="tag in event.tags"
+              :key="tag"
+              pill
+              class="me-1 mb-1"
+            >
+              {{ tag }}
+            </b-badge>
           </div>
         </div>
       </div>
@@ -81,10 +141,10 @@
     </h4>
     <b-row>
       <b-col
-        sm="12"
-        :md="skillData.cols"
         v-for="(skillData, idx) in skills"
         :key="idx"
+        sm="12"
+        :md="skillData.cols"
         class="mb-3"
       >
         <b-card class="h-100">
@@ -93,7 +153,10 @@
             <b-card-title>{{ skillData.title }}</b-card-title>
           </div>
           <b-card-text>
-            <b-list-group flush v-if="skillData.layout !== 'grid'">
+            <b-list-group
+              v-if="skillData.layout !== 'grid'"
+              flush
+            >
               <b-list-group-item
                 v-for="(list, idxList) in skillData.lists"
                 :key="idxList"
@@ -106,26 +169,242 @@
                     width="28"
                     :src="list.icon"
                     :alt="list.text + ' logo'"
-                  ></b-img>
+                  />
                   <span>{{ list.text }}</span>
                 </div>
-                <b-badge v-if="list.count" pill variant="secondary">{{ list.count }}</b-badge>
+                <b-badge
+                  v-if="list.count"
+                  pill
+                  variant="secondary"
+                >
+                  {{ list.count }}
+                </b-badge>
               </b-list-group-item>
             </b-list-group>
-            <div v-else class="platforms-grid">
-              <span v-for="(list, idxList) in skillData.lists" :key="idxList" class="platform-chip">
-                <b-img v-if="list.icon" width="20" :src="list.icon" :alt="list.text + ' logo'"></b-img>
+            <div
+              v-else
+              class="platforms-grid"
+            >
+              <span
+                v-for="(list, idxList) in skillData.lists"
+                :key="idxList"
+                class="platform-chip"
+              >
+                <b-img
+                  v-if="list.icon"
+                  width="20"
+                  :src="list.icon"
+                  :alt="list.text + ' logo'"
+                />
                 {{ list.text }}
-                <b-badge v-if="list.count" pill variant="secondary" class="ms-1">{{ list.count }}</b-badge>
+                <b-badge
+                  v-if="list.count"
+                  pill
+                  variant="secondary"
+                  class="ms-1"
+                >{{ list.count }}</b-badge>
               </span>
             </div>
           </b-card-text>
         </b-card>
       </b-col>
     </b-row>
-
   </div>
 </template>
+
+<script>
+import _ from "lodash";
+import { projectsMixins } from "../mixins/projectsMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+export default {
+  mixins: [projectsMixins, seoMixins],
+  data() {
+    return {
+      dimensions: [
+        {
+          icon: "phone_iphone",
+          title: "Software Engineer",
+          desc: "Backend & APIs (Laravel, Node.js, Deno), React Native + Expo with native modules in Swift/Kotlin, Cloudflare Workers and AWS — full-stack in JavaScript/TypeScript, from APIs to mobile to cloud.",
+        },
+        {
+          icon: "electrical_services",
+          title: "Electrical Engineer",
+          desc: "B.E. in Electrical & Electronics Engineering. Hardware prototyping, IoT with RFID & sensors, electronics simulation, and field service engineering.",
+        },
+        {
+          icon: "edit",
+          title: "Creative Writer",
+          desc: "Author of original poems and quotes. Writing is how I think — precise, layered, and built to leave an impression.",
+        },
+        {
+          icon: "handshake",
+          title: "Leader & Collaborator",
+          desc: "Led cross-functional teams, mentored developers, handled client relationships, and delivered across cultures and time zones.",
+        },
+      ],
+      timeline: [
+        {
+          title: "App Development Manager",
+          role: "App Development Manager",
+          company: "ConvergeStack",
+          companyUrl: "//www.convergestack.com/",
+          period: "Jan 2022 – Present",
+          variant: "primary",
+          description:
+            "Backend architecture and APIs, cloud and server management, and CI/CD with reproducible QA/staging environments. Leads cross-platform app development with React Native (Expo) and custom native modules in Swift and Kotlin (including SIP/WebRTC voice calling).",
+          tags: ["Backend & APIs", "React Native", "Expo", "Swift", "Kotlin", "AWS", "Cloudflare", "CI/CD"],
+        },
+        {
+          title: "Web Developer",
+          role: "Web Developer",
+          company: "View9 | Nepal",
+          companyUrl: "//view9.com.np",
+          period: "Jan 2019 – Dec 2021",
+          variant: "info",
+          description:
+            "Led backend development and bank/payment-gateway API integrations over SOAP and JSON with automated transaction tracking. Built fraud-detection and reporting dashboards and CMS sites; managed AWS/Laravel infrastructure and mentored junior developers.",
+          tags: ["Laravel", "AWS", "PHP", "API Integration", "SOAP/JSON"],
+        },
+        {
+          title: "Junior Android Developer",
+          role: "Part-time Junior Android Developer",
+          company: "Fixolla | India",
+          companyUrl: "//fixolla.com",
+          period: "Feb 2018 – Dec 2018",
+          variant: "success",
+          description:
+            "Worked on Android app and API development as part of an early-stage startup team.",
+          tags: ["Android", "Java", "REST APIs"],
+        },
+        {
+          title: "Security Analyst",
+          role: "Part-time Security Analyst",
+          company: "Fixolla | India",
+          companyUrl: "//fixolla.com",
+          period: "Sep 2017 – Feb 2018",
+          variant: "warning",
+          description:
+            "Data scraping from open sources, building company databases, and public speaking & promotional activities at colleges across Bangalore.",
+          tags: ["Data Scraping", "Public Speaking", "Research"],
+        },
+        {
+          title: "Service & Sales Engineer",
+          role: "Service and Sales Engineer",
+          company: "A2Z Laundry Solutions | India",
+          companyUrl: "//a2zlaundrysolutions.com",
+          period: "Dec 2016 – Dec 2018",
+          variant: "danger",
+          description:
+            "Set up and expanded laundry businesses across India. Authorized service engineer for Danube (France), Pony (Italy), SEKO (USA), Electrolux, Maytag, and Speedqueen.",
+          tags: ["Hardware", "Field Engineering", "Sales", "International Brands"],
+        },
+      ],
+      skills: [
+        {
+          title: "Software & Apps",
+          icon: "code",
+          cols: 7,
+          lists: [
+            { text: "Backend & APIs in Laravel (PHP), Node.js, and Deno" },
+            { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking" },
+            { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)" },
+            { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients" },
+            { text: "Content-managed (CMS) sites for non-technical clients" },
+            { text: "Full-stack web platforms — Vue.js front end, Laravel + AWS back end" },
+            { text: "Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS" },
+            { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)" },
+            { text: "SIP/WebRTC voice calling via custom native modules" },
+            { text: "Apple TV apps with HomeKit integration" },
+            { text: "Serverless edge APIs with Cloudflare Workers" },
+            { text: "Self-hosted WebSocket services in PHP/Laravel" },
+            { text: "CI/CD pipelines with reproducible QA/staging environments" },
+            { text: "Container deployments — Podman, Nexus, Docker" },
+            { text: "Server automation — remote DB backups/restore, CRON jobs, queues" },
+            { text: "Self-hosted local LLMs + workflow automation (Activepieces)" },
+            { text: "Data scraping, processing, and ETL pipelines" },
+          ],
+        },
+        {
+          title: "Engineering & Hardware",
+          icon: "memory",
+          cols: 5,
+          lists: [
+            { text: "Electrical system design & simulation (AutoCAD, MiPower)" },
+            { text: "Portable IoT devices — RFID, physical sensors, Wi-Fi" },
+            { text: "Arduino-based hardware prototyping" },
+            { text: "Field service & commissioning of industrial machines" },
+            { text: "Project planning & scheduling (Primavera P6)" },
+          ],
+        },
+        {
+          title: "Creative & Writing",
+          icon: "create",
+          cols: 5,
+          lists: [
+            { text: "Original poetry — published on this site" },
+            { text: "Original quotes & reflections" },
+            { text: "Technical writing & documentation" },
+            { text: "UI/UX design with Figma and Photoshop" },
+          ],
+        },
+        {
+          title: "Tools I Work With",
+          icon: "build",
+          cols: 7,
+          lists: [
+            { text: "Android Studio" },
+            { text: "AutoCAD" },
+            { text: "Figma" },
+            { text: "IntelliJ IDEA / VS Code" },
+            { text: "MiPower" },
+            { text: "Photoshop" },
+            { text: "Primavera P6" },
+            { text: "Deno / Bun" },
+          ],
+        },
+      ],
+    };
+  },
+  created() {
+    this.applySeo({
+      title: "Hire Hasil | Engineer, Creator & Leader",
+      description:
+        "Hasil Paudyal — App Development Manager, Electrical Engineer, IoT builder, and poet from Nepal. Experienced across mobile apps, cloud backends, hardware, and creative writing.",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords:
+        "Hire Hasil Paudyal, App Development Manager, React Native, Expo, Electrical Engineer, IoT, Poetry, Laravel, AWS, Nepal",
+      url: "https://hasilpaudyal.com.np/hire-Hasil",
+      type: "profile",
+      schema: [
+        this.seoPerson(),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Hire Hasil", path: "/hire-Hasil" }
+        ])
+      ]
+    });
+
+    let technologies = [];
+    this.getProjectTechnologies().forEach((technology) => {
+      technologies.push({
+        text: technology["tech"],
+        count: technology["projCount"],
+        icon:
+          "/" +
+          technology["tech"].replace(/ /g, "").toLowerCase() +
+          "-logo.png",
+      });
+    });
+    this.skills.push({
+      title: "Tech Stacks & Platforms",
+      icon: "dns",
+      cols: 12,
+      layout: "grid",
+      lists: _.orderBy(technologies, ["count", "text"], ["desc", "asc"]),
+    });
+  },
+};
+</script>
 
 <style lang="scss">
 #hire-hasil {
@@ -412,188 +691,3 @@
   }
 }
 </style>
-
-<script>
-import _ from "lodash";
-import { projectsMixins } from "../mixins/projectsMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
-export default {
-  mixins: [projectsMixins, htmlHeadMixins],
-  created() {
-    this.getOptimizedSeoMetaTags({
-      title: "Hire Hasil | Engineer, Creator & Leader",
-      description:
-        "Hasil Paudyal — App Development Manager, Electrical Engineer, IoT builder, and poet from Nepal. Experienced across mobile apps, cloud backends, hardware, and creative writing.",
-      image: "https://hasilpaudyal.com.np/og-image.jpg",
-      keywords:
-        "Hire Hasil Paudyal, App Development Manager, React Native, Expo, Electrical Engineer, IoT, Poetry, Laravel, AWS, Nepal",
-    });
-
-    let technologies = [];
-    this.getProjectTechnologies().forEach((technology) => {
-      technologies.push({
-        text: technology["tech"],
-        count: technology["projCount"],
-        icon:
-          "/" +
-          technology["tech"].replace(/ /g, "").toLowerCase() +
-          "-logo.png",
-      });
-    });
-    this.skills.push({
-      title: "Tech Stacks & Platforms",
-      icon: "dns",
-      cols: 12,
-      layout: "grid",
-      lists: _.orderBy(technologies, ["count", "text"], ["desc", "asc"]),
-    });
-  },
-  data() {
-    return {
-      dimensions: [
-        {
-          icon: "phone_iphone",
-          title: "Software Engineer",
-          desc: "Backend & APIs (Laravel, Node.js, Deno), React Native + Expo with native modules in Swift/Kotlin, Cloudflare Workers and AWS — full-stack in JavaScript/TypeScript, from APIs to mobile to cloud.",
-        },
-        {
-          icon: "electrical_services",
-          title: "Electrical Engineer",
-          desc: "B.E. in Electrical & Electronics Engineering. Hardware prototyping, IoT with RFID & sensors, electronics simulation, and field service engineering.",
-        },
-        {
-          icon: "edit",
-          title: "Creative Writer",
-          desc: "Author of original poems and quotes. Writing is how I think — precise, layered, and built to leave an impression.",
-        },
-        {
-          icon: "handshake",
-          title: "Leader & Collaborator",
-          desc: "Led cross-functional teams, mentored developers, handled client relationships, and delivered across cultures and time zones.",
-        },
-      ],
-      timeline: [
-        {
-          title: "App Development Manager",
-          role: "App Development Manager",
-          company: "ConvergeStack",
-          companyUrl: "//www.convergestack.com/",
-          period: "Jan 2022 – Present",
-          variant: "primary",
-          description:
-            "Backend architecture and APIs, cloud and server management, and CI/CD with reproducible QA/staging environments. Leads cross-platform app development with React Native (Expo) and custom native modules in Swift and Kotlin (including SIP/WebRTC voice calling).",
-          tags: ["Backend & APIs", "React Native", "Expo", "Swift", "Kotlin", "AWS", "Cloudflare", "CI/CD"],
-        },
-        {
-          title: "Web Developer",
-          role: "Web Developer",
-          company: "View9 | Nepal",
-          companyUrl: "//view9.com.np",
-          period: "Jan 2019 – Dec 2021",
-          variant: "info",
-          description:
-            "Led backend development and bank/payment-gateway API integrations over SOAP and JSON with automated transaction tracking. Built fraud-detection and reporting dashboards and CMS sites; managed AWS/Laravel infrastructure and mentored junior developers.",
-          tags: ["Laravel", "AWS", "PHP", "API Integration", "SOAP/JSON"],
-        },
-        {
-          title: "Junior Android Developer",
-          role: "Part-time Junior Android Developer",
-          company: "Fixolla | India",
-          companyUrl: "//fixolla.com",
-          period: "Feb 2018 – Dec 2018",
-          variant: "success",
-          description:
-            "Worked on Android app and API development as part of an early-stage startup team.",
-          tags: ["Android", "Java", "REST APIs"],
-        },
-        {
-          title: "Security Analyst",
-          role: "Part-time Security Analyst",
-          company: "Fixolla | India",
-          companyUrl: "//fixolla.com",
-          period: "Sep 2017 – Feb 2018",
-          variant: "warning",
-          description:
-            "Data scraping from open sources, building company databases, and public speaking & promotional activities at colleges across Bangalore.",
-          tags: ["Data Scraping", "Public Speaking", "Research"],
-        },
-        {
-          title: "Service & Sales Engineer",
-          role: "Service and Sales Engineer",
-          company: "A2Z Laundry Solutions | India",
-          companyUrl: "//a2zlaundrysolutions.com",
-          period: "Dec 2016 – Dec 2018",
-          variant: "danger",
-          description:
-            "Set up and expanded laundry businesses across India. Authorized service engineer for Danube (France), Pony (Italy), SEKO (USA), Electrolux, Maytag, and Speedqueen.",
-          tags: ["Hardware", "Field Engineering", "Sales", "International Brands"],
-        },
-      ],
-      skills: [
-        {
-          title: "Software & Apps",
-          icon: "code",
-          cols: 7,
-          lists: [
-            { text: "Backend & APIs in Laravel (PHP), Node.js, and Deno" },
-            { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking" },
-            { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)" },
-            { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients" },
-            { text: "Content-managed (CMS) sites for non-technical clients" },
-            { text: "Full-stack web platforms — Vue.js front end, Laravel + AWS back end" },
-            { text: "Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS" },
-            { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)" },
-            { text: "SIP/WebRTC voice calling via custom native modules" },
-            { text: "Apple TV apps with HomeKit integration" },
-            { text: "Serverless edge APIs with Cloudflare Workers" },
-            { text: "Self-hosted WebSocket services in PHP/Laravel" },
-            { text: "CI/CD pipelines with reproducible QA/staging environments" },
-            { text: "Container deployments — Podman, Nexus, Docker" },
-            { text: "Server automation — remote DB backups/restore, CRON jobs, queues" },
-            { text: "Self-hosted local LLMs + workflow automation (Activepieces)" },
-            { text: "Data scraping, processing, and ETL pipelines" },
-          ],
-        },
-        {
-          title: "Engineering & Hardware",
-          icon: "memory",
-          cols: 5,
-          lists: [
-            { text: "Electrical system design & simulation (AutoCAD, MiPower)" },
-            { text: "Portable IoT devices — RFID, physical sensors, Wi-Fi" },
-            { text: "Arduino-based hardware prototyping" },
-            { text: "Field service & commissioning of industrial machines" },
-            { text: "Project planning & scheduling (Primavera P6)" },
-          ],
-        },
-        {
-          title: "Creative & Writing",
-          icon: "create",
-          cols: 5,
-          lists: [
-            { text: "Original poetry — published on this site" },
-            { text: "Original quotes & reflections" },
-            { text: "Technical writing & documentation" },
-            { text: "UI/UX design with Figma and Photoshop" },
-          ],
-        },
-        {
-          title: "Tools I Work With",
-          icon: "build",
-          cols: 7,
-          lists: [
-            { text: "Android Studio" },
-            { text: "AutoCAD" },
-            { text: "Figma" },
-            { text: "IntelliJ IDEA / VS Code" },
-            { text: "MiPower" },
-            { text: "Photoshop" },
-            { text: "Primavera P6" },
-            { text: "Deno / Bun" },
-          ],
-        },
-      ],
-    };
-  },
-};
-</script>

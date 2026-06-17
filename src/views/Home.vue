@@ -1,21 +1,28 @@
 <template>
-  <div id="homepage" class="section">
-
+  <div
+    id="homepage"
+    class="section"
+  >
     <!-- Floating geometric shapes (decorative) -->
-    <div class="shapes-bg" aria-hidden="true">
-      <div class="shape shape-circle s1"></div>
-      <div class="shape shape-sq    s2"></div>
-      <div class="shape shape-circle s3"></div>
-      <div class="shape shape-sq    s4"></div>
-      <div class="shape shape-circle s5"></div>
-      <div class="shape shape-sq    s6"></div>
-      <div class="shape shape-circle s7"></div>
-      <div class="shape shape-circle s8"></div>
+    <div
+      class="shapes-bg"
+      aria-hidden="true"
+    >
+      <div class="shape shape-circle s1" />
+      <div class="shape shape-sq    s2" />
+      <div class="shape shape-circle s3" />
+      <div class="shape shape-sq    s4" />
+      <div class="shape shape-circle s5" />
+      <div class="shape shape-sq    s6" />
+      <div class="shape shape-circle s7" />
+      <div class="shape shape-circle s8" />
     </div>
 
     <b-row class="pt-4">
-      <b-col sm="12" md="12">
-
+      <b-col
+        sm="12"
+        md="12"
+      >
         <!-- Who am I? -->
         <b-card class="mb-4 section-card">
           <b-card-title>
@@ -34,19 +41,41 @@
             Skills Overview
           </b-card-title>
           <b-row class="g-4 justify-content-center">
-            <b-col cols="6" sm="4" md="2" v-for="skill in skills" :key="skill.label" class="text-center">
+            <b-col
+              v-for="skill in skills"
+              :key="skill.label"
+              cols="6"
+              sm="4"
+              md="2"
+              class="text-center"
+            >
               <div class="ring-wrap">
-                <svg viewBox="0 0 100 100" class="ring-svg">
-                  <circle class="ring-track" cx="50" cy="50" r="40"/>
-                  <circle class="ring-fill" cx="50" cy="50" r="40"
-                    :style="{ strokeDashoffset: ringsAnimated ? skill.offset : 251.33 }"/>
+                <svg
+                  viewBox="0 0 100 100"
+                  class="ring-svg"
+                >
+                  <circle
+                    class="ring-track"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                  />
+                  <circle
+                    class="ring-fill"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    :style="{ strokeDashoffset: ringsAnimated ? skill.offset : 251.33 }"
+                  />
                 </svg>
                 <div class="ring-inner">
                   <i class="material-icons">{{ skill.icon }}</i>
                   <strong>{{ skill.percent }}%</strong>
                 </div>
               </div>
-              <p class="ring-label">{{ skill.label }}</p>
+              <p class="ring-label">
+                {{ skill.label }}
+              </p>
             </b-col>
           </b-row>
         </b-card>
@@ -58,13 +87,25 @@
             What do I do?
           </b-card-title>
           <div class="career-list">
-            <div class="career-item" v-for="job in jobHistory" :key="job.title">
+            <div
+              v-for="job in jobHistory"
+              :key="job.title"
+              class="career-item"
+            >
               <div class="career-header">
-                <a :href="job.url" target="_blank" class="job-position"
-                   v-b-tooltip.hover.right :title="'Visit ' + job.company + '\'s website'">{{ job.title }}</a>
+                <a
+                  v-b-tooltip.hover.right
+                  :href="job.url"
+                  target="_blank"
+                  class="job-position"
+                  :title="'Visit ' + job.company + '\'s website'"
+                >{{ job.title }}</a>
                 <span class="career-period">{{ job.period }}</span>
               </div>
-              <div class="career-desc" v-html="job.desc"></div>
+              <div
+                class="career-desc"
+                v-html="job.desc"
+              />
             </div>
           </div>
         </b-card>
@@ -74,35 +115,71 @@
           <b-card-title>
             <i class="material-icons">all_inbox</i>
             Highlighted Projects
-            <router-link class="float-end view-all-btn" to="/projects"><i class="material-icons">arrow_forward</i></router-link>
+            <router-link
+              class="float-end view-all-btn"
+              to="/projects"
+            >
+              <i class="material-icons">arrow_forward</i>
+            </router-link>
           </b-card-title>
           <b-row class="g-3">
-            <b-col sm="12" md="4" v-for="(project, idx) in highlightedProjects"
-              v-show="project.type=='it'" :key="idx">
-              <div style="cursor:pointer"
-                @click="$router.push({name:'project',params:{id:project.id,urlSlug:project.urlSlug}})">
-                <b-card :id="'project-'+idx" class="mb-3 project-card" :title="project.name">
+            <b-col
+              v-for="(project, idx) in highlightedProjects"
+              v-show="project.type=='it'"
+              :key="idx"
+              sm="12"
+              md="4"
+            >
+              <div
+                style="cursor:pointer"
+                @click="$router.push({name:'project',params:{id:project.id,urlSlug:project.urlSlug}})"
+              >
+                <b-card
+                  :id="'project-'+idx"
+                  class="mb-3 project-card"
+                  :title="project.name"
+                >
                   <div class="project-banner mb-3">
                     <span class="project-initial">{{ project.name.charAt(0) }}</span>
                   </div>
                   <h5 class="text-info">
-                    <span v-for="(tech,i) in project.technologies" :key="i">
-                      <b-img class="mx-1" width="32"
+                    <span
+                      v-for="(tech,i) in project.technologies"
+                      :key="i"
+                    >
+                      <b-img
+                        class="mx-1"
+                        width="32"
                         :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
-                        :alt="tech+' logo'"></b-img>
+                        :alt="tech+' logo'"
+                      />
                     </span>
                   </h5>
                   <b-card-text>
                     {{ project.tagLine }}
-                    <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
-                      <b-progress-bar v-for="(level, idxLevel) in project.contributionLevels" :key="idxLevel"
-                        :value="level" :variant="getVariant(idxLevel)">{{ idxLevel }}</b-progress-bar>
+                    <b-progress
+                      v-show="project.contributionLevels"
+                      class="mt-3"
+                      show-value
+                    >
+                      <b-progress-bar
+                        v-for="(level, idxLevel) in project.contributionLevels"
+                        :key="idxLevel"
+                        :value="level"
+                        :variant="getVariant(idxLevel)"
+                      >
+                        {{ idxLevel }}
+                      </b-progress-bar>
                     </b-progress>
                   </b-card-text>
                 </b-card>
               </div>
-              <b-tooltip :delay="{show:0,hide:0}" :target="'project-'+idx" placement="bottom"
-                :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
+              <b-tooltip
+                :delay="{show:0,hide:0}"
+                :target="'project-'+idx"
+                placement="bottom"
+                :title="getProjectPageDescription(project.id).slice(0,80)+'...'"
+              />
             </b-col>
           </b-row>
         </b-card>
@@ -114,7 +191,11 @@
             What can I do?
           </b-card-title>
           <div class="capabilities-grid">
-            <div class="cap-item" v-for="item in whatCanIDo" :key="item.text">
+            <div
+              v-for="item in whatCanIDo"
+              :key="item.text"
+              class="cap-item"
+            >
               <i class="material-icons cap-icon">{{ item.icon }}</i>
               <span>{{ item.text }}</span>
             </div>
@@ -126,18 +207,33 @@
           <b-card-title>
             <i class="material-icons">star</i>
             Best Quotes
-            <router-link class="float-end view-all-btn" to="/quotes"><i class="material-icons">arrow_forward</i></router-link>
+            <router-link
+              class="float-end view-all-btn"
+              to="/quotes"
+            >
+              <i class="material-icons">arrow_forward</i>
+            </router-link>
           </b-card-title>
           <b-row class="g-3">
-            <b-col sm="12" md="4" v-for="(quote, idx) in bestQuotes" :key="idx">
-              <div style="cursor:pointer"
-                @click="$router.push({name:'quote',params:{id:quote.id,urlSlug:quote.urlSlug}})">
+            <b-col
+              v-for="(quote, idx) in bestQuotes"
+              :key="idx"
+              sm="12"
+              md="4"
+            >
+              <div
+                style="cursor:pointer"
+                @click="$router.push({name:'quote',params:{id:quote.id,urlSlug:quote.urlSlug}})"
+              >
                 <b-card class="quote-card mb-3">
                   <div class="quote-banner mb-3">
                     <i class="material-icons quote-banner-icon">format_quote</i>
                   </div>
                   <b-card-text>
-                    <span v-for="quoteLine in quote.quoteLines" :key="quoteLine">{{ quoteLine }}<br/></span>
+                    <span
+                      v-for="quoteLine in quote.quoteLines"
+                      :key="quoteLine"
+                    >{{ quoteLine }}<br></span>
                   </b-card-text>
                 </b-card>
               </div>
@@ -150,12 +246,24 @@
           <b-card-title>
             <i class="material-icons">favorite</i>
             Best Poems
-            <router-link class="float-end view-all-btn" to="/poems"><i class="material-icons">arrow_forward</i></router-link>
+            <router-link
+              class="float-end view-all-btn"
+              to="/poems"
+            >
+              <i class="material-icons">arrow_forward</i>
+            </router-link>
           </b-card-title>
           <b-row class="g-3">
-            <b-col sm="12" md="6" v-for="(poem, idx) in bestPoems" :key="idx">
-              <div style="cursor:pointer"
-                @click="$router.push({name:'poem',params:{id:poem.id,urlSlug:poem.urlSlug}})">
+            <b-col
+              v-for="(poem, idx) in bestPoems"
+              :key="idx"
+              sm="12"
+              md="6"
+            >
+              <div
+                style="cursor:pointer"
+                @click="$router.push({name:'poem',params:{id:poem.id,urlSlug:poem.urlSlug}})"
+              >
                 <b-card class="poem-card text-center mb-3">
                   <div class="poem-banner mb-3">
                     <i class="material-icons poem-banner-icon">auto_stories</i>
@@ -165,9 +273,15 @@
                     {{ poem.name }}
                   </b-card-title>
                   <b-card-text>
-                    <p v-for="(para, idxPara) in poem.poemParas" :key="idxPara">
-                      <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
-                        {{ paraLine }}<br/>
+                    <p
+                      v-for="(para, idxPara) in poem.poemParas"
+                      :key="idxPara"
+                    >
+                      <span
+                        v-for="(paraLine, idxLine) in para.paraLines"
+                        :key="idxLine"
+                      >
+                        {{ paraLine }}<br>
                       </span>
                     </p>
                   </b-card-text>
@@ -176,11 +290,116 @@
             </b-col>
           </b-row>
         </b-card>
-
       </b-col>
     </b-row>
   </div>
 </template>
+
+<script>
+import { seoMixins } from "../mixins/seoMixins.js"
+import { projectsMixins } from "../mixins/projectsMixins.js";
+import { quotesMixins } from "../mixins/quotesMixins.js";
+import { poemsMixins } from "../mixins/poemsMixins.js";
+
+export default {
+  mixins: [seoMixins, projectsMixins, quotesMixins, poemsMixins],
+  data() {
+    return {
+      ringsAnimated: false,
+      highlightedProjects: [],
+      bestQuotes: [],
+      bestPoems: [],
+
+      skills: [
+        { label: 'Mobile Dev',       percent: 90, icon: 'smartphone', offset: 25.1 },
+        { label: 'Web Dev',          percent: 85, icon: 'web',        offset: 37.7 },
+        { label: 'EE & IoT',         percent: 75, icon: 'memory',     offset: 62.8 },
+        { label: 'Cloud & DevOps',   percent: 80, icon: 'cloud',      offset: 50.3 },
+        { label: 'Creative Writing', percent: 70, icon: 'create',     offset: 75.4 },
+      ],
+
+      jobHistory: [
+        {
+          title: "App Development Manager at ConvergeStack",
+          company: "ConvergeStack",
+          url: "//www.convergestack.com/",
+          period: "Jan 2022 – Present",
+          desc: "As project lead, I shape backend architecture and APIs with the team — guiding data models and algorithm implementation — and manage cloud servers and deployment. I build cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ship production-ready Android and iOS releases. I also set up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs."
+        },
+        {
+          title: "Web Developer at View9 | Nepal",
+          company: "View9",
+          url: "//view9.com.np",
+          period: "Jan 2019 – Dec 2021 · 2 yrs 11 mos",
+          desc: "I led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. I built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. On the operations side I set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issues."
+        },
+        {
+          title: "Part-time Junior Android Developer at Fixolla | India",
+          company: "Fixolla",
+          url: "//fixolla.com",
+          period: "Feb 2018 – Dec 2018 · 11 mos",
+          desc: "I worked with the Android development team, gaining experience in app and API development."
+        },
+        {
+          title: "Part-time Security Analyst at Fixolla | India",
+          company: "Fixolla",
+          url: "//fixolla.com",
+          period: "Sep 2017 – Feb 2018 · 6 mos",
+          desc: "As a security analyst, I assisted in data scraping from open sources to build company databases and participated in public speaking and promotional activities at colleges in Bangalore."
+        },
+        {
+          title: "Service and Sales Engineer at A2Z Laundry Solutions | India",
+          company: "A2Z Laundry Solutions",
+          url: "//a2zlaundrysolutions.com",
+          period: "Dec 2016 – Dec 2018 · 2 yrs 1 mo",
+          desc: `I set up and expanded laundry businesses across India, serving as an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a>, and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. I also worked with <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a>, and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.`
+        },
+      ],
+
+      whatCanIDo: [
+        { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking", icon: "account_balance" },
+        { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)",       icon: "gpp_maybe"      },
+        { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients", icon: "analytics" },
+        { text: "Content-managed (CMS) sites for non-technical clients — banners, copy, page sections", icon: "edit_note" },
+        { text: "Highly dynamic and scalable web platforms",                                       icon: "web"            },
+        { text: "Web and mobile apps (React Native / Expo) for Android and iOS",                   icon: "smartphone"     },
+        { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)",                  icon: "code"           },
+        { text: "SIP/WebRTC voice calling via custom Expo native modules",                         icon: "call"           },
+        { text: "Apple TV apps interacting with HomeKit devices",                                  icon: "tv"             },
+        { text: "Serverless edge functions and APIs with Cloudflare Workers",                      icon: "cloud"          },
+        { text: "Website setup on AWS EC2, dedicated hosting, or shared hosting",                  icon: "dns"            },
+        { text: "AWS Elastic Beanstalk with S3, load balancer, CloudWatch, and Lambda",            icon: "hub"            },
+        { text: "CI/CD pipelines with reproducible QA/staging environments",                       icon: "merge"          },
+        { text: "Server automation — remote DB backups/restore, CRON jobs, and queues",            icon: "backup"         },
+        { text: "Self-hosted local LLMs + workflow automation (e.g. Activepieces) for internal tasks", icon: "smart_toy"  },
+        { text: "Self-hosted PHP WebSocket services in Laravel",                                   icon: "sync_alt"       },
+        { text: "Container-based deployments with Podman and Nexus artifact registry",             icon: "layers"         },
+        { text: "Portable hardware interfacing with RFID, sensors, and Wi-Fi for IoT",             icon: "memory"         },
+        { text: "Scripts for scraping, processing, and storing data",                              icon: "storage"        },
+        { text: "Graphic / UI design",                                                             icon: "palette"        },
+      ]
+    }
+  },
+  mounted() {
+    // Trigger ring animation after a short delay so the transition is visible
+    setTimeout(() => { this.ringsAnimated = true; }, 350);
+  },
+  created() {
+    this.applySeo({
+      title: "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet",
+      description: "Portfolio of Hasil Paudyal: React Native (Expo) & web developer, app development manager, electrical engineer, and poet from Nepal. Explore my work in app development, web platforms, electronics, and poetry.",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords: "Hasil Paudyal, React Native, Web Developer, App Development Manager, Electrical Engineer, Nepal, Portfolio, Expo, Laravel, AWS, Android, iOS, Cloudflare Workers",
+      url: "https://hasilpaudyal.com.np",
+      type: "profile",
+      schema: this.seoPerson()
+    });
+    this.highlightedProjects = this.getAllProjects().filter(p => [12, 16, 23].includes(p.id));
+    this.bestQuotes = this.getAllquotes().filter(q => [2, 4, 9].includes(q.id));
+    this.bestPoems = this.getAllpoems().filter(p => [3, 8].includes(p.id));
+  }
+}
+</script>
 
 <style lang="scss">
 #homepage {
@@ -520,112 +739,3 @@
   }
 }
 </style>
-
-<script>
-import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js"
-import { projectsMixins } from "../mixins/projectsMixins.js";
-import { quotesMixins } from "../mixins/quotesMixins.js";
-import { poemsMixins } from "../mixins/poemsMixins.js";
-
-export default {
-  mixins: [schemaMixins, htmlHeadMixins, projectsMixins, quotesMixins, poemsMixins],
-  data() {
-    return {
-      ringsAnimated: false,
-      highlightedProjects: [],
-      bestQuotes: [],
-      bestPoems: [],
-
-      skills: [
-        { label: 'Mobile Dev',       percent: 90, icon: 'smartphone', offset: 25.1 },
-        { label: 'Web Dev',          percent: 85, icon: 'web',        offset: 37.7 },
-        { label: 'EE & IoT',         percent: 75, icon: 'memory',     offset: 62.8 },
-        { label: 'Cloud & DevOps',   percent: 80, icon: 'cloud',      offset: 50.3 },
-        { label: 'Creative Writing', percent: 70, icon: 'create',     offset: 75.4 },
-      ],
-
-      jobHistory: [
-        {
-          title: "App Development Manager at ConvergeStack",
-          company: "ConvergeStack",
-          url: "//www.convergestack.com/",
-          period: "Jan 2022 – Present",
-          desc: "As project lead, I shape backend architecture and APIs with the team — guiding data models and algorithm implementation — and manage cloud servers and deployment. I build cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ship production-ready Android and iOS releases. I also set up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs."
-        },
-        {
-          title: "Web Developer at View9 | Nepal",
-          company: "View9",
-          url: "//view9.com.np",
-          period: "Jan 2019 – Dec 2021 · 2 yrs 11 mos",
-          desc: "I led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. I built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. On the operations side I set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issues."
-        },
-        {
-          title: "Part-time Junior Android Developer at Fixolla | India",
-          company: "Fixolla",
-          url: "//fixolla.com",
-          period: "Feb 2018 – Dec 2018 · 11 mos",
-          desc: "I worked with the Android development team, gaining experience in app and API development."
-        },
-        {
-          title: "Part-time Security Analyst at Fixolla | India",
-          company: "Fixolla",
-          url: "//fixolla.com",
-          period: "Sep 2017 – Feb 2018 · 6 mos",
-          desc: "As a security analyst, I assisted in data scraping from open sources to build company databases and participated in public speaking and promotional activities at colleges in Bangalore."
-        },
-        {
-          title: "Service and Sales Engineer at A2Z Laundry Solutions | India",
-          company: "A2Z Laundry Solutions",
-          url: "//a2zlaundrysolutions.com",
-          period: "Dec 2016 – Dec 2018 · 2 yrs 1 mo",
-          desc: `I set up and expanded laundry businesses across India, serving as an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a>, and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. I also worked with <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a>, and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.`
-        },
-      ],
-
-      whatCanIDo: [
-        { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking", icon: "account_balance" },
-        { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)",       icon: "gpp_maybe"      },
-        { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients", icon: "analytics" },
-        { text: "Content-managed (CMS) sites for non-technical clients — banners, copy, page sections", icon: "edit_note" },
-        { text: "Highly dynamic and scalable web platforms",                                       icon: "web"            },
-        { text: "Web and mobile apps (React Native / Expo) for Android and iOS",                   icon: "smartphone"     },
-        { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)",                  icon: "code"           },
-        { text: "SIP/WebRTC voice calling via custom Expo native modules",                         icon: "call"           },
-        { text: "Apple TV apps interacting with HomeKit devices",                                  icon: "tv"             },
-        { text: "Serverless edge functions and APIs with Cloudflare Workers",                      icon: "cloud"          },
-        { text: "Website setup on AWS EC2, dedicated hosting, or shared hosting",                  icon: "dns"            },
-        { text: "AWS Elastic Beanstalk with S3, load balancer, CloudWatch, and Lambda",            icon: "hub"            },
-        { text: "CI/CD pipelines with reproducible QA/staging environments",                       icon: "merge"          },
-        { text: "Server automation — remote DB backups/restore, CRON jobs, and queues",            icon: "backup"         },
-        { text: "Self-hosted local LLMs + workflow automation (e.g. Activepieces) for internal tasks", icon: "smart_toy"  },
-        { text: "Self-hosted PHP WebSocket services in Laravel",                                   icon: "sync_alt"       },
-        { text: "Container-based deployments with Podman and Nexus artifact registry",             icon: "layers"         },
-        { text: "Portable hardware interfacing with RFID, sensors, and Wi-Fi for IoT",             icon: "memory"         },
-        { text: "Scripts for scraping, processing, and storing data",                              icon: "storage"        },
-        { text: "Graphic / UI design",                                                             icon: "palette"        },
-      ]
-    }
-  },
-  mounted() {
-    // Trigger ring animation after a short delay so the transition is visible
-    setTimeout(() => { this.ringsAnimated = true; }, 350);
-  },
-  created() {
-    this.getOptimizedSeoMetaTags({
-      title: "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet",
-      description: "Portfolio of Hasil Paudyal: React Native (Expo) & web developer, app development manager, electrical engineer, and poet from Nepal. Explore my work in app development, web platforms, electronics, and poetry.",
-      image: "https://hasilpaudyal.com.np/og-image.jpg",
-      keywords: "Hasil Paudyal, React Native, Web Developer, App Development Manager, Electrical Engineer, Nepal, Portfolio, Expo, Laravel, AWS, Android, iOS, Cloudflare Workers",
-      url: "https://hasilpaudyal.com.np"
-    });
-    this.injectDefaultSchemaJSON('hasil');
-    this.highlightedProjects = this.getAllProjects().filter(p => [12, 16, 23].includes(p.id));
-    this.bestQuotes = this.getAllquotes().filter(q => [2, 4, 9].includes(q.id));
-    this.bestPoems = this.getAllpoems().filter(p => [3, 8].includes(p.id));
-  },
-  beforeRouteLeave(to, from, next) {
-    this.clearSchemaJSON();
-    next();
-  }
-}
-</script>

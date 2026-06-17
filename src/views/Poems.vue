@@ -1,7 +1,15 @@
 <template>
-  <div id="poems" class="mt-5">
+  <div
+    id="poems"
+    class="mt-5"
+  >
     <b-row>
-      <b-col sm="12" md="4" v-for="(poem, idx) in poems" :key="idx">
+      <b-col
+        v-for="(poem, idx) in poems"
+        :key="idx"
+        sm="12"
+        md="4"
+      >
         <div
           style="cursor: pointer"
           @click="$router.push({ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug } })"
@@ -12,15 +20,18 @@
             </div>
             <b-card-title>
               <i class="material-icons poem-title-icon">auto_stories</i>
-              {{poem.name}}
+              {{ poem.name }}
             </b-card-title>
             <b-card-text>
-              <span v-for="(paraLine, index) in poem.poemParas[0].paraLines" :key="index">
+              <span
+                v-for="(paraLine, index) in poem.poemParas[0].paraLines"
+                :key="index"
+              >
                 <span v-if="index < 3">
-                  {{paraLine}}
-                  <br/>
+                  {{ paraLine }}
+                  <br>
                 </span>
-                <span v-else-if="index == 3">{{paraLine}}<br>...</span>
+                <span v-else-if="index == 3">{{ paraLine }}<br>...</span>
               </span>
             </b-card-text>
           </b-card>
@@ -29,6 +40,32 @@
     </b-row>
   </div>
 </template>
+
+<script>
+import { poemsMixins } from "../mixins/poemsMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+export default {
+  mixins: [poemsMixins, seoMixins],
+  data() {
+    return {
+      poems: []
+    };
+  },
+  created() {
+    this.applySeo({
+      title: "Poems | Hasil's Personal Site",
+      description: "Collection of poems by Hasil Paudyal.",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal",
+      schema: this.seoBreadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Poems", path: "/poems" }
+      ])
+    });
+    this.poems = this.getAllpoems();
+  }
+};
+</script>
 
 <style lang="scss">
 #poems {
@@ -106,25 +143,3 @@
   }
 }
 </style>
-
-<script>
-import { poemsMixins } from "../mixins/poemsMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
-export default {
-  mixins: [poemsMixins, htmlHeadMixins],
-  data() {
-    return {
-      poems: []
-    };
-  },
-  created() {
-    this.getOptimizedSeoMetaTags({
-      title: "Poems | Hasil's Personal Site",
-      description: "Collection of poems by Hasil Paudyal.",
-      image: "https://hasilpaudyal.com.np/og-image.jpg",
-      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
-    });
-    this.poems = this.getAllpoems();
-  }
-};
-</script>

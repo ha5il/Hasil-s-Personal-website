@@ -1,80 +1,158 @@
 <template>
-  <div id="projects" class="mt-5">
-    <h4 class="p-3">IT Projects</h4>
+  <div
+    id="projects"
+    class="mt-5"
+  >
+    <h4 class="p-3">
+      IT Projects
+    </h4>
     <b-row>
-      <b-col sm="12" md="4" v-for="(project, idx) in projects" v-show="project.type=='it'" :key="idx">
+      <b-col
+        v-for="(project, idx) in projects"
+        v-show="project.type=='it'"
+        :key="idx"
+        sm="12"
+        md="4"
+      >
         <div
           style="cursor: pointer"
           @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
         >
-          <b-card :id="'it-project-'+project.id" class="mb-3" :title="project.name">
+          <b-card
+            :id="'it-project-'+project.id"
+            class="mb-3"
+            :title="project.name"
+          >
             <div class="project-banner mb-3">
               <span class="project-initial">{{ project.name.charAt(0) }}</span>
             </div>
             <h5 class="text-info">
-              <span v-for="(tech,idx) in project.technologies" :key="idx">
+              <span
+                v-for="(tech,idx) in project.technologies"
+                :key="idx"
+              >
                 <b-img
                   class="mx-1"
                   width="32"
                   :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
                   :alt="tech+' logo'"
-                ></b-img>
+                />
               </span>
             </h5>
             <b-card-text>
-              {{project.tagLine}}
-              <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
+              {{ project.tagLine }}
+              <b-progress
+                v-show="project.contributionLevels"
+                class="mt-3"
+                show-value
+              >
                 <b-progress-bar
                   v-for="(level, idxLevel) in project.contributionLevels"
                   :key="idxLevel"
                   :value="level"
                   :variant="getVariant(idxLevel)"
-                >{{idxLevel}}</b-progress-bar>
+                >
+                  {{ idxLevel }}
+                </b-progress-bar>
               </b-progress>
             </b-card-text>
           </b-card>
         </div>
-        <b-tooltip :delay="{show:0,hide:0}" :target="'it-project-'+project.id" placement="bottom"
-          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
+        <b-tooltip
+          :delay="{show:0,hide:0}"
+          :target="'it-project-'+project.id"
+          placement="bottom"
+          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"
+        />
       </b-col>
     </b-row>
-    <h4 class="p-3">Electrical &amp; Electronics Projects</h4>
+    <h4 class="p-3">
+      Electrical &amp; Electronics Projects
+    </h4>
     <b-row>
-      <b-col cols="12" v-for="(project, idx) in projects" v-show="project.type=='ee'" :key="idx">
+      <b-col
+        v-for="(project, idx) in projects"
+        v-show="project.type=='ee'"
+        :key="idx"
+        cols="12"
+      >
         <div
           style="cursor: pointer"
           @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
         >
-          <b-card :id="'ee-project-'+project.id" class="mb-3" :title="project.name">
+          <b-card
+            :id="'ee-project-'+project.id"
+            class="mb-3"
+            :title="project.name"
+          >
             <h5 class="text-info">
-              <span v-for="(tech,idx) in project.technologies" :key="idx">
+              <span
+                v-for="(tech,idx) in project.technologies"
+                :key="idx"
+              >
                 <b-img
                   class="mx-1"
                   width="32"
                   :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
                   :alt="tech+' logo'"
-                ></b-img>
+                />
               </span>
             </h5>
             <b-card-text>
-              {{project.tagLine}}
-              <b-progress class="mt-3" v-show="project.contributionLevels" show-value>
+              {{ project.tagLine }}
+              <b-progress
+                v-show="project.contributionLevels"
+                class="mt-3"
+                show-value
+              >
                 <b-progress-bar
                   v-for="(level, idxLevel) in project.contributionLevels"
                   :key="idxLevel"
                   :value="level"
                   :variant="getVariant(idxLevel)"
-                >{{idxLevel}}</b-progress-bar>
+                >
+                  {{ idxLevel }}
+                </b-progress-bar>
               </b-progress>
             </b-card-text>
           </b-card>
         </div>
-        <b-tooltip :delay="{show:0,hide:0}" :target="'ee-project-'+project.id" placement="bottom"
-          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"></b-tooltip>
+        <b-tooltip
+          :delay="{show:0,hide:0}"
+          :target="'ee-project-'+project.id"
+          placement="bottom"
+          :title="getProjectPageDescription(project.id).slice(0,80)+'...'"
+        />
       </b-col>
     </b-row>
   </div>
 </template>
+
+<script>
+import { projectsMixins } from "../mixins/projectsMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+export default {
+  mixins: [projectsMixins, seoMixins],
+  data() {
+    return {
+      projects: null
+    };
+  },
+  created() {
+    this.applySeo({
+      title: "Projects | Hasil Paudyal Portfolio",
+      description: "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords: "Hasil Paudyal, Projects, Electrical & Electronics Engineering, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio",
+      schema: this.seoBreadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Projects", path: "/projects" }
+      ])
+    });
+    this.projects = this.getAllProjects();
+  }
+};
+</script>
 
 <style lang="scss">
 #projects {
@@ -165,25 +243,3 @@
   }
 }
 </style>
-
-<script>
-import { projectsMixins } from "../mixins/projectsMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
-export default {
-  mixins: [projectsMixins, htmlHeadMixins],
-  data() {
-    return {
-      projects: null
-    };
-  },
-  created() {
-    this.getOptimizedSeoMetaTags({
-      title: "Projects | Hasil Paudyal Portfolio",
-      description: "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.",
-      image: "https://hasilpaudyal.com.np/og-image.jpg",
-      keywords: "Hasil Paudyal, Projects, Electrical & Electronics Engineering, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio"
-    });
-    this.projects = this.getAllProjects();
-  }
-};
-</script>

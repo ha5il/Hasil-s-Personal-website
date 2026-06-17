@@ -1,7 +1,16 @@
 <template>
-  <div id="quotes" class="mt-5">
+  <div
+    id="quotes"
+    class="mt-5"
+  >
     <b-row class="g-4">
-      <b-col sm="12" md="6" lg="4" v-for="(quote, idx) in quotes" :key="idx">
+      <b-col
+        v-for="(quote, idx) in quotes"
+        :key="idx"
+        sm="12"
+        md="6"
+        lg="4"
+      >
         <div
           class="quote-card-wrap"
           @click="$router.push({ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug } })"
@@ -13,7 +22,10 @@
             <div class="quote-body">
               <span class="open-mark">&ldquo;</span>
               <p class="quote-lines">
-                <span v-for="(line, i) in quote.quoteLines" :key="i">{{ line }}<br v-if="i < quote.quoteLines.length - 1"/></span>
+                <span
+                  v-for="(line, i) in quote.quoteLines"
+                  :key="i"
+                >{{ line }}<br v-if="i < quote.quoteLines.length - 1"></span>
               </p>
               <span class="close-mark">&rdquo;</span>
             </div>
@@ -26,10 +38,36 @@
         src="https://read.amazon.com/kp/card?asin=B01M99C005&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_1LlwDb4A0SXAB"
         allowfullscreen
         title="Amazon book preview"
-      ></iframe>
+      />
     </div>
   </div>
 </template>
+
+<script>
+import { quotesMixins } from "../mixins/quotesMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+export default {
+  mixins: [quotesMixins, seoMixins],
+  data() {
+    return {
+      quotes: []
+    };
+  },
+  created() {
+    this.applySeo({
+      title: "Quotes | Hasil's Personal Site",
+      description: "Collection of quotes by Hasil Paudyal.",
+      image: "https://hasilpaudyal.com.np/og-image.jpg",
+      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal",
+      schema: this.seoBreadcrumb([
+        { name: "Home", path: "/" },
+        { name: "Quotes", path: "/quotes" }
+      ])
+    });
+    this.quotes = this.getAllquotes();
+  }
+};
+</script>
 
 <style lang="scss">
 #quotes {
@@ -126,25 +164,3 @@
   }
 }
 </style>
-
-<script>
-import { quotesMixins } from "../mixins/quotesMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
-export default {
-  mixins: [quotesMixins, htmlHeadMixins],
-  data() {
-    return {
-      quotes: []
-    };
-  },
-  created() {
-    this.getOptimizedSeoMetaTags({
-      title: "Quotes | Hasil's Personal Site",
-      description: "Collection of quotes by Hasil Paudyal.",
-      image: "https://hasilpaudyal.com.np/og-image.jpg",
-      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal"
-    });
-    this.quotes = this.getAllquotes();
-  }
-};
-</script>

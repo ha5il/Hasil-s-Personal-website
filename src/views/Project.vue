@@ -1,16 +1,19 @@
 <template>
-  <div id="project" class="mt-5">
-    <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
+  <div
+    id="project"
+    class="mt-5"
+  >
+    <b-breadcrumb :items="breadcrumbItems" />
     <b-row>
       <b-col cols="12">
         <b-card>
           <div class="card-title">
-            {{project.name}}
+            {{ project.name }}
             <b-link
               v-show="project.website"
+              v-b-tooltip.hover.right
               :href="project.website"
               target="_blank"
-              v-b-tooltip.hover.right
               title="Visit Website"
             >
               <i class="material-icons">launch</i>
@@ -30,32 +33,52 @@
           <div class="project-detail-banner mb-3">
             <span class="project-initial">{{ project.name.charAt(0) }}</span>
           </div>
-          <b-progress class="mb-3" height="28px" v-show="project.contributionLevels" show-value>
+          <b-progress
+            v-show="project.contributionLevels"
+            class="mb-3"
+            height="28px"
+            show-value
+          >
             <b-progress-bar
               v-for="(level, idxLevel) in project.contributionLevels"
               :key="idxLevel"
               :value="level"
               :variant="getVariant(idxLevel)"
-            >{{idxLevel}} <span class="progress-percentage">{{level}}%</span></b-progress-bar>
+            >
+              {{ idxLevel }} <span class="progress-percentage">{{ level }}%</span>
+            </b-progress-bar>
           </b-progress>
-          <b-card-text v-for="(detail, idx) in project.details" :key="idx">
+          <b-card-text
+            v-for="(detail, idx) in project.details"
+            :key="idx"
+          >
             <h5 class="text-info">
-              <i class="material-icons">{{detail.titleIcon}}</i>
-              {{detail.title}}
+              <i class="material-icons">{{ detail.titleIcon }}</i>
+              {{ detail.title }}
             </h5>
             <p
-              v-show="detail.paragraphs"
               v-for="(para, idxPara) in detail.paragraphs"
+              v-show="detail.paragraphs"
               :key="idxPara"
-            >{{para.text}}</p>
-            <b-list-group v-show="detail.lists" flush>
+            >
+              {{ para.text }}
+            </p>
+            <b-list-group
+              v-show="detail.lists"
+              flush
+            >
               <b-list-group-item
                 v-for="(list, idxList) in detail.lists"
                 :key="idxList"
                 class="d-flex justify-content-between align-items-center"
               >
-                {{list.text}}
-                <b-badge :variant="getVariant(list.badge)" pill>{{list.badge}}</b-badge>
+                {{ list.text }}
+                <b-badge
+                  :variant="getVariant(list.badge)"
+                  pill
+                >
+                  {{ list.badge }}
+                </b-badge>
               </b-list-group-item>
             </b-list-group>
           </b-card-text>
@@ -64,6 +87,64 @@
     </b-row>
   </div>
 </template>
+
+<script>
+import { projectsMixins } from "../mixins/projectsMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+
+export default {
+  mixins: [projectsMixins, seoMixins],
+  data() {
+    return {
+      project: null,
+      breadcrumbItems: null,
+    };
+  },
+  created() {
+    const id = this.$route.params.id;
+    let currentPageActualUrlSlug = this.getProjectUrlSlug(id);
+    if (!currentPageActualUrlSlug) {
+      this.$router.push({ name: "projects" });
+      return;
+    }
+    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
+      this.$router.push({
+        name: "project",
+        params: { id, urlSlug: currentPageActualUrlSlug }
+      });
+    }
+    this.project = this.getProjectDetails(id);
+    const path = `/project/${id}/${currentPageActualUrlSlug}`;
+    this.applySeo({
+      title: this.getProjectPageTitle(id),
+      description: this.getProjectPageDescription(id),
+      type: "article",
+      schema: [
+        this.seoCreativeWork({
+          name: this.project.name,
+          description: this.getProjectPageDescription(id),
+          path,
+          type: this.project.type === "it" ? "SoftwareApplication" : "CreativeWork",
+          extra: {
+            keywords: this.project.technologies.join(", "),
+            ...(this.project.type === "it" ? { applicationCategory: "WebApplication" } : {}),
+            ...(this.project.website ? { sameAs: "https:" + this.project.website } : {})
+          }
+        }),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+          { name: this.project.name, path }
+        ])
+      ]
+    });
+    this.breadcrumbItems = [
+      { text: 'Projects', to: { name: 'projects' } },
+      { text: this.project.name, active: true },
+    ];
+  }
+};
+</script>
 
 <style lang="scss">
 #project {
@@ -202,51 +283,3 @@
   }
 }
 </style>
-
-<script>
-import { projectsMixins } from "../mixins/projectsMixins.js";
-import { schemaMixins, htmlHeadMixins } from "../mixins/seoMixins.js";
-
-export default {
-  mixins: [projectsMixins, schemaMixins, htmlHeadMixins],
-  data() {
-    return {
-      project: null,
-      breadcrumbItems: null,
-    };
-  },
-  created() {
-    const id = this.$route.params.id;
-    let currentPageActualUrlSlug = this.getProjectUrlSlug(id);
-    if (!currentPageActualUrlSlug) {
-      this.$router.push({ name: "projects" });
-      return;
-    }
-    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
-      this.$router.push({
-        name: "project",
-        params: { id, urlSlug: currentPageActualUrlSlug }
-      });
-    }
-    this.project = this.getProjectDetails(id);
-    this.getOptimizedSeoMetaTags({
-      title: this.getProjectPageTitle(id),
-      description: this.getProjectPageDescription(id),
-      image: undefined
-    });
-    this.injectSchemaJSON(JSON.stringify({
-      "@context": "http://schema.org",
-      "@type": "CreativeWork",
-      "name": this.project.name
-    }));
-    this.breadcrumbItems = [
-      { text: 'Projects', to: { name: 'projects' } },
-      { text: this.project.name, active: true },
-    ];
-  },
-  beforeRouteLeave(to, from, next) {
-    this.clearSchemaJSON();
-    next();
-  }
-};
-</script>

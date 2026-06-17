@@ -1,8 +1,17 @@
 <template>
   <div id="app">
-    <div v-show="showBgAnim" class="bg"></div>
-    <div v-show="showBgAnim" class="bg bg2"></div>
-    <div v-show="showBgAnim" class="bg bg3"></div>
+    <div
+      v-show="showBgAnim"
+      class="bg"
+    />
+    <div
+      v-show="showBgAnim"
+      class="bg bg2"
+    />
+    <div
+      v-show="showBgAnim"
+      class="bg bg3"
+    />
     <b-container fluid>
       <b-row class="pt-2">
         <b-col
@@ -12,59 +21,72 @@
           :class="{ 'd-none d-md-block': $route.name !== 'home' }"
         >
           <b-card class="card-poem-intro p-3">
-            <transition name="fade-avatar" mode="out-in">
+            <transition
+              name="fade-avatar"
+              mode="out-in"
+            >
               <img
                 :key="avatarImage"
                 :src="avatarImage"
                 alt="Hasil Paudyal"
                 class="card-img-top"
                 style="width:100%;border-radius:20px;"
-              />
+              >
             </transition>
-            <p class="my-name">Hasil Paudyal</p>
+            <p class="my-name">
+              Hasil Paudyal
+            </p>
             <b-card-text class="card-text-poem">
               <span><strong>H</strong>ere I am</span>
-              <br />
+              <br>
               <span><strong>A</strong> cut above you all</span>
-              <br />
+              <br>
               <span><strong>S</strong>ilent as a grave</span>
-              <br />
+              <br>
               <span><strong>I</strong>n favour of your death</span>
-              <br />
-              <br />
+              <br>
+              <br>
               <span><strong>L</strong>ethal is my pen</span>
-              <br />
+              <br>
               <span><strong>P</strong>erfect would be again</span>
-              <br />
+              <br>
               <span><strong>A</strong> fortune is with me</span>
-              <br />
+              <br>
               <span><strong>U</strong>nbeatable this shall be</span>
-              <br />
-              <br />
+              <br>
+              <br>
               <span><strong>D</strong>are you come near</span>
-              <br />
+              <br>
               <span><strong>Y</strong>ell you out there</span>
-              <br />
+              <br>
               <span><strong>A</strong>nd who is this me</span>
-              <br />
+              <br>
               <span><strong>L</strong>inks the first letters to me</span>
             </b-card-text>
             <div class="text-center">
-              <b-link class="px-3" href="https://www.linkedin.com/in/hasil/" target="_blank">
+              <b-link
+                class="px-3"
+                href="https://www.linkedin.com/in/hasil/"
+                target="_blank"
+              >
                 <img
                   v-b-tooltip.hover.bottom
                   title="Let's get connected for work"
                   src="/iconledincon.svg"
                   width="20%"
-                />
+                >
               </b-link>
-              <b-link class="px-3" href="https://facebook.com/hasill" target="_blank">
+              <b-link
+                class="px-3"
+                href="https://facebook.com/hasill"
+                target="_blank"
+              >
                 <img
                   v-b-tooltip.hover.bottom
                   title="Let's get connected as friend"
                   src="/iconfbcon.svg"
                   width="20%"
-                />
+                >
               </b-link>
             </div>
           </b-card>
@@ -97,7 +119,7 @@
               to="/poems"
               exact-active-class="active"
             >
-            <i class="material-icons">import_contacts</i>Poems
+              <i class="material-icons">import_contacts</i>Poems
             </b-nav-item>
             <b-nav-item
               to="/hire-Hasil"
@@ -105,26 +127,64 @@
             >
               <i class="material-icons">work</i>Hire Me
             </b-nav-item>
-            <b-nav-item class="back" v-if="navBackShow && navBackTo" :to="navBackTo">
+            <b-nav-item
+              v-if="navBackShow && navBackTo"
+              class="back"
+              :to="navBackTo"
+            >
               <i class="material-icons">arrow_back</i>
             </b-nav-item>
           </b-nav>
-          <div v-if="routeLoading" class="text-center my-5 py-5">
-            <b-spinner class="mx-1" variant="primary" label="Spinning"></b-spinner>
-            <b-spinner class="mx-1" variant="warning" type="grow" label="Spinning"></b-spinner>
-            <b-spinner class="mx-1" variant="success" label="Spinning"></b-spinner>
-            <b-spinner class="mx-1" variant="danger" type="grow" label="Spinning"></b-spinner>
-            <b-spinner class="mx-1" variant="info" label="Spinning"></b-spinner>
+          <div
+            v-if="routeLoading"
+            class="text-center my-5 py-5"
+          >
+            <b-spinner
+              class="mx-1"
+              variant="primary"
+              label="Spinning"
+            />
+            <b-spinner
+              class="mx-1"
+              variant="warning"
+              type="grow"
+              label="Spinning"
+            />
+            <b-spinner
+              class="mx-1"
+              variant="success"
+              label="Spinning"
+            />
+            <b-spinner
+              class="mx-1"
+              variant="danger"
+              type="grow"
+              label="Spinning"
+            />
+            <b-spinner
+              class="mx-1"
+              variant="info"
+              label="Spinning"
+            />
           </div>
-          <router-view v-else :key="$route.params.id" />
-          <footer class="mt-3" v-show="!routeLoading">
+          <router-view
+            v-else
+            :key="$route.params.id"
+          />
+          <footer
+            v-show="!routeLoading"
+            class="mt-3"
+          >
             <div
               style="cursor: pointer"
               @click="$router.push({ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug } })"
             >
-              <span v-for="quoteLine in footerQuote.quoteLines" :key="quoteLine">
-                {{quoteLine}}
-                <br />
+              <span
+                v-for="quoteLine in footerQuote.quoteLines"
+                :key="quoteLine"
+              >
+                {{ quoteLine }}
+                <br>
               </span>
             </div>
           </footer>
@@ -133,7 +193,10 @@
 
       <div id="theme-panel">
         <transition name="theme-panel-fade">
-          <div v-show="isThemeBtnsVisible" class="theme-picker-panel">
+          <div
+            v-show="isThemeBtnsVisible"
+            class="theme-picker-panel"
+          >
             <div class="theme-panel-header">
               <i class="material-icons">palette</i> Themes
             </div>
@@ -146,11 +209,11 @@
                 <button
                   v-for="t in lightThemes"
                   :key="t.label"
-                  @click="switchTheme(t.darkMode, t.primary, t.secondary)"
                   class="theme-swatch-btn"
                   :style="{ background: `linear-gradient(135deg, ${t.primary} 50%, ${t.secondary} 50%)` }"
                   :title="t.label"
-                ></button>
+                  @click="switchTheme(t.darkMode, t.primary, t.secondary)"
+                />
               </div>
             </div>
 
@@ -162,11 +225,11 @@
                 <button
                   v-for="t in darkThemes"
                   :key="t.label"
-                  @click="switchTheme(t.darkMode, t.primary, t.secondary)"
                   class="theme-swatch-btn"
                   :style="{ background: `linear-gradient(135deg, ${t.primary} 50%, ${t.secondary} 50%)` }"
                   :title="t.label"
-                ></button>
+                  @click="switchTheme(t.darkMode, t.primary, t.secondary)"
+                />
               </div>
             </div>
           </div>
@@ -182,6 +245,161 @@
     </b-container>
   </div>
 </template>
+
+<script>
+import { quotesMixins } from "./mixins/quotesMixins.js";
+import { appState } from "./state.js";
+
+export default {
+  mixins: [quotesMixins],
+  data() {
+    return {
+      changeQuote: false,
+      footerQuote: null,
+      navBackShow: false,
+      navBackTo: null,
+      isThemeBtnsVisible: false,
+      showBgAnim: true,
+      avatarImage: '/Hasil-Shobha.png',
+      allThemes: [
+        // Light themes — primary is dark (text), secondary is accent (titles, nav)
+        { darkMode: false, primary: "#7A1C22", secondary: "#B8860B", label: "Claret & Gold" },
+        { darkMode: false, primary: "#1B2E4A", secondary: "#2E7DA8", label: "Navy & Steel" },
+        { darkMode: false, primary: "#3D1F0A", secondary: "#2E8B8B", label: "Espresso & Teal" },
+        { darkMode: false, primary: "#1E4D2B", secondary: "#A0690A", label: "Forest & Amber" },
+        { darkMode: false, primary: "#4A1A5E", secondary: "#A0527A", label: "Plum & Rose" },
+        // Dark themes — primary is bright (text on dark bg), secondary is accent
+        { darkMode: true, primary: "#F5A623", secondary: "#E07B5D", label: "Amber & Coral" },
+        { darkMode: true, primary: "#44C8BE", secondary: "#5BB89A", label: "Aqua & Seafoam" },
+        { darkMode: true, primary: "#8B9FE8", secondary: "#B87FCC", label: "Periwinkle & Orchid" },
+      ],
+    };
+  },
+  computed: {
+    routeLoading() {
+      return appState.routeLoading;
+    },
+    lightThemes() {
+      return this.allThemes.filter(t => !t.darkMode);
+    },
+    darkThemes() {
+      return this.allThemes.filter(t => t.darkMode);
+    },
+  },
+  watch: {
+    $route(to) {
+      if (window.innerWidth < 576) {
+        if (to.name === 'project') {
+          this.navBackShow = true;
+          this.navBackTo = "/projects";
+        } else if (to.name === 'quote') {
+          this.navBackShow = true;
+          this.navBackTo = "/quotes";
+        } else if (to.name === 'poem') {
+          this.navBackShow = true;
+          this.navBackTo = "/poems";
+        } else {
+          this.navBackShow = false;
+          this.navBackTo = null;
+        }
+      }
+      this.updateAvatarImage();
+      if (this.isThemeBtnsVisible) {
+        this.isThemeBtnsVisible = false;
+      }
+    }
+  },
+  created() {
+    this.initTheme();
+    this.footerQuote = this.getRandomQuote();
+    this.updateAvatarImage();
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      let footer = document.querySelector("footer");
+      if (window.pageYOffset + window.innerHeight > footer.offsetTop) {
+        this.changeQuote = true;
+      }
+      if (
+        this.changeQuote &&
+        window.pageYOffset + window.innerHeight < footer.offsetTop
+      ) {
+        this.footerQuote = this.getRandomQuote();
+        this.changeQuote = false;
+      }
+      if (this.isThemeBtnsVisible) {
+        this.isThemeBtnsVisible = false;
+      }
+    },
+    switchTheme(darkMode, primary, secondary) {
+      this.showBgAnim = !darkMode;
+      const bg = darkMode ? "#121212" : "#fdf7ff";
+      const cardBg = darkMode ? "#1F1F1F" : "#ffffffe0";
+      const root = document.documentElement;
+      root.style.setProperty("--global-bg", bg);
+      root.style.setProperty("--global-card-bg", cardBg);
+      root.style.setProperty("--global-primary-color", primary);
+      root.style.setProperty("--global-secondary-color", secondary);
+      root.style.setProperty("--global-shadow-color", darkMode ? "#2A2A2A" : "#d0d0d0");
+      // Keep Bootstrap variables in sync so BS components also respect the theme
+      root.style.setProperty("--bs-body-bg", bg);
+      root.style.setProperty("--bs-body-color", darkMode ? "#e0e0e0" : "#212529");
+      root.style.setProperty("--bs-card-bg", cardBg);
+      root.style.setProperty("--bs-border-color-translucent", darkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.175)");
+      // Route link + info colours through the theme
+      root.style.setProperty("--bs-link-color", secondary);
+      root.style.setProperty("--bs-link-hover-color", primary);
+      root.style.setProperty("--bs-info", secondary);
+      root.style.setProperty("--bs-info-rgb", this.hexToRgb(secondary));
+
+      localStorage.setItem("theme", JSON.stringify({ darkMode, primary, secondary, setAt: Date.now() }));
+    },
+    pickRandomTheme() {
+      const prefersDark = window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const candidates = this.allThemes.filter(t => t.darkMode === prefersDark);
+      const pool = candidates.length ? candidates : this.allThemes;
+      const { darkMode, primary, secondary } = pool[Math.floor(Math.random() * pool.length)];
+      this.switchTheme(darkMode, primary, secondary);
+    },
+    initTheme() {
+      let stored;
+      try {
+        stored = JSON.parse(localStorage.getItem("theme"));
+      } catch {
+        stored = null;
+      }
+
+      const ONE_DAY = 86400000;
+      const isExpired = stored && stored.setAt && (Date.now() - stored.setAt > ONE_DAY);
+
+      if (stored && typeof stored.darkMode === "boolean" && !isExpired) {
+        this.switchTheme(stored.darkMode, stored.primary, stored.secondary);
+      } else {
+        this.pickRandomTheme();
+      }
+    },
+    hexToRgb(hex) {
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
+      return `${r}, ${g}, ${b}`;
+    },
+    updateAvatarImage() {
+      const images = [
+        '/Hasil-Shobha.png',
+        '/Hasil-Shobha-2.png',
+        '/Hasil.png',
+        '/Hasil-Shobha-3.png'
+      ];
+      this.avatarImage = images[Math.floor(Math.random() * images.length)];
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 :root {
@@ -698,158 +916,3 @@ h4, h5 {
   box-shadow: 0 4px 16px var(--global-shadow-color);
 }
 </style>
-
-<script>
-import { quotesMixins } from "./mixins/quotesMixins.js";
-import { appState } from "./state.js";
-
-export default {
-  mixins: [quotesMixins],
-  data() {
-    return {
-      changeQuote: false,
-      footerQuote: null,
-      navBackShow: false,
-      navBackTo: null,
-      isThemeBtnsVisible: false,
-      showBgAnim: true,
-      avatarImage: '/Hasil-Shobha.png',
-      allThemes: [
-        // Light themes — primary is dark (text), secondary is accent (titles, nav)
-        { darkMode: false, primary: "#7A1C22", secondary: "#B8860B", label: "Claret & Gold" },
-        { darkMode: false, primary: "#1B2E4A", secondary: "#2E7DA8", label: "Navy & Steel" },
-        { darkMode: false, primary: "#3D1F0A", secondary: "#2E8B8B", label: "Espresso & Teal" },
-        { darkMode: false, primary: "#1E4D2B", secondary: "#A0690A", label: "Forest & Amber" },
-        { darkMode: false, primary: "#4A1A5E", secondary: "#A0527A", label: "Plum & Rose" },
-        // Dark themes — primary is bright (text on dark bg), secondary is accent
-        { darkMode: true, primary: "#F5A623", secondary: "#E07B5D", label: "Amber & Coral" },
-        { darkMode: true, primary: "#44C8BE", secondary: "#5BB89A", label: "Aqua & Seafoam" },
-        { darkMode: true, primary: "#8B9FE8", secondary: "#B87FCC", label: "Periwinkle & Orchid" },
-      ],
-    };
-  },
-  computed: {
-    routeLoading() {
-      return appState.routeLoading;
-    },
-    lightThemes() {
-      return this.allThemes.filter(t => !t.darkMode);
-    },
-    darkThemes() {
-      return this.allThemes.filter(t => t.darkMode);
-    },
-  },
-  methods: {
-    handleScroll() {
-      let footer = document.querySelector("footer");
-      if (window.pageYOffset + window.innerHeight > footer.offsetTop) {
-        this.changeQuote = true;
-      }
-      if (
-        this.changeQuote &&
-        window.pageYOffset + window.innerHeight < footer.offsetTop
-      ) {
-        this.footerQuote = this.getRandomQuote();
-        this.changeQuote = false;
-      }
-      if (this.isThemeBtnsVisible) {
-        this.isThemeBtnsVisible = false;
-      }
-    },
-    switchTheme(darkMode, primary, secondary) {
-      this.showBgAnim = !darkMode;
-      const bg = darkMode ? "#121212" : "#fdf7ff";
-      const cardBg = darkMode ? "#1F1F1F" : "#ffffffe0";
-      const root = document.documentElement;
-      root.style.setProperty("--global-bg", bg);
-      root.style.setProperty("--global-card-bg", cardBg);
-      root.style.setProperty("--global-primary-color", primary);
-      root.style.setProperty("--global-secondary-color", secondary);
-      root.style.setProperty("--global-shadow-color", darkMode ? "#2A2A2A" : "#d0d0d0");
-      // Keep Bootstrap variables in sync so BS components also respect the theme
-      root.style.setProperty("--bs-body-bg", bg);
-      root.style.setProperty("--bs-body-color", darkMode ? "#e0e0e0" : "#212529");
-      root.style.setProperty("--bs-card-bg", cardBg);
-      root.style.setProperty("--bs-border-color-translucent", darkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.175)");
-      // Route link + info colours through the theme
-      root.style.setProperty("--bs-link-color", secondary);
-      root.style.setProperty("--bs-link-hover-color", primary);
-      root.style.setProperty("--bs-info", secondary);
-      root.style.setProperty("--bs-info-rgb", this.hexToRgb(secondary));
-
-      localStorage.setItem("theme", JSON.stringify({ darkMode, primary, secondary, setAt: Date.now() }));
-    },
-    pickRandomTheme() {
-      const prefersDark = window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const candidates = this.allThemes.filter(t => t.darkMode === prefersDark);
-      const pool = candidates.length ? candidates : this.allThemes;
-      const { darkMode, primary, secondary } = pool[Math.floor(Math.random() * pool.length)];
-      this.switchTheme(darkMode, primary, secondary);
-    },
-    initTheme() {
-      let stored = null;
-      try {
-        stored = JSON.parse(localStorage.getItem("theme"));
-      } catch (e) {
-        stored = null;
-      }
-
-      const ONE_DAY = 86400000;
-      const isExpired = stored && stored.setAt && (Date.now() - stored.setAt > ONE_DAY);
-
-      if (stored && typeof stored.darkMode === "boolean" && !isExpired) {
-        this.switchTheme(stored.darkMode, stored.primary, stored.secondary);
-      } else {
-        this.pickRandomTheme();
-      }
-    },
-    hexToRgb(hex) {
-      const r = parseInt(hex.slice(1, 3), 16);
-      const g = parseInt(hex.slice(3, 5), 16);
-      const b = parseInt(hex.slice(5, 7), 16);
-      return `${r}, ${g}, ${b}`;
-    },
-    updateAvatarImage() {
-      const images = [
-        '/Hasil-Shobha.png',
-        '/Hasil-Shobha-2.png',
-        '/Hasil.png',
-        '/Hasil-Shobha-3.png'
-      ];
-      this.avatarImage = images[Math.floor(Math.random() * images.length)];
-    }
-  },
-  created() {
-    this.initTheme();
-    this.footerQuote = this.getRandomQuote();
-    this.updateAvatarImage();
-  },
-  mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-  },
-  watch: {
-    $route(to) {
-      if (window.innerWidth < 576) {
-        if (to.name === 'project') {
-          this.navBackShow = true;
-          this.navBackTo = "/projects";
-        } else if (to.name === 'quote') {
-          this.navBackShow = true;
-          this.navBackTo = "/quotes";
-        } else if (to.name === 'poem') {
-          this.navBackShow = true;
-          this.navBackTo = "/poems";
-        } else {
-          this.navBackShow = false;
-          this.navBackTo = null;
-        }
-      }
-      this.updateAvatarImage();
-      if (this.isThemeBtnsVisible) {
-        this.isThemeBtnsVisible = false;
-      }
-    }
-  }
-};
-</script>

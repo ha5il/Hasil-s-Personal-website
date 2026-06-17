@@ -1,0 +1,50 @@
+name: Build, prerender & deploy to Cloudflare Pages
+
+# Cloudflare Pages' own build container has no Chrome, so it can't run the
+# prerender step. Instead we build + prerender here (GitHub runners have Chrome)
+# and push the finished dist/ to Pages via Wrangler Direct Upload — which is
+# available on the free plan and doesn't count against Pages' Git build quota.
+
+on:
+  push:
+    branches: [vue]
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Guarantees a Chrome binary and exposes its path for the prerender script.
+      - id: chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - run: npm ci
+
+      # vite build + scripts/prerender.mjs (snapshots every route in sitemap.xml).
+      - name: Build & prerender
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: npm run build:seo
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Set the project name as a repo variable (Settings → Secrets and
+          # variables → Actions → Variables): CF_PAGES_PROJECT
+          command: pages deploy dist --project-name=${{ vars.CF_PAGES_PROJECT }} --branch=${{ github.ref_name }}

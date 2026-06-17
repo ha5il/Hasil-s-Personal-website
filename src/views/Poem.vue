@@ -1,17 +1,29 @@
 <template>
-  <div id="poem" class="mt-5">
-    <b-breadcrumb :items="breadcrumbItems"></b-breadcrumb>
+  <div
+    id="poem"
+    class="mt-5"
+  >
+    <b-breadcrumb :items="breadcrumbItems" />
     <b-row>
-      <b-col col sm="12">
+      <b-col
+        col
+        sm="12"
+      >
         <b-card>
           <b-card-title>
-            {{poem.name}}
+            {{ poem.name }}
           </b-card-title>
           <b-card-text class="mt-4">
-            <p v-for="(para, idxPara) in poem.poemParas" :key="idxPara">
-              <span v-for="(paraLine, idxLine) in para.paraLines" :key="idxLine">
-                {{paraLine}}
-                <br/>
+            <p
+              v-for="(para, idxPara) in poem.poemParas"
+              :key="idxPara"
+            >
+              <span
+                v-for="(paraLine, idxLine) in para.paraLines"
+                :key="idxLine"
+              >
+                {{ paraLine }}
+                <br>
               </span>
             </p>
             <h5 class="text-info">
@@ -23,6 +35,61 @@
     </b-row>
   </div>
 </template>
+
+<script>
+import { poemsMixins } from "../mixins/poemsMixins.js";
+import { seoMixins } from "../mixins/seoMixins.js";
+
+export default {
+  mixins: [poemsMixins, seoMixins],
+  data() {
+    return {
+      poem: null,
+      breadcrumbItems: null,
+    };
+  },
+  created() {
+    const id = this.$route.params.id;
+    let currentPageActualUrlSlug = this.getPoemUrlSlug(id);
+    if (!currentPageActualUrlSlug) {
+      this.$router.push({ name: "poems" });
+      return;
+    }
+    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
+      this.$router.push({
+        name: "poem",
+        params: { id, urlSlug: currentPageActualUrlSlug }
+      });
+    }
+    this.poem = this.getPoemDetails(id);
+    const path = `/poem/${id}/${currentPageActualUrlSlug}`;
+    this.applySeo({
+      title: this.getPoemPageTitle(id),
+      description: this.getPoemPageDescription(id),
+      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal",
+      type: "article",
+      schema: [
+        this.seoCreativeWork({
+          name: this.poem.name,
+          description: this.getPoemPageDescription(id),
+          path,
+          type: "CreativeWork",
+          extra: { genre: "Poetry" }
+        }),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Poems", path: "/poems" },
+          { name: this.poem.name, path }
+        ])
+      ]
+    });
+    this.breadcrumbItems = [
+      { text: 'Poems', to: { name: 'poems' } },
+      { text: this.poem.urlSlug, active: true },
+    ];
+  }
+};
+</script>
 
 <style lang="scss">
 #poem {
@@ -64,42 +131,3 @@
   }
 }
 </style>
-
-<script>
-import { poemsMixins } from "../mixins/poemsMixins.js";
-import { htmlHeadMixins } from "../mixins/seoMixins.js";
-
-export default {
-  mixins: [poemsMixins, htmlHeadMixins],
-  data() {
-    return {
-      poem: null,
-      breadcrumbItems: null,
-    };
-  },
-  created() {
-    const id = this.$route.params.id;
-    let currentPageActualUrlSlug = this.getPoemUrlSlug(id);
-    if (!currentPageActualUrlSlug) {
-      this.$router.push({ name: "poems" });
-      return;
-    }
-    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
-      this.$router.push({
-        name: "poem",
-        params: { id, urlSlug: currentPageActualUrlSlug }
-      });
-    }
-    this.getOptimizedSeoMetaTags({
-      title: this.getPoemPageTitle(id),
-      description: this.getPoemPageDescription(id),
-      keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal"
-    });
-    this.poem = this.getPoemDetails(id);
-    this.breadcrumbItems = [
-      { text: 'Poems', to: { name: 'poems' } },
-      { text: this.poem.urlSlug, active: true },
-    ];
-  }
-};
-</script>

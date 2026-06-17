@@ -11,10 +11,11 @@ The site is updated rarely (~monthly), so reading the actual content files when 
 
 ## Stack & commands
 
-- Vue 3 (**Options API**) · Vite · **bootstrap-vue-next** (Bootstrap 5) · vue-router 4 · SCSS (dart-sass).
+- Vue 3 (**Options API**) · Vite · **bootstrap-vue-next** (Bootstrap 5) · vue-router 5 · SCSS (dart-sass).
 - `npm run dev` (localhost:5173) · `npm run build` (→ `dist/`) · `npm run preview`.
 - **Always `npm run build` to verify after changes** — it's the real check.
-- ⚠️ **`npm run lint` is broken** — ESLint v9 needs an `eslint.config.js` that doesn't exist. Don't rely on it; verify with the build instead.
+- `npm run build:seo` = `vite build` + **prerender** (`scripts/prerender.mjs`): snapshots every route in `sitemap.xml` into static `dist/<route>/index.html` so non-JS crawlers (social cards, Bing) get correct per-page tags. Needs a local Chrome (`puppeteer-core`; set `CHROME_PATH` to override). **This is the deploy command** — plain `build` ships an empty SPA shell with only the homepage's static tags. See the SEO section.
+- `npm run lint` (ESLint v10 flat config in `eslint.config.js`) and `npm run lint:fix` both work. Config = `@eslint/js` recommended + `eslint-plugin-vue` `flat/recommended`. Build is still the primary correctness check; lint is for style/quality. `package.json` is `"type": "module"`.
 - Active branch is **`vue`** (the Vue 3 rewrite). `master` is a legacy Laravel version — ignore it.
 - `dist/` is gitignored; everything in `public/` is copied verbatim into the build.
 
@@ -30,7 +31,7 @@ source of truth. When you change a *fact*, you must update **every** copy:
 - `src/views/HireHasil.vue`
 - `public/llms.txt`
 - `public/llms-full.txt`
-- `src/mixins/seoMixins.js` → `globalSchemas.hasil` (only if it's a schema fact: job title, degree, profile links)
+- `src/mixins/seoMixins.js` → the `personSchema` const (only if it's a schema fact: job title, degree, profile links)
 
 Repo map:
 
@@ -39,13 +40,14 @@ Repo map:
 | `src/mixins/projectsMixins.js` | `projects` array (all project data) + helper methods |
 | `src/mixins/quotesMixins.js` | `quotes` array + methods |
 | `src/mixins/poemsMixins.js` | `poems` array + methods |
-| `src/mixins/seoMixins.js` | SEO meta-tag injection + schema.org Person (NOT a content list) |
+| `src/mixins/seoMixins.js` | `applySeo()` head injection + schema.org builders (NOT a content list) |
 | `src/views/*.vue` | Pages; they consume the mixins |
 | `src/App.vue` | Global shell: nav, theme picker, avatar rotation, footer quote, loading spinner, all global CSS |
 | `src/router.js` | Routes |
 | `src/state.js` | `appState.routeLoading` reactive flag only |
-| `src/main.js` | App bootstrap |
-| `public/` | `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt`, tech logos, photos, `og-image.jpg` |
+| `src/main.js` | App bootstrap; skips the artificial route-loading delay when `window.__PRERENDER_INJECTED` is set (prerender) |
+| `scripts/prerender.mjs` | Post-build snapshot prerenderer (reads routes from `sitemap.xml`) |
+| `public/` | `sitemap.xml`, `robots.txt`, `llms.txt`, `llms-full.txt`, `site.webmanifest`, tech logos, photos, `og-image.jpg`, favicon/PWA icons (`apple-touch-icon.png`, `icon-192/512.png`, `favicon-32x32.png`) |
 
 ---
 
@@ -73,9 +75,10 @@ Methods:
 
 **`poemsMixins.js`** — poem shape `{ id, urlSlug, name, poemParas:[{ paraLines:[string] }] }`. Method: `getAllpoems()`.
 
-**`seoMixins.js`** exports **two** mixins:
-- `schemaMixins`: `injectDefaultSchemaJSON('hasil')` injects the schema.org **Person** JSON-LD (`globalSchemas.hasil`) into `<head>`. Only **Home.vue** uses it. The Person object (name, jobTitle, `alumniOf`, `hasCredential` = degree, `sameAs` links) lives at the top of this file — update it when those facts change.
-- `htmlHeadMixins`: `getOptimizedSeoMetaTags({ title, description, image, keywords, url })` — sets `<title>` + OG/Twitter/description/keywords meta by **mutating `document.head` directly** (there is no vue-meta). Every view calls this in its `created()`.
+**`seoMixins.js`** exports **one** mixin, `seoMixins`, with a single entry point + schema builders. Every view imports `{ seoMixins }` and calls `applySeo()` once in `created()`. It mutates `document.head` directly (there is no vue-meta).
+- `applySeo({ title, description, image, keywords, url, type, schema })` — sets `<title>`, description, OG, Twitter Card, **canonical**, `og:url`, **`og:type`** (`'website'`|`'article'`|`'profile'`), and **JSON-LD**. Add a new head concern *here* and every page gets it. `image` defaults to `og-image.jpg`. **canonical/`og:url` are always built from the production origin (`SITE_URL` const), not `window.location.origin`** — so prerender (localhost) and dev don't emit a wrong canonical; only the path comes from the route. Pass `url` to override. `schema` may be one object or an array; pass nothing to clear (so stale JSON-LD never lingers across SPA routes). After running it dispatches a `seo-ready` DOM event (a hook for the prerenderer).
+- Schema builders (also methods on the mixin): `seoPerson()` → the schema.org **Person** (the `personSchema` const at the top — name, jobTitle, `alumniOf`, `hasCredential` = degree, `sameAs` links; update those facts here). `seoBreadcrumb([{name, path}])` → `BreadcrumbList`. `seoCreativeWork({name, description, path, type, extra})` → a CreativeWork-family node (`SoftwareApplication` for `type:'it'` projects, `CreativeWork`+`genre` for poems, `Quotation` for quotes).
+- Per-page JSON-LD: Home + HireHasil → Person; project/poem/quote detail → CreativeWork + BreadcrumbList; list pages → BreadcrumbList.
 
 ---
 
@@ -104,8 +107,8 @@ Methods:
   (`.project-banner` / `.project-initial`) instead of a photo. The project detail page shows no cover.
 - **Social / OG image:** a single `public/og-image.jpg` (1200×630). It's the default in
   `index.html` (`og:image` + `twitter:image`) and is set per-page via the `image` arg of
-  `getOptimizedSeoMetaTags`. Home/Projects/HireHasil/Quotes/Poems set it explicitly; the
-  Quote/Poem/Project **detail** pages don't set `image` and inherit the index.html default.
+  `applySeo`. Home/Projects/HireHasil/Quotes/Poems set it explicitly; the Quote/Poem/Project
+  **detail** pages don't pass `image`, so `applySeo` falls back to the same `og-image.jpg` default.
 - `public/Hasil-*.png` are **real profile photos** used by the App.vue avatar rotation and the
   HireHasil hero — **distinct** from `og-image.jpg`; don't conflate them.
 
@@ -129,7 +132,7 @@ Methods:
 
 ### Bio / skills / career / education facts
 No single source — update **all** of: `Home.vue`, `HireHasil.vue`, `llms.txt`, `llms-full.txt`,
-and `seoMixins.js` `globalSchemas.hasil` if it's a schema fact (jobTitle, degree/`hasCredential`, `sameAs`).
+and `seoMixins.js` `personSchema` if it's a schema fact (jobTitle, degree/`hasCredential`, `sameAs`).
 Remember HireHasil's tech grid auto-generates from project data (don't hand-edit it).
 
 ---
@@ -165,6 +168,42 @@ block a path, add/remove a crawler rule, or if the sitemap URL changes.
 > update `sitemap.xml` (+ bump only the affected `lastmod`s) and re-check `llms*.txt`. New
 > images or content rarely need `robots.txt`.
 
+### Prerendering (`scripts/prerender.mjs`) — why & how
+
+The app is a **client-side SPA**: per-page tags are injected by JS *after* load. Google renders
+JS so it's fine, but **social crawlers (Facebook/LinkedIn/X/Slack/WhatsApp) and Bing don't run JS**
+— without prerender they'd see only the homepage tags from `index.html` on every URL.
+
+`npm run build:seo` fixes this: after `vite build`, it serves `dist/`, visits **every URL in
+`sitemap.xml`** in headless Chrome, waits for `applySeo()` to populate `<head>`, and writes the
+rendered HTML back to `dist/<route>/index.html`. So **`sitemap.xml` is the prerender route list** —
+add a page there and it gets prerendered; the two can't drift.
+
+- **Snapshot, not SSR — and that matters.** The previous attempt that broke click listeners was
+  almost certainly SSR/hydration. This is a *snapshot* prerender: the client still does
+  `createApp().mount('#app')` (not `createSSRApp().hydrate()`), so Vue clears the container and
+  **re-mounts fresh — every listener re-attaches.** Don't switch this to `vite-ssg`/hydration
+  without guarding every `window`/`localStorage`/`matchMedia`/`Math.random()` use, or listeners
+  break again. (Verified: mounting over a snapshot keeps SPA nav + click handlers working.)
+- Needs a local Chrome via `puppeteer-core` (no Chromium download). Auto-detects macOS Chrome;
+  override with `CHROME_PATH=/path/to/chrome`. CI must have Chrome available.
+- `main.js` skips the artificial 500–1500 ms loading delay when `window.__PRERENDER_INJECTED` is
+  set (the prerenderer injects it), so snapshots resolve fast and deterministically.
+- `dist/` is gitignored — prerendered output is a build artifact, never committed. Deploy the
+  output of `build:seo`, **not** plain `build`.
+
+> ⚠️ Plain `npm run build` overwrites `dist/` with the un-prerendered SPA. Run `build:seo` (or
+> `npm run prerender` after a build) for anything that goes live.
+
+**Deploy = GitHub Actions (`.github/workflows/deploy.yml`), NOT Cloudflare's own git build.**
+Cloudflare Pages' build container has no Chrome and can't prerender. The workflow runs on push to
+`vue`: builds + prerenders on a Chrome runner, then `wrangler pages deploy dist` (Direct Upload).
+- Don't change Cloudflare's build command to `build:seo` — it fails with "Chrome not found".
+- Deploy target is a **Direct Upload** Pages project; Wrangler can't deploy into a Git-connected one.
+- The workflow needs secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` and var
+  `CF_PAGES_PROJECT` — keep those names if you edit it. Chrome comes from `browser-actions/setup-chrome`
+  (path → `CHROME_PATH` for `scripts/prerender.mjs`).
+
 ---
 
 ## Shell / theming (rarely touched)
@@ -172,5 +211,5 @@ block a path, add/remove a crawler rule, or if the sitemap URL changes.
 `App.vue` owns the theme picker (drives `--global-*` CSS variables), the random avatar rotation
 (`Hasil-*.png`), the footer quote (`getRandomQuote()`), and the loading spinner toggled by
 `appState.routeLoading`. `main.js` sets an **artificial** random 500–1500 ms route-loading delay
-in `router.afterEach`, and registers **all** bootstrap-vue-next components & directives globally —
+in `router.afterEach` (skipped during prerender — see the Prerendering section), and registers **all** bootstrap-vue-next components & directives globally —
 so `<b-card>`, `<b-img>`, `v-b-tooltip`, etc. need no imports (directive names drop the leading `v`).
