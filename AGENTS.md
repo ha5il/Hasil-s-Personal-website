@@ -186,6 +186,18 @@ that URL's `lastmod` in `scripts/seo-manifest.json` and regenerate.
 Allows all crawlers, explicitly allows AI bots (GPTBot, ClaudeBot, etc.) and
 `facebookexternalhit`, and points to the sitemap. **Usually no change is needed.**
 
+### Search Console — how to read the indexing report (so you don't "fix" non-problems)
+Verified property exists (TXT record `google-site-verification` — keep it). Expected/normal
+entries that need NO action:
+- **"Page with redirect"**: `http://` → `https://` homepage, and old project slugs (they 404
+  or canonical-redirect by design).
+- **404s for legacy Laravel-era URLs** (`/gallery/`, `/hasil-videos/`, `/about-hasil/`) and
+  random-hash spam-probe URLs — intentionally 404 since July 2026; do not add redirects.
+- **Some poem/quote pages staying "crawled – not indexed"**: they're thin literary pages;
+  Google may decline them regardless of markup. Not a defect.
+- Dead legacy subdomains `amp.` and `blog.` have no DNS; stale index entries are expected
+  to decay (removal was requested via GSC July 2026).
+
 ### Prerendering (`scripts/prerender.mjs`) — why & how
 
 The app is a **client-side SPA**: per-page tags are injected by JS *after* load. Google renders
@@ -234,7 +246,11 @@ deploy dist` (Direct Upload).
   Routing** (free). Client-side honeypot field drops naive bots.
 - 🔒 **The destination email address is a secret (`CONTACT_TO` via `wrangler secret put`) and
   must NEVER appear in the repo, client code, or any response.** Don't "helpfully" inline it.
-- Setup/runbook: `worker/README.md`.
+- Setup/runbook: `worker/README.md`. **Status: live since July 2026** — Email Routing is
+  enabled on the zone (it replaced the old unused Zoho MX/SPF records; don't re-add Zoho),
+  `CONTACT_TO` is set, and the Worker is deployed. A free-plan WAF rate-limiting rule
+  (3 req / 10 s per IP on `/api/contact`, action Block) guards against email flooding —
+  Cloudflare's always-on DDoS protection covers the rest; no other throttling is needed.
 
 ---
 
