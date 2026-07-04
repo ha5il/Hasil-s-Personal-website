@@ -16,7 +16,10 @@
               target="_blank"
               title="Visit Website"
             >
-              <i class="material-icons">launch</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >launch</i>
             </b-link>
             <b-badge
               v-show="project.sourceCode"
@@ -27,7 +30,10 @@
               aria-label="View Source Code"
             >
               Source Code
-              <i class="material-icons">launch</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >launch</i>
             </b-badge>
           </div>
           <div class="project-detail-banner mb-3">
@@ -53,7 +59,10 @@
             :key="idx"
           >
             <h5 class="text-info">
-              <i class="material-icons">{{ detail.titleIcon }}</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >{{ detail.titleIcon }}</i>
               {{ detail.title }}
             </h5>
             <p
@@ -118,6 +127,8 @@ export default {
     this.applySeo({
       title: this.getProjectPageTitle(id),
       description: this.getProjectPageDescription(id),
+      // Per-project OG card, generated into dist/og/ by scripts/generate-og-images.mjs
+      image: `/og/project-${id}.jpg`,
       type: "article",
       schema: [
         this.seoCreativeWork({

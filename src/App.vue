@@ -66,7 +66,7 @@
             <div class="text-center">
               <b-link
                 class="px-3"
-                href="https://www.linkedin.com/in/hasil/"
+                :href="profile.links.linkedin"
                 target="_blank"
               >
                 <img
@@ -74,11 +74,12 @@
                   title="Let's get connected for work"
                   src="/iconledincon.svg"
                   width="20%"
+                  alt="LinkedIn"
                 >
               </b-link>
               <b-link
                 class="px-3"
-                href="https://facebook.com/hasill"
+                :href="profile.links.facebook"
                 target="_blank"
               >
                 <img
@@ -86,6 +87,7 @@
                   title="Let's get connected as friend"
                   src="/iconfbcon.svg"
                   width="20%"
+                  alt="Facebook"
                 >
               </b-link>
             </div>
@@ -101,83 +103,75 @@
               to="/"
               exact-active-class="active"
             >
-              <i class="material-icons">home</i>Home
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >home</i>Home
             </b-nav-item>
             <b-nav-item
               to="/projects"
               exact-active-class="active"
             >
-              <i class="material-icons">all_inbox</i>Projects
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >all_inbox</i>Projects
             </b-nav-item>
             <b-nav-item
               to="/quotes"
               exact-active-class="active"
             >
-              <i class="material-icons">record_voice_over</i>Quotes
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >record_voice_over</i>Quotes
             </b-nav-item>
             <b-nav-item
               to="/poems"
               exact-active-class="active"
             >
-              <i class="material-icons">import_contacts</i>Poems
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >import_contacts</i>Poems
             </b-nav-item>
             <b-nav-item
               to="/hire-Hasil"
               exact-active-class="active"
             >
-              <i class="material-icons">work</i>Hire Me
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >work</i>Hire Me
             </b-nav-item>
             <b-nav-item
               v-if="navBackShow && navBackTo"
               class="back"
               :to="navBackTo"
             >
-              <i class="material-icons">arrow_back</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >arrow_back</i>
             </b-nav-item>
           </b-nav>
-          <div
-            v-if="routeLoading"
-            class="text-center my-5 py-5"
-          >
-            <b-spinner
-              class="mx-1"
-              variant="primary"
-              label="Spinning"
-            />
-            <b-spinner
-              class="mx-1"
-              variant="warning"
-              type="grow"
-              label="Spinning"
-            />
-            <b-spinner
-              class="mx-1"
-              variant="success"
-              label="Spinning"
-            />
-            <b-spinner
-              class="mx-1"
-              variant="danger"
-              type="grow"
-              label="Spinning"
-            />
-            <b-spinner
-              class="mx-1"
-              variant="info"
-              label="Spinning"
-            />
-          </div>
-          <router-view
-            v-else
-            :key="$route.params.id"
-          />
+          <router-view v-slot="{ Component }">
+            <transition
+              name="page"
+              mode="out-in"
+            >
+              <component
+                :is="Component"
+                :key="$route.params.id"
+              />
+            </transition>
+          </router-view>
           <footer
-            v-show="!routeLoading"
             class="mt-3"
           >
-            <div
-              style="cursor: pointer"
-              @click="$router.push({ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug } })"
+            <router-link
+              class="footer-quote-link"
+              :to="{ name: 'quote', params: { id: footerQuote.id, urlSlug: footerQuote.urlSlug } }"
             >
               <span
                 v-for="quoteLine in footerQuote.quoteLines"
@@ -186,7 +180,7 @@
                 {{ quoteLine }}
                 <br>
               </span>
-            </div>
+            </router-link>
           </footer>
         </b-col>
       </b-row>
@@ -198,12 +192,18 @@
             class="theme-picker-panel"
           >
             <div class="theme-panel-header">
-              <i class="material-icons">palette</i> Themes
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >palette</i> Themes
             </div>
 
             <div class="theme-group-section">
               <div class="theme-group-label">
-                <i class="material-icons">wb_sunny</i> Light
+                <i
+                  aria-hidden="true"
+                  class="material-icons"
+                >wb_sunny</i> Light
               </div>
               <div class="theme-swatches">
                 <button
@@ -212,6 +212,7 @@
                   class="theme-swatch-btn"
                   :style="{ background: `linear-gradient(135deg, ${t.primary} 50%, ${t.secondary} 50%)` }"
                   :title="t.label"
+                  :aria-label="t.label + ' theme'"
                   @click="switchTheme(t.darkMode, t.primary, t.secondary)"
                 />
               </div>
@@ -219,7 +220,10 @@
 
             <div class="theme-group-section">
               <div class="theme-group-label">
-                <i class="material-icons">dark_mode</i> Dark
+                <i
+                  aria-hidden="true"
+                  class="material-icons"
+                >dark_mode</i> Dark
               </div>
               <div class="theme-swatches">
                 <button
@@ -228,6 +232,7 @@
                   class="theme-swatch-btn"
                   :style="{ background: `linear-gradient(135deg, ${t.primary} 50%, ${t.secondary} 50%)` }"
                   :title="t.label"
+                  :aria-label="t.label + ' theme'"
                   @click="switchTheme(t.darkMode, t.primary, t.secondary)"
                 />
               </div>
@@ -237,9 +242,14 @@
 
         <button
           class="theme-toggle-main"
+          :aria-label="isThemeBtnsVisible ? 'Close theme picker' : 'Open theme picker'"
+          :aria-expanded="isThemeBtnsVisible ? 'true' : 'false'"
           @click="isThemeBtnsVisible = !isThemeBtnsVisible"
         >
-          <i class="material-icons">{{ isThemeBtnsVisible ? 'close' : 'palette' }}</i>
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >{{ isThemeBtnsVisible ? 'close' : 'palette' }}</i>
         </button>
       </div>
     </b-container>
@@ -248,19 +258,20 @@
 
 <script>
 import { quotesMixins } from "./mixins/quotesMixins.js";
-import { appState } from "./state.js";
+import { profile } from "./content/profile.js";
 
 export default {
   mixins: [quotesMixins],
   data() {
     return {
+      profile,
       changeQuote: false,
       footerQuote: null,
       navBackShow: false,
       navBackTo: null,
       isThemeBtnsVisible: false,
       showBgAnim: true,
-      avatarImage: '/Hasil-Shobha.png',
+      avatarImage: '/Hasil-Shobha.webp',
       allThemes: [
         // Light themes — primary is dark (text), secondary is accent (titles, nav)
         { darkMode: false, primary: "#7A1C22", secondary: "#B8860B", label: "Claret & Gold" },
@@ -276,9 +287,6 @@ export default {
     };
   },
   computed: {
-    routeLoading() {
-      return appState.routeLoading;
-    },
     lightThemes() {
       return this.allThemes.filter(t => !t.darkMode);
     },
@@ -390,10 +398,10 @@ export default {
     },
     updateAvatarImage() {
       const images = [
-        '/Hasil-Shobha.png',
-        '/Hasil-Shobha-2.png',
-        '/Hasil.png',
-        '/Hasil-Shobha-3.png'
+        '/Hasil-Shobha.webp',
+        '/Hasil-Shobha-2.webp',
+        '/Hasil.webp',
+        '/Hasil-Shobha-3.webp'
       ];
       this.avatarImage = images[Math.floor(Math.random() * images.length)];
     }
@@ -439,22 +447,55 @@ a {
   cursor: url('/cursor-pointer.png'), pointer;
 }
 
-.fade-enter-active {
-  transition: opacity 0.6s ease, transform 0.6s ease;
+// Route transition: quick fade + slight upward slide. Cards ride in a touch
+// further via card-in for depth. No `appear` — initial load (and prerender
+// snapshots) render instantly; only in-app navigation animates.
+.page-enter-active {
+  transition: opacity 0.28s ease, transform 0.28s ease;
 }
 
-.fade-leave-active {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+.page-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.fade-enter-from {
-  transform: skewX(20deg);
+.page-enter-from {
   opacity: 0;
+  transform: translateY(12px);
 }
 
-.fade-leave-to {
-  transform: skewX(-20deg);
+.page-leave-to {
   opacity: 0;
+  transform: translateY(-8px);
+}
+
+.page-enter-active .card {
+  animation: card-in 0.45s ease both;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 0.15s ease;
+    transform: none;
+  }
+  .page-enter-from,
+  .page-leave-to {
+    transform: none;
+  }
+  .page-enter-active .card {
+    animation: none;
+  }
 }
 
 .fade-avatar-enter-active, .fade-avatar-leave-active {
@@ -493,6 +534,16 @@ a {
 	100% {
 		transform: translateX(25%)
 	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg, .bg2, .bg3 {
+    animation: none;
+  }
+
+  .card-poem-intro img:hover {
+    animation: none;
+  }
 }
 
 .nav {
@@ -697,6 +748,18 @@ footer {
   border-radius: 10px 10px 0px 0px;
   bottom: 0px;
 
+  .footer-quote-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: -2px;
+      border-radius: 8px;
+    }
+  }
+
   span {
     cursor: url('/cursor-pointer.png'), pointer;;
   }
@@ -792,8 +855,9 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 
-  &:focus {
-    outline: none;
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
     border-color: #fff;
   }
 }
@@ -817,7 +881,10 @@ footer {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   }
 
-  &:focus { outline: none; }
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
 
   .material-icons { font-size: 1.25rem; }
 }
@@ -903,6 +970,20 @@ h4, h5 {
 .bs-tooltip-bottom .tooltip-arrow::before { border-bottom-color: var(--global-primary-color) !important; }
 .bs-tooltip-start .tooltip-arrow::before  { border-left-color: var(--global-primary-color) !important; }
 .bs-tooltip-end .tooltip-arrow::before    { border-right-color: var(--global-primary-color) !important; }
+
+// Print: hide the app shell so printing a page (esp. /hire-Hasil, which is
+// designed as a printable resume) yields just the content on white.
+@media print {
+  .bg, .bg2, .bg3,
+  .nav.fixed-top,
+  #theme-panel,
+  footer,
+  #app > .container-fluid > .row > [class*="col-md-3"] {
+    display: none !important;
+  }
+
+  body { background: #fff !important; }
+}
 
 // Popovers — theme-aware surface
 .popover {

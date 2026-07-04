@@ -50,7 +50,22 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
-      # ⚙️ vite build + scripts/prerender.mjs (snapshots every route in sitemap.xml).
+      - name: 🔍 Lint
+        run: npm run lint
+
+      # 🧩 sitemap⇄data slug drift, missing tech logos, dead featured ids, llms mirror.
+      - name: 🧩 Content consistency check
+        run: npm run check
+
+      # 🔄 sitemap.xml + llms*.txt are generated from src/content/profile.js and
+      # the mixins. If someone changed content without running `npm run generate`,
+      # regeneration produces a diff → fail before deploying stale crawl files.
+      - name: 🔄 Verify generated SEO files are fresh
+        run: |
+          npm run generate
+          git diff --exit-code public/sitemap.xml public/llms.txt public/llms-full.txt scripts/seo-manifest.json
+
+      # ⚙️ vite build + prerender + per-project OG images (all routes from sitemap.xml).
       - name: 🏗️ Build & Prerender
         env:
           CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}

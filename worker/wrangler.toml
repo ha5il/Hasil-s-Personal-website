@@ -1,0 +1,21 @@
+# Contact-form relay Worker — see contact-worker.js and README.md.
+# Deploy: cd worker && npx wrangler deploy
+#
+# The destination email is a SECRET (npx wrangler secret put CONTACT_TO),
+# never written in this file — keeping it out of the public repo.
+
+name = "hasil-contact"
+main = "contact-worker.js"
+compatibility_date = "2026-06-01"
+
+# Same-zone route: the site fetches /api/contact with no CORS complexity.
+routes = [
+  { pattern = "hasilpaudyal.com.np/api/contact", zone_name = "hasilpaudyal.com.np" },
+  { pattern = "www.hasilpaudyal.com.np/api/contact", zone_name = "hasilpaudyal.com.np" }
+]
+
+# Email Routing send binding. No destination restriction here (the address
+# would be public); the actual recipient comes from the CONTACT_TO secret and
+# must be a VERIFIED destination address in Email Routing.
+[[send_email]]
+name = "CONTACT_EMAIL"

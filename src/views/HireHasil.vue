@@ -3,223 +3,418 @@
     id="hire-hasil"
     class="mt-5"
   >
-    <!-- Hero -->
-    <b-card class="hero-card mb-4">
-      <div class="hero-inner">
-        <div class="hero-avatar d-none d-md-flex">
-          <img
-            src="/Hasil-Shobha.png"
-            alt="Hasil Paudyal"
-          >
-        </div>
-        <div class="hero-content">
-          <h2 class="hero-name">
-            Hasil Paudyal
-          </h2>
-          <p class="hero-tagline">
-            Engineer &bull; Creator &bull; Leader
+    <div class="resume-sheet">
+      <!-- Header -->
+      <header class="resume-header">
+        <img
+          src="/Hasil-Shobha.webp"
+          alt="Hasil Paudyal"
+          class="resume-avatar d-none d-sm-block"
+          width="110"
+          height="110"
+        >
+        <div class="resume-header-main">
+          <h1 class="hero-name">
+            {{ profile.name }}
+          </h1>
+          <p class="resume-title">
+            {{ profile.jobTitle }} &bull; Engineer &bull; Creator &bull; Leader
           </p>
-          <p class="hero-bio">
-            From designing electrical systems and repairing international hardware in India,
-            to building backend systems and APIs and leading app development across mobile
-            and cloud platforms — and writing poetry in between. I bring a rare combination
-            of technical depth, creative thinking, and real-world problem-solving.
-          </p>
-          <div class="hero-links">
-            <b-link
-              href="//np.linkedin.com/in/hasil"
+          <div class="resume-contact-strip">
+            <span class="contact-chip">
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >place</i> {{ profile.location }}
+            </span>
+            <a
+              class="contact-chip"
+              :href="profile.links.linkedin"
               target="_blank"
-              class="hero-link"
+              rel="noopener"
             >
               <img
-                v-b-tooltip.hover.bottom
-                title="Connect on LinkedIn"
                 src="/iconledincon.svg"
-                width="28"
-              >
-              LinkedIn
-            </b-link>
-            <b-link
-              href="//facebook.com/hasill"
+                width="16"
+                height="16"
+                alt=""
+              > LinkedIn
+            </a>
+            <a
+              class="contact-chip"
+              :href="profile.links.github"
               target="_blank"
-              class="hero-link"
+              rel="noopener"
+            >
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >code</i> GitHub
+            </a>
+            <a
+              class="contact-chip"
+              :href="profile.links.facebook"
+              target="_blank"
+              rel="noopener"
             >
               <img
-                v-b-tooltip.hover.bottom
-                title="Connect on Facebook"
                 src="/iconfbcon.svg"
-                width="28"
-              >
-              Facebook
-            </b-link>
+                width="16"
+                height="16"
+                alt=""
+              > Facebook
+            </a>
+            <a
+              class="contact-chip contact-chip-cta d-print-none"
+              href="#contact"
+              @click.prevent="scrollToContact"
+            >
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >mail</i> Contact me
+            </a>
           </div>
         </div>
-      </div>
-    </b-card>
+      </header>
 
-    <!-- Dimensions -->
-    <h4 class="section-label">
-      <i class="material-icons">auto_awesome</i>
-      What Makes Me, Me
-    </h4>
-    <b-row class="mb-4">
-      <b-col
-        v-for="(dim, idx) in dimensions"
-        :key="idx"
-        sm="12"
-        md="6"
-        lg="3"
-        class="mb-3"
-      >
-        <b-card class="dimension-card h-100">
-          <div class="dim-icon">
-            <i class="material-icons">{{ dim.icon }}</i>
+      <!-- Summary -->
+      <section class="resume-section">
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >person</i>
+          Summary
+        </h4>
+        <p class="resume-summary">
+          {{ profile.hireSummary }}
+        </p>
+      </section>
+
+      <!-- Core strengths -->
+      <section class="resume-section">
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >auto_awesome</i>
+          Core Strengths
+        </h4>
+        <b-row>
+          <b-col
+            v-for="(dim, idx) in dimensions"
+            :key="idx"
+            sm="12"
+            md="6"
+            class="mb-3"
+          >
+            <div class="strength-item">
+              <div class="dim-icon">
+                <i
+                  aria-hidden="true"
+                  class="material-icons"
+                >{{ dim.icon }}</i>
+              </div>
+              <div>
+                <h5 class="dim-title">
+                  {{ dim.title }}
+                </h5>
+                <p class="dim-desc">
+                  {{ dim.desc }}
+                </p>
+              </div>
+            </div>
+          </b-col>
+        </b-row>
+      </section>
+
+      <!-- Experience -->
+      <section class="resume-section">
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >timeline</i>
+          Experience
+        </h4>
+        <div class="timeline-container">
+          <div
+            v-for="(event, idx) in timeline"
+            :key="idx"
+            class="timeline-item"
+          >
+            <div
+              class="timeline-dot"
+              :class="event.variant"
+            />
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-title">{{ event.title }}</span>
+                <span class="timeline-period">{{ event.period }}</span>
+              </div>
+              <div class="timeline-role">
+                <strong>{{ event.role }}</strong>
+                <span v-if="event.company"> at
+                  <a
+                    :href="event.companyUrl"
+                    target="_blank"
+                    rel="noopener"
+                  >{{ event.company }}</a>
+                </span>
+              </div>
+              <div class="timeline-desc">
+                {{ event.description }}
+              </div>
+              <div
+                v-if="event.tags"
+                class="timeline-tags mt-2"
+              >
+                <b-badge
+                  v-for="tag in event.tags"
+                  :key="tag"
+                  pill
+                  class="me-1 mb-1"
+                >
+                  {{ tag }}
+                </b-badge>
+              </div>
+            </div>
           </div>
-          <h5 class="dim-title">
-            {{ dim.title }}
-          </h5>
-          <p class="dim-desc">
-            {{ dim.desc }}
-          </p>
-        </b-card>
-      </b-col>
-    </b-row>
+        </div>
+      </section>
 
-    <!-- Career Timeline -->
-    <h4 class="section-label">
-      <i class="material-icons">timeline</i>
-      Career Journey
-    </h4>
-    <div class="timeline-container mb-4">
-      <div
-        v-for="(event, idx) in timeline"
-        :key="idx"
-        class="timeline-item"
-      >
-        <div
-          class="timeline-dot"
-          :class="event.variant"
-        />
-        <div class="timeline-content">
+      <!-- Education -->
+      <section class="resume-section">
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >school</i>
+          Education
+        </h4>
+        <div class="education-item">
           <div class="timeline-header">
-            <span class="timeline-title">{{ event.title }}</span>
-            <span class="timeline-period">{{ event.period }}</span>
+            <span class="timeline-title">{{ profile.education.degree }}</span>
+            <span class="timeline-period">{{ profile.education.period }}</span>
           </div>
           <div class="timeline-role">
-            <strong>{{ event.role }}</strong>
-            <span v-if="event.company"> at
-              <a
-                :href="event.companyUrl"
-                target="_blank"
-              >{{ event.company }}</a>
-            </span>
-          </div>
-          <div class="timeline-desc">
-            {{ event.description }}
-          </div>
-          <div
-            v-if="event.tags"
-            class="timeline-tags mt-2"
-          >
-            <b-badge
-              v-for="tag in event.tags"
-              :key="tag"
-              pill
-              class="me-1 mb-1"
-            >
-              {{ tag }}
-            </b-badge>
+            {{ profile.education.school }} — {{ profile.education.place }}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Capabilities -->
-    <h4 class="section-label">
-      <i class="material-icons">construction</i>
-      What I Can Do For You
-    </h4>
-    <b-row>
-      <b-col
-        v-for="(skillData, idx) in skills"
-        :key="idx"
-        sm="12"
-        :md="skillData.cols"
-        class="mb-3"
-      >
-        <b-card class="h-100">
-          <div class="skill-card-header">
-            <i class="material-icons skill-icon">{{ skillData.icon }}</i>
-            <b-card-title>{{ skillData.title }}</b-card-title>
-          </div>
-          <b-card-text>
-            <b-list-group
-              v-if="skillData.layout !== 'grid'"
-              flush
-            >
-              <b-list-group-item
-                v-for="(list, idxList) in skillData.lists"
-                :key="idxList"
-                class="d-flex justify-content-between align-items-center"
-              >
-                <div class="d-flex align-items-center">
-                  <b-img
-                    v-if="list.icon"
-                    class="me-2"
-                    width="28"
-                    :src="list.icon"
-                    :alt="list.text + ' logo'"
-                  />
-                  <span>{{ list.text }}</span>
-                </div>
-                <b-badge
-                  v-if="list.count"
-                  pill
-                  variant="secondary"
+      <!-- Capabilities -->
+      <section class="resume-section">
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >construction</i>
+          What I Can Do For You
+        </h4>
+        <b-row>
+          <b-col
+            v-for="(skillData, idx) in skills"
+            :key="idx"
+            sm="12"
+            :md="skillData.cols"
+            class="mb-3"
+          >
+            <b-card class="h-100">
+              <div class="skill-card-header">
+                <i class="material-icons skill-icon">{{ skillData.icon }}</i>
+                <b-card-title>{{ skillData.title }}</b-card-title>
+              </div>
+              <b-card-text>
+                <b-list-group
+                  v-if="skillData.layout !== 'grid'"
+                  flush
                 >
-                  {{ list.count }}
-                </b-badge>
-              </b-list-group-item>
-            </b-list-group>
-            <div
-              v-else
-              class="platforms-grid"
-            >
-              <span
-                v-for="(list, idxList) in skillData.lists"
-                :key="idxList"
-                class="platform-chip"
-              >
-                <b-img
-                  v-if="list.icon"
-                  width="20"
-                  :src="list.icon"
-                  :alt="list.text + ' logo'"
-                />
-                {{ list.text }}
-                <b-badge
-                  v-if="list.count"
-                  pill
-                  variant="secondary"
-                  class="ms-1"
-                >{{ list.count }}</b-badge>
-              </span>
+                  <b-list-group-item
+                    v-for="(list, idxList) in skillData.lists"
+                    :key="idxList"
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex align-items-center">
+                      <b-img
+                        v-if="list.icon"
+                        lazy
+                        class="me-2"
+                        width="28"
+                        :src="list.icon"
+                        :alt="list.text + ' logo'"
+                      />
+                      <span>{{ list.text }}</span>
+                    </div>
+                    <b-badge
+                      v-if="list.count"
+                      pill
+                      variant="secondary"
+                    >
+                      {{ list.count }}
+                    </b-badge>
+                  </b-list-group-item>
+                </b-list-group>
+                <div
+                  v-else
+                  class="platforms-grid"
+                >
+                  <span
+                    v-for="(list, idxList) in skillData.lists"
+                    :key="idxList"
+                    class="platform-chip"
+                  >
+                    <b-img
+                      v-if="list.icon"
+                      lazy
+                      width="20"
+                      :src="list.icon"
+                      :alt="list.text + ' logo'"
+                    />
+                    {{ list.text }}
+                    <b-badge
+                      v-if="list.count"
+                      pill
+                      variant="secondary"
+                      class="ms-1"
+                    >{{ list.count }}</b-badge>
+                  </span>
+                </div>
+              </b-card-text>
+            </b-card>
+          </b-col>
+        </b-row>
+      </section>
+
+      <!-- Contact (screen only — hidden in print) -->
+      <section
+        id="contact"
+        class="resume-section d-print-none"
+      >
+        <h4 class="section-label">
+          <i
+            aria-hidden="true"
+            class="material-icons"
+          >mail</i>
+          Get In Touch
+        </h4>
+        <b-card class="contact-card">
+          <form
+            v-if="contactStatus !== 'sent'"
+            class="contact-form"
+            @submit.prevent="submitContact"
+          >
+            <div class="contact-row">
+              <label>
+                Your name
+                <input
+                  v-model.trim="contactForm.name"
+                  type="text"
+                  name="name"
+                  required
+                  maxlength="100"
+                  autocomplete="name"
+                >
+              </label>
+              <label>
+                Your email
+                <input
+                  v-model.trim="contactForm.email"
+                  type="email"
+                  name="email"
+                  required
+                  maxlength="200"
+                  autocomplete="email"
+                >
+              </label>
             </div>
-          </b-card-text>
+            <label>
+              Message
+              <textarea
+                v-model.trim="contactForm.message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                maxlength="5000"
+              />
+            </label>
+            <!-- Honeypot: invisible to humans; bots that fill it are dropped -->
+            <label
+              class="hp-field"
+              aria-hidden="true"
+            >
+              Website
+              <input
+                v-model="contactForm.website"
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              >
+            </label>
+            <button
+              type="submit"
+              class="contact-submit"
+              :disabled="contactStatus === 'sending'"
+            >
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >send</i>
+              {{ contactStatus === 'sending' ? 'Sending…' : 'Send message' }}
+            </button>
+            <p
+              v-if="contactStatus === 'error'"
+              class="contact-error"
+              role="alert"
+            >
+              Sorry, the message could not be sent right now. Please try again in a
+              minute, or reach me on
+              <a
+                href="https://www.linkedin.com/in/hasil/"
+                target="_blank"
+                rel="noopener"
+              >LinkedIn</a>.
+            </p>
+          </form>
+          <div
+            v-else
+            class="contact-success"
+            role="status"
+          >
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >check_circle</i>
+            <p>
+              Thank you, {{ contactForm.name || 'friend' }} — your message is on its way.
+              I usually reply within a day or two.
+            </p>
+          </div>
         </b-card>
-      </b-col>
-    </b-row>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
-import _ from "lodash";
 import { projectsMixins } from "../mixins/projectsMixins.js";
 import { seoMixins } from "../mixins/seoMixins.js";
+import { profile } from "../content/profile.js";
+
+// Same-zone Worker route (see worker/README.md). The Worker relays the message
+// by email without the address ever appearing in client code.
+const CONTACT_ENDPOINT = "/api/contact";
+
 export default {
   mixins: [projectsMixins, seoMixins],
   data() {
     return {
+      profile,
+      contactForm: { name: "", email: "", message: "", website: "" },
+      contactStatus: "idle", // idle | sending | sent | error
       dimensions: [
         {
           icon: "phone_iphone",
@@ -242,127 +437,23 @@ export default {
           desc: "Led cross-functional teams, mentored developers, handled client relationships, and delivered across cultures and time zones.",
         },
       ],
-      timeline: [
-        {
-          title: "App Development Manager",
-          role: "App Development Manager",
-          company: "ConvergeStack",
-          companyUrl: "//www.convergestack.com/",
-          period: "Jan 2022 – Present",
-          variant: "primary",
-          description:
-            "Backend architecture and APIs, cloud and server management, and CI/CD with reproducible QA/staging environments. Leads cross-platform app development with React Native (Expo) and custom native modules in Swift and Kotlin (including SIP/WebRTC voice calling).",
-          tags: ["Backend & APIs", "React Native", "Expo", "Swift", "Kotlin", "AWS", "Cloudflare", "CI/CD"],
-        },
-        {
-          title: "Web Developer",
-          role: "Web Developer",
-          company: "View9 | Nepal",
-          companyUrl: "//view9.com.np",
-          period: "Jan 2019 – Dec 2021",
-          variant: "info",
-          description:
-            "Led backend development and bank/payment-gateway API integrations over SOAP and JSON with automated transaction tracking. Built fraud-detection and reporting dashboards and CMS sites; managed AWS/Laravel infrastructure and mentored junior developers.",
-          tags: ["Laravel", "AWS", "PHP", "API Integration", "SOAP/JSON"],
-        },
-        {
-          title: "Junior Android Developer",
-          role: "Part-time Junior Android Developer",
-          company: "Fixolla | India",
-          companyUrl: "//fixolla.com",
-          period: "Feb 2018 – Dec 2018",
-          variant: "success",
-          description:
-            "Worked on Android app and API development as part of an early-stage startup team.",
-          tags: ["Android", "Java", "REST APIs"],
-        },
-        {
-          title: "Security Analyst",
-          role: "Part-time Security Analyst",
-          company: "Fixolla | India",
-          companyUrl: "//fixolla.com",
-          period: "Sep 2017 – Feb 2018",
-          variant: "warning",
-          description:
-            "Data scraping from open sources, building company databases, and public speaking & promotional activities at colleges across Bangalore.",
-          tags: ["Data Scraping", "Public Speaking", "Research"],
-        },
-        {
-          title: "Service & Sales Engineer",
-          role: "Service and Sales Engineer",
-          company: "A2Z Laundry Solutions | India",
-          companyUrl: "//a2zlaundrysolutions.com",
-          period: "Dec 2016 – Dec 2018",
-          variant: "danger",
-          description:
-            "Set up and expanded laundry businesses across India. Authorized service engineer for Danube (France), Pony (Italy), SEKO (USA), Electrolux, Maytag, and Speedqueen.",
-          tags: ["Hardware", "Field Engineering", "Sales", "International Brands"],
-        },
-      ],
-      skills: [
-        {
-          title: "Software & Apps",
-          icon: "code",
-          cols: 7,
-          lists: [
-            { text: "Backend & APIs in Laravel (PHP), Node.js, and Deno" },
-            { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking" },
-            { text: "Fraud-detection admin panels (e.g. flagging multiple signups from one IP)" },
-            { text: "Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients" },
-            { text: "Content-managed (CMS) sites for non-technical clients" },
-            { text: "Full-stack web platforms — Vue.js front end, Laravel + AWS back end" },
-            { text: "Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS" },
-            { text: "Custom Expo native modules in Swift (iOS) and Kotlin (Android)" },
-            { text: "SIP/WebRTC voice calling via custom native modules" },
-            { text: "Apple TV apps with HomeKit integration" },
-            { text: "Serverless edge APIs with Cloudflare Workers" },
-            { text: "Self-hosted WebSocket services in PHP/Laravel" },
-            { text: "CI/CD pipelines with reproducible QA/staging environments" },
-            { text: "Container deployments — Podman, Nexus, Docker" },
-            { text: "Server automation — remote DB backups/restore, CRON jobs, queues" },
-            { text: "Self-hosted local LLMs + workflow automation (Activepieces)" },
-            { text: "Data scraping, processing, and ETL pipelines" },
-          ],
-        },
-        {
-          title: "Engineering & Hardware",
-          icon: "memory",
-          cols: 5,
-          lists: [
-            { text: "Electrical system design & simulation (AutoCAD, MiPower)" },
-            { text: "Portable IoT devices — RFID, physical sensors, Wi-Fi" },
-            { text: "Arduino-based hardware prototyping" },
-            { text: "Field service & commissioning of industrial machines" },
-            { text: "Project planning & scheduling (Primavera P6)" },
-          ],
-        },
-        {
-          title: "Creative & Writing",
-          icon: "create",
-          cols: 5,
-          lists: [
-            { text: "Original poetry — published on this site" },
-            { text: "Original quotes & reflections" },
-            { text: "Technical writing & documentation" },
-            { text: "UI/UX design with Figma and Photoshop" },
-          ],
-        },
-        {
-          title: "Tools I Work With",
-          icon: "build",
-          cols: 7,
-          lists: [
-            { text: "Android Studio" },
-            { text: "AutoCAD" },
-            { text: "Figma" },
-            { text: "IntelliJ IDEA / VS Code" },
-            { text: "MiPower" },
-            { text: "Photoshop" },
-            { text: "Primavera P6" },
-            { text: "Deno / Bun" },
-          ],
-        },
-      ],
+      // Facts come from src/content/profile.js — the single source of truth.
+      timeline: profile.career.map((c) => ({
+        title: c.title,
+        role: c.role,
+        company: c.company,
+        companyUrl: c.companyUrl,
+        period: c.period,
+        variant: c.variant,
+        description: c.summary,
+        tags: c.tags,
+      })),
+      skills: profile.capabilityGroups.map((g) => ({
+        title: g.title,
+        icon: g.icon,
+        cols: g.cols,
+        lists: g.items.map((text) => ({ text })),
+      })),
     };
   },
   created() {
@@ -400,8 +491,39 @@ export default {
       icon: "dns",
       cols: 12,
       layout: "grid",
-      lists: _.orderBy(technologies, ["count", "text"], ["desc", "asc"]),
+      lists: [...technologies].sort(
+        (a, b) => b.count - a.count || a.text.localeCompare(b.text)
+      ),
     });
+  },
+  methods: {
+    scrollToContact() {
+      const el = document.getElementById("contact");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    async submitContact() {
+      // Honeypot filled → almost certainly a bot; pretend success, send nothing.
+      if (this.contactForm.website) {
+        this.contactStatus = "sent";
+        return;
+      }
+      this.contactStatus = "sending";
+      try {
+        const res = await fetch(CONTACT_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: this.contactForm.name,
+            email: this.contactForm.email,
+            message: this.contactForm.message,
+          }),
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        this.contactStatus = "sent";
+      } catch {
+        this.contactStatus = "error";
+      }
+    },
   },
 };
 </script>
@@ -414,42 +536,52 @@ export default {
     margin-top: 85px !important;
   }
 
-  // ── Hero ──────────────────────────────────────────────────────────────────
-  .hero-card {
-    background: linear-gradient(135deg, var(--global-secondary-color) 0%, var(--global-card-bg) 60%);
-    border-radius: 20px !important;
+  // ── Resume sheet (paper-like container) ──────────────────────────────────
+  .resume-sheet {
+    max-width: 940px;
+    margin: 0 auto;
+    background: var(--global-card-bg);
+    border-radius: 20px;
     box-shadow: 0 6px 24px 0 var(--global-shadow-color);
+    padding: 36px 40px;
 
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      gap: 28px;
+    @media (max-width: 576px) {
+      padding: 22px 16px;
     }
+  }
 
-    .hero-avatar {
+  .resume-section {
+    margin-top: 28px;
+  }
+
+  // ── Header ────────────────────────────────────────────────────────────────
+  .resume-header {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--global-secondary-color);
+
+    .resume-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--global-secondary-color);
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       flex-shrink: 0;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 4px solid var(--global-secondary-color);
-        background: #fff;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      }
     }
 
     .hero-name {
       color: var(--global-primary-color);
       font-weight: 700;
       margin-bottom: 4px;
+      font-size: 2rem;
     }
 
-    .hero-tagline {
-      font-size: 1.1rem;
+    .resume-title {
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--global-primary-color);
       opacity: 0.8;
@@ -457,33 +589,46 @@ export default {
       text-transform: uppercase;
       margin-bottom: 12px;
     }
+  }
 
-    .hero-bio {
+  .resume-contact-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--global-primary-color);
-      font-size: 0.97rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
+      text-decoration: none;
+      border: 1px solid var(--global-shadow-color);
+      border-radius: 20px;
+      padding: 4px 14px;
+      transition: opacity 0.2s, transform 0.2s;
+
+      .material-icons { font-size: 1rem; color: var(--global-secondary-color); }
+
+      &:hover { opacity: 0.75; transform: translateY(-1px); }
     }
 
-    .hero-links {
-      display: flex;
-      gap: 20px;
+    .contact-chip-cta {
+      color: #fff;
+      border: none;
+      background: linear-gradient(135deg, var(--global-primary-color), var(--global-secondary-color));
 
-      .hero-link {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: var(--global-primary-color);
-        text-decoration: none;
-        transition: opacity 0.2s;
-
-        &:hover { opacity: 0.7; }
-
-        img { vertical-align: middle; }
-      }
+      .material-icons { color: #fff; }
     }
+  }
+
+  .resume-summary {
+    color: var(--global-primary-color);
+    font-size: 0.97rem;
+    line-height: 1.65;
+    margin: 0;
+    text-align: justify;
   }
 
   // ── Section labels ──────────────────────────────────────────────────────
@@ -494,38 +639,34 @@ export default {
     display: flex;
     align-items: center;
     gap: 8px;
+    font-size: 1.15rem;
 
     .material-icons {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       vertical-align: middle;
       color: var(--global-secondary-color);
     }
   }
 
-  // ── Dimension cards ─────────────────────────────────────────────────────
-  .dimension-card {
-    text-align: center;
-    padding: 8px;
-    border: none;
-    box-shadow: 0 2px 12px 0 var(--global-shadow-color);
-    background-color: var(--global-card-bg);
-    transition: transform 0.25s;
-
-    &:hover { transform: translateY(-4px); }
+  // ── Core strengths ──────────────────────────────────────────────────────
+  .strength-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
 
     .dim-icon {
-      width: 56px;
-      height: 56px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--global-primary-color) 0%, var(--global-secondary-color) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 12px;
+      flex-shrink: 0;
 
       .material-icons {
         color: #fff;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -533,7 +674,7 @@ export default {
       color: var(--global-secondary-color);
       font-weight: 700;
       font-size: 1rem;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
 
     .dim-desc {
@@ -547,7 +688,7 @@ export default {
   // ── Timeline ─────────────────────────────────────────────────────────────
   .timeline-container {
     position: relative;
-    margin-left: 20px;
+    margin-left: 8px;
     padding-left: 24px;
     border-left: 3px solid var(--global-secondary-color);
   }
@@ -555,8 +696,10 @@ export default {
   .timeline-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     position: relative;
+
+    &:last-child { margin-bottom: 0; }
   }
 
   .timeline-dot {
@@ -565,7 +708,7 @@ export default {
     min-width: 16px;
     border-radius: 50%;
     margin-right: 18px;
-    margin-top: 10px;
+    margin-top: 6px;
     border: 3px solid var(--global-card-bg);
     box-shadow: 0 0 0 3px var(--global-secondary-color);
     flex-shrink: 0;
@@ -578,10 +721,6 @@ export default {
   }
 
   .timeline-content {
-    background: var(--global-card-bg);
-    border-radius: 12px;
-    box-shadow: 0 2px 10px 0 var(--global-shadow-color);
-    padding: 14px 18px;
     flex: 1;
   }
 
@@ -632,10 +771,15 @@ export default {
     color: #fff;
   }
 
+  // ── Education ────────────────────────────────────────────────────────────
+  .education-item {
+    padding-left: 8px;
+  }
+
   // ── Skill cards ──────────────────────────────────────────────────────────
   .card {
-    border: none;
-    box-shadow: 0 2px 12px 0 var(--global-shadow-color);
+    border: 1px solid var(--global-shadow-color);
+    box-shadow: none;
     background-color: var(--global-card-bg);
 
     .list-group-item {
@@ -678,7 +822,7 @@ export default {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: rgba(128,128,128,0.08);
+      background: rgba(128, 128, 128, 0.08);
       border: 1px solid var(--global-shadow-color);
       border-radius: 20px;
       padding: 4px 12px;
@@ -686,7 +830,138 @@ export default {
       color: var(--global-primary-color);
       transition: background 0.2s;
 
-      &:hover { background: rgba(128,128,128,0.16); }
+      &:hover { background: rgba(128, 128, 128, 0.16); }
+    }
+  }
+
+  // ── Contact form ─────────────────────────────────────────────────────────
+  .contact-card {
+    border: 1px solid var(--global-shadow-color);
+  }
+
+  .contact-form {
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--global-primary-color);
+    }
+
+    input,
+    textarea {
+      border: 1px solid var(--global-shadow-color);
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: var(--global-bg);
+      color: var(--global-primary-color);
+
+      &:focus {
+        outline: 2px solid var(--global-secondary-color);
+        outline-offset: 1px;
+        border-color: transparent;
+      }
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 14px;
+
+      @media (max-width: 576px) {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+
+    // Honeypot: moved off-screen (display:none would let smarter bots skip it)
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+    }
+
+    .contact-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--global-primary-color), var(--global-secondary-color));
+      border: none;
+      border-radius: 20px;
+      padding: 9px 26px;
+      font-weight: 600;
+
+      &:disabled { opacity: 0.6; }
+      &:hover:not(:disabled) { transform: translateY(-1px); }
+
+      .material-icons { font-size: 1.1rem; }
+    }
+
+    .contact-error {
+      margin: 12px 0 0;
+      font-size: 0.9rem;
+      color: #dc3545;
+    }
+  }
+
+  .contact-success {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--global-primary-color);
+
+    .material-icons {
+      color: #28a745;
+      font-size: 2rem;
+    }
+
+    p { margin: 0; }
+  }
+}
+
+// ── Print: the page IS the resume ──────────────────────────────────────────
+@media print {
+  #hire-hasil {
+    margin-top: 0 !important;
+
+    // Everything inherits the CSS variables, so force a paper palette once.
+    --global-primary-color: #111;
+    --global-secondary-color: #444;
+    --global-card-bg: #fff;
+    --global-bg: #fff;
+    --global-shadow-color: #bbb;
+
+    .resume-sheet {
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .resume-section { margin-top: 18px; }
+
+    .timeline-item,
+    .strength-item,
+    .card { page-break-inside: avoid; }
+
+    .card { box-shadow: none; }
+
+    // Chips/dots rely on backgrounds that printers drop — keep outlines only
+    .contact-chip { border: 1px solid #bbb; }
+    .dim-icon { background: #eee !important; .material-icons { color: #111; } }
+    .timeline-dot { box-shadow: 0 0 0 3px #444; background: #fff !important; }
+    .timeline-tags .badge {
+      background: #fff !important;
+      color: #111 !important;
+      border: 1px solid #999;
     }
   }
 }

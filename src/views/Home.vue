@@ -26,18 +26,24 @@
         <!-- Who am I? -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">sentiment_satisfied_alt</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >sentiment_satisfied_alt</i>
             Who am I?
           </b-card-title>
           <b-card-text class="justified bio-text">
-            Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical & Electronics Engineering, I have expertise in design, web development, management, electrical repair, and electronics simulation. Beyond technology, I write poems, share quotes, and experiment with cloud-based data.
+            {{ profile.bioFirstPerson }}
           </b-card-text>
         </b-card>
 
         <!-- Skills Rings -->
         <b-card class="mb-4 section-card skills-section">
           <b-card-title>
-            <i class="material-icons">equalizer</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >equalizer</i>
             Skills Overview
           </b-card-title>
           <b-row class="g-4 justify-content-center">
@@ -69,7 +75,10 @@
                   />
                 </svg>
                 <div class="ring-inner">
-                  <i class="material-icons">{{ skill.icon }}</i>
+                  <i
+                    aria-hidden="true"
+                    class="material-icons"
+                  >{{ skill.icon }}</i>
                   <strong>{{ skill.percent }}%</strong>
                 </div>
               </div>
@@ -83,7 +92,10 @@
         <!-- What do I do? -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">work</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >work</i>
             What do I do?
           </b-card-title>
           <div class="career-list">
@@ -113,13 +125,19 @@
         <!-- Highlighted Projects -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">all_inbox</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >all_inbox</i>
             Highlighted Projects
             <router-link
               class="float-end view-all-btn"
               to="/projects"
             >
-              <i class="material-icons">arrow_forward</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >arrow_forward</i>
             </router-link>
           </b-card-title>
           <b-row class="g-3">
@@ -148,6 +166,7 @@
                       :key="i"
                     >
                       <b-img
+                        lazy
                         class="mx-1"
                         width="32"
                         :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
@@ -187,7 +206,10 @@
         <!-- What can I do? -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">help</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >help</i>
             What can I do?
           </b-card-title>
           <div class="capabilities-grid">
@@ -205,13 +227,19 @@
         <!-- Best Quotes -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">star</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >star</i>
             Best Quotes
             <router-link
               class="float-end view-all-btn"
               to="/quotes"
             >
-              <i class="material-icons">arrow_forward</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >arrow_forward</i>
             </router-link>
           </b-card-title>
           <b-row class="g-3">
@@ -244,13 +272,19 @@
         <!-- Best Poems -->
         <b-card class="mb-4 section-card">
           <b-card-title>
-            <i class="material-icons">favorite</i>
+            <i
+              aria-hidden="true"
+              class="material-icons"
+            >favorite</i>
             Best Poems
             <router-link
               class="float-end view-all-btn"
               to="/poems"
             >
-              <i class="material-icons">arrow_forward</i>
+              <i
+                aria-hidden="true"
+                class="material-icons"
+              >arrow_forward</i>
             </router-link>
           </b-card-title>
           <b-row class="g-3">
@@ -300,11 +334,13 @@ import { seoMixins } from "../mixins/seoMixins.js"
 import { projectsMixins } from "../mixins/projectsMixins.js";
 import { quotesMixins } from "../mixins/quotesMixins.js";
 import { poemsMixins } from "../mixins/poemsMixins.js";
+import { profile } from "../content/profile.js";
 
 export default {
   mixins: [seoMixins, projectsMixins, quotesMixins, poemsMixins],
   data() {
     return {
+      profile,
       ringsAnimated: false,
       highlightedProjects: [],
       bestQuotes: [],
@@ -318,43 +354,15 @@ export default {
         { label: 'Creative Writing', percent: 70, icon: 'create',     offset: 75.4 },
       ],
 
-      jobHistory: [
-        {
-          title: "App Development Manager at ConvergeStack",
-          company: "ConvergeStack",
-          url: "//www.convergestack.com/",
-          period: "Jan 2022 – Present",
-          desc: "As project lead, I shape backend architecture and APIs with the team — guiding data models and algorithm implementation — and manage cloud servers and deployment. I build cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ship production-ready Android and iOS releases. I also set up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs."
-        },
-        {
-          title: "Web Developer at View9 | Nepal",
-          company: "View9",
-          url: "//view9.com.np",
-          period: "Jan 2019 – Dec 2021 · 2 yrs 11 mos",
-          desc: "I led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. I built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. On the operations side I set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issues."
-        },
-        {
-          title: "Part-time Junior Android Developer at Fixolla | India",
-          company: "Fixolla",
-          url: "//fixolla.com",
-          period: "Feb 2018 – Dec 2018 · 11 mos",
-          desc: "I worked with the Android development team, gaining experience in app and API development."
-        },
-        {
-          title: "Part-time Security Analyst at Fixolla | India",
-          company: "Fixolla",
-          url: "//fixolla.com",
-          period: "Sep 2017 – Feb 2018 · 6 mos",
-          desc: "As a security analyst, I assisted in data scraping from open sources to build company databases and participated in public speaking and promotional activities at colleges in Bangalore."
-        },
-        {
-          title: "Service and Sales Engineer at A2Z Laundry Solutions | India",
-          company: "A2Z Laundry Solutions",
-          url: "//a2zlaundrysolutions.com",
-          period: "Dec 2016 – Dec 2018 · 2 yrs 1 mo",
-          desc: `I set up and expanded laundry businesses across India, serving as an authorized service engineer for brands such as <a href="//www.danube-international.com" target="_blank">Danube International (France)</a>, <a href="//ponyitaly.com" target="_blank">Pony (Italy)</a>, and <a href="//www.seko.com" target="_blank">SEKO (USA)</a>. I also worked with <a href="//www.electroluxgroup.com" target="_blank">Electrolux (Sweden)</a>, <a href="//www.maytag.com" target="_blank">Maytag (USA)</a>, <a href="//speedqueen.com" target="_blank">Speedqueen (USA)</a>, <a href="//hydrosystemsco.com" target="_blank">Hydrosystems (USA)</a>, <a href="//www.seitz24.com" target="_blank">SEITZ (Germany)</a>, and <a href="//sunrisegmpl.com" target="_blank">Sunrise (India)</a>.`
-        },
-      ],
+      // Career facts come from src/content/profile.js (single source of truth);
+      // `story` is the first-person telling used only on this page.
+      jobHistory: profile.career.map((c) => ({
+        title: `${c.role} at ${c.company}`,
+        company: c.companyLabel,
+        url: c.companyUrl,
+        period: c.periodLong,
+        desc: c.story,
+      })),
 
       whatCanIDo: [
         { text: "Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking", icon: "account_balance" },

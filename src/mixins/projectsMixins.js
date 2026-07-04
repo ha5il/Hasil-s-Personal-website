@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { shuffle } from "../utils.js";
 
 const projects = [
     {
@@ -956,7 +956,7 @@ const projects = [
 export const projectsMixins = {
     methods: {
         getAllProjects() {
-            return _.shuffle(projects.map(row => pick(row, [
+            return shuffle(projects.map(row => pick(row, [
                 'name', 'tagLine', 'coverImage', 'technologies',
                 'type', 'urlSlug', 'id', 'contributionLevels'
             ])));

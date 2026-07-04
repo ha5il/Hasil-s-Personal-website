@@ -55,8 +55,12 @@ const router = createRouter({
       }
     },
     {
+      // Real 404 view (no redirect-to-home: that was a soft-404 for crawlers).
+      // The prerenderer snapshots this route as dist/404.html, which Cloudflare
+      // Pages serves with a true 404 status for any unknown URL.
       path: '/:pathMatch(.*)*',
-      redirect: { name: 'home' }
+      name: 'not-found',
+      component: () => import('@/views/NotFound.vue')
     }
   ]
 })

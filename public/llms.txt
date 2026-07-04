@@ -2,7 +2,7 @@
 
 > Personal portfolio of Hasil Paudyal: App Development Manager, React Native / Expo developer, web developer, electrical engineer, hardware builder, and original poet. Based in Kathmandu, Nepal.
 
-> Last updated: 2026-06-12
+> Last updated: 2026-07-04
 
 ## About
 
@@ -17,45 +17,49 @@ GitHub: https://github.com/ha5il
 
 - Backend & APIs in Laravel (PHP), Node.js, and Deno
 - Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking
-- Fraud-detection admin panels and reporting/analytics dashboards for courier/logistics clients
+- Fraud-detection admin panels (e.g. flagging multiple signups from one IP)
+- Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients
 - Content-managed (CMS) sites for non-technical clients
-- Full-stack web platforms in JavaScript/TypeScript (Vue.js, Laravel, AWS EBS, RDS, S3, Lambda)
-- Mobile apps — React Native (Expo) for iOS and Android, with custom native modules in Swift and Kotlin
-- SIP/WebRTC voice calling via custom Expo native modules
-- Apple TV apps with HomeKit device integration
-- Serverless edge APIs and workers with Cloudflare Workers
-- CI/CD pipelines and reproducible QA/staging environments
-- Server automation — remote DB backups/restore, CRON jobs, queues
-- Self-hosted local LLMs + workflow automation (Activepieces) for internal tasks
+- Full-stack web platforms — Vue.js front end, Laravel + AWS back end
+- Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS
+- Custom Expo native modules in Swift (iOS) and Kotlin (Android)
+- SIP/WebRTC voice calling via custom native modules
+- Apple TV apps with HomeKit integration
+- Serverless edge APIs with Cloudflare Workers
+- Self-hosted WebSocket services in PHP/Laravel
+- CI/CD pipelines with reproducible QA/staging environments
 - Container deployments — Podman, Nexus, Docker
+- Server automation — remote DB backups/restore, CRON jobs, queues
+- Self-hosted local LLMs + workflow automation (Activepieces)
+- Data scraping, processing, and ETL pipelines
 - IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
 - Original poetry and prose writing
 
 ## Site Sections
 
 - [Home](https://hasilpaudyal.com.np/) — Bio, career history, highlighted projects, featured quotes and poems
-- [Projects](https://hasilpaudyal.com.np/projects) — IT projects and Electrical/Electronics projects with tech stacks and contribution breakdowns
+- [Projects](https://hasilpaudyal.com.np/projects) — 19 IT projects and 4 Electrical/Electronics projects with tech stacks and contribution breakdowns
 - [Quotes](https://hasilpaudyal.com.np/quotes) — 11 original quotes authored by Hasil Paudyal
-- [Poems](https://hasilpaudyal.com.np/poems) — Original poems including acrostic, philosophical, and lyrical pieces
-- [Hire Me](https://hasilpaudyal.com.np/hire-Hasil) — Full career timeline, skills across engineering and creative domains, and collaboration contact
+- [Poems](https://hasilpaudyal.com.np/poems) — 10 original poems including acrostic, philosophical, and lyrical pieces
+- [Hire Me](https://hasilpaudyal.com.np/hire-Hasil) — Resume-style page: full career timeline, education, skills across engineering and creative domains, and a contact form
 
 ## Key IT Projects
 
-- **BriefBoard** — KPI dashboard mobile app (iOS + Android), published to App Store and Google Play. React Native / Expo.
-- **Legal Remit** — Real-time international remittance web platform. Laravel, AWS EBS, RDS.
-- **VoIP Calls** — SIP and WebRTC call app with custom Expo native modules in Swift and Kotlin.
-- **KTM Retail** — E-commerce for Jockey/Dixey Nepal. Vue.js, Laravel.
-- **Strata Tender Management** — Tender creation and bidding portal. Laravel, Vue.js, AWS.
-- **Community Events** — React Native app for creating and joining community events.
-- **Limbu Dictionary** — Free online Limbu–English–Nepali dictionary. React Native, WordPress API.
-- **Reachon** — Digital education platform with real-time features. Vue.js, Socket.io.
+- **BriefBoard** — Your key metrics at a glance — a premium mobile KPI dashboard. Technologies: React Native, Expo.
+- **Legal Remit** — Remittance website for money transfers. Technologies: Laravel, jQuery, AWS.
+- **VoIP Calls** — Local IP based call app Technologies: React Native, Expo, Swift, Java.
+- **KTM Retail** — Vue.js-based e-commerce website. Technologies: Vuejs, Laravel.
+- **Tender Management** — Draft, publish, bid and award for public and private tenders. Technologies: Laravel, Vuejs, AWS.
+- **Community Events** — Create, invite and enjoy events happening in your community. Technologies: Spring Boot, React Native, Expo, AWS, Firestore.
+- **Limbu Dictionary** — A FREE online dictionary to quickly search Limbu meanings in English and Nepali words. Technologies: React Native.
+- **ReachOn** — Digital Education For All Technologies: Laravel, Socket, Vuejs.
 
 ## Electrical & Electronics Projects
 
-- RFID Limiter — Arduino Uno device limiting RFID scan frequency
-- RABC Analyser — Windows console app for Danube International washer extractor analysis
-- Electricity Thief Detector — Automatic supply-line remover circuit
-- Device Performance Tracker — Real-time electrical device performance analyser
+- RFID Limiter — An Arduino UNO based project for limiting the RFID Scans.
+- RABC Analyser — Windows console based app for extracting the total washes done in Danube Washer. Also C# based GUI app is partially developed!
+- Electrical Thief Eliminator — This device detects, locates and terminates the electricity thief from the supply line.
+- Electrical Performance Analyser — An Arduino UNO based project for realtime data recording and analysis.
 
 ## Technologies
 

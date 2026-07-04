@@ -1,8 +1,8 @@
 # Hasil Paudyal — Full Site Content
 
-> This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np.
+> This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np. Generated from the site's data — do not edit by hand.
 
-> Last updated: 2026-06-12
+> Last updated: 2026-07-04
 
 ---
 
@@ -24,127 +24,178 @@
 ### App Development Manager — ConvergeStack, Kathmandu (Jan 2022 – Present)
 As project lead, shapes backend architecture and APIs with the team — guiding data models and algorithm implementation — and manages cloud servers and deployment. Builds cross-platform mobile apps with React Native (Expo), including custom native modules in Swift (iOS) and Kotlin (Android) for capabilities like SIP/WebRTC voice calling, and ships production-ready Android and iOS releases. Also sets up CI/CD pipelines, reproducible QA/staging environments, and internal workflow automation with self-hosted local LLMs.
 
-### Web Developer — View9, Nepal (Jan 2019 – Dec 2021, 2 years 11 months)
+### Web Developer — View9, Nepal (Jan 2019 – Dec 2021, 2 yrs 11 mos)
 Led backend development, integrating server-to-server APIs for banks and payment gateways — remittance, payments, and verification over SOAP and JSON — with automated transaction tracking. Built fraud-detection admin panels (such as flagging multiple signups from a single IP), reporting and analytics dashboards for courier/logistics clients, and content-managed sites for non-technical clients. Set up scheduling, queues, recurring jobs, and remote database backups on AWS and Laravel, and mentored junior teammates on server setup and production issue handling.
 
-### Part-time Junior Android Developer — Fixolla, India (Feb 2018 – Dec 2018, 11 months)
+### Part-time Junior Android Developer — Fixolla, India (Feb 2018 – Dec 2018, 11 mos)
 Worked with the Android development team on app and API development.
 
-### Part-time Security Analyst — Fixolla, India (Sep 2017 – Feb 2018, 6 months)
+### Part-time Security Analyst — Fixolla, India (Sep 2017 – Feb 2018, 6 mos)
 Assisted in data scraping from open sources to build company databases. Participated in public speaking and promotional activities at colleges in Bangalore.
 
-### Service and Sales Engineer — A2Z Laundry Solutions, India (Dec 2016 – Dec 2018, 2 years 1 month)
+### Service and Sales Engineer — A2Z Laundry Solutions, India (Dec 2016 – Dec 2018, 2 yrs 1 mo)
 Set up and expanded laundry businesses across India. Authorised service engineer for Danube International (France), Pony (Italy), SEKO (USA), Electrolux (Sweden), Maytag (USA), Speedqueen (USA), Hydrosystems (USA), SEITZ (Germany), and Sunrise (India).
 
 ---
 
 ## Education
 
-**B.E. Electrical & Electronics Engineering** — New Horizon College of Engineering, Bangalore (2013–2017)
+**B.E. Electrical & Electronics Engineering** — New Horizon College of Engineering, Bangalore, India (2013 – 2017)
 
 ---
 
 ## Capabilities
 
-Capability depth, strongest first: Backend & APIs, Mobile, Cloud/DevOps, Frontend.
-
+### Software & Apps
 - Backend & APIs in Laravel (PHP), Node.js, and Deno
-- Bank & payment-gateway integrations over SOAP and JSON (remittance, payment, verification), with automated transaction tracking
+- Bank & payment-gateway integrations over SOAP and JSON, with automated transaction tracking
 - Fraud-detection admin panels (e.g. flagging multiple signups from one IP)
-- Reporting & analytics dashboards (monthly sales + operational reports) for courier/logistics clients
-- Content-managed (CMS) sites for non-technical clients — banners, homepage copy, page sections
+- Reporting & analytics dashboards (sales + operational reports) for courier/logistics clients
+- Content-managed (CMS) sites for non-technical clients
 - Full-stack web platforms — Vue.js front end, Laravel + AWS back end
 - Hybrid mobile apps in JavaScript/TypeScript — React Native (Expo) for Android & iOS
 - Custom Expo native modules in Swift (iOS) and Kotlin (Android)
-- SIP/WebRTC voice calling via custom Expo native modules
+- SIP/WebRTC voice calling via custom native modules
 - Apple TV apps with HomeKit integration
 - Serverless edge APIs with Cloudflare Workers
 - Self-hosted WebSocket services in PHP/Laravel
-- CI/CD pipelines and reproducible QA/staging environments
+- CI/CD pipelines with reproducible QA/staging environments
 - Container deployments — Podman, Nexus, Docker
-- Server automation — remote database backups/restore, CRON jobs, queues
-- Self-hosted local LLMs + workflow automation (e.g. Activepieces) for internal tasks
-- IoT hardware — RFID, physical sensors, Arduino, Wi-Fi based devices
+- Server automation — remote DB backups/restore, CRON jobs, queues
+- Self-hosted local LLMs + workflow automation (Activepieces)
 - Data scraping, processing, and ETL pipelines
+
+### Engineering & Hardware
+- Electrical system design & simulation (AutoCAD, MiPower)
+- Portable IoT devices — RFID, physical sensors, Wi-Fi
+- Arduino-based hardware prototyping
+- Field service & commissioning of industrial machines
+- Project planning & scheduling (Primavera P6)
+
+### Creative & Writing
+- Original poetry — published on this site
+- Original quotes & reflections
+- Technical writing & documentation
+- UI/UX design with Figma and Photoshop
+
+### Tools I Work With
+- Android Studio
+- AutoCAD
+- Figma
+- IntelliJ IDEA / VS Code
+- MiPower
+- Photoshop
+- Primavera P6
+- Deno / Bun
 
 ---
 
 ## IT Projects
 
-### BriefBoard
-KPI dashboard mobile app published on App Store and Google Play. Built with React Native / Expo. Displays business metrics and key performance indicators.
-App Store: https://apps.apple.com/id/app/briefboard/id6757684014
-Play Store: https://play.google.com/store/apps/details?id=com.convergestack.briefboard
-
-### Legal Remit
-Real-time international remittance web platform. Technologies: Laravel, AWS Elastic Beanstalk, RDS, S3.
-
-### VoIP Calls
-SIP and WebRTC based call app with custom Expo native modules written in Swift (iOS) and Kotlin (Android). Local IP based calling.
-
-### KTM Retail (Jockey / Dixey Nepal)
-E-commerce website for Jockey and Dixey Nepal. Technologies: Vue.js, Laravel.
+### KTM Retail
+KTM Retail is created for the authorized dealer of Jockey and Dixey in Nepal. The website and mobile app allow users to purchase items with digital payment and track their status. It also has reliable options for admin to activate offers and flash sales during festivals.
+Technologies: Vuejs, Laravel.
 
 ### Intranery
-Online stationery and multi-product marketplace for dealers, similar to Daraz. Aimed at door-to-door delivery across Nepal. Technologies: Vue.js, Laravel.
-
-### Strata Tender Management
-Tender creation and bidding portal. Technologies: Laravel, Vue.js, AWS.
-
-### Community Events
-React Native app for creating, inviting, and enjoying community events. Technologies: React Native, Backend API, Frontend.
-
-### Limbu English-Nepali Dictionary
-Free online dictionary for searching Limbu meanings in English and Nepali. Technologies: Native Framework, WordPress.
+Intranery Online means buying or purchasing stationery and other products online (The Internet Technology). Today, the development of technology is increasing rapidly in the world. The internet has turned our existence upside down. It has revolutionized communication, to the extent that is now our preferred medium of everyday communication. In almost everything we do today, we use the Internet. Ordering a pizza, buying a television, sharing a moment with a friend and many more.
+Technologies: Vuejs, Laravel.
 
 ### Foreveryng
-Online beauty store for Nepal. E-commerce website. Technologies: Vue.js, Laravel, API.
+The project is created to replace the WordPress site crafted with WooCommerce. Since WooCommerce is not targeted to the Nepalese market, we had to build a better platform than that.
+Technologies: Laravel.
+Website: https://foreveryng.com
 
 ### Kourtier Courier
-Web app for courier tracking management. Technologies: Vue.js, Laravel, Teammates.
-
-### Discount Card
-Discounts, coupons, and entertainment for every age group. Technologies: Vue.js, API, Backend, Merchant integrations.
-
-### Indigo Ink
-Book gallery page for a book publisher with events management. Technologies: Laravel, PHP.
-
-### Short Vids
-Short entertaining videos app to make your day. Technologies: Vue.js.
+Kourtier Couriers Pvt. Ltd. was established in 1997 by Mr. Pawan Kishore Rathi with a group of professionals who have over a decade of experience in their respective fields. Today, Kourtier is the leading and the largest network courier service provider in Nepal covering a self-network of more than 130 service stations around Nepal with a strong and well-set-up delivery structure in Kathmandu valley. The Company is running with advanced and scientific management using world-class technology and having quality manpower. Kourtier has come up with a fresh team and technology to address your customized requirements and by more than a decade and a half long experience, we are aware of the type and sensitivity of consignment; the process of delivery; standard POD requirements and delivery schedule structure. Kourtier has the required infrastructure, manpower, expertise, and technology to do such activities smoothly.
+Technologies: Laravel, jQuery.
+Website: https://kourtiercourier.com.np
 
 ### Mero Pharmacist
-Pharma SRS and online enquiry platform.
+Meropharmacist is the first of its kind to provide counseling to the patients on the medicines they are taking. Lack of awareness regarding medicine use is a serious problem in Nepal, with almost every Nepali lacking the right information about 'what and how' on their medicines. Time and again, this has resulted in serious medicine-related concerns like drug overuse, misuse, adverse drug reactions, and lack of patient compliance.
+Technologies: Laravel.
+Website: https://meropharmacist.com
 
-### CMS Website
-Content management website for Nepal.
+### CMS Site
+October CMS based website to publish news, articles and blogs.
+Technologies: October CMS.
 
-### Employee Records Directory
-Employee records directory built with Laravel and Vue.js.
+### Fixolla
+Fixolla takes gadget repairing to the next level. Their innovative backend system and unparalleled customer care for smartphones and laptops ensure 100% customer satisfaction. From a broken screen to a frozen OS, they fix it all.
+Technologies: Java, Laravel, Android Studio.
+
+### Legal Remit
+Legal Remit in one of few realtime international remit transfers working for Nepal. Transferring money is optimized with KYC, documents validation and assigning to banks. The web app also keeps record a of deposits made to banks between countries.
+Technologies: Laravel, jQuery, AWS.
+Website: https://legalremit.com
+
+### Limbu Dictionary
+WordPress provides API service. The app uses it to list post, search them and view details. Also, there are some static supporting pages.
+Technologies: React Native.
+Website: https://apps.apple.com/us/app/limbu-dictionary/id1491522563
+
+### Indigo Ink
+Indigo Ink book publisher comes online with a book gallery. They also have a system to publish the events they regularly organize.
+Technologies: October CMS.
+
+### Employee Records
+Provides an easy and fast search of employees in several departments within the company.
+Technologies: Vuejs, Laravel.
 
 ### Amour Production House
-Website for a production house built with OctoberCMS.
+Website built for the Production house to highlight its portfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes a restricted area where the visitor has to enter access code to proceed.
+Technologies: October CMS.
 
-### Reachon
-Digital education platform with real-time features. Technologies: Vue.js, Socket.io, Nepal.
+### ReachOn
+ReachOn is the digital education platform with the vision to create an education system where every student has the same opportunities. Education is all about accessibility and equality but different student left their class with different level of understanding and face many problems with the current education system.
+Technologies: Laravel, Socket, Vuejs.
 
-### Fixolla India
-Website for Fixolla — simplifying lives through repair services (mobile, tablet, laptop).
+### Discount Card
+An subscription based card model that keeps track of discounts provided by restaurants to its customers.
+Technologies: CodeIgniter, Vuejs.
+
+### Short Vids
+This app is similar to popular short videos sharing apps. We have optimized the backend for AWS with content caching for faster operations.
+Technologies: Laravel, Vuejs, AWS.
+
+### Tender Management
+This includes portal for managers and contractors for tender creation and bidding. Super Admin portal is currently developed for license verification with 3rd party api and account activation.
+Technologies: Laravel, Vuejs, AWS.
+
+### Community Events
+Expo managed React Native app for creating events and sharing to the community. This app also includes chat feature implemented using firestore database provided by Google Firebase.
+Technologies: Spring Boot, React Native, Expo, AWS, Firestore.
+
+### VoIP Calls
+App is used for establishing VoIP calls between users in the local network in react native. A prototype for the same using WebRTC was also built.
+Technologies: React Native, Expo, Swift, Java.
+
+### BriefBoard
+BriefBoard is a premium mobile dashboard app that transforms complex business data into accessible insights at a glance. Engineered for non-technical users while leveraging advanced mobile design patterns, it simplifies performance monitoring for teams across SaaS, Retail, Healthcare, Fintech, and Logistics.
+Technologies: React Native, Expo.
+Website: https://apps.apple.com/id/app/briefboard/id6757684014
 
 ---
 
 ## Electrical & Electronics Projects
 
-### RFID Limiter — Arduino Uno
-Portable hardware device that limits the frequency of RFID scans. Built with Arduino Uno, RFID reader, and custom firmware.
+### RFID Limiter
+Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with an option to limit the number of authorizations to the individual cardholder. After (n) number of scans, the device revokes the access unless re-authorized by system head.
+Technologies: Arduino.
+Source code: https://github.com/ha5il/RFID-Limiter
 
-### RABC Analyser — Windows Console App
-Windows console application for analysing Danube International washer extractor data. RABC = Risk Analysis and Biocontamination Control.
+### RABC Analyser
+Danube International Washer-Extractor keeps the record of washes done in the machine with the timestamp. The app is made to calculate total kgs of washes done by machine to report the laundry owner so that he can cross-check it with revenue collected.
+Technologies: Visual Studio.
+Source code: https://github.com/ha5il/RABC-Analyser
 
-### Electricity Thief Automatic Remover
-Circuit that automatically detects and disconnects electricity theft from supply lines.
+### Electrical Thief Eliminator
+A novel system has been devised to eliminate power theft by automatic release of high voltage pulse in the transmission line in response to the command received by the remote termination unit (high voltage source) from arduino in the event of theft being detected. Due to high voltage pulse in the transmission lines, the pilferer's appliances drawing powers illegally by way of tapping get impaired. This operation is transient (for 1-5 seconds) and during this time the supply of voltage for the normal consumers is kept suspended. However, in case of emergency, i.e., when the normal supply cannot be disturbed, the bypass mode is activated so that consumers continue to get un-interrupted power supply, and during this period the process of theft elimination is kept suspended. The actual working of this novel system has been demonstrated by simulating the process in Proteus 8.6. The process thus developed is effective and reliable.
+Technologies: Arduino.
 
-### Electrical Device Performance Tracker
-Real-time analyser and tracker for electrical device performance metrics.
+### Electrical Performance Analyser
+Electrical performance analysis includes crucial for advancement of any system in future to the necessary practical level. This project is carried out with an objective to carry out performance analysis of some electrical devices like transformer, motor, generator in terms of its speed, temperature, voltage and current the parameters of respective device is recorded using dedicated sensors deployed across the project module. The project module includes the runtime java application along with Arduino interface environment which automatically detects the faults across the electrical devices and classifies it with the fault details. Based on the specifications of the devices, the pre set value for sensors is modified using Java and Arduino interface such that it automatically detects basic faults. Moreover, analysis of continuous data collected in periodic intervals from several motors helps in improvising them to the latest industrial demand.
+Technologies: Arduino, PHP.
+Source code: https://github.com/ha5il/Electrical-Performance-Analyzer
 
 ---
 
@@ -156,17 +207,17 @@ Real-time analyser and tracker for electrical device performance metrics.
 
 3. "Life for me is just a result of experiments being performed by far more developed creatures."
 
-4. "Dream big! But not so big that it becomes a mess, and you may never reach reality."
+4. "Dream big! / But not so big that it becomes a mess, and you may never reach reality."
 
 5. "Dreaming of getting you / I loosed everything / Cheerfulness of smile / And all the dreams of life"
 
 6. "Give me another Chance / Then, / You will Get / Less than I Gain..."
 
-7. "When I was small I felt like a Superhero as my father threw me up in the air. Now after reaching this success peak I unmask - Real Superhero made me Superhero!"
+7. "When I was small I felt like a Superhero as my father threw me up in the air. / Now after reaching this success peak I unmask - Real Superhero made me Superhero!"
 
-8. "Congratulations to your mom and dad for birth of a sweet child! Sorry that I couldn't wish them when you were born."
+8. "Congratulations to your mom and dad for birth of a sweet child! /  / Sorry that I couldn't wish them when you were born."
 
-9. "Oh great! I never recognized Sunshine shining me, within me."
+9. "Oh great! / I never recognized Sunshine shining me, within me."
 
 10. "I will miss you / not because you taught me, / not because you helped me on all steps of education; / but only because / you made me a leader to lead as an perfect Electrical Engineer."
 
@@ -176,7 +227,7 @@ Real-time analyser and tracker for electrical device performance metrics.
 
 ## Original Poems by Hasil Paudyal
 
-### It's Me (Acrostic: H.A.S.I.L. P.A.U.D.Y.A.L.)
+### It's Me
 
 Here I am / A cut above you all / Silent as a grave / In favour of your death
 
@@ -200,7 +251,7 @@ Give me another Chance / Then, / You will Get / Less than I Gain...
 
 ---
 
-### Greed, Love, Genius and Peace
+### Greed, love, genius and peace
 
 The world doesn't seems to be greedy / You are the one who feels greedy / If you think that I am greedy / Then remember I am greedy because you are greedy
 
@@ -212,7 +263,7 @@ Try to live always in peace / So that I can stay in peace / To live in peace, kn
 
 ---
 
-### What This Moment Is?
+### What this moment is?
 
 I never wish of getting you / But I always meet you / Wherever I move from / It leads up to you
 
@@ -240,7 +291,7 @@ Please understand me / Trust me and help me / To get out of this puzzle / Foreve
 
 ### My Dream Girl
 
-My sound never goes sharper, / Never goes shriller, / When I speak with you,
+My sound never goes sharper, / Never goes shriller, / When I speak with you, / When I speak with you,
 
 Coz you are my love, / You are my love; / The crazy feelings of me, / Crazy feelings of me towards you,
 
@@ -254,11 +305,11 @@ Oh God! please don't let this dream go, / Please God! don't let this dream go, /
 
 ### Leave Me Alone
 
-What do you think you yourself are, leader of my heart? / Who do you think you are, someone for whom I can die?
+What do you think you yourself are, leader of / my heart? / Who do you think you are, someone for whom / I can die?
 
 If so, then stop thinking the false! / Your dreams can never get true / I don't remember you, crazy for me / At least someone can really be the same for me
 
-If you didn't love me, you really are a good actress / But if you really do, better let me forget it as you never loved me
+If you didn't love me, you really are a good / actress / But if you really do, better let me forget it as / you never loved me
 
 Days were in past where I waited for you / But its the present, time to forget you / I don't care what you shall do / I only remember what I should do
 
@@ -284,7 +335,7 @@ Everyone is helping me to get it / And I am too trying me best to achieve it / W
 
 If I fail this time / I need to try next time / But my pens will scold me / My book will hate me
 
-So request god to gain success / And help me to cross IRON GATE / I am sure I won't make it rust / Thus help me my host
+So request god to gain success / And help me to cross IRON GATE / I am sure I won’t make it rust / Thus help me my host
 
 ---
 
@@ -316,5 +367,5 @@ You are the Sunshine / The best Sunshine / Shining my every year / Happy New Yea
 
 ---
 
-*Last updated: 2026-06-12*
+*Last updated: 2026-07-04*
 *Source: https://hasilpaudyal.com.np*

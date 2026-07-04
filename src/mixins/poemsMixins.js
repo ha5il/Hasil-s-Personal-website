@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { shuffle } from "../utils.js";
 
 const poems = [
     {
@@ -378,7 +378,7 @@ const poems = [
 export const poemsMixins = {
     methods: {
         getAllpoems() {
-            return _.shuffle(poems.map(row => pick(row, [
+            return shuffle(poems.map(row => pick(row, [
                 'id', 'urlSlug', 'name', 'poemParas'
             ])));
         },

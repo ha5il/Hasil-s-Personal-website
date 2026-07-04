@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://hasilpaudyal.com.np</loc>
+        <loc>https://hasilpaudyal.com.np/</loc>
+        <lastmod>2026-06-17</lastmod>
+    </url>
+    <url>
+        <loc>https://hasilpaudyal.com.np/projects</loc>
         <lastmod>2026-06-17</lastmod>
     </url>
     <url>
@@ -13,12 +17,8 @@
         <lastmod>2026-06-17</lastmod>
     </url>
     <url>
-        <loc>https://hasilpaudyal.com.np/projects</loc>
-        <lastmod>2026-06-17</lastmod>
-    </url>
-    <url>
         <loc>https://hasilpaudyal.com.np/hire-Hasil</loc>
-        <lastmod>2026-06-17</lastmod>
+        <lastmod>2026-07-04</lastmod>
     </url>
     <url>
         <loc>https://hasilpaudyal.com.np/project/1/ktmretail-jockey-nepal-vuejs-ecommerce-website</loc>

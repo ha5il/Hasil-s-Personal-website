@@ -32,6 +32,7 @@
                 :key="idx"
               >
                 <b-img
+                  lazy
                   class="mx-1"
                   width="32"
                   :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"
@@ -91,6 +92,7 @@
                 :key="idx"
               >
                 <b-img
+                  lazy
                   class="mx-1"
                   width="32"
                   :src="'/'+tech.replace(/ /g,'').toLowerCase()+'-logo.png'"

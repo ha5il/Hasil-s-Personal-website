@@ -1,0 +1,5 @@
+# Platform-level redirects for Cloudflare Pages.
+# /performance-analysis is a legacy inbound URL; redirect it with a real 301
+# (the SPA router also handles it client-side, but with dist/404.html present
+# CF Pages would otherwise serve unknown paths a 404 before the SPA loads).
+/performance-analysis /project/11/electrical-device-performance-tracker-analyser-realtime 301

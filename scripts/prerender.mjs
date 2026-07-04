@@ -88,6 +88,9 @@ async function run() {
   }
 
   const routes = await routesFromSitemap()
+  // Not in the sitemap on purpose: snapshots the catch-all NotFound view into
+  // dist/404.html, which Cloudflare Pages serves (status 404) for unknown URLs.
+  routes.push('/404')
   const server = await startServer()
   const base = `http://127.0.0.1:${server.address().port}`
   const executablePath = resolveChrome()

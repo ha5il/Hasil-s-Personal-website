@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { shuffle } from "../utils.js";
 
 const quotes = [
     {
@@ -91,7 +91,7 @@ const quotes = [
 export const quotesMixins = {
     methods: {
         getAllquotes() {
-            return _.shuffle(quotes.map(row => pick(row, [
+            return shuffle(quotes.map(row => pick(row, [
                 'id', 'urlSlug', 'quoteLines'
             ])));
         },
@@ -105,7 +105,7 @@ export const quotesMixins = {
             return returnData;
         },
         getRandomQuote() {
-            return _.shuffle(quotes)[0];
+            return shuffle(quotes)[0];
         },
         getQuoteDetails(quoteId) {
             let returnData = null;
