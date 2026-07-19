@@ -10,10 +10,9 @@ const projects = [
         id: 1,
         technologies: ['Vuejs', 'Laravel'],
         contributionLevels: {
-            Design: 5,
-            Backend: 30,
-            Frontend: 40,
-            Teammates: 25,
+            Design: 7,
+            Backend: 40,
+            Frontend: 53,
         },
         details: [{
             title: 'Overview',
@@ -62,10 +61,9 @@ const projects = [
         id: 2,
         technologies: ['Vuejs', 'Laravel'],
         contributionLevels: {
-            Design: 5,
-            Backend: 15,
-            Frontend: 20,
-            Teammates: 60,
+            Design: 13,
+            Backend: 38,
+            Frontend: 50,
         },
         details: [{
             title: 'Overview',
@@ -102,11 +100,10 @@ const projects = [
         website: '//foreveryng.com',
         technologies: ['Laravel'],
         contributionLevels: {
-            Design: 5,
-            Backend: 40,
-            API: 30,
-            Frontend: 5,
-            Teammates: 20,
+            Design: 6,
+            Backend: 50,
+            API: 38,
+            Frontend: 6,
         },
         details: [{
             title: 'Overview',
@@ -178,9 +175,8 @@ const projects = [
         website: '//kourtiercourier.com.np',
         technologies: ['Laravel', 'jQuery'],
         contributionLevels: {
-            Design: 2,
-            Backend: 8,
-            Teammates: 90,
+            Design: 20,
+            Backend: 80,
         },
         details: [{
             title: 'Overview',
@@ -209,8 +205,7 @@ const projects = [
         website: '//meropharmacist.com',
         technologies: ['Laravel'],
         contributionLevels: {
-            Backend: 10,
-            Teammates: 90,
+            Backend: 100,
         },
         details: [{
             title: 'Overview',
@@ -240,8 +235,7 @@ const projects = [
         id: 6,
         technologies: ['October CMS'],
         contributionLevels: {
-            Backend: 30,
-            Teammates: 70,
+            Backend: 100,
         },
         details: [{
             title: 'Overview',
@@ -271,11 +265,10 @@ const projects = [
         id: 7,
         technologies: ['Java', 'Laravel', 'Android Studio'],
         contributionLevels: {
-            AndroidApp: 20,
-            Design: 5,
-            Backend: 10,
-            Frontend: 5,
-            Teammates: 60,
+            AndroidApp: 50,
+            Design: 13,
+            Backend: 25,
+            Frontend: 13,
         },
         details: [{
             title: 'Overview',
@@ -384,9 +377,8 @@ const projects = [
         id: 10,
         technologies: ['Arduino'],
         contributionLevels: {
-            'C/C++': 40,
-            Hardware: 30,
-            Teammates: 30,
+            'C/C++': 57,
+            Hardware: 43,
         },
         details: [{
             title: 'Project Overview',
@@ -419,10 +411,9 @@ const projects = [
         id: 11,
         technologies: ['Arduino', 'PHP'],
         contributionLevels: {
-            'C/C++': 25,
-            'PHP': 10,
-            Hardware: 40,
-            Teammates: 25,
+            'C/C++': 33,
+            'PHP': 13,
+            Hardware: 53,
         },
         sourceCode: '//github.com/ha5il/Electrical-Performance-Analyzer',
         details: [{
@@ -465,9 +456,8 @@ const projects = [
         technologies: ['Laravel', 'jQuery', 'AWS'],
         contributionLevels: {
             Design: 5,
-            Backend: 70,
-            Frontend: 20,
-            Teammates: 5,
+            Backend: 74,
+            Frontend: 21,
         },
         details: [{
             title: 'Overview',
@@ -531,9 +521,8 @@ const projects = [
         website: '//apps.apple.com/us/app/limbu-dictionary/id1491522563',
         technologies: ['React Native'],
         contributionLevels: {
-            'Native Framework': 60,
-            Design: 25,
-            Teammates: 15,
+            'Native Framework': 71,
+            Design: 29,
         },
         details: [{
             title: 'Overview',
@@ -576,8 +565,7 @@ const projects = [
         id: 14,
         technologies: ['October CMS'],
         contributionLevels: {
-            Backend: 50,
-            Teammates: 50,
+            Backend: 100,
         },
         details: [{
             title: 'Overview',
@@ -626,22 +614,30 @@ const projects = [
             Design: 5,
             Backend: 90,
             Frontend: 70,
-            Teammates: 15,
         },
         details: [{
             title: 'Overview',
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Provides an easy and fast search of employees in several departments within the company.'
+                    text: 'Internal employee directory that provides an easy and fast search of employees across the several departments of the company. It started as an in-house tool but was planned as a product that could be offered to other companies as well.'
+                },
+                {
+                    text: 'The completed modules cover employee management (CRUD) and an organization chart visualising the company structure. Development was later paused as company priorities shifted to other work.'
                 }
             ],
         }, {
             title: 'My Highlighted Tasks',
             titleIcon: 'code',
             lists: [{
+                badge: 'Backend',
+                text: 'Wrote around 90% of the Laravel backend: API design, authentication with role-based access, employee data import and the admin CRUD.'
+            }, {
                 badge: 'Database',
                 text: 'Database design'
+            }, {
+                badge: 'Feature',
+                text: 'Organization chart module mapping employees to their departments and reporting lines.'
             }, {
                 badge: 'Feature',
                 text: 'Vuejs filter and vue-router management.'
@@ -847,21 +843,58 @@ const projects = [
         type: "it",
         urlSlug: "community-events",
         id: 21,
-        technologies: ['Spring Boot', 'React Native', 'Expo', 'AWS', 'Firestore'],
+        technologies: ['Spring Boot', 'React Native', 'Expo', 'AWS', 'Firebase'],
         contributionLevels: {
             Design: 5,
             Backend: 20,
             Frontend: 70,
-            Teammates: 5,
         },
         details: [{
             title: 'Overview',
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'Expo managed React Native app for creating events and sharing to the community. This app also includes chat feature implemented using firestore database provided by Google Firebase.'
+                    text: 'Expo managed React Native app built for a client, letting people create events and share them with their community. A Spring Boot REST API hosted on AWS serves the mobile app, while the in-app chat runs on Firebase Realtime Database.'
+                },
+                {
+                    text: 'Events can be shared to social media through deep links: the shared URL opens the event directly in the app when installed, and falls back to a website showing the event details otherwise.'
                 }
             ],
+        }, {
+            title: 'Features',
+            titleIcon: 'stars',
+            lists: [{
+                badge: 'Feature',
+                text: 'Upcoming and highlighted events feed for discovering what is happening in the community.'
+            }, {
+                badge: 'Feature',
+                text: 'Deep-linked social sharing — event URLs open in the app or fall back to the event page on the website.'
+            }, {
+                badge: 'Feature',
+                text: 'Automatic reminder notifications a day before the event and again on the event date.'
+            }, {
+                badge: 'Feature',
+                text: 'Event locations on a map; tapping the address hands off to Apple Maps or Google Maps for navigation.'
+            }, {
+                badge: 'Feature',
+                text: 'Real-time chat between attendees built on Firebase Realtime Database.'
+            }, {
+                badge: 'Backend',
+                text: 'Admin panel for uploading event media such as banners and setting the event location.'
+            }],
+        }, {
+            title: 'My Highlighted Tasks',
+            titleIcon: 'code',
+            lists: [{
+                badge: 'Frontend',
+                text: 'Wrote around 70% of the mobile app and website code, including the custom UI design and animations — the trickiest part of the interface work.'
+            }, {
+                badge: 'Feature',
+                text: 'Implemented the real-time chat and kept notifications reliably in sync with event and chat state.'
+            }, {
+                badge: 'Backend',
+                text: 'Contributed around 20% of the Spring Boot API service powering the app.'
+            }],
         }]
     }, {
         name: "VoIP Calls",
@@ -981,8 +1014,6 @@ export const projectsMixins = {
         },
         getVariant(type) {
             switch (type) {
-                case 'Teammates':
-                    return 'secondary';
                 case 'Design':
                 case 'Feature':
                 case 'C/C++':

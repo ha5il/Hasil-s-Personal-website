@@ -39,21 +39,34 @@
           <div class="project-detail-banner mb-3">
             <span class="project-initial">{{ project.name.charAt(0) }}</span>
           </div>
-          <b-progress
-            v-show="project.contributionLevels"
-            class="mb-3"
-            height="28px"
-            show-value
+          <div
+            v-if="project.contributionLevels"
+            class="contribution mb-3"
           >
-            <b-progress-bar
-              v-for="(level, idxLevel) in project.contributionLevels"
-              :key="idxLevel"
-              :value="level"
-              :variant="getVariant(idxLevel)"
+            <h6 class="mb-1">
+              My contribution
+              <small class="opacity-75">— share of each area's work done by me</small>
+            </h6>
+            <div
+              v-for="(level, area) in project.contributionLevels"
+              :key="area"
+              class="mb-2"
             >
-              {{ idxLevel }} <span class="progress-percentage">{{ level }}%</span>
-            </b-progress-bar>
-          </b-progress>
+              <div class="d-flex justify-content-between small">
+                <span>{{ area }}</span>
+                <span>{{ level }}%</span>
+              </div>
+              <b-progress
+                height="8px"
+                :max="100"
+              >
+                <b-progress-bar
+                  :value="level"
+                  :variant="getVariant(area)"
+                />
+              </b-progress>
+            </div>
+          </div>
           <b-card-text
             v-for="(detail, idx) in project.details"
             :key="idx"

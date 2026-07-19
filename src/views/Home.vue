@@ -176,20 +176,30 @@
                   </h5>
                   <b-card-text>
                     {{ project.tagLine }}
-                    <b-progress
-                      v-show="project.contributionLevels"
-                      class="mt-3"
-                      show-value
+                    <div
+                      v-if="project.contributionLevels"
+                      class="contribution mt-3"
                     >
-                      <b-progress-bar
-                        v-for="(level, idxLevel) in project.contributionLevels"
-                        :key="idxLevel"
-                        :value="level"
-                        :variant="getVariant(idxLevel)"
+                      <div
+                        v-for="(level, area) in project.contributionLevels"
+                        :key="area"
+                        class="mb-1"
                       >
-                        {{ idxLevel }}
-                      </b-progress-bar>
-                    </b-progress>
+                        <div class="d-flex justify-content-between small">
+                          <span>{{ area }}</span>
+                          <span>{{ level }}%</span>
+                        </div>
+                        <b-progress
+                          height="6px"
+                          :max="100"
+                        >
+                          <b-progress-bar
+                            :value="level"
+                            :variant="getVariant(area)"
+                          />
+                        </b-progress>
+                      </div>
+                    </div>
                   </b-card-text>
                 </b-card>
               </div>

@@ -2,7 +2,7 @@
 
 > This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np. Generated from the site's data — do not edit by hand.
 
-> Last updated: 2026-07-04
+> Last updated: 2026-07-19
 
 ---
 
@@ -138,7 +138,7 @@ Indigo Ink book publisher comes online with a book gallery. They also have a sys
 Technologies: October CMS.
 
 ### Employee Records
-Provides an easy and fast search of employees in several departments within the company.
+Internal employee directory that provides an easy and fast search of employees across the several departments of the company. It started as an in-house tool but was planned as a product that could be offered to other companies as well.
 Technologies: Vuejs, Laravel.
 
 ### Amour Production House
@@ -162,8 +162,8 @@ This includes portal for managers and contractors for tender creation and biddin
 Technologies: Laravel, Vuejs, AWS.
 
 ### Community Events
-Expo managed React Native app for creating events and sharing to the community. This app also includes chat feature implemented using firestore database provided by Google Firebase.
-Technologies: Spring Boot, React Native, Expo, AWS, Firestore.
+Expo managed React Native app built for a client, letting people create events and share them with their community. A Spring Boot REST API hosted on AWS serves the mobile app, while the in-app chat runs on Firebase Realtime Database.
+Technologies: Spring Boot, React Native, Expo, AWS, Firebase.
 
 ### VoIP Calls
 App is used for establishing VoIP calls between users in the local network in react native. A prototype for the same using WebRTC was also built.
@@ -367,5 +367,5 @@ You are the Sunshine / The best Sunshine / Shining my every year / Happy New Yea
 
 ---
 
-*Last updated: 2026-07-04*
+*Last updated: 2026-07-19*
 *Source: https://hasilpaudyal.com.np*
