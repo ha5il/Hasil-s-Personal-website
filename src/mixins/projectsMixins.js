@@ -222,6 +222,9 @@ const projects = [
                 badge: 'Frontend',
                 text: 'Social login'
             }, {
+                badge: 'Feature',
+                text: 'Patient counseling questions module (simple CRUD for submitting and answering medicine questions).'
+            }, {
                 badge: 'Marketing',
                 text: 'Blog share feature'
             }],
@@ -242,7 +245,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'October CMS based website to publish news, articles and blogs.'
+                    text: 'October CMS based website built for a local news agency to publish news, articles and blogs, with media uploads managed by the agency itself.'
+                },
+                {
+                    text: 'The site also exposed a set of APIs that powered a basic companion mobile app for reading the news and blog posts (the app itself was built by another team). The custom plugins were written to be reusable across our other October CMS projects.'
                 }
             ],
         }, {
@@ -251,6 +257,12 @@ const projects = [
             lists: [{
                 badge: 'Backend',
                 text: 'Blog Post Management'
+            }, {
+                badge: 'Feature',
+                text: 'APIs for the companion news-reader mobile app.'
+            }, {
+                badge: 'Feature',
+                text: 'Reusable custom October CMS plugins shared across other projects.'
             }, {
                 badge: 'Marketing',
                 text: 'Highlight blog post'
@@ -283,7 +295,7 @@ const projects = [
             titleIcon: 'code',
             lists: [{
                 badge: 'Feature',
-                text: 'Android App'
+                text: 'Android app with courier-style repair tracking — dropped at repair center, technician assigned, repaired, out for delivery.'
             }, {
                 badge: 'Feature',
                 text: 'API'
@@ -292,7 +304,7 @@ const projects = [
                 text: 'Protection of User Data'
             }, {
                 badge: 'Marketing',
-                text: 'Tracking the rivals'
+                text: 'Competitor-monitoring script (Google Alerts style) that tracked rival products\' website activities and new features.'
             }],
         }]
     },
@@ -314,6 +326,9 @@ const projects = [
             paragraphs: [
                 {
                     text: 'Usually RFID cards are used for authorizing by knowing the identity of the carrier. I built the device with an option to limit the number of authorizations to the individual cardholder. After (n) number of scans, the device revokes the access unless re-authorized by system head.'
+                },
+                {
+                    text: 'It was a proof-of-concept I developed at my first employer, a laundry machine sales and service company. Laundry customers get an RFID card that tracks their wash history — for example hostel residents get 3 free washes per month, and the device enforces that limit.'
                 }
             ],
         }, {
@@ -352,6 +367,9 @@ const projects = [
             paragraphs: [
                 {
                     text: 'Danube International Washer-Extractor keeps the record of washes done in the machine with the timestamp. The app is made to calculate total kgs of washes done by machine to report the laundry owner so that he can cross-check it with revenue collected.'
+                },
+                {
+                    text: 'The washer exposes its debugging log files and wash records over a USB port. The app parses those logs into a readable wash history so the owner can cross-check it against the offline register the manager maintains — if 100 kg was washed but only 80 kg recorded, the missing revenue is now visible.'
                 }
             ],
         }, {
@@ -529,7 +547,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'WordPress provides API service. The app uses it to list post, search them and view details. Also, there are some static supporting pages.'
+                    text: 'The dictionary is a simple word database served through the WordPress API. The app uses it to list posts, search them and view details, alongside some static supporting pages. It is online-only — no offline word storage.'
+                },
+                {
+                    text: 'This was my first Expo project. Certain elements are rendered through a WebView component, while the rest of the app is straightforward API calls and native display.'
                 }
             ],
         }, {
@@ -541,6 +562,9 @@ const projects = [
             }, {
                 badge: 'Feature',
                 text: 'Detail page with Limbu font'
+            }, {
+                badge: 'Feature',
+                text: 'WebView-embedded sections mixed with native screens.'
             }, {
                 badge: 'Publishing',
                 text: 'Deploying to App Store'
@@ -573,6 +597,9 @@ const projects = [
             paragraphs: [
                 {
                     text: 'Indigo Ink book publisher comes online with a book gallery. They also have a system to publish the events they regularly organize.'
+                },
+                {
+                    text: 'The site was built for the publisher\'s printing-press business — a deliberately simple October CMS build where the gallery, events and online enquiries are all manageable by the client from the backend.'
                 }
             ],
         }, {
@@ -675,6 +702,9 @@ const projects = [
             paragraphs: [
                 {
                     text: 'Website built for the Production house to highlight its portfolio. Dynamic frontend allows admin to set banners, website contents, videos. The site also includes a restricted area where the visitor has to enter access code to proceed.'
+                },
+                {
+                    text: 'Built solo in October CMS with every piece of content editable by the client themselves from the backend — no developer needed for day-to-day updates.'
                 }
             ],
         }, {
@@ -710,6 +740,9 @@ const projects = [
             paragraphs: [
                 {
                     text: 'ReachOn is the digital education platform with the vision to create an education system where every student has the same opportunities. Education is all about accessibility and equality but different student left their class with different level of understanding and face many problems with the current education system.'
+                },
+                {
+                    text: 'Live classes stayed on Zoom and similar tools — ReachOn focused on everything around them: assignments submitted as photo uploads, and an MCQ exam engine where teachers feed in questions and schedule exams. Questions are shuffled on every attempt, and the time a student spends on each question is tracked.'
                 }
             ],
         }, {
@@ -718,6 +751,9 @@ const projects = [
             lists: [{
                 badge: 'Feature',
                 text: 'Backend panel to check answer sheet'
+            }, {
+                badge: 'Feature',
+                text: 'MCQ exam engine — teacher-fed questions, scheduled exams, per-attempt shuffling and per-question answer-time tracking.'
             }, {
                 badge: 'Feature',
                 text: 'Laravel Echo for notification'
@@ -745,7 +781,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'An subscription based card model that keeps track of discounts provided by restaurants to its customers.'
+                    text: 'A subscription based redeem-card platform built for a client: restaurants, bars, clubs and resorts offer discounts to cardholders, and the system keeps track of every discount provided.'
+                },
+                {
+                    text: 'There was no online payment gateway — the annual card subscriptions were paid offline, so the platform tracked those payments and renewals instead.'
                 }
             ],
         }, {
@@ -753,10 +792,16 @@ const projects = [
             titleIcon: 'code',
             lists: [{
                 badge: 'Feature',
-                text: 'Bulk registration of users'
+                text: 'Bulk user registration and onboarding by admin.'
             }, {
                 badge: 'Feature',
-                text: 'Reporting and renewal options for accounts.'
+                text: 'Stamp-card loyalty feature for enabled merchants — e.g. buy 4 coffees and the 5th is free.'
+            }, {
+                badge: 'Feature',
+                text: 'Backend usage reports showing which merchants provide the most discounts and benefits to cardholders.'
+            }, {
+                badge: 'Feature',
+                text: 'Payment tracking and renewal options for the annually renewed accounts.'
             }],
         }]
     }, {
@@ -768,16 +813,19 @@ const projects = [
         id: 19,
         technologies: ['Laravel', 'Vuejs', 'AWS'],
         contributionLevels: {
-            Design: 40,
-            API: 100,
-            Backend: 100
+            Design: 20,
+            API: 80,
+            Backend: 80
         },
         details: [{
             title: 'Overview',
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'This app is similar to popular short videos sharing apps. We have optimized the backend for AWS with content caching for faster operations.'
+                    text: 'A TikTok-inspired short video sharing app built as an internal product. The backend was optimized for AWS with content caching for faster operations, and every media transcoding step was handled by the Laravel backend itself.'
+                },
+                {
+                    text: 'The app never took off — it stayed under a thousand users, so the project was eventually dropped. It remains a solid exercise in building a video pipeline end to end.'
                 }
             ],
         }, {
@@ -786,6 +834,9 @@ const projects = [
             lists: [{
                 badge: 'Feature',
                 text: 'Video sharing as public, followers or private.'
+            }, {
+                badge: 'Feature',
+                text: 'Media transcoding pipeline handled entirely in the Laravel backend.'
             }, {
                 badge: 'Security',
                 text: 'Restriction on content viewing'
@@ -912,10 +963,10 @@ const projects = [
             titleIcon: 'assignment',
             paragraphs: [
                 {
-                    text: 'App is used for establishing VoIP calls between users in the local network in react native. A prototype for the same using WebRTC was also built.'
+                    text: 'App is used for establishing VoIP calls between users in the local network in react native, backed by an Asterisk server. A prototype for the same using WebRTC was also built.'
                 },
                 {
-                    text: 'This app utilizes a custom Expo module written to wrap native Android and iOS libraries.'
+                    text: 'The calls run through a commercial SIP SDK that only ships as native Android and iOS libraries, so I wrote a custom Expo module wrapping the SDK — Java on Android and Swift on iOS — to expose it to React Native.'
                 },
             ],
         }, {

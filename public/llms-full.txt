@@ -116,7 +116,7 @@ Technologies: Laravel.
 Website: https://meropharmacist.com
 
 ### CMS Site
-October CMS based website to publish news, articles and blogs.
+October CMS based website built for a local news agency to publish news, articles and blogs, with media uploads managed by the agency itself.
 Technologies: October CMS.
 
 ### Fixolla
@@ -129,7 +129,7 @@ Technologies: Laravel, jQuery, AWS.
 Website: https://legalremit.com
 
 ### Limbu Dictionary
-WordPress provides API service. The app uses it to list post, search them and view details. Also, there are some static supporting pages.
+The dictionary is a simple word database served through the WordPress API. The app uses it to list posts, search them and view details, alongside some static supporting pages. It is online-only — no offline word storage.
 Technologies: React Native.
 Website: https://apps.apple.com/us/app/limbu-dictionary/id1491522563
 
@@ -150,11 +150,11 @@ ReachOn is the digital education platform with the vision to create an education
 Technologies: Laravel, Socket, Vuejs.
 
 ### Discount Card
-An subscription based card model that keeps track of discounts provided by restaurants to its customers.
+A subscription based redeem-card platform built for a client: restaurants, bars, clubs and resorts offer discounts to cardholders, and the system keeps track of every discount provided.
 Technologies: CodeIgniter, Vuejs.
 
 ### Short Vids
-This app is similar to popular short videos sharing apps. We have optimized the backend for AWS with content caching for faster operations.
+A TikTok-inspired short video sharing app built as an internal product. The backend was optimized for AWS with content caching for faster operations, and every media transcoding step was handled by the Laravel backend itself.
 Technologies: Laravel, Vuejs, AWS.
 
 ### Tender Management
@@ -166,7 +166,7 @@ Expo managed React Native app built for a client, letting people create events a
 Technologies: Spring Boot, React Native, Expo, AWS, Firebase.
 
 ### VoIP Calls
-App is used for establishing VoIP calls between users in the local network in react native. A prototype for the same using WebRTC was also built.
+App is used for establishing VoIP calls between users in the local network in react native, backed by an Asterisk server. A prototype for the same using WebRTC was also built.
 Technologies: React Native, Expo, Swift, Java.
 
 ### BriefBoard
