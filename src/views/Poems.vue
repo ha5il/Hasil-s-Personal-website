@@ -10,9 +10,9 @@
         sm="12"
         md="4"
       >
-        <div
-          style="cursor: pointer"
-          @click="$router.push({ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug } })"
+        <router-link
+          class="card-link"
+          :to="{ name: 'poem', params: { id: poem.id, urlSlug: poem.urlSlug } }"
         >
           <b-card class="mb-3">
             <div class="poem-banner mb-3">
@@ -35,7 +35,7 @@
               </span>
             </b-card-text>
           </b-card>
-        </div>
+        </router-link>
       </b-col>
     </b-row>
   </div>

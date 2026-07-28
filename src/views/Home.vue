@@ -148,9 +148,9 @@
               sm="12"
               md="4"
             >
-              <div
-                style="cursor:pointer"
-                @click="$router.push({name:'project',params:{id:project.id,urlSlug:project.urlSlug}})"
+              <router-link
+                class="card-link"
+                :to="{name:'project',params:{id:project.id,urlSlug:project.urlSlug}}"
               >
                 <b-card
                   :id="'project-'+idx"
@@ -202,7 +202,7 @@
                     </div>
                   </b-card-text>
                 </b-card>
-              </div>
+              </router-link>
               <b-tooltip
                 :delay="{show:0,hide:0}"
                 :target="'project-'+idx"
@@ -259,9 +259,9 @@
               sm="12"
               md="4"
             >
-              <div
-                style="cursor:pointer"
-                @click="$router.push({name:'quote',params:{id:quote.id,urlSlug:quote.urlSlug}})"
+              <router-link
+                class="card-link"
+                :to="{name:'quote',params:{id:quote.id,urlSlug:quote.urlSlug}}"
               >
                 <b-card class="quote-card mb-3">
                   <div class="quote-banner mb-3">
@@ -274,7 +274,7 @@
                     >{{ quoteLine }}<br></span>
                   </b-card-text>
                 </b-card>
-              </div>
+              </router-link>
             </b-col>
           </b-row>
         </b-card>
@@ -304,9 +304,9 @@
               sm="12"
               md="6"
             >
-              <div
-                style="cursor:pointer"
-                @click="$router.push({name:'poem',params:{id:poem.id,urlSlug:poem.urlSlug}})"
+              <router-link
+                class="card-link"
+                :to="{name:'poem',params:{id:poem.id,urlSlug:poem.urlSlug}}"
               >
                 <b-card class="poem-card text-center mb-3">
                   <div class="poem-banner mb-3">
@@ -330,7 +330,7 @@
                     </p>
                   </b-card-text>
                 </b-card>
-              </div>
+              </router-link>
             </b-col>
           </b-row>
         </b-card>

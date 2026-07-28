@@ -11,9 +11,9 @@
         md="6"
         lg="4"
       >
-        <div
-          class="quote-card-wrap"
-          @click="$router.push({ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug } })"
+        <router-link
+          class="quote-card-wrap card-link"
+          :to="{ name: 'quote', params: { id: quote.id, urlSlug: quote.urlSlug } }"
         >
           <div class="quote-card">
             <div class="quote-banner">
@@ -30,7 +30,7 @@
               <span class="close-mark">&rdquo;</span>
             </div>
           </div>
-        </div>
+        </router-link>
       </b-col>
     </b-row>
     <div class="ratio ratio-16x9 mt-5">

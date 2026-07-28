@@ -8,9 +8,10 @@
 //
 // What it does: serves dist/, visits every URL listed in public/sitemap.xml in
 // headless Chrome, waits for the app to inject its per-route <head> tags
-// (the `seo-ready` event), then writes the fully-rendered HTML back to
-// dist/<route>/index.html. Social crawlers + Bing then get correct per-page
-// title/description/OG/JSON-LD without running any JS.
+// (the `seo-ready` event), then writes the fully-rendered HTML back as a flat
+// file — dist/quotes.html, dist/project/12/slug.html (see the write below for
+// why flat and not directory/index.html). Social crawlers + Bing then get
+// correct per-page title/description/OG/JSON-LD without running any JS.
 //
 // Chrome: uses your system Chrome via puppeteer-core (no Chromium download).
 // Override the binary with CHROME_PATH=/path/to/chrome if auto-detect misses.
@@ -61,15 +62,21 @@ async function routesFromSitemap() {
   })
 }
 
-// Minimal static server with SPA fallback to index.html.
-function startServer() {
+// Minimal static server with SPA fallback to the ORIGINAL index.html.
+// `shell` is the pristine Vite shell, read once before any route is written.
+// Reading it off disk per-request would be wrong: prerendering "/" overwrites
+// dist/index.html, so every later route would boot from a shell that already
+// carries the homepage's title/canonical/OG tags.
+function startServer(shell) {
   return new Promise(resolve => {
     const server = http.createServer(async (req, res) => {
       try {
         const urlPath = decodeURIComponent(req.url.split('?')[0])
-        let filePath = join(DIST, urlPath)
+        const filePath = join(DIST, urlPath)
         if (!extname(filePath) || !existsSync(filePath)) {
-          filePath = join(DIST, 'index.html') // SPA fallback
+          res.writeHead(200, { 'Content-Type': 'text/html' })
+          res.end(shell) // SPA fallback
+          return
         }
         const body = await readFile(filePath)
         res.writeHead(200, { 'Content-Type': MIME[extname(filePath)] || 'application/octet-stream' })
@@ -87,11 +94,14 @@ async function run() {
     throw new Error('dist/index.html missing — run `npm run build` first.')
   }
 
+  // Snapshot the pristine shell before the loop starts overwriting index.html.
+  const shell = await readFile(join(DIST, 'index.html'))
+
   const routes = await routesFromSitemap()
   // Not in the sitemap on purpose: snapshots the catch-all NotFound view into
   // dist/404.html, which Cloudflare Pages serves (status 404) for unknown URLs.
   routes.push('/404')
-  const server = await startServer()
+  const server = await startServer(shell)
   const base = `http://127.0.0.1:${server.address().port}`
   const executablePath = resolveChrome()
 
@@ -105,15 +115,20 @@ async function run() {
   let ok = 0
   for (const route of routes) {
     const page = await browser.newPage()
-    // Mark the run as a prerender BEFORE any app code executes.
-    await page.evaluateOnNewDocument(() => { window.__PRERENDER_INJECTED = true })
+    // Mark the run as a prerender BEFORE any app code executes, and latch the
+    // `seo-ready` event. Presence of <link rel="canonical"> is NOT a usable
+    // signal: the SPA fallback below serves dist/index.html, which after the
+    // homepage is prerendered already contains the homepage's canonical — so a
+    // presence check passes instantly on every later route and gates nothing.
+    await page.evaluateOnNewDocument(() => {
+      window.__PRERENDER_INJECTED = true
+      window.__SEO_READY = false
+      document.addEventListener('seo-ready', () => { window.__SEO_READY = true })
+    })
     try {
       await page.goto(base + route, { waitUntil: 'networkidle0', timeout: 30000 })
-      // Wait for the app to have applied SEO (canonical present is the signal).
-      await page.waitForFunction(
-        () => !!document.querySelector('link[rel="canonical"]'),
-        { timeout: 15000 }
-      )
+      // Wait for the app to have actually applied SEO for THIS route.
+      await page.waitForFunction(() => window.__SEO_READY === true, { timeout: 15000 })
       const html = '<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML)
       // Write flat .html files (e.g. dist/quotes.html, dist/project/12/slug.html)
       // so Cloudflare Pages serves them at /quotes, /project/12/slug with no

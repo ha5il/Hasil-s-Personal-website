@@ -14,9 +14,9 @@
         sm="12"
         md="4"
       >
-        <div
-          style="cursor: pointer"
-          @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
+        <router-link
+          class="card-link"
+          :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } }"
         >
           <b-card
             :id="'it-project-'+project.id"
@@ -68,7 +68,7 @@
               </div>
             </b-card-text>
           </b-card>
-        </div>
+        </router-link>
         <b-tooltip
           :delay="{show:0,hide:0}"
           :target="'it-project-'+project.id"
@@ -87,9 +87,9 @@
         :key="idx"
         cols="12"
       >
-        <div
-          style="cursor: pointer"
-          @click="$router.push({ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } })"
+        <router-link
+          class="card-link"
+          :to="{ name: 'project', params: { id: project.id, urlSlug: project.urlSlug } }"
         >
           <b-card
             :id="'ee-project-'+project.id"
@@ -138,7 +138,7 @@
               </div>
             </b-card-text>
           </b-card>
-        </div>
+        </router-link>
         <b-tooltip
           :delay="{show:0,hide:0}"
           :target="'ee-project-'+project.id"

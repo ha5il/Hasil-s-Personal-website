@@ -450,6 +450,28 @@ a {
 // Route transition: quick fade + slight upward slide. Cards ride in a touch
 // further via card-in for depth. No `appear` — initial load (and prerender
 // snapshots) render instantly; only in-app navigation animates.
+// Card wrappers are real <a> elements, not click-handler divs: the list pages
+// are prerendered, and without anchors Google has no crawl path to the ~40
+// project/quote/poem detail pages (they sat in "Discovered – currently not
+// indexed", never crawled). Also makes the cards keyboard-reachable.
+.card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--global-primary-color);
+    outline-offset: 2px;
+    border-radius: 8px;
+  }
+}
+
 .page-enter-active {
   transition: opacity 0.28s ease, transform 0.28s ease;
 }

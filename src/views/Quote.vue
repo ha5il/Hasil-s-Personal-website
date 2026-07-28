@@ -30,16 +30,16 @@
         :key="idx"
         md="3"
       >
-        <div
-          style="cursor: pointer"
-          @click="$router.push({ name: 'quote', params: { id: q.id, urlSlug: q.urlSlug } })"
+        <router-link
+          class="card-link"
+          :to="{ name: 'quote', params: { id: q.id, urlSlug: q.urlSlug } }"
         >
           <b-card>
             <b-card-text>
               <p>{{ q.quoteLines[0].substr(0, 20) }}...</p>
             </b-card-text>
           </b-card>
-        </div>
+        </router-link>
       </b-col>
     </b-row>
   </div>
