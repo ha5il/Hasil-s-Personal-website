@@ -129,7 +129,10 @@ async function run() {
       await page.goto(base + route, { waitUntil: 'networkidle0', timeout: 30000 })
       // Wait for the app to have actually applied SEO for THIS route.
       await page.waitForFunction(() => window.__SEO_READY === true, { timeout: 15000 })
-      const html = '<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML)
+      // Vite's runtime preloader inserts route-chunk <link>s with absolute URLs on
+      // this temporary server's origin; make them root-relative for production.
+      const html = ('<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML))
+        .replaceAll(base + '/', '/')
       // Write flat .html files (e.g. dist/quotes.html, dist/project/12/slug.html)
       // so Cloudflare Pages serves them at /quotes, /project/12/slug with no
       // trailing-slash redirect. CF Pages natively serves foo.html at /foo.
