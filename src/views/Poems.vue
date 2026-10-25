@@ -98,7 +98,7 @@ export default {
 
   .card:hover {
     transform: scale(1.04);
-    cursor: url('/cursor-pointer.png'), pointer;;
+    cursor: var(--cursor-pointer, pointer);
   }
 
   .poem-banner {

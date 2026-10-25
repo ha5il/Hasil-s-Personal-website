@@ -78,7 +78,7 @@ export default {
   }
 
   .quote-card-wrap {
-    cursor: url('/cursor-pointer.png'), pointer;
+    cursor: var(--cursor-pointer, pointer);
     height: 100%;
   }
 

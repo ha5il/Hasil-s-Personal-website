@@ -259,6 +259,7 @@
 <script>
 import { quotesMixins } from "./mixins/quotesMixins.js";
 import { profile } from "./content/profile.js";
+import { nibCursors } from "./cursors.js";
 
 export default {
   mixins: [quotesMixins],
@@ -362,6 +363,9 @@ export default {
       root.style.setProperty("--bs-link-hover-color", primary);
       root.style.setProperty("--bs-info", secondary);
       root.style.setProperty("--bs-info-rgb", this.hexToRgb(secondary));
+      const cursors = nibCursors(primary, secondary);
+      root.style.setProperty("--cursor-normal", cursors.normal);
+      root.style.setProperty("--cursor-pointer", cursors.pointer);
 
       localStorage.setItem("theme", JSON.stringify({ darkMode, primary, secondary, setAt: Date.now() }));
     },
@@ -417,7 +421,7 @@ export default {
   --global-secondary-color: #e6a410;
   --global-shadow-color: #d0d0d0;
   --bs-body-font-family: "DM Sans", sans-serif;
-  cursor: url('/cursor-normal.png'), auto;
+  cursor: var(--cursor-normal, auto);
 }
 
 ::-webkit-scrollbar {
@@ -443,8 +447,10 @@ export default {
   box-shadow: inset 0px 0px 4px 0px #000000;
 }
 
-a {
-  cursor: url('/cursor-pointer.png'), pointer;
+// :root lifts specificity above Bootstrap reboot's button:not(:disabled) rule.
+a,
+:root button:not(:disabled) {
+  cursor: var(--cursor-pointer, pointer);
 }
 
 // Route transition: quick fade + slight upward slide. Cards ride in a touch
@@ -783,7 +789,7 @@ footer {
   }
 
   span {
-    cursor: url('/cursor-pointer.png'), pointer;;
+    cursor: var(--cursor-pointer, pointer);
   }
 }
 
@@ -867,7 +873,7 @@ footer {
   height: 36px;
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  cursor: url('/cursor-pointer.png'), pointer;
+  cursor: var(--cursor-pointer, pointer);
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 
@@ -894,7 +900,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url('/cursor-pointer.png'), pointer;
+  cursor: var(--cursor-pointer, pointer);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
