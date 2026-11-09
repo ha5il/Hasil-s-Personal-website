@@ -1,10 +1,13 @@
 Sitemap: https://hasilpaudyal.com.np/sitemap.xml
 
-# All crawlers welcome — public portfolio
+# All crawlers welcome — public portfolio.
+# Content-Signal (contentsignals.org): this site may be used for search,
+# for AI answers (ai-input) and for AI training (ai-train).
 User-agent: *
-Disallow:
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
 
-# AI / LLM crawlers — explicitly allowed
+# AI / LLM crawlers and assistant fetchers — explicitly allowed
 User-agent: GPTBot
 Allow: /
 
@@ -15,6 +18,12 @@ User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: anthropic-ai
@@ -32,10 +41,25 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 User-agent: YouBot
 Allow: /
 
+User-agent: Applebot
+Allow: /
+
 User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 User-agent: Bytespider
@@ -50,10 +74,11 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
+User-agent: meta-externalfetcher
+Allow: /
+
 User-agent: facebookexternalhit
 Allow: /
 
-# LLM content files
-User-agent: *
-Allow: /llms.txt
-Allow: /llms-full.txt
+# Machine-readable summaries for LLMs: /llms.txt and /llms-full.txt
+# Content feed: /feed.xml

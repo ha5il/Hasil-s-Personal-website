@@ -131,7 +131,14 @@ async function run() {
       await page.waitForFunction(() => window.__SEO_READY === true, { timeout: 15000 })
       // Vite's runtime preloader inserts route-chunk <link>s with absolute URLs on
       // this temporary server's origin; make them root-relative for production.
-      const html = ('<!DOCTYPE html>\n' + await page.evaluate(() => document.documentElement.outerHTML))
+      const html = ('<!DOCTYPE html>\n' + await page.evaluate(() => {
+        // Material Icons render by ligature, so an icon's NAME is its text
+        // content ("work", "equalizer"). Text-only crawlers would read that as
+        // copy glued to the real heading, so blank it in the snapshot. Safe:
+        // the client re-mounts fresh over the snapshot, so live icons are intact.
+        document.querySelectorAll('.material-icons').forEach(el => { el.textContent = '' })
+        return document.documentElement.outerHTML
+      }))
         .replaceAll(base + '/', '/')
       // Write flat .html files (e.g. dist/quotes.html, dist/project/12/slug.html)
       // so Cloudflare Pages serves them at /quotes, /project/12/slug with no

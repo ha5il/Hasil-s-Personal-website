@@ -8,7 +8,9 @@
       <b-col cols="12">
         <b-card>
           <div class="card-title">
-            {{ project.name }}
+            <h1 class="project-title">
+              {{ project.name }}
+            </h1>
             <b-link
               v-show="project.website"
               v-b-tooltip.hover.right
@@ -43,10 +45,10 @@
             v-if="project.contributionLevels"
             class="contribution mb-3"
           >
-            <h6 class="mb-1">
+            <h2 class="h6 mb-1">
               My contribution
               <small class="opacity-75">— share of each area's work done by me</small>
-            </h6>
+            </h2>
             <div
               v-for="(level, area) in project.contributionLevels"
               :key="area"
@@ -71,13 +73,13 @@
             v-for="(detail, idx) in project.details"
             :key="idx"
           >
-            <h5 class="text-info">
+            <h2 class="h5 text-info">
               <i
                 aria-hidden="true"
                 class="material-icons"
               >{{ detail.titleIcon }}</i>
               {{ detail.title }}
-            </h5>
+            </h2>
             <p
               v-for="(para, idxPara) in detail.paragraphs"
               v-show="detail.paragraphs"
@@ -142,6 +144,7 @@ export default {
       description: this.getProjectPageDescription(id),
       // Per-project OG card, generated into dist/og/ by scripts/generate-og-images.mjs
       image: `/og/project-${id}.jpg`,
+      keywords: [this.project.name, ...this.project.technologies, this.project.type === "it" ? "software project" : "electronics project", "Hasil Paudyal"].join(", "),
       type: "article",
       schema: [
         this.seoCreativeWork({
@@ -230,6 +233,13 @@ export default {
       color: var(--global-secondary-color);
       font-weight: normal;
       font-size: 24px;
+
+      .project-title {
+        display: inline;
+        font: inherit;
+        color: inherit;
+        margin: 0;
+      }
 
       a {
         color: var(--global-secondary-color);

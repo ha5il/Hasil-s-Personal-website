@@ -468,6 +468,7 @@ export default {
       type: "profile",
       schema: [
         this.seoPerson(),
+        this.seoProfilePage({ name: "Hire Hasil | Engineer, Creator & Leader", path: "/hire-Hasil" }),
         this.seoBreadcrumb([
           { name: "Home", path: "/" },
           { name: "Hire Hasil", path: "/hire-Hasil" }

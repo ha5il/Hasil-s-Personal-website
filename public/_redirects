@@ -3,3 +3,6 @@
 # (the SPA router also handles it client-side, but with dist/404.html present
 # CF Pages would otherwise serve unknown paths a 404 before the SPA loads).
 /performance-analysis /project/11/electrical-device-performance-tracker-analyser-realtime 301
+# Case variants of the resume page (CF Pages matches case-sensitively, so no loop).
+/hire-hasil /hire-Hasil 301
+/HIRE-HASIL /hire-Hasil 301

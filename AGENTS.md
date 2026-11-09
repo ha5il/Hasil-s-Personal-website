@@ -22,9 +22,10 @@ The site is updated rarely (~monthly), so reading the actual content files when 
 - Vue 3 (**Options API**) · Vite · **bootstrap-vue-next** (Bootstrap 5) · vue-router 5 · SCSS (dart-sass).
 - `npm run dev` (localhost:5173) · `npm run build` (→ `dist/`) · `npm run preview`.
 - **Always `npm run build` to verify after changes** — it's the real check.
-- `npm run generate` — regenerates `public/sitemap.xml`, `public/llms.txt`, `public/llms-full.txt`
-  from `src/content/profile.js` + the data mixins. **Run after any content change and commit
-  the output** (CI fails otherwise). Never hand-edit those three files or `scripts/seo-manifest.json`.
+- `npm run generate` — regenerates `public/sitemap.xml`, `public/feed.xml` (RSS), `public/llms.txt`,
+  `public/llms-full.txt` from `src/content/profile.js` + the data mixins. **Run after any content
+  change and commit the output** (CI fails otherwise). Never hand-edit those four files or
+  `scripts/seo-manifest.json`.
 - `npm run check` — content consistency checker (`scripts/check-content.mjs`): sitemap⇄data slug
   drift, missing tech logos, dead featured ids, duplicate ids, llms mirror. Runs in CI; run it
   locally after content edits.
@@ -60,7 +61,7 @@ capability groups, technology lists. Change a fact there → run `npm run genera
 | `src/App.vue` | Global shell: nav, theme picker, avatar rotation, footer quote, route transitions, print rules, all global CSS |
 | `src/router.js` | Routes; catch-all `/:pathMatch(.*)*` renders NotFound (NOT a redirect) |
 | `src/main.js` | App bootstrap; **selective** bootstrap-vue-next registration (see gotchas) |
-| `scripts/generate-seo-files.mjs` | Generates sitemap.xml + llms*.txt (owns them; deterministic via `seo-manifest.json`) |
+| `scripts/generate-seo-files.mjs` | Generates sitemap.xml + feed.xml + llms*.txt (owns them; deterministic via `seo-manifest.json`) |
 | `scripts/check-content.mjs` | CI consistency checker |
 | `scripts/prerender.mjs` | Post-build snapshot prerenderer (reads routes from `sitemap.xml`, + `/404`) |
 | `scripts/generate-og-images.mjs` | Renders 1200×630 OG card per project → `dist/og/` (build artifact) |
@@ -97,9 +98,12 @@ Methods:
 **`poemsMixins.js`** — poem shape `{ id, urlSlug, name, poemParas:[{ paraLines:[string] }] }`. Methods: `getAllpoems()`, `getPoemDetails(id)`, `getPoemUrlSlug(id)`.
 
 **`seoMixins.js`** exports **one** mixin, `seoMixins`. Every view calls `applySeo()` once in `created()`. It mutates `document.head` directly (no vue-meta).
-- `applySeo({ title, description, image, keywords, url, type, schema, robots })` — sets `<title>`, description, OG, Twitter Card, **canonical**, `og:url`, **`og:type`** (`'website'`|`'article'`|`'profile'`), **JSON-LD**, and **`robots`** (pass `'noindex'` on non-indexable pages; it's *removed* when not passed so it can't linger across SPA navigations). `image` defaults to `og-image.jpg`; a **root-relative** image path (`/og/…`) is resolved against the production origin. **canonical/`og:url` always build from the production origin (`profile.siteUrl`), never `window.location.origin`.** `schema`: one object or an array; omit to clear. Dispatches `seo-ready` after running (prerenderer hook).
-- Schema builders: `seoPerson()` (Person — built from `profile.js`), `seoBreadcrumb([{name, path}])`, `seoCreativeWork({name, description, path, type, extra})`.
-- Per-page JSON-LD: Home + HireHasil → Person; project/poem/quote detail → CreativeWork + BreadcrumbList; list pages → BreadcrumbList.
+- `applySeo({ title, description, image, keywords, url, type, schema, robots })` — sets `<title>`, description, OG, Twitter Card, **canonical**, `og:url`, **`og:type`** (`'website'`|`'article'`|`'profile'`), **JSON-LD**, and **`robots`** (pass `'noindex'` on non-indexable pages; when not passed it is reset to the indexable default `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1`, so a noindex can't linger across SPA navigations). `image` defaults to `og-image.jpg`; a **root-relative** image path (`/og/…`) is resolved against the production origin. **canonical/`og:url` always build from the production origin (`profile.siteUrl`), never `window.location.origin`.** `schema`: one object or an array; omit to clear. Dispatches `seo-ready` after running (prerenderer hook).
+- Schema builders: `seoPerson()` (Person, `@id` `…/#person`, built from `profile.js`; `sameAs` = every `profile.links` entry), `seoWebSite()` (`@id` `…/#website`), `seoProfilePage({name, description, path})`, `seoCollectionPage({name, description, path, items:[{name, path}]})` (CollectionPage + ItemList), `seoBreadcrumb([{name, path}])`, `seoCreativeWork({name, description, path, type, extra})`. Page-level nodes reference the Person/WebSite by `@id`, and carry `dateModified` read from `scripts/seo-manifest.json` (imported as JSON into the mixin — keep that file committed and valid).
+- Per-page JSON-LD: Home → Person + WebSite + ProfilePage; HireHasil → Person + ProfilePage + BreadcrumbList; project/poem/quote detail → CreativeWork(+`text` for poems/quotes) + BreadcrumbList; list pages → CollectionPage/ItemList + BreadcrumbList.
+- `applySeo()` also injects `<link rel="me">` for every `profile.links` URL (identity consolidation).
+- **Every page renders exactly one `<h1>`** (Home: name + `profile.headline`; list pages: a `h1.h4.p-3` page title; detail pages: the item name). Sub-headings are `h2` with Bootstrap `.h4`/`.h5`/`.h6` classes to keep the original sizes — keep that structure when adding sections.
+- The homepage canonical/`og:url` is the origin **with** a trailing slash (`https://hasilpaudyal.com.np/`), matching the sitemap and the host's redirect of the bare origin.
 
 ---
 
@@ -120,7 +124,7 @@ Methods:
 - **Canonical-slug self-redirect (SEO-critical):** `Project.vue`, `Quote.vue`, `Poem.vue`
   redirect to the canonical `urlSlug` from the data if the URL's slug doesn't match. External
   links must use the exact `urlSlug`. The sitemap is generated from the data, so it can't drift.
-- **`/hire-Hasil` has a capital `H`** (route is case-sensitive).
+- **`/hire-Hasil` has a capital `H`.** The route is declared `sensitive: true`; other casings are 301'd by `public/_redirects` (`/hire-hasil`, `/HIRE-HASIL`) and, client-side, by a router redirect. CF Pages matches `_redirects` sources case-sensitively (verified live), so the rule can't loop.
 - **`getAllProjects()` is shuffled** — never assume project order from it. Node scripts that
   need deterministic order must sort (the generators sort by id).
 - **404 handling:** catch-all route renders `NotFound.vue` (with `robots: 'noindex'`); the
@@ -174,8 +178,10 @@ Home, hire-Hasil, App shell links, and llms files all pick it up.
 
 ## SEO / crawl files
 
-### Generated: `sitemap.xml`, `llms.txt`, `llms-full.txt` (never hand-edit)
-`npm run generate` builds all three from profile.js + the mixins. `<lastmod>` moves **only**
+### Generated: `sitemap.xml`, `feed.xml`, `llms.txt`, `llms-full.txt` (never hand-edit)
+`npm run generate` builds all four from profile.js + the mixins. `feed.xml` is an RSS 2.0 feed of
+every project/poem/quote whose `pubDate` is the manifest lastmod (newest first); `index.html`
+advertises it via `<link rel="alternate" type="application/rss+xml">`. `<lastmod>` moves **only**
 for URLs whose content hash actually changed (tracked in `scripts/seo-manifest.json`, committed) —
 so don't worry about lastmod at all; the generator owns it. CI regenerates and **fails if the
 committed files are stale**, so never edit content without running generate.
@@ -183,8 +189,10 @@ To force a lastmod bump without a content change (e.g. a pure design change to a
 that URL's `lastmod` in `scripts/seo-manifest.json` and regenerate.
 
 ### `public/robots.txt` (hand-maintained)
-Allows all crawlers, explicitly allows AI bots (GPTBot, ClaudeBot, etc.) and
-`facebookexternalhit`, and points to the sitemap. **Usually no change is needed.**
+Allows all crawlers, carries a `Content-Signal: search=yes, ai-input=yes, ai-train=yes` line
+(contentsignals.org — Hasil wants AI use allowed), explicitly allows AI bots (GPTBot, ClaudeBot,
+Perplexity, Applebot, etc.) and `facebookexternalhit`, and points to the sitemap.
+**Usually no change is needed.**
 
 ### Search Console — how to read the indexing report (so you don't "fix" non-problems)
 Verified property exists (TXT record `google-site-verification` — keep it). Expected/normal
@@ -221,6 +229,9 @@ route list** — generated pages and prerendered pages can't drift.
   redirect. **Do not revert to `directory/index.html` output.**
 - `main.js` no longer has an artificial delay; `window.__PRERENDER_INJECTED` is still set by the
   prerenderer if tooling ever needs it.
+- The snapshot **blanks the text of every `.material-icons` element** (icon ligature names like
+  `work` would otherwise read as page copy to text-only crawlers). Live icons are unaffected
+  because the client re-mounts fresh over the snapshot.
 
 > ⚠️ Plain `npm run build` overwrites `dist/` with the un-prerendered SPA. Deploy the output of
 > `build:seo`, **not** plain `build`.
@@ -228,7 +239,11 @@ route list** — generated pages and prerendered pages can't drift.
 **Deploy = GitHub Actions (`.github/workflows/deploy.yml`), NOT Cloudflare's own git build.**
 Cloudflare Pages' build container has no Chrome. On push to `vue`: lint → content check →
 generated-files freshness check → `build:seo` (build + prerender + OG cards) → `wrangler pages
-deploy dist` (Direct Upload).
+deploy dist` (Direct Upload) → `npm run indexnow` (non-fatal).
+- **IndexNow** (`scripts/indexnow.mjs`): after each deploy, POSTs every sitemap URL to api.indexnow.org so
+  Bing/Yandex/Naver/Seznam (and DuckDuckGo/Yahoo/Ecosia, which use Bing) re-fetch promptly. The key is
+  the 32-hex `public/<key>.txt` file — it is public by protocol design, not a secret; don't delete or
+  rename it. Google and Brave ignore IndexNow (sitemap + their own schedule only).
 - Don't change Cloudflare's build command to `build:seo` — it fails with "Chrome not found".
 - Deploy target is a **Direct Upload** Pages project; Wrangler can't deploy into a Git-connected one.
 - Secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` and var `CF_PAGES_PROJECT` — keep those names.

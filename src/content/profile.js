@@ -35,7 +35,8 @@ export const profile = {
     links: {
         linkedin: 'https://www.linkedin.com/in/hasil/',
         github: 'https://github.com/ha5il',
-        facebook: 'https://facebook.com/hasill'
+        facebook: 'https://facebook.com/hasill',
+        goodreads: 'https://www.goodreads.com/author/show/7394609.Hasil_Paudyal'
     },
 
     education: {
@@ -45,6 +46,9 @@ export const profile = {
         place: 'Bangalore, India',
         period: '2013 – 2017'
     },
+
+    // Short role line — Home <h1> subtitle.
+    headline: 'App Development Manager · React Native & Web Developer · Electrical Engineer · Poet',
 
     // One-line site description (llms.txt header / meta-ish contexts).
     tagline:

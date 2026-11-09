@@ -63,7 +63,7 @@ jobs:
       - name: 🔄 Verify generated SEO files are fresh
         run: |
           npm run generate
-          git diff --exit-code public/sitemap.xml public/llms.txt public/llms-full.txt scripts/seo-manifest.json
+          git diff --exit-code public/sitemap.xml public/feed.xml public/llms.txt public/llms-full.txt scripts/seo-manifest.json
 
       # ⚙️ vite build + prerender + per-project OG images (all routes from sitemap.xml).
       - name: 🏗️ Build & Prerender
@@ -77,6 +77,13 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=${{ vars.CF_PAGES_PROJECT }} --commit-dirty=true
+
+      # 📡 Tell IndexNow engines (Bing, Yandex, Naver, Seznam → DuckDuckGo, Yahoo,
+      # Ecosia) to re-fetch every sitemap URL. Non-fatal: a ping failure must not
+      # mark a successful deploy as failed.
+      - name: 📡 Notify IndexNow
+        continue-on-error: true
+        run: npm run indexnow
 
       - name: 🚦 Update GitHub deployment status
         if: always()

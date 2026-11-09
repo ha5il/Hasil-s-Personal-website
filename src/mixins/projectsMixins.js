@@ -1083,17 +1083,15 @@ export const projectsMixins = {
                     return 'dark';
             }
         },
+        // "<name> – <tagLine> | Hasil Paudyal", dropping the tagline when the
+        // result would overrun what result pages display (~65 chars).
         getProjectPageTitle(projectId) {
-            let returnData = 'Project';
-            projects.forEach(project => {
-                if (project['id'] == projectId) {
-                    returnData += " - " + project['name'];
-                    if (project['website']) {
-                        returnData += " | " + project['website'].replace('//', '');
-                    }
-                }
-            });
-            return returnData;
+            const project = projects.find(p => p.id == projectId);
+            if (!project) return 'Project | Hasil Paudyal';
+            const base = `${project.name} | Hasil Paudyal`;
+            const tagLine = (project.tagLine || '').replace(/[.!]+$/, '');
+            const withTag = `${project.name} – ${tagLine} | Hasil Paudyal`;
+            return tagLine && withTag.length <= 65 ? withTag : base;
         },
         getProjectPageDescription(projectId) {
             let returnData = null;

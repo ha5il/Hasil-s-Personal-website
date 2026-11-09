@@ -18,7 +18,16 @@
       <div class="shape shape-circle s8" />
     </div>
 
-    <b-row class="pt-4">
+    <header class="home-intro mt-5">
+      <h1 class="home-title">
+        {{ profile.name }}
+      </h1>
+      <p class="home-headline">
+        {{ profile.headline }}
+      </p>
+    </header>
+
+    <b-row class="pt-2">
       <b-col
         sm="12"
         md="12"
@@ -403,14 +412,20 @@ export default {
     setTimeout(() => { this.ringsAnimated = true; }, 350);
   },
   created() {
+    const title = "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet";
+    const description = "Hasil Paudyal: React Native (Expo) & web developer, App Development Manager, electrical engineer and poet from Kathmandu, Nepal. Projects, poems and quotes.";
     this.applySeo({
-      title: "Hasil Paudyal | React Native & Web Developer, Electrical Engineer & Poet",
-      description: "Portfolio of Hasil Paudyal: React Native (Expo) & web developer, app development manager, electrical engineer, and poet from Nepal. Explore my work in app development, web platforms, electronics, and poetry.",
+      title,
+      description,
       image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, React Native, Web Developer, App Development Manager, Electrical Engineer, Nepal, Portfolio, Expo, Laravel, AWS, Android, iOS, Cloudflare Workers",
-      url: "https://hasilpaudyal.com.np",
+      url: "https://hasilpaudyal.com.np/",
       type: "profile",
-      schema: this.seoPerson()
+      schema: [
+        this.seoPerson(),
+        this.seoWebSite(),
+        this.seoProfilePage({ name: title, description, path: "/" })
+      ]
     });
     this.highlightedProjects = this.getAllProjects().filter(p => [12, 16, 23].includes(p.id));
     this.bestQuotes = this.getAllquotes().filter(q => [2, 4, 9].includes(q.id));
@@ -423,6 +438,27 @@ export default {
 #homepage {
   min-height: 90vh;
   position: relative;
+
+  .home-intro {
+    position: relative;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+
+    .home-title {
+      color: var(--global-secondary-color);
+      font-size: 2rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .home-headline {
+      color: var(--global-primary-color);
+      font-family: "Quantico", sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      opacity: 0.85;
+      margin-bottom: 0;
+    }
+  }
 
   // --- Floating shapes ---
   .shapes-bg {

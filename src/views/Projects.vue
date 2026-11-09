@@ -3,9 +3,12 @@
     id="projects"
     class="mt-5"
   >
-    <h4 class="p-3">
+    <h1 class="h4 p-3">
+      Projects
+    </h1>
+    <h2 class="h5 px-3 pb-2">
       IT Projects
-    </h4>
+    </h2>
     <b-row>
       <b-col
         v-for="(project, idx) in projects"
@@ -77,9 +80,9 @@
         />
       </b-col>
     </b-row>
-    <h4 class="p-3">
+    <h2 class="h5 p-3">
       Electrical &amp; Electronics Projects
-    </h4>
+    </h2>
     <b-row>
       <b-col
         v-for="(project, idx) in projects"
@@ -161,15 +164,27 @@ export default {
     };
   },
   created() {
+    const title = "Projects | Hasil Paudyal Portfolio";
+    const description = "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.";
     this.applySeo({
-      title: "Projects | Hasil Paudyal Portfolio",
-      description: "Explore a curated list of Electrical, Electronics, and IT projects led by Hasil Paudyal and his team. Discover innovative solutions in web development, app development, and hardware integration.",
+      title,
+      description,
       image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, Projects, Electrical & Electronics Engineering, IT, Web Development, App Development, Laravel, Vuejs, Arduino, AWS, Portfolio",
-      schema: this.seoBreadcrumb([
-        { name: "Home", path: "/" },
-        { name: "Projects", path: "/projects" }
-      ])
+      schema: [
+        this.seoCollectionPage({
+          name: title,
+          description,
+          path: "/projects",
+          items: this.getAllProjects()
+            .sort((a, b) => a.id - b.id)
+            .map(p => ({ name: p.name, path: `/project/${p.id}/${p.urlSlug}` }))
+        }),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" }
+        ])
+      ]
     });
     this.projects = this.getAllProjects();
   }

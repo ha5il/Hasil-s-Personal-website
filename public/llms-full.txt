@@ -2,7 +2,7 @@
 
 > This document is intended for LLM indexers and AI assistants. It contains the full text content of hasilpaudyal.com.np. Generated from the site's data — do not edit by hand.
 
-> Last updated: 2026-07-19
+> Last updated: 2026-11-09
 
 ---
 
@@ -14,6 +14,7 @@
 **LinkedIn:** https://www.linkedin.com/in/hasil/
 **GitHub:** https://github.com/ha5il
 **Facebook:** https://facebook.com/hasill
+**Goodreads:** https://www.goodreads.com/author/show/7394609.Hasil_Paudyal
 
 **Bio:** Not always starting from A ends you in Z, sometimes you have to continue with AA and create any word of your own. With a background in Electrical & Electronics Engineering, Hasil has expertise in backend & API development, mobile and cloud/DevOps, web development, management, electrical repair, electronics simulation, IoT hardware, and creative writing. He writes original poems and quotes, and has built and shipped mobile apps to the App Store and Google Play.
 
@@ -367,5 +368,5 @@ You are the Sunshine / The best Sunshine / Shining my every year / Happy New Yea
 
 ---
 
-*Last updated: 2026-07-19*
+*Last updated: 2026-11-09*
 *Source: https://hasilpaudyal.com.np*

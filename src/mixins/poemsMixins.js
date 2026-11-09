@@ -407,7 +407,7 @@ export const poemsMixins = {
                     returnData = poem.name;
                 }
             });
-            return "Poem - " + returnData;
+            return `${returnData} – a poem by Hasil Paudyal`;
         },
         getPoemPageDescription(poemId) {
             let returnData = null;

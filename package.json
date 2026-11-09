@@ -13,7 +13,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "check": "node scripts/check-content.mjs",
-    "generate": "node scripts/generate-seo-files.mjs"
+    "generate": "node scripts/generate-seo-files.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",

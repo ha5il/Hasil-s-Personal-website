@@ -3,6 +3,9 @@
     id="poems"
     class="mt-5"
   >
+    <h1 class="h4 p-3">
+      Poems
+    </h1>
     <b-row>
       <b-col
         v-for="(poem, idx) in poems"
@@ -52,15 +55,27 @@ export default {
     };
   },
   created() {
+    const title = "Poems by Hasil Paudyal | Original English Poetry";
+    const description = "Original poems by Hasil Paudyal — acrostic, philosophical and lyrical pieces in English, written by a Nepali engineer, app developer and poet.";
     this.applySeo({
-      title: "Poems | Hasil's Personal Site",
-      description: "Collection of poems by Hasil Paudyal.",
+      title,
+      description,
       image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, Poems, Poetry, Portfolio, Nepal",
-      schema: this.seoBreadcrumb([
-        { name: "Home", path: "/" },
-        { name: "Poems", path: "/poems" }
-      ])
+      schema: [
+        this.seoCollectionPage({
+          name: title,
+          description,
+          path: "/poems",
+          items: this.getAllpoems()
+            .sort((a, b) => a.id - b.id)
+            .map(p => ({ name: p.name, path: `/poem/${p.id}/${p.urlSlug}` }))
+        }),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Poems", path: "/poems" }
+        ])
+      ]
     });
     this.poems = this.getAllpoems();
   }

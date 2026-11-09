@@ -45,7 +45,14 @@ const router = createRouter({
     {
       path: '/hire-Hasil',
       name: 'hire-hasil',
+      sensitive: true,
       component: () => import('@/views/HireHasil.vue')
+    },
+    {
+      // Any other casing (/hire-hasil, /HIRE-HASIL) → the canonical capital-H URL.
+      // Matching is case-insensitive by default; the route above is exact.
+      path: '/hire-hasil',
+      redirect: { name: 'hire-hasil' }
     },
     {
       path: '/performance-analysis',

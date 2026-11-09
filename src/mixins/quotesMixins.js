@@ -125,9 +125,13 @@ export const quotesMixins = {
                     })
                 }
             });
-            var trimmedString = returnData.substr(0, 40);
-            trimmedString = trimmedString.substr(0, Math.min(trimmedString.length, trimmedString.lastIndexOf(" ")))
-            return "Quote -" + trimmedString + '...';
+            returnData = returnData.trim();
+            let excerpt = returnData;
+            if (returnData.length > 50) {
+                excerpt = returnData.substr(0, 50);
+                excerpt = excerpt.substr(0, Math.min(excerpt.length, excerpt.lastIndexOf(" "))) + '…';
+            }
+            return `“${excerpt}” – a quote by Hasil Paudyal`;
         },
         getQuotePageDescription(quoteId) {
             let returnData = null;

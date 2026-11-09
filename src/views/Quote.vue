@@ -4,6 +4,9 @@
     class="mt-5"
   >
     <b-breadcrumb :items="breadcrumbItems" />
+    <h1 class="h4 p-3">
+      Quote
+    </h1>
     <b-row>
       <b-col cols="12">
         <b-card>
@@ -14,16 +17,27 @@
             >
               {{ line }}
             </p>
-            <h5 class="text-info">
+            <p class="h5 text-info">
               - Hasil Paudyal
-            </h5>
+            </p>
           </b-card-text>
         </b-card>
       </b-col>
     </b-row>
-    <h4 class="p-3">
+    <h2 class="h4 p-3">
+      About the author
+    </h2>
+    <b-card class="mb-4 author-card">
+      <b-card-text>
+        {{ profile.aboutThirdPerson }}
+        <router-link :to="{ name: 'hire-hasil' }">
+          More about Hasil
+        </router-link>
+      </b-card-text>
+    </b-card>
+    <h2 class="h4 p-3">
       Other quotes
-    </h4>
+    </h2>
     <b-row id="other-quotes">
       <b-col
         v-for="(q, idx) in otherQuotes"
@@ -48,69 +62,74 @@
 <script>
 import { quotesMixins } from "../mixins/quotesMixins.js";
 import { seoMixins } from "../mixins/seoMixins.js";
+import { profile } from "../content/profile.js";
 
 export default {
   mixins: [quotesMixins, seoMixins],
   data() {
     return {
+      profile,
       quote: null,
       otherQuotes: [],
       breadcrumbItems: null,
     };
   },
   watch: {
-    $route: { handler: "updatePage" }
+    // The component instance is reused when navigating quote → quote, so
+    // created() alone would leave the previous quote (and its head tags) on screen.
+    $route: { handler: "load" }
   },
   created() {
-    const id = this.$route.params.id;
-    let currentPageActualUrlSlug = this.getQuoteUrlSlug(id);
-    if (!currentPageActualUrlSlug) {
-      this.$router.push({ name: "quotes" });
-      return;
-    }
-    if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
-      this.$router.push({
-        name: "quote",
-        params: { id, urlSlug: currentPageActualUrlSlug }
-      });
-    }
-    this.updatePage();
-    const path = `/quote/${id}/${currentPageActualUrlSlug}`;
-    this.applySeo({
-      title: this.getQuotePageTitle(id),
-      description: this.getQuotePageDescription(id),
-      keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal",
-      type: "article",
-      schema: [
-        this.seoCreativeWork({
-          name: this.getQuotePageTitle(id),
-          description: this.getQuotePageDescription(id),
-          path,
-          type: "Quotation",
-          extra: { text: this.quote.quoteLines.join(" ") }
-        }),
-        this.seoBreadcrumb([
-          { name: "Home", path: "/" },
-          { name: "Quotes", path: "/quotes" },
-          { name: this.quote.urlSlug, path }
-        ])
-      ]
-    });
-    this.breadcrumbItems = [
-      { text: 'Quotes', to: { name: 'quotes' } },
-      { text: this.quote.urlSlug, active: true },
-    ];
+    this.load();
   },
   methods: {
-    updatePage() {
-      this.quote = this.getQuoteDetails(this.$route.params.id);
+    load() {
+      if (this.$route.name !== "quote") return;
+      const id = this.$route.params.id;
+      const currentPageActualUrlSlug = this.getQuoteUrlSlug(id);
+      if (!currentPageActualUrlSlug) {
+        this.$router.push({ name: "quotes" });
+        return;
+      }
+      if (currentPageActualUrlSlug != this.$route.params.urlSlug) {
+        this.$router.push({
+          name: "quote",
+          params: { id, urlSlug: currentPageActualUrlSlug }
+        });
+      }
+      this.quote = this.getQuoteDetails(id);
       this.otherQuotes = [];
       while (this.otherQuotes.length !== 4) {
-        let uniqueQuote = this.getRandomQuote();
+        const uniqueQuote = this.getRandomQuote();
         if (!this.otherQuotes.includes(uniqueQuote)) {
           this.otherQuotes.push(uniqueQuote);
         }
       }
+      const path = `/quote/${id}/${currentPageActualUrlSlug}`;
+      this.applySeo({
+        title: this.getQuotePageTitle(id),
+        description: this.getQuotePageDescription(id),
+        keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal",
+        type: "article",
+        schema: [
+          this.seoCreativeWork({
+            name: this.getQuotePageTitle(id),
+            description: this.getQuotePageDescription(id),
+            path,
+            type: "Quotation",
+            extra: { text: this.quote.quoteLines.join(" ") }
+          }),
+          this.seoBreadcrumb([
+            { name: "Home", path: "/" },
+            { name: "Quotes", path: "/quotes" },
+            { name: this.quote.quoteLines[0], path }
+          ])
+        ]
+      });
+      this.breadcrumbItems = [
+        { text: 'Quotes', to: { name: 'quotes' } },
+        { text: this.quote.urlSlug, active: true },
+      ];
     }
   }
 };

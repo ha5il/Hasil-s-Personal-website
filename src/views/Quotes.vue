@@ -3,6 +3,9 @@
     id="quotes"
     class="mt-5"
   >
+    <h1 class="h4 p-3">
+      Quotes
+    </h1>
     <b-row class="g-4">
       <b-col
         v-for="(quote, idx) in quotes"
@@ -54,15 +57,27 @@ export default {
     };
   },
   created() {
+    const title = "Quotes by Hasil Paudyal | Original Quotes & Reflections";
+    const description = "Original quotes and reflections written by Hasil Paudyal — short thoughts on life, ambition, genius and wordplay from a Nepali engineer and poet.";
     this.applySeo({
-      title: "Quotes | Hasil's Personal Site",
-      description: "Collection of quotes by Hasil Paudyal.",
+      title,
+      description,
       image: "https://hasilpaudyal.com.np/og-image.jpg",
       keywords: "Hasil Paudyal, Quotes, Inspiration, Portfolio, Nepal",
-      schema: this.seoBreadcrumb([
-        { name: "Home", path: "/" },
-        { name: "Quotes", path: "/quotes" }
-      ])
+      schema: [
+        this.seoCollectionPage({
+          name: title,
+          description,
+          path: "/quotes",
+          items: this.getAllquotes()
+            .sort((a, b) => a.id - b.id)
+            .map(q => ({ name: q.quoteLines[0], path: `/quote/${q.id}/${q.urlSlug}` }))
+        }),
+        this.seoBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Quotes", path: "/quotes" }
+        ])
+      ]
     });
     this.quotes = this.getAllquotes();
   }
